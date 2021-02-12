@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="dicerengine2" lang="en">
+        <msg name='%KnobCalleeAttributionMode'>Call Stack Mode</msg>
+        <msg name='%KnobDescCalleeAttributionMode'>Choose how to show system functions in the stack.</msg>
+        <msg name='%KnobValueNone'>User/system functions</msg>
+        <msg name='%KnobValueBottomUser'>Only user functions</msg>
+        <msg name='%KnobValueTopSystem'>User functions + 1</msg>
+        <msg name='%KnobValueLoop'>Loops only</msg>
+        <msg name='%KnobValueLoopAndFunction'>Loops and functions</msg>
+        <msg name='%KnobValueFunction'>Functions only</msg>
+        <msg name='%KnobInlineAttributionMode'>Inline Mode</msg>
+        <msg name='%KnobDescInlineAttributionMode'>Choose to show or hide inline functions in the stack.</msg>
+        <msg name='%KnobLoopAttributionMode'>Loop Mode</msg>
+        <msg name='%KnobDescLoopAttributionMode'>Choose to show or hide loops in the stack.</msg>
+        <msg name='%KnobFrameThreshold'>Frame rate threshold</msg>
+        <msg name='%KnobDescFrameThreshold'>Specify a threshold to classify a frame rate as Good, Fast, or Slow.</msg>
+        <msg name='%KnobRegionThreshold'>Region duration threshold</msg>
+        <msg name='%KnobDescRegionThreshold'>Specify a threshold to classify a region duration as Good, Fast, or Slow.</msg>
+        <msg name='%KnobUtilizationThreshold'>Utilization threshold</msg>
+        <msg name='%KnobDescUtilizationThreshold'>Specify a threshold to classify the application concurrency and CPU usage in Poor, Ideal, OK, or Over utilization categories.</msg>
+        <msg name='%KnobTaskThreshold'>Task duration threshold</msg>
+        <msg name='%KnobDescTaskThreshold'>Specify a threshold to classify a task duration as Good, Fast, or Slow.</msg>
+        <msg name='%KnobBandwidthThreshold'>Bandwidth utilization threshold</msg>
+        <msg name='%KnobDescBandwidthThreshold'>Specify a threshold to classify a bandwidth utilization as Low, Medium, or High.</msg>
+        <msg name='%KnobInterruptThreshold'>Interrupt duration threshold</msg>
+        <msg name='%KnobDescInterruptThreshold'>Specify a threshold to classify a interrupt duration as Good, Fast, or Slow.</msg>
+        <msg name='%KnobDescLoadDetailedData'>Specify a loader and filter data to load details from the raw traces</msg>
+        <msg name='%KnobValueInlinesOn'>Show inline functions</msg>
+        <msg name='%KnobValueInlinesOff'>Hide inline functions</msg>
+        <msg name='%KnobCodeRegionOfInterestThreshold'>Code Region Of Interest duration threshold</msg>
+        <msg name='%KnobDescCodeRegionOfInterestThreshold'>Specify a threshold to classify a Code Region Of Interest duration as Good, Fast, or Slow.</msg>
+        <msg name='%OpenMP'>OpenMP</msg>
+        <msg name='%TBB'>Intel TBB</msg>
+        <msg name='%DirectX'>DirectX</msg>
+        <msg name='%User'>User</msg>
+        <msg name='%Idle'>Idle</msg>
+        <msg name='%Poor'>Poor</msg>
+        <msg name='%Ok'>Ok</msg>
+        <msg name='%Ideal'>Ideal</msg>
+        <msg name='%Over'>Over</msg>
+        <msg name='%SlowCodeRegionOfInterest'>Slow</msg>
+        <msg name='%GoodCodeRegionOfInterest'>Good</msg>
+        <msg name='%FastCodeRegionOfInterest'>Fast</msg>
+        <msg name='%SlowFrame'>Slow</msg>
+        <msg name='%GoodFrame'>Good</msg>
+        <msg name='%FastFrame'>Fast</msg>
+        <msg name='%SlowRegion'>Slow</msg>
+        <msg name='%GoodRegion'>Good</msg>
+        <msg name='%FastRegion'>Fast</msg>
+        <msg name='%SlowTask'>Slow</msg>
+        <msg name='%GoodTask'>Good</msg>
+        <msg name='%FastTask'>Fast</msg>
+        <msg name='%LowBandwidth'>Low</msg>
+        <msg name='%MediumBandwidth'>Medium</msg>
+        <msg name='%HighBandwidth'>High</msg>
+        <msg name='%SlowLatency'>Slow</msg>
+        <msg name='%GoodLatency'>Good</msg>
+        <msg name='%FastLatency'>Fast</msg>
+        <msg name='%SlowIORequest'>Slow</msg>
+        <msg name='%GoodIORequest'>Good</msg>
+        <msg name='%FastIORequest'>Fast</msg>
+        <msg name='%LowCritical'>Low</msg>
+        <msg name='%MediumCritical'>Medium</msg>
+        <msg name='%HighCritical'>High</msg>
+    </catalog>
+</xmc>

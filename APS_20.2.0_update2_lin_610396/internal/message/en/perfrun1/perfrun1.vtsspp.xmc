@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.vtsspp" lang="en">
+        <msg name='stackwalk'>Specify stack unwinding method. Possible values: online - unwind stacks during collection; offline - unwind stacks after collection is finished; lbr - enable LBR-based call stack collection.</msg>
+        <msg name='bts-count'>Specify the &lt;integer&gt; number of BTS records collected after each sample or context switch (VTSS++ only).</msg>
+        <msg name='cpu-mask'>Specify which CPU(s) &lt;string&gt; to collect data on. For example, specify "2-8,10,12-14" to sample only CPUs 2 through 8, 10, and 12 through 14.</msg>
+        <msg name='sample-after-multiplier'>Specify the sample after multiplier as &lt;double&gt;. This multiplier modifies the sample after value for all the events specified in -event-config option. The values can range from 0.1 to 100.0.</msg>
+        <msg name='collector'>Specify a driver to be used for profiling session.</msg>
+        <msg name='nmi-watchdog-disable'>To enable hardware event-based sampling, PRODUCT_LEGAL_SHORT_NAME has disabled the NMI watchdog timer. The watchdog timer will be re-enabled after collection completes.</msg>
+        <msg name='event-mux-alg'>Specify the event multiplexing algorithm. Possible values: sequence, timer, trigger.</msg>
+        <msg name='event-mux-timeslice'>Specify the event multiplexing time slice value as &lt;integer&gt;. The time slice specifies the duration between cycles for each event multiplexing group. The default value is 1 millisecond. This option is valid only for timer-based event multiplexing.</msg>
+        <msg name='event-mux-factor'>Specify the event multiplexing factor as &lt;integer&gt;. It controls the switching of event multiplexing groups. The default factor is 1. This option is valid only for trigger-based event multiplexing.</msg>
+        <msg name='BadTimeSliceFactorOption'>The -event-mux-timeslice and -event-mux-factor options cannot be specified together.</msg>
+        <msg name='BadTimeSliceTriggerOption'>The -event-mux-timeslice and -event-mux-trigger options cannot be specified together.</msg>
+        <msg name='BadMuxGroupConfig'>Cannot configure sampling event groups. The collection is terminated.<br/>Use -knob event-config=? to see the list of available events for the target.</msg>
+        <msg name='PMUBusy'>PMU resource(s) currently being used by another profiling tool or process:       another PMU collection session may be running</msg>
+    </catalog>
+</xmc>

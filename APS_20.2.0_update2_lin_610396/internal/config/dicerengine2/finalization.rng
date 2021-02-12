@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Relax NG schema definition for finalization XML parameters -->
+<grammar xmlns:unsignedLong="http://www.w3.org/2001/XMLSchema#unsignedLong" xmlns:boolean="http://www.w3.org/2001/XMLSchema#boolean" xmlns:int="http://www.w3.org/2001/XMLSchema#int" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="bag">
+      <zeroOrMore>
+        <choice>
+          <element name="collector">
+            <ref name="anyContent"/>
+          </element>
+          <ref name="clearParameters"/>
+          <ref name="loadParameters"/>
+          <ref name="transformParameters"/>
+          <ref name="precomputeParameters"/>
+          <ref name="setknobsParameters"/>
+          <ref name="resolveParameters"/>
+          <ref name="checkpointParameters"/>
+          <ref name="updateParameters"/>
+          <ref name="deprecatedClearRawDataParameters"/>
+          <ref name="deprecatedClearInstanceDataParameters"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </start>
+  <define name="stepBaseParameters">
+    <optional>
+      <!--
+        The `id' attribute is not used directly but is used to match things up during rule
+        processing. It might go away when we move completely to using "inline" rules when
+        the rules are defined inside of XML elements they modify.
+      -->
+      <attribute name="id">
+        <data type="string"/>
+      </attribute>
+    </optional>
+    <optional>
+      <!--
+        The enable attribute is true by default and allows to switch off a particular
+        finalization step completely. In particular, this attribute is used internally
+        by command-line - -use-finalization-step option.
+      -->
+      <attribute name="boolean:enable">
+        <data type="boolean"/>
+      </attribute>
+    </optional>
+  </define>
+  <define name="clearParameters">
+    <element name="clearParameters">
+      <ref name="stepBaseParameters"/>
+      <zeroOrMore>
+        <ref name="clearOption"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="clearOption">
+    <element name="clearOption">
+      <attribute name="option">
+        <value>dbType</value>
+      </attribute>
+      <data type="string"/>
+    </element>
+  </define>
+  <define name="loadParameters">
+    <element name="loadParameters">
+      <ref name="stepBaseParameters"/>
+      <optional>
+        <attribute name="int:hugeResultThresholdMb">
+          <data type="int"/>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <ref name="loadOption"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="loadOption">
+    <choice>
+      <element name="boolean:loadOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="boolean"/>
+      </element>
+      <element name="int:loadOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="int"/>
+      </element>
+      <element name="unsignedLong:loadOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="int"/>
+      </element>
+      <element name="loadOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="string"/>
+      </element>
+      <element name="loadOption">
+        <attribute name="name">
+          <data type="string"/>
+        </attribute>
+        <attribute name="value">
+          <data type="string"/>
+        </attribute>
+      </element>
+    </choice>
+  </define>
+  <define name="transformParameters">
+    <element name="transformParameters">
+      <ref name="stepBaseParameters"/>
+      <zeroOrMore>
+        <choice>
+          <!--
+            Transform options declared outside of any transformation apply to
+            all transformations globally and exist in the current schema for
+            2 reasons. *First*, it is for backward compatibility with older
+            format of finalization options. *Second*, it is often convenient
+            to apply a given transform option to all of the transformation.
+            For example, when some global table name is set.
+          -->
+          <ref name="transformOption"/>
+          <element name="transformation">
+            <attribute name="name">
+              <data type="string"/>
+            </attribute>
+            <optional>
+              <attribute name="boolean:suppressErrors">
+                <data type="boolean"/>
+              </attribute>
+            </optional>
+            <optional>
+              <attribute name="boolean:deferred">
+                <data type="boolean"/>
+              </attribute>
+            </optional>
+            <zeroOrMore>
+              <!--
+                Defer this transformation until
+                after resolution phase
+              -->
+              <ref name="transformOption"/>
+            </zeroOrMore>
+          </element>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="transformOption">
+    <choice>
+      <element name="boolean:transformOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="boolean"/>
+      </element>
+      <element name="int:transformOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="int"/>
+      </element>
+      <element name="transformOption">
+        <attribute name="option">
+          <data type="string"/>
+        </attribute>
+        <data type="string"/>
+      </element>
+      <element name="transformOption">
+        <attribute name="name">
+          <data type="string"/>
+        </attribute>
+        <attribute name="value">
+          <data type="string"/>
+        </attribute>
+      </element>
+    </choice>
+  </define>
+  <define name="precomputeParameters">
+    <element name="precomputeParameters">
+      <ref name="stepBaseParameters"/>
+    </element>
+  </define>
+  <define name="setknobsParameters">
+    <element name="setknobsParameters">
+      <ref name="stepBaseParameters"/>
+      <zeroOrMore>
+        <ref name="engineKnob"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <!-- Resolution parameters -->
+  <define name="resolverParam">
+    <ref name="stepBaseParameters"/>
+    <element name="resolutionType">
+      <attribute name="name">
+        <data type="string"/>
+      </attribute>
+      <optional>
+        <attribute name="boolean:selective">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="engineKnob">
+    <element name="engineKnob">
+      <attribute name="id">
+        <data type="string"/>
+      </attribute>
+      <text/>
+    </element>
+  </define>
+  <define name="resolveParameters">
+    <element name="resolveParameters">
+      <zeroOrMore>
+        <choice>
+          <ref name="resolverParam"/>
+          <ref name="engineKnob"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="checkpointOption">
+    <element name="boolean:checkpointOption">
+      <attribute name="option">
+        <choice>
+          <value>DiscardRawData</value>
+          <value>DiscardInstanceData</value>
+        </choice>
+      </attribute>
+      <data type="boolean"/>
+    </element>
+  </define>
+  <!-- Database checkpoint parameters -->
+  <define name="checkpointParameters">
+    <element name="checkpointParameters">
+      <ref name="stepBaseParameters"/>
+      <optional>
+        <!--
+          Controls whether collector raw data should be removed upon finalization.
+          Deprecated and shouldn't be used in actual configuration files
+        -->
+        <attribute name="boolean:discardRawData">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+      <optional>
+        <!--
+          Controls whether instance data (needed for timeline and time filtering) should
+          be removed upon finalization to save space.
+          Deprecated and shouldn't be used in actual configuration files
+        -->
+        <attribute name="boolean:discardInstanceData">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+      <optional>
+        <!-- Deprecated parameter for clearing instance data. -->
+        <attribute name="boolean:clearAll">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+      <zeroOrMore>
+        <ref name="checkpointOption"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <!--
+    The "update" section is mostly internal and is for "update" step which is
+    taken when the database requires schema update. The update parameters are
+    used internally to control whether the step should be executed or not. The
+    presence of updateParameters here is merely indication that the same schema
+    of variant bag flows internally in the engine. It's not a call for using
+    updateParameters in collector configuration files.
+  -->
+  <define name="updateParameters">
+    <element name="updateParameters">
+      <ref name="stepBaseParameters"/>
+    </element>
+  </define>
+  <define name="deprecatedClearRawDataParameters">
+    <element name="clearRawDataParameters">
+      <optional>
+        <!-- Deprecated variant of discardRawData option -->
+        <attribute name="boolean:clearRawData">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="deprecatedClearInstanceDataParameters">
+    <element name="clearInstanceDataParameters">
+      <optional>
+        <!-- Deprecated variant of discardInstanceData option -->
+        <attribute name="boolean:clearInstanceData">
+          <data type="boolean"/>
+        </attribute>
+      </optional>
+    </element>
+  </define>
+  <define name="anyContent">
+    <zeroOrMore>
+      <choice>
+        <attribute>
+          <anyName/>
+        </attribute>
+        <text/>
+        <element>
+          <anyName/>
+          <ref name="anyContent"/>
+        </element>
+      </choice>
+    </zeroOrMore>
+  </define>
+</grammar>

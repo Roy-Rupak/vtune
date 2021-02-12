@@ -1,0 +1,789 @@
+HELP_ID	CODE	UMASK	OTHER	COMMON	WEIGHT	COUNTER	NAME	DESCRIPTION	HELP_FILE	OVERFLOW	SAV_LOWER_LIMIT	PRECISE_EVENT	LATENCY	MSR_INDEX	MSR_VALUE	LBR_VALUE	DEFAULT	UNCORE_QUEUE_RESET	UNCORE	MIN_STEP	EM TRIGGER
+0x10001	0x14	0x1	0x53	0x8	0	"0,1,2,3"	ARITH.CYCLES_DIV_BUSY	Cycles the divider is busy	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10001	0x14	0x1	0x1D7	0x8	0	"0,1,2,3"	ARITH.DIV	Divide Operations executed	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10001	0x14	0x2	0x53	0x8	0	"0,1,2,3"	ARITH.MUL	Multiply operations executed	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10002	0xE6	0x2	0x53	0x2	0	"0,1,2,3"	BACLEAR.BAD_TARGET	BACLEAR asserted with bad target address	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10002	0xE6	0x1	0x53	0x2	0	"0,1,2,3"	BACLEAR.CLEAR	"BACLEAR asserted, regardless of cause "	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10003	0xA7	0x1	0x53	0x2	0	"0,1,2,3"	BACLEAR_FORCE_IQ	Instruction queue forced BACLEAR	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10004	0xE8	0x1	0x53	0x2	0	"0,1,2,3"	BPU_CLEARS.EARLY	Early Branch Prediciton Unit clears	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10004	0xE8	0x2	0x53	0x2	0	"0,1,2,3"	BPU_CLEARS.LATE	Late Branch Prediction Unit clears	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10005	0xE5	0x1	0x53	0x2	0	"0,1,2,3"	BPU_MISSED_CALL_RET	Branch prediction unit missed call or return	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10006	0xE0	0x1	0x53	0x2	0	"0,1,2,3"	BR_INST_DECODED	Branch instructions decoded	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x7F	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.ANY	Branch instructions executed	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x1	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.COND	Conditional branch instructions executed	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x2	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.DIRECT	Unconditional branches executed	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x10	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.DIRECT_NEAR_CALL	Unconditional call branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x20	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.INDIRECT_NEAR_CALL	Indirect call branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x4	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.INDIRECT_NON_CALL	Indirect non call branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x30	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.NEAR_CALLS	Call branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x7	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.NON_CALLS	All non call branches executed	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x8	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.RETURN_NEAR	Indirect return branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10007	0x88	0x40	0x53	0x2	0	"0,1,2,3"	BR_INST_EXEC.TAKEN	Taken branches executed	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10008	0xC4	0x4	0x53	0x20	0	"0,1,2,3"	BR_INST_RETIRED.ALL_BRANCHES	Retired branch instructions (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10008	0xC4	0x1	0x53	0x20	0	"0,1,2,3"	BR_INST_RETIRED.CONDITIONAL	Retired conditional branch instructions (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10008	0xC4	0x2	0x53	0x20	0	"0,1,2,3"	BR_INST_RETIRED.NEAR_CALL	Retired near call instructions (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x10008	0xC4	0x2	0x51	0x20	0	"0,1,2,3"	BR_INST_RETIRED.NEAR_CALL_R3	Retired near call instructions Ring 3 only(Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x7F	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.ANY	Mispredicted branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x1	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.COND	Mispredicted conditional branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x2	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.DIRECT	Mispredicted unconditional branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x10	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.DIRECT_NEAR_CALL	Mispredicted non call branches executed	pmw_sp.chm	2000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x20	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.INDIRECT_NEAR_CALL	Mispredicted indirect call branches executed	pmw_sp.chm	2000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x4	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.INDIRECT_NON_CALL	Mispredicted indirect non call branches executed	pmw_sp.chm	2000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x30	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.NEAR_CALLS	Mispredicted call branches executed	pmw_sp.chm	2000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x7	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.NON_CALLS	Mispredicted non call branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x8	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.RETURN_NEAR	Mispredicted return branches executed	pmw_sp.chm	2000	0	0	0	0	0	0	0	0	0	0	0
+0x10009	0x89	0x40	0x53	0x2	0	"0,1,2,3"	BR_MISP_EXEC.TAKEN	Mispredicted taken branches executed	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x1000A	0xC5	0x4	0x53	0x20	0	"0,1,2,3"	BR_MISP_RETIRED.ALL_BRANCHES	Mispredicted retired branch instructions (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x1000A	0xC5	0x1	0x53	0x20	0	"0,1,2,3"	BR_MISP_RETIRED.CONDITIONAL	Mispredicted conditional retired branches (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x1000A	0xC5	0x2	0x53	0x20	0	"0,1,2,3"	BR_MISP_RETIRED.NEAR_CALL	Mispredicted near retired calls (Precise Event)	pmw_sp.chm	2000	0	1	0	0	0	0	0	0	0	0	0
+0x1000B	0x63	0x2	0x53	0x40	0	"0,1"	CACHE_LOCK_CYCLES.L1D	Cycles L1D locked	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1000B	0x63	0x1	0x53	0x40	0	"0,1"	CACHE_LOCK_CYCLES.L1D_L2	Cycles L1D and L2 locked	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1000C	0x0	0x0	0x53	0x400	0	34	CPU_CLK_UNHALTED.REF	Reference cycles when thread is not halted (fixed counter)	pmw_sp.chm	2000000	5	0	0	0	0	0	1	0	0	0	2
+0x1000D	0x3C	0x1	0x53	0x400	0	"0,1,2,3"	CPU_CLK_UNHALTED.REF_P	Reference base clock (133 Mhz) cycles when thread is not halted (programmable counter)	pmw_sp.chm	100000	5	0	0	0	0	0	0	0	0	0	0
+0x1000E	0x0	0x0	0x53	0x400	0	33	CPU_CLK_UNHALTED.THREAD	Cycles when thread is not halted (fixed counter)	pmw_sp.chm	2000000	5	0	0	0	0	0	1	0	0	0	1
+0x1000F	0x3C	0x0	0x53	0x400	0	"0,1,2,3"	CPU_CLK_UNHALTED.THREAD_P	Cycles when thread is not halted (programmable counter)	pmw_sp.chm	2000000	5	0	0	0	0	0	0	0	0	0	0
+0x1000F	0x3C	0x0	0x2D3	0x400	0	"0,1,2,3"	CPU_CLK_UNHALTED.TOTAL_CYCLES	Total CPU cycles	pmw_sp.chm	2000000	5	0	0	0	0	0	0	0	0	0	0
+0x10010	0x8	0x1	0x53	0x100	0	"0,1,2,3"	DTLB_LOAD_MISSES.ANY	DTLB load misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10010	0x8	0x80	0x53	0x100	0	"0,1,2,3"	DTLB_LOAD_MISSES.LARGE_WALK_COMPLETED	DTLB load miss large page walks	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10010	0x8	0x20	0x53	0x100	0	"0,1,2,3"	DTLB_LOAD_MISSES.PDE_MISS	DTLB load miss caused by low part of address	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10010	0x8	0x10	0x53	0x100	0	"0,1,2,3"	DTLB_LOAD_MISSES.STLB_HIT	DTLB second level hit	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10010	0x8	0x2	0x53	0x100	0	"0,1,2,3"	DTLB_LOAD_MISSES.WALK_COMPLETED	DTLB load miss page walks complete	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10010	0x8	0x4	0x53	0x100	0	"0,1,2,3"	DTLB_LOAD_MISSES.WALK_CYCLES	DTLB load miss page walk cycles	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10011	0x49	0x1	0x53	0x100	0	"0,1,2,3"	DTLB_MISSES.ANY	DTLB misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10011	0x49	0x80	0x53	0x100	0	"0,1,2,3"	DTLB_MISSES.LARGE_WALK_COMPLETED	DTLB miss large page walks	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10011	0x49	0x20	0x53	0x100	0	"0,1,2,3"	DTLB_MISSES.PDE_MISS	DTLB misses casued by low part of address	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10011	0x49	0x10	0x53	0x100	0	"0,1,2,3"	DTLB_MISSES.STLB_HIT	DTLB first level misses but second level hit	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10011	0x49	0x2	0x53	0x100	0	"0,1,2,3"	DTLB_MISSES.WALK_COMPLETED	DTLB miss page walks	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10011	0x49	0x4	0x53	0x100	0	"0,1,2,3"	DTLB_MISSES.WALK_CYCLES	DTLB miss page walk cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10012	0x4F	0x10	0x53	0x100	0	"0,1,2,3"	EPT.WALK_CYCLES	Extended Page Table walk cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10013	0xD5	0x1	0x53	0x4	0	"0,1,2,3"	ES_REG_RENAMES	ES segment renames	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10014	0xF7	0x1	0x53	0x20	0	"0,1,2,3"	FP_ASSIST.ALL	X87 Floating point assists (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x10014	0xF7	0x4	0x53	0x20	0	"0,1,2,3"	FP_ASSIST.INPUT	X87 Floating poiint assists for invalid input value (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x10014	0xF7	0x2	0x53	0x20	0	"0,1,2,3"	FP_ASSIST.OUTPUT	X87 Floating point assists for invalid output value (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x2	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.MMX	MMX Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x80	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.SSE_DOUBLE_PRECISION	SSE* FP double precision Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x4	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.SSE_FP	SSE and SSE2 FP Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x10	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.SSE_FP_PACKED	SSE FP packed Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x20	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.SSE_FP_SCALAR	SSE FP scalar Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x40	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.SSE_SINGLE_PRECISION	SSE* FP single precision Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x8	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.SSE2_INTEGER	SSE2 integer Uops	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10015	0x10	0x1	0x53	0x8	0	"0,1,2,3"	FP_COMP_OPS_EXE.X87	Computational floating-point operations executed	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10016	0xCC	0x3	0x53	0x8	0	"0,1,2,3"	FP_MMX_TRANS.ANY	All Floating Point to and from MMX transitions	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10016	0xCC	0x1	0x53	0x8	0	"0,1,2,3"	FP_MMX_TRANS.TO_FP	Transitions from MMX to Floating Point instructions	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10016	0xCC	0x2	0x53	0x8	0	"0,1,2,3"	FP_MMX_TRANS.TO_MMX	Transitions from Floating Point to MMX instructions	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10017	0x87	0xF	0x53	0x1	0	"0,1,2,3"	ILD_STALL.ANY	Any Instruction Length Decoder stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10017	0x87	0x4	0x53	0x1	0	"0,1,2,3"	ILD_STALL.IQ_FULL	Instruction Queue full stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10017	0x87	0x1	0x53	0x1	0	"0,1,2,3"	ILD_STALL.LCP	Length Change Prefix stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10017	0x87	0x2	0x53	0x1	0	"0,1,2,3"	ILD_STALL.MRU	Stall cycles due to BPU MRU bypass	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10017	0x87	0x8	0x53	0x1	0	"0,1,2,3"	ILD_STALL.REGEN	Regen stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10018	0x18	0x1	0x53	0x1	0	"0,1,2,3"	INST_DECODED.DEC0	Instructions that must be decoded by decoder 0	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10019	0x1E	0x1	0x53	0x1	0	"0,1,2,3"	INST_QUEUE_WRITE_CYCLES	Cycles instructions are written to the instruction queue	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1001A	0x17	0x1	0x53	0x1	0	"0,1,2,3"	INST_QUEUE_WRITES	Instructions written to instruction queue.	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1001B	0x0	0x0	0x53	0x400	0	32	INST_RETIRED.ANY	Instructions retired (fixed counter)	pmw_sp.chm	2000000	5	0	0	0	0	0	1	0	0	0	1
+0x1001C	0xC0	0x1	0x53	0x20	0	"0,1,2,3"	INST_RETIRED.ANY_P	Instructions retired (Programmable counter and Precise Event)	pmw_sp.chm	2000000	5	1	0	0	0	0	0	0	0	0	0
+0x1001C	0xC0	0x4	0x53	0x20	0	"0,1,2,3"	INST_RETIRED.MMX	Retired MMX instructions (Precise Event)	pmw_sp.chm	2000000	5	1	0	0	0	0	0	0	0	0	0
+0x1001C	0xC0	0x1	0x10D3	0x20	0	"0,1,2,3"	INST_RETIRED.TOTAL_CYCLES	Total cycles (Precise Event)	pmw_sp.chm	2000000	5	1	0	0	0	0	0	0	0	0	0
+0x1001C	0xC0	0x2	0x53	0x20	0	"0,1,2,3"	INST_RETIRED.X87	Retired floating-point operations (Precise Event)	pmw_sp.chm	2000000	5	1	0	0	0	0	0	0	0	0	0
+0x1001D	0x6C	0x1	0x53	0x200	0	"0,1,2,3"	IO_TRANSACTIONS	I/O transactions	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1001E	0xAE	0x1	0x53	0x2000	0	"0,1,2,3"	ITLB_FLUSH	ITLB flushes	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1001F	0xC8	0x20	0x53	0x2000	0	"0,1,2,3"	ITLB_MISS_RETIRED	Retired instructions that missed the ITLB (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10020	0x85	0x1	0x53	0x2000	0	"0,1,2,3"	ITLB_MISSES.ANY	ITLB miss	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10020	0x85	0x80	0x53	0x2000	0	"0,1,2,3"	ITLB_MISSES.LARGE_WALK_COMPLETED	ITLB miss large page walks	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10020	0x85	0x2	0x53	0x2000	0	"0,1,2,3"	ITLB_MISSES.WALK_COMPLETED	ITLB miss page walks	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10020	0x85	0x4	0x53	0x2000	0	"0,1,2,3"	ITLB_MISSES.WALK_CYCLES	ITLB miss page walk cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10021	0x51	0x4	0x53	0x40	0	"0,1"	L1D.M_EVICT	L1D cache lines replaced in M state 	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10021	0x51	0x2	0x53	0x40	0	"0,1"	L1D.M_REPL	L1D cache lines allocated in the M state	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10021	0x51	0x8	0x53	0x40	0	"0,1"	L1D.M_SNOOP_EVICT	L1D snoop eviction of cache lines in M state	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10021	0x51	0x1	0x53	0x40	0	"0,1"	L1D.REPL	L1 data cache lines allocated	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10022	0x52	0x1	0x53	0x40	0	"0,1"	L1D_CACHE_PREFETCH_LOCK_FB_HIT	L1D prefetch load lock accepted in fill buffer	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10023	0x4E	0x2	0x53	0x40	0	"0,1"	L1D_PREFETCH.MISS	L1D hardware prefetch misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10023	0x4E	0x1	0x53	0x40	0	"0,1"	L1D_PREFETCH.REQUESTS	L1D hardware prefetch requests	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10023	0x4E	0x4	0x53	0x40	0	"0,1"	L1D_PREFETCH.TRIGGERS	L1D hardware prefetch requests triggered	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10024	0x28	0x4	0x53	0x40	0	"0,1,2,3"	L1D_WB_L2.E_STATE	L1 writebacks to L2 in E state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10024	0x28	0x1	0x53	0x40	0	"0,1,2,3"	L1D_WB_L2.I_STATE	L1 writebacks to L2 in I state (misses)	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10024	0x28	0x8	0x53	0x40	0	"0,1,2,3"	L1D_WB_L2.M_STATE	L1 writebacks to L2 in M state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10024	0x28	0xF	0x53	0x40	0	"0,1,2,3"	L1D_WB_L2.MESI	All L1 writebacks to L2	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10024	0x28	0x2	0x53	0x40	0	"0,1,2,3"	L1D_WB_L2.S_STATE	L1 writebacks to L2 in S state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10025	0x80	0x4	0x53	0x1000	0	"0,1,2,3"	L1I.CYCLES_STALLED	L1I instruction fetch stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10025	0x80	0x1	0x53	0x1000	0	"0,1,2,3"	L1I.HITS	L1I instruction fetch hits	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10025	0x80	0x2	0x53	0x1000	0	"0,1,2,3"	L1I.MISSES	L1I instruction fetch misses	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10025	0x80	0x3	0x53	0x1000	0	"0,1,2,3"	L1I.READS	L1I Instruction fetches	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0xFF	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.ANY	All L2 data requests	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x4	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.DEMAND.E_STATE	L2 data demand loads in E state	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x1	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.DEMAND.I_STATE	L2 data demand loads in I state (misses)	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x8	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.DEMAND.M_STATE	L2 data demand loads in M state	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0xF	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.DEMAND.MESI	L2 data demand requests	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x2	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.DEMAND.S_STATE	L2 data demand loads in S state	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x40	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.PREFETCH.E_STATE	L2 data prefetches in E state	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x10	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.PREFETCH.I_STATE	L2 data prefetches in the I state (misses)	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x80	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.PREFETCH.M_STATE	L2 data prefetches in M state	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0xF0	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.PREFETCH.MESI	All L2 data prefetches	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10026	0x26	0x20	0x53	0x80	0	"0,1,2,3"	L2_DATA_RQSTS.PREFETCH.S_STATE	L2 data prefetches in the S state	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10027	0xF1	0x7	0x53	0x80	0	"0,1,2,3"	L2_LINES_IN.ANY	L2 lines alloacated	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10027	0xF1	0x4	0x53	0x80	0	"0,1,2,3"	L2_LINES_IN.E_STATE	L2 lines allocated in the E state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10027	0xF1	0x2	0x53	0x80	0	"0,1,2,3"	L2_LINES_IN.S_STATE	L2 lines allocated in the S state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10028	0xF2	0xF	0x53	0x80	0	"0,1,2,3"	L2_LINES_OUT.ANY	L2 lines evicted	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10028	0xF2	0x1	0x53	0x80	0	"0,1,2,3"	L2_LINES_OUT.DEMAND_CLEAN	L2 lines evicted by a demand request	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10028	0xF2	0x2	0x53	0x80	0	"0,1,2,3"	L2_LINES_OUT.DEMAND_DIRTY	L2 modified lines evicted by a demand request	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10028	0xF2	0x4	0x53	0x80	0	"0,1,2,3"	L2_LINES_OUT.PREFETCH_CLEAN	L2 lines evicted by a prefetch request	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10028	0xF2	0x8	0x53	0x80	0	"0,1,2,3"	L2_LINES_OUT.PREFETCH_DIRTY	L2 modified lines evicted by a prefetch request	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x10	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.IFETCH_HIT	L2 instruction fetch hits	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x20	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.IFETCH_MISS	L2 instruction fetch misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x30	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.IFETCHES	L2 instruction fetches	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x1	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.LD_HIT	L2 load hits	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x2	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.LD_MISS	L2 load misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x3	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.LOADS	L2 requests	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0xAA	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.MISS	All L2 misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x40	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.PREFETCH_HIT	L2 prefetch hits	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x80	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.PREFETCH_MISS	L2 prefetch misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0xC0	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.PREFETCHES	All L2 prefetches	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0xFF	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.REFERENCES	All L2 requests	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x4	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.RFO_HIT	L2 RFO hits	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0x8	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.RFO_MISS	L2 RFO misses	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10029	0x24	0xC	0x53	0x80	0	"0,1,2,3"	L2_RQSTS.RFOS	L2 RFO requests	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x80	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.ANY	All L2 transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x20	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.FILL	L2 fill transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x4	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.IFETCH	L2 instruction fetch transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x10	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.L1D_WB	L1D writeback to L2 transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x1	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.LOAD	L2 Load transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x8	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.PREFETCH	L2 prefetch transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x2	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.RFO	L2 RFO transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002A	0xF0	0x40	0x53	0x80	0	"0,1,2,3"	L2_TRANSACTIONS.WB	L2 writeback to LLC transactions	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x40	0x53	0x80	0	"0,1,2,3"	L2_WRITE.LOCK.E_STATE	L2 demand lock RFOs in E state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0xE0	0x53	0x80	0	"0,1,2,3"	L2_WRITE.LOCK.HIT	All demand L2 lock RFOs that hit the cache	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x10	0x53	0x80	0	"0,1,2,3"	L2_WRITE.LOCK.I_STATE	L2 demand lock RFOs in I state (misses)	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x80	0x53	0x80	0	"0,1,2,3"	L2_WRITE.LOCK.M_STATE	L2 demand lock RFOs in M state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0xF0	0x53	0x80	0	"0,1,2,3"	L2_WRITE.LOCK.MESI	All demand L2 lock RFOs	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x20	0x53	0x80	0	"0,1,2,3"	L2_WRITE.LOCK.S_STATE	L2 demand lock RFOs in S state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0xE	0x53	0x80	0	"0,1,2,3"	L2_WRITE.RFO.HIT	All L2 demand store RFOs that hit the cache	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x1	0x53	0x80	0	"0,1,2,3"	L2_WRITE.RFO.I_STATE	L2 demand store RFOs in I state (misses)	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x8	0x53	0x80	0	"0,1,2,3"	L2_WRITE.RFO.M_STATE	L2 demand store RFOs in M state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0xF	0x53	0x80	0	"0,1,2,3"	L2_WRITE.RFO.MESI	All L2 demand store RFOs	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002B	0x27	0x2	0x53	0x80	0	"0,1,2,3"	L2_WRITE.RFO.S_STATE	L2 demand store RFOs in S state	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1002C	0x82	0x1	0x53	0x2000	0	"0,1,2,3"	LARGE_ITLB.HIT	Large ITLB hit	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002D	0x3	0x2	0x53	0x8	0	"0,1,2,3"	LOAD_BLOCK.OVERLAP_STORE	Loads that partially overlap an earlier store	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1002E	0x13	0x7	0x53	0x8	0	"0,1,2,3"	LOAD_DISPATCH.ANY	All loads dispatched	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1002E	0x13	0x4	0x53	0x8	0	"0,1,2,3"	LOAD_DISPATCH.MOB	Loads dispatched from the MOB	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1002E	0x13	0x1	0x53	0x8	0	"0,1,2,3"	LOAD_DISPATCH.RS	Loads dispatched that bypass the MOB	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1002E	0x13	0x2	0x53	0x8	0	"0,1,2,3"	LOAD_DISPATCH.RS_DELAYED	Loads dispatched from stage 305	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1002F	0x4C	0x1	0x53	0x8	0	"0,1"	LOAD_HIT_PRE	Load operations conflicting with software prefetches	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10030	0x2E	0x1	0x53	0x200	0	"0,1,2,3"	LONGEST_LAT_CACHE.MISS	Longest latency cache miss	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10030	0x2E	0x2	0x53	0x200	0	"0,1,2,3"	LONGEST_LAT_CACHE.REFERENCE	Longest latency cache reference	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10031	0xA8	0x1	0x153	0x1	0	"0,1,2,3"	LSD.ACTIVE	Cycles when uops were delivered by the LSD	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10031	0xA8	0x1	0x1D3	0x1	0	"0,1,2,3"	LSD.INACTIVE	Cycles no uops were delivered by the LSD	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10032	0x20	0x1	0x53	0x1	0	"0,1,2,3"	LSD_OVERFLOW	Loops that can't stream from the instruction queue	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10033	0xC3	0x1	0x53	0x1	0	"0,1,2,3"	MACHINE_CLEARS.CYCLES	Cycles machine clear asserted	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10033	0xC3	0x2	0x53	0x1	0	"0,1,2,3"	MACHINE_CLEARS.MEM_ORDER	Execution pipeline restart due to Memory ordering conflicts 	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10033	0xC3	0x4	0x53	0x1	0	"0,1,2,3"	MACHINE_CLEARS.SMC	Self-Modifying Code detected	pmw_sp.chm	20000	0	0	0	0	0	0	0	0	0	0	0
+0x10034	0xD0	0x1	0x53	0x1	0	"0,1,2,3"	MACRO_INSTS.DECODED	Instructions decoded	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10035	0xA6	0x1	0x53	0x1	0	"0,1,2,3"	MACRO_INSTS.FUSIONS_DECODED	Macro-fused instructions decoded	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_0	Memory instructions retired above 0 clocks (Precise Event)	pmw_sp.chm	2000000	0	1	1	0x3F6	0x0	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_1024	Memory instructions retired above 1024 clocks (Precise Event)	pmw_sp.chm	100	0	1	1	0x3F6	0x400	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_128	Memory instructions retired above 128 clocks (Precise Event)	pmw_sp.chm	1000	0	1	1	0x3F6	0x80	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_16	Memory instructions retired above 16 clocks (Precise Event)	pmw_sp.chm	10000	0	1	1	0x3F6	0x10	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_16384	Memory instructions retired above 16384 clocks (Precise Event)	pmw_sp.chm	5	0	1	1	0x3F6	0x4000	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_2048	Memory instructions retired above 2048 clocks (Precise Event)	pmw_sp.chm	50	0	1	1	0x3F6	0x800	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_256	Memory instructions retired above 256 clocks (Precise Event)	pmw_sp.chm	500	0	1	1	0x3F6	0x100	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_32	Memory instructions retired above 32 clocks (Precise Event)	pmw_sp.chm	5000	0	1	1	0x3F6	0x20	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_32768	Memory instructions retired above 32768 clocks (Precise Event)	pmw_sp.chm	3	0	1	1	0x3F6	0x8000	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_4	Memory instructions retired above 4 clocks (Precise Event)	pmw_sp.chm	50000	0	1	1	0x3F6	0x4	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_4096	Memory instructions retired above 4096 clocks (Precise Event)	pmw_sp.chm	20	0	1	1	0x3F6	0x1000	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_512	Memory instructions retired above 512 clocks (Precise Event)	pmw_sp.chm	200	0	1	1	0x3F6	0x200	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_64	Memory instructions retired above 64 clocks (Precise Event)	pmw_sp.chm	2000	0	1	1	0x3F6	0x40	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_8	Memory instructions retired above 8 clocks (Precise Event)	pmw_sp.chm	20000	0	1	1	0x3F6	0x8	0	0	0	0	0	0
+0x10036	0xB	0x10	0x53	0x20	0	3	MEM_INST_RETIRED.LATENCY_ABOVE_THRESHOLD_8192	Memory instructions retired above 8192 clocks (Precise Event)	pmw_sp.chm	10	0	1	1	0x3F6	0x2000	0	0	0	0	0	0
+0x10036	0xB	0x1	0x53	0x20	0	"0,1,2,3"	MEM_INST_RETIRED.LOADS	Instructions retired which contains a load (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10036	0xB	0x2	0x53	0x20	0	"0,1,2,3"	MEM_INST_RETIRED.STORES	Instructions retired which contains a store (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x80	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.DTLB_MISS	Retired loads that miss the DTLB (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x40	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.HIT_LFB	Retired loads that miss L1D and hit an previously allocated LFB (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x1	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.L1D_HIT	Retired loads that hit the L1 data cache (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x2	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.L2_HIT	Retired loads that hit the L2 cache (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x10	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.LLC_MISS	Retired loads that miss the LLC cache (Precise Event)	pmw_sp.chm	10000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x4	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.LLC_UNSHARED_HIT	Retired loads that hit valid versions in the LLC cache (Precise Event)	pmw_sp.chm	40000	0	1	0	0	0	0	0	0	0	0	0
+0x10037	0xCB	0x8	0x53	0x20	0	"0,1,2,3"	MEM_LOAD_RETIRED.OTHER_CORE_L2_HIT_HITM	Retired loads that hit sibling core's L2 in modified or unmodified states (Precise Event)	pmw_sp.chm	40000	0	1	0	0	0	0	0	0	0	0	0
+0x10038	0xC	0x1	0x53	0x20	0	"0,1,2,3"	MEM_STORE_RETIRED.DTLB_MISS	Retired stores that miss the DTLB (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x2	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.LOCAL_HITM	Load instructions retired that HIT modified data in sibling core (Precise Event)	pmw_sp.chm	40000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x8	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.LOCAL_DRAM_AND_REMOTE_CACHE_HIT	Load instructions retired local dram and remote cache HIT data sources (Precise Event)	pmw_sp.chm	20000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x10	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.REMOTE_DRAM	Load instructions retired remote DRAM and remote home-remote cache HITM (Precise Event)	pmw_sp.chm	10000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x80	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.UNCACHEABLE	Load instructions retired IO (Precise Event)	pmw_sp.chm	4000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x4	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.REMOTE_HITM	Retired loads that hit remote socket in modified state (Precise Event)	pmw_sp.chm	40000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x20	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.OTHER_LLC_MISS	Load instructions retired other llc miss	pmw_sp.chm	10000	0	1	0	0	0	0	0	0	0	0	0
+0x10039	0xF	0x1	0x53	0x20	0	"0,1,2,3"	MEM_UNCORE_RETIRED.UNKNOWN_SOURCE	Load instructions retired unknown llc miss	pmw_sp.chm	10000	0	1	0	0	0	0	0	0	0	0	0
+0x1003A	0x5	0x2	0x53	0x8	0	"0,1,2,3"	MISALIGN_MEM_REF.STORE	Misaligned store references	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x80	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.ANY	All offcore requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x8	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.ANY.READ	Offcore read requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x10	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.ANY.RFO	Offcore RFO requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x2	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.DEMAND.READ_CODE	Offcore demand code read requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x1	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.DEMAND.READ_DATA	Offcore demand data read requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x4	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.DEMAND.RFO	Offcore demand RFO requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003B	0xB0	0x40	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS.L1D_WRITEBACK	Offcore L1 data cache writebacks	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x8	0x53	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.ANY.READ	Outstanding offcore reads	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x8	0x153	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.ANY.READ_NOT_EMPTY	Cycles offcore reads busy	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x2	0x53	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.DEMAND.READ_CODE	Outstanding offcore demand code reads	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x2	0x153	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.DEMAND.READ_CODE_NOT_EMPTY	Cycles offcore demand code read busy	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x1	0x53	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.DEMAND.READ_DATA	Outstanding offcore demand data reads	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x1	0x153	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.DEMAND.READ_DATA_NOT_EMPTY	Cycles offcore demand data read busy	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x4	0x53	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.DEMAND.RFO	Outstanding offcore demand RFOs	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003C	0x60	0x4	0x153	0x200	0	0	OFFCORE_REQUESTS_OUTSTANDING.DEMAND.RFO_NOT_EMPTY	Cycles offcore demand RFOs busy	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1003D	0xB2	0x1	0x53	0x200	0	"0,1,2,3"	OFFCORE_REQUESTS_SQ_FULL	Offcore requests blocked due to Super Queue full	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10040	0x7	0x1	0x53	0x8	0	"0,1,2,3"	PARTIAL_ADDRESS_ALIAS	False dependencies due to partial address aliasing	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10041	0xD2	0xF	0x53	0x4	0	"0,1,2,3"	RAT_STALLS.ANY	All RAT stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10041	0xD2	0x1	0x53	0x4	0	"0,1,2,3"	RAT_STALLS.FLAGS	Flag stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10041	0xD2	0x2	0x53	0x4	0	"0,1,2,3"	RAT_STALLS.REGISTERS	Partial register stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10041	0xD2	0x4	0x53	0x4	0	"0,1,2,3"	RAT_STALLS.ROB_READ_PORT	ROB read port stalls cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10041	0xD2	0x8	0x53	0x4	0	"0,1,2,3"	RAT_STALLS.SCOREBOARD	Scoreboard stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x1	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.ANY	Resource related stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x20	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.FPCW	FPU control word write stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x2	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.LOAD	Load buffer stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x40	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.MXCSR	MXCSR rename stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x80	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.OTHER	Other Resource related stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x10	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.ROB_FULL	ROB full stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x4	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.RS_FULL	Reservation Station full stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10042	0xA2	0x8	0x53	0x4	0	"0,1,2,3"	RESOURCE_STALLS.STORE	Store buffer stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10043	0x4	0x7	0x53	0x8	0	"0,1,2,3"	SB_DRAIN.ANY	All Store buffer stall cycles	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10044	0xD4	0x1	0x53	0x4	0	"0,1,2,3"	SEG_RENAME_STALLS	Segment rename stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x4	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.PACK	128 bit SIMD integer pack operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x20	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.PACKED_ARITH	128 bit SIMD integer arithmetic operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x10	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.PACKED_LOGICAL	128 bit SIMD integer logical operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x1	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.PACKED_MPY	128 bit SIMD integer multiply operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x2	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.PACKED_SHIFT	128 bit SIMD integer shift operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x40	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.SHUFFLE_MOVE	128 bit SIMD integer shuffle/move operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10045	0x12	0x8	0x53	0x8	0	"0,1,2,3"	SIMD_INT_128.UNPACK	128 bit SIMD integer unpack operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x4	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.PACK	SIMD integer 64 bit pack operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x20	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.PACKED_ARITH	SIMD integer 64 bit arithmetic operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x10	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.PACKED_LOGICAL	SIMD integer 64 bit logical operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x1	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.PACKED_MPY	SIMD integer 64 bit packed multiply operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x2	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.PACKED_SHIFT	SIMD integer 64 bit shift operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x40	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.SHUFFLE_MOVE	SIMD integer 64 bit shuffle/move operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10046	0xFD	0x8	0x53	0x8	0	"0,1,2,3"	SIMD_INT_64.UNPACK	SIMD integer 64 bit unpack operations	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x10047	0xB8	0x1	0x53	0x4000	0	"0,1,2,3"	SNOOP_RESPONSE.HIT	Thread responded HIT to snoop	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10047	0xB8	0x2	0x53	0x4000	0	"0,1,2,3"	SNOOP_RESPONSE.HITE	Thread responded HITE to snoop	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10047	0xB8	0x4	0x53	0x4000	0	"0,1,2,3"	SNOOP_RESPONSE.HITM	Thread responded HITM to snoop	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10048	0xB4	0x4	0x53	0x4000	0	"0,1,2,3"	SNOOPQ_REQUESTS.CODE	Snoop code requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10048	0xB4	0x1	0x53	0x4000	0	"0,1,2,3"	SNOOPQ_REQUESTS.DATA	Snoop data requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10048	0xB4	0x2	0x53	0x4000	0	"0,1,2,3"	SNOOPQ_REQUESTS.INVALIDATE	Snoop invalidate requests	pmw_sp.chm	100000	0	0	0	0	0	0	0	0	0	0	0
+0x10049	0xB3	0x4	0x53	0x4000	0	0	SNOOPQ_REQUESTS_OUTSTANDING.CODE	Outstanding snoop code requests	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10049	0xB3	0x4	0x153	0x4000	0	0	SNOOPQ_REQUESTS_OUTSTANDING.CODE_NOT_EMPTY	Cycles snoop code requests queued	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10049	0xB3	0x1	0x53	0x4000	0	0	SNOOPQ_REQUESTS_OUTSTANDING.DATA	Outstanding snoop data requests	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10049	0xB3	0x1	0x153	0x4000	0	0	SNOOPQ_REQUESTS_OUTSTANDING.DATA_NOT_EMPTY	Cycles snoop data requests queued	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10049	0xB3	0x2	0x53	0x4000	0	0	SNOOPQ_REQUESTS_OUTSTANDING.INVALIDATE	Outstanding snoop invalidate requests	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10049	0xB3	0x2	0x153	0x4000	0	0	SNOOPQ_REQUESTS_OUTSTANDING.INVALIDATE_NOT_EMPTY	Cycles snoop invalidate requests queued	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1004A	0xF6	0x1	0x53	0x200	0	"0,1,2,3"	SQ_FULL_STALL_CYCLES	Super Queue full stall cycles	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1004B	0xF4	0x4	0x53	0x200	0	"0,1,2,3"	SQ_MISC.LRU_HINTS	Super Queue LRU hints sent to LLC	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1004B	0xF4	0x10	0x53	0x200	0	"0,1,2,3"	SQ_MISC.SPLIT_LOCK	Super Queue lock splits across a cache line	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1004C	0xC7	0x4	0x53	0x20	0	"0,1,2,3"	SSEX_UOPS_RETIRED.PACKED_DOUBLE	SIMD Packed-Double Uops retired (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x1004C	0xC7	0x1	0x53	0x20	0	"0,1,2,3"	SSEX_UOPS_RETIRED.PACKED_SINGLE	SIMD Packed-Single Uops retired (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x1004C	0xC7	0x8	0x53	0x20	0	"0,1,2,3"	SSEX_UOPS_RETIRED.SCALAR_DOUBLE	SIMD Scalar-Double Uops retired (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x1004C	0xC7	0x2	0x53	0x20	0	"0,1,2,3"	SSEX_UOPS_RETIRED.SCALAR_SINGLE	SIMD Scalar-Single Uops retired (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x1004C	0xC7	0x10	0x53	0x20	0	"0,1,2,3"	SSEX_UOPS_RETIRED.VECTOR_INTEGER	SIMD Vector Integer Uops retired (Precise Event)	pmw_sp.chm	200000	0	1	0	0	0	0	0	0	0	0	0
+0x1004D	0x6	0x4	0x53	0x8	0	"0,1,2,3"	STORE_BLOCKS.AT_RET	Loads delayed with at-Retirement block code	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1004D	0x6	0x8	0x53	0x8	0	"0,1,2,3"	STORE_BLOCKS.L1D_BLOCK	Cacheable loads delayed with L1D block code	pmw_sp.chm	200000	0	0	0	0	0	0	0	0	0	0	0
+0x1004E	0xEC	0x1	0x53	0x400	0	"0,1,2,3"	THREAD_ACTIVE	Cycles thread is active	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x1004F	0x19	0x1	0x53	0x1	0	"0,1,2,3"	TWO_UOP_INSTS_DECODED	Two Uop instructions decoded	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10050	0xDB	0x1	0x53	0x8	0	"0,1,2,3"	UOP_UNFUSION	Uop unfusions due to FP exceptions	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10051	0xD1	0x4	0x53	0x1	0	"0,1,2,3"	UOPS_DECODED.ESP_FOLDING	Stack pointer instructions decoded	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10051	0xD1	0x8	0x53	0x1	0	"0,1,2,3"	UOPS_DECODED.ESP_SYNC	Stack pointer sync operations	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10051	0xD1	0x2	0x153	0x1	0	"0,1,2,3"	UOPS_DECODED.MS_CYCLES_ACTIVE	Uops decoded by Microcode Sequencer	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10051	0xD1	0x1	0x1D3	0x1	0	"0,1,2,3"	UOPS_DECODED.STALL_CYCLES	Cycles no Uops are decoded	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x3F	0x173	0x8	0	"0,1,2,3"	UOPS_EXECUTED.CORE_ACTIVE_CYCLES	Cycles Uops executed on any port (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x1F	0x173	0x8	0	"0,1,2,3"	UOPS_EXECUTED.CORE_ACTIVE_CYCLES_NO_PORT5	Cycles Uops executed on ports 0-4 (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x3F	0x1F7	0x8	0	"0,1,2,3"	UOPS_EXECUTED.CORE_STALL_COUNT	Uops executed on any port (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x1F	0x1F7	0x8	0	"0,1,2,3"	UOPS_EXECUTED.CORE_STALL_COUNT_NO_PORT5	Uops executed on ports 0-4 (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x3F	0x1F3	0x8	0	"0,1,2,3"	UOPS_EXECUTED.CORE_STALL_CYCLES	Cycles no Uops issued on any port (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x1F	0x1F3	0x8	0	"0,1,2,3"	UOPS_EXECUTED.CORE_STALL_CYCLES_NO_PORT5	Cycles no Uops issued on ports 0-4 (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x1	0x53	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT0	Uops executed on port 0	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x40	0x53	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT015	"Uops issued on ports 0, 1 or 5"	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x40	0x1D3	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT015_STALL_CYCLES	"Cycles no Uops issued on ports 0, 1 or 5"	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x2	0x53	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT1	Uops executed on port 1	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x4	0x73	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT2_CORE	Uops executed on port 2 (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x80	0x73	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT234_CORE	"Uops issued on ports 2, 3 or 4"	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x8	0x73	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT3_CORE	Uops executed on port 3 (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x10	0x73	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT4_CORE	Uops executed on port 4 (core count)	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10052	0xB1	0x20	0x53	0x8	0	"0,1,2,3"	UOPS_EXECUTED.PORT5	Uops executed on port 5	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10053	0xE	0x1	0x53	0x4	0	"0,1,2,3"	UOPS_ISSUED.ANY	Uops issued	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10053	0xE	0x1	0x1F3	0x4	0	"0,1,2,3"	UOPS_ISSUED.CORE_STALL_CYCLES	Cycles no Uops were issued on any thread	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10053	0xE	0x1	0x173	0x4	0	"0,1,2,3"	UOPS_ISSUED.CYCLES_ALL_THREADS	Cycles Uops were issued on either thread	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10053	0xE	0x2	0x53	0x4	0	"0,1,2,3"	UOPS_ISSUED.FUSED	Fused Uops issued	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10053	0xE	0x1	0x1D3	0x4	0	"0,1,2,3"	UOPS_ISSUED.STALL_CYCLES	Cycles no Uops were issued	pmw_sp.chm	2000000	0	0	0	0	0	0	0	0	0	0	0
+0x10054	0xC2	0x1	0x153	0x20	0	"0,1,2,3"	UOPS_RETIRED.ACTIVE_CYCLES	Cycles Uops are being retired	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10054	0xC2	0x1	0x53	0x20	0	"0,1,2,3"	UOPS_RETIRED.ANY	Uops retired (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10054	0xC2	0x4	0x53	0x20	0	"0,1,2,3"	UOPS_RETIRED.MACRO_FUSED	Macro-fused Uops retired (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10054	0xC2	0x2	0x53	0x20	0	"0,1,2,3"	UOPS_RETIRED.RETIRE_SLOTS	Retirement slots used (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10054	0xC2	0x1	0x1D3	0x20	0	"0,1,2,3"	UOPS_RETIRED.STALL_CYCLES	Cycles Uops are not retiring (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x10054	0xC2	0x1	0x10D3	0x20	0	"0,1,2,3"	UOPS_RETIRED.TOTAL_CYCLES	Total cycles using precise uop retired event (Precise Event)	pmw_sp.chm	2000000	0	1	0	0	0	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY_DATA read and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5011	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.ANY_CACHE_DRAM_0	REQUEST = ANY_DATA read and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f11	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = ANY_DATA read and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3011	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.ANY_LLC_MISS_0	REQUEST = ANY_DATA read and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf811	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.ANY_LOCATION_0	REQUEST = ANY_DATA read and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff11	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.IO_CSR_MMIO_0	REQUEST = ANY_DATA read and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8011	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.LLC_HIT_NO_OTHER_CORE_0	REQUEST = ANY_DATA read and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x111	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = ANY_DATA read and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x211	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = ANY_DATA read and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x411	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.LOCAL_CACHE_0	REQUEST = ANY_DATA read and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x711	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY_DATA read and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1011	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.OTHER_LOCAL_DRAM_0	REQUEST = ANY_DATA read and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4011	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.REMOTE_CACHE_HITM_0	REQUEST = ANY_DATA read and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x811	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_DATA.REMOTE_DRAM_0	REQUEST = ANY_DATA read and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2011	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5044	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.ANY_CACHE_DRAM_0	REQUEST = ANY IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f44	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = ANY IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3044	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.ANY_LLC_MISS_0	REQUEST = ANY IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf844	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.ANY_LOCATION_0	REQUEST = ANY IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff44	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.IO_CSR_MMIO_0	REQUEST = ANY IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8044	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.LLC_HIT_NO_OTHER_CORE_0	REQUEST = ANY IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x144	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = ANY IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x244	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = ANY IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x444	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.LOCAL_CACHE_0	REQUEST = ANY IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x744	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1044	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.OTHER_LOCAL_DRAM_0	REQUEST = ANY IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4044	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.REMOTE_CACHE_HITM_0	REQUEST = ANY IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x844	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_IFETCH.REMOTE_DRAM_0	REQUEST = ANY IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2044	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY_REQUEST and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x50ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.ANY_CACHE_DRAM_0	REQUEST = ANY_REQUEST and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7fff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = ANY_REQUEST and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x30ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.ANY_LLC_MISS_0	REQUEST = ANY_REQUEST and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf8ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.ANY_LOCATION_0	REQUEST = ANY_REQUEST and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xffff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.IO_CSR_MMIO_0	REQUEST = ANY_REQUEST and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x80ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.LLC_HIT_NO_OTHER_CORE_0	REQUEST = ANY_REQUEST and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x1ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = ANY_REQUEST and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x2ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = ANY_REQUEST and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.LOCAL_CACHE_0	REQUEST = ANY_REQUEST and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x7ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY_REQUEST and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x10ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.OTHER_LOCAL_DRAM_0	REQUEST = ANY_REQUEST and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x40ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.REMOTE_CACHE_HITM_0	REQUEST = ANY_REQUEST and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x8ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_REQUEST.REMOTE_DRAM_0	REQUEST = ANY_REQUEST and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x20ff	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY RFO and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5022	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.ANY_CACHE_DRAM_0	REQUEST = ANY RFO and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f22	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = ANY RFO and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3022	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.ANY_LLC_MISS_0	REQUEST = ANY RFO and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf822	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.ANY_LOCATION_0	REQUEST = ANY RFO and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff22	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.IO_CSR_MMIO_0	REQUEST = ANY RFO and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8022	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.LLC_HIT_NO_OTHER_CORE_0	REQUEST = ANY RFO and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x122	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = ANY RFO and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x222	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = ANY RFO and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x422	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.LOCAL_CACHE_0	REQUEST = ANY RFO and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x722	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = ANY RFO and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1022	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.OTHER_LOCAL_DRAM_0	REQUEST = ANY RFO and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4022	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.REMOTE_CACHE_HITM_0	REQUEST = ANY RFO and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x822	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.ANY_RFO.REMOTE_DRAM_0	REQUEST = ANY RFO and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2022	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = CORE_WB and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5008	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.ANY_CACHE_DRAM_0	REQUEST = CORE_WB and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f08	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = CORE_WB and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3008	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.ANY_LLC_MISS_0	REQUEST = CORE_WB and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf808	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.ANY_LOCATION_0	REQUEST = CORE_WB and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff08	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.IO_CSR_MMIO_0	REQUEST = CORE_WB and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8008	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.LLC_HIT_NO_OTHER_CORE_0	REQUEST = CORE_WB and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x108	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = CORE_WB and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x208	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = CORE_WB and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x408	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.LOCAL_CACHE_0	REQUEST = CORE_WB and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x708	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = CORE_WB and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1008	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.OTHER_LOCAL_DRAM_0	REQUEST = CORE_WB and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4008	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.REMOTE_CACHE_HITM_0	REQUEST = CORE_WB and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x808	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.COREWB.REMOTE_DRAM_0	REQUEST = CORE_WB and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2008	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DATA_IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5077	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.ANY_CACHE_DRAM_0	REQUEST = DATA_IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f77	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = DATA_IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3077	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.ANY_LLC_MISS_0	REQUEST = DATA_IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf877	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.ANY_LOCATION_0	REQUEST = DATA_IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff77	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.IO_CSR_MMIO_0	REQUEST = DATA_IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8077	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.LLC_HIT_NO_OTHER_CORE_0	REQUEST = DATA_IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x177	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = DATA_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x277	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = DATA_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x477	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.LOCAL_CACHE_0	REQUEST = DATA_IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x777	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DATA_IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1077	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.OTHER_LOCAL_DRAM_0	REQUEST = DATA_IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4077	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.REMOTE_CACHE_HITM_0	REQUEST = DATA_IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x877	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IFETCH.REMOTE_DRAM_0	REQUEST = DATA_IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2077	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DATA_IN and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5033	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.ANY_CACHE_DRAM_0	REQUEST = DATA_IN and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f33	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = DATA_IN and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3033	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.ANY_LLC_MISS_0	REQUEST = DATA_IN and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf833	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.ANY_LOCATION_0	REQUEST = DATA_IN and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff33	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.IO_CSR_MMIO_0	REQUEST = DATA_IN and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8033	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.LLC_HIT_NO_OTHER_CORE_0	REQUEST = DATA_IN and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x133	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = DATA_IN and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x233	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = DATA_IN and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x433	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.LOCAL_CACHE_0	REQUEST = DATA_IN and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x733	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DATA_IN and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1033	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.OTHER_LOCAL_DRAM_0	REQUEST = DATA_IN and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4033	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.REMOTE_CACHE_HITM_0	REQUEST = DATA_IN and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x833	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DATA_IN.REMOTE_DRAM_0	REQUEST = DATA_IN and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2033	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_DATA and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5003	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.ANY_CACHE_DRAM_0	REQUEST = DEMAND_DATA and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f03	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = DEMAND_DATA and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3003	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.ANY_LLC_MISS_0	REQUEST = DEMAND_DATA and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf803	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.ANY_LOCATION_0	REQUEST = DEMAND_DATA and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff03	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.IO_CSR_MMIO_0	REQUEST = DEMAND_DATA and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8003	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.LLC_HIT_NO_OTHER_CORE_0	REQUEST = DEMAND_DATA and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x103	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = DEMAND_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x203	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = DEMAND_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x403	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.LOCAL_CACHE_0	REQUEST = DEMAND_DATA and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x703	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_DATA and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1003	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.OTHER_LOCAL_DRAM_0	REQUEST = DEMAND_DATA and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4003	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.REMOTE_CACHE_HITM_0	REQUEST = DEMAND_DATA and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x803	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA.REMOTE_DRAM_0	REQUEST = DEMAND_DATA and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2003	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_DATA_RD and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5001	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_CACHE_DRAM_0	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f01	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3001	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_LLC_MISS_0	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf801	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_LOCATION_0	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff01	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.IO_CSR_MMIO_0	REQUEST = DEMAND_DATA_RD and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8001	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.LLC_HIT_NO_OTHER_CORE_0	REQUEST = DEMAND_DATA_RD and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x101	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = DEMAND_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x201	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = DEMAND_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x401	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.LOCAL_CACHE_0	REQUEST = DEMAND_DATA_RD and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x701	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_DATA_RD and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1001	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.OTHER_LOCAL_DRAM_0	REQUEST = DEMAND_DATA_RD and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4001	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.REMOTE_CACHE_HITM_0	REQUEST = DEMAND_DATA_RD and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x801	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_DATA_RD.REMOTE_DRAM_0	REQUEST = DEMAND_DATA_RD and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2001	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5004	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_CACHE_DRAM_0	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f04	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3004	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_LLC_MISS_0	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf804	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_LOCATION_0	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff04	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.IO_CSR_MMIO_0	REQUEST = DEMAND_IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8004	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.LLC_HIT_NO_OTHER_CORE_0	REQUEST = DEMAND_IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x104	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = DEMAND_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x204	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = DEMAND_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x404	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.LOCAL_CACHE_0	REQUEST = DEMAND_IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x704	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1004	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.OTHER_LOCAL_DRAM_0	REQUEST = DEMAND_IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4004	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.REMOTE_CACHE_HITM_0	REQUEST = DEMAND_IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x804	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_IFETCH.REMOTE_DRAM_0	REQUEST = DEMAND_IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2004	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_RFO and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5002	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.ANY_CACHE_DRAM_0	REQUEST = DEMAND_RFO and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f02	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = DEMAND_RFO and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3002	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.ANY_LLC_MISS_0	REQUEST = DEMAND_RFO and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf802	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.ANY_LOCATION_0	REQUEST = DEMAND_RFO and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff02	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.IO_CSR_MMIO_0	REQUEST = DEMAND_RFO and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8002	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT_NO_OTHER_CORE_0	REQUEST = DEMAND_RFO and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x102	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = DEMAND_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x202	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = DEMAND_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x402	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.LOCAL_CACHE_0	REQUEST = DEMAND_RFO and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x702	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = DEMAND_RFO and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1002	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.OTHER_LOCAL_DRAM_0	REQUEST = DEMAND_RFO and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4002	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.REMOTE_CACHE_HITM_0	REQUEST = DEMAND_RFO and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x802	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.DEMAND_RFO.REMOTE_DRAM_0	REQUEST = DEMAND_RFO and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2002	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = OTHER and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5080	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.ANY_CACHE_DRAM_0	REQUEST = OTHER and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f80	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = OTHER and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3080	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.ANY_LLC_MISS_0	REQUEST = OTHER and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf880	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.ANY_LOCATION_0	REQUEST = OTHER and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff80	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.IO_CSR_MMIO_0	REQUEST = OTHER and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8080	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.LLC_HIT_NO_OTHER_CORE_0	REQUEST = OTHER and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x180	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = OTHER and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x280	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = OTHER and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x480	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.LOCAL_CACHE_0	REQUEST = OTHER and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x780	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = OTHER and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1080	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.OTHER_LOCAL_DRAM_0	REQUEST = OTHER and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4080	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.REMOTE_CACHE_HITM_0	REQUEST = OTHER and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x880	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.OTHER.REMOTE_DRAM_0	REQUEST = OTHER and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2080	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_DATA and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5050	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.ANY_CACHE_DRAM_0	REQUEST = PF_DATA and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f50	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = PF_DATA and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3050	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.ANY_LLC_MISS_0	REQUEST = PF_DATA and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf850	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.ANY_LOCATION_0	REQUEST = PF_DATA and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff50	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.IO_CSR_MMIO_0	REQUEST = PF_DATA and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8050	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.LLC_HIT_NO_OTHER_CORE_0	REQUEST = PF_DATA and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x150	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = PF_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x250	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = PF_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x450	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.LOCAL_CACHE_0	REQUEST = PF_DATA and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x750	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_DATA and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1050	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.OTHER_LOCAL_DRAM_0	REQUEST = PF_DATA and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4050	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.REMOTE_CACHE_HITM_0	REQUEST = PF_DATA and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x850	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA.REMOTE_DRAM_0	REQUEST = PF_DATA and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2050	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_DATA_RD and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5010	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.ANY_CACHE_DRAM_0	REQUEST = PF_DATA_RD and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f10	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = PF_DATA_RD and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3010	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.ANY_LLC_MISS_0	REQUEST = PF_DATA_RD and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf810	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.ANY_LOCATION_0	REQUEST = PF_DATA_RD and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff10	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.IO_CSR_MMIO_0	REQUEST = PF_DATA_RD and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8010	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.LLC_HIT_NO_OTHER_CORE_0	REQUEST = PF_DATA_RD and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x110	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = PF_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x210	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = PF_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x410	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.LOCAL_CACHE_0	REQUEST = PF_DATA_RD and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x710	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_DATA_RD and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1010	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.OTHER_LOCAL_DRAM_0	REQUEST = PF_DATA_RD and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4010	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.REMOTE_CACHE_HITM_0	REQUEST = PF_DATA_RD and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x810	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_DATA_RD.REMOTE_DRAM_0	REQUEST = PF_DATA_RD and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2010	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_RFO and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5040	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.ANY_CACHE_DRAM_0	REQUEST = PF_RFO and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f40	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = PF_RFO and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3040	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.ANY_LLC_MISS_0	REQUEST = PF_RFO and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf840	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.ANY_LOCATION_0	REQUEST = PF_RFO and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff40	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.IO_CSR_MMIO_0	REQUEST = PF_RFO and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8040	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.LLC_HIT_NO_OTHER_CORE_0	REQUEST = PF_RFO and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x140	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = PF_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x240	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = PF_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x440	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.LOCAL_CACHE_0	REQUEST = PF_RFO and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x740	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_RFO and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1040	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.OTHER_LOCAL_DRAM_0	REQUEST = PF_RFO and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4040	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.REMOTE_CACHE_HITM_0	REQUEST = PF_RFO and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x840	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_IFETCH.REMOTE_DRAM_0	REQUEST = PF_RFO and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2040	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5020	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.ANY_CACHE_DRAM_0	REQUEST = PF_IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f20	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = PF_IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3020	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.ANY_LLC_MISS_0	REQUEST = PF_IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf820	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.ANY_LOCATION_0	REQUEST = PF_IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff20	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.IO_CSR_MMIO_0	REQUEST = PF_IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8020	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.LLC_HIT_NO_OTHER_CORE_0	REQUEST = PF_IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x120	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = PF_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x220	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = PF_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x420	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.LOCAL_CACHE_0	REQUEST = PF_IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x720	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PF_IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1020	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.OTHER_LOCAL_DRAM_0	REQUEST = PF_IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4020	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.REMOTE_CACHE_HITM_0	REQUEST = PF_IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x820	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PF_RFO.REMOTE_DRAM_0	REQUEST = PF_IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2020	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PREFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x5070	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.ANY_CACHE_DRAM_0	REQUEST = PREFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x7f70	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.ANY_DRAM_AND_REMOTE_FWD_0	REQUEST = PREFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A6	0x3070	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.ANY_LLC_MISS_0	REQUEST = PREFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A6	0xf870	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.ANY_LOCATION_0	REQUEST = PREFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A6	0xff70	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.IO_CSR_MMIO_0	REQUEST = PREFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A6	0x8070	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.LLC_HIT_NO_OTHER_CORE_0	REQUEST = PREFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A6	0x170	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.LLC_HIT_OTHER_CORE_HIT_0	REQUEST = PREFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x270	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.LLC_HIT_OTHER_CORE_HITM_0	REQUEST = PREFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x470	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.LOCAL_CACHE_0	REQUEST = PREFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A6	0x770	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_0	REQUEST = PREFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A6	0x1070	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.OTHER_LOCAL_DRAM_0	REQUEST = PREFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x4070	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.REMOTE_CACHE_HITM_0	REQUEST = PREFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A6	0x870	0	0	0	0	0	0
+0x1003E	0xB7	0x1	0x53	0x200	0	2	OFFCORE_RESPONSE.PREFETCH.REMOTE_DRAM_0	REQUEST = PREFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A6	0x2070	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY_DATA read and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5011	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.ANY_CACHE_DRAM_1	REQUEST = ANY_DATA read and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f11	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = ANY_DATA read and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3011	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.ANY_LLC_MISS_1	REQUEST = ANY_DATA read and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf811	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.ANY_LOCATION_1	REQUEST = ANY_DATA read and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff11	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.IO_CSR_MMIO_1	REQUEST = ANY_DATA read and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8011	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.LLC_HIT_NO_OTHER_CORE_1	REQUEST = ANY_DATA read and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x111	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = ANY_DATA read and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x211	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = ANY_DATA read and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x411	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.LOCAL_CACHE_1	REQUEST = ANY_DATA read and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x711	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY_DATA read and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1011	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.OTHER_LOCAL_DRAM_1	REQUEST = ANY_DATA read and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4011	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.REMOTE_CACHE_HITM_1	REQUEST = ANY_DATA read and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x811	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_DATA.REMOTE_DRAM_1	REQUEST = ANY_DATA read and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2011	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5044	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.ANY_CACHE_DRAM_1	REQUEST = ANY IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f44	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = ANY IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3044	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.ANY_LLC_MISS_1	REQUEST = ANY IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf844	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.ANY_LOCATION_1	REQUEST = ANY IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff44	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.IO_CSR_MMIO_1	REQUEST = ANY IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8044	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.LLC_HIT_NO_OTHER_CORE_1	REQUEST = ANY IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x144	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = ANY IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x244	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = ANY IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x444	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.LOCAL_CACHE_1	REQUEST = ANY IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x744	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1044	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.OTHER_LOCAL_DRAM_1	REQUEST = ANY IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4044	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.REMOTE_CACHE_HITM_1	REQUEST = ANY IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x844	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_IFETCH.REMOTE_DRAM_1	REQUEST = ANY IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2044	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY_REQUEST and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x50ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.ANY_CACHE_DRAM_1	REQUEST = ANY_REQUEST and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7fff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = ANY_REQUEST and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x30ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.ANY_LLC_MISS_1	REQUEST = ANY_REQUEST and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf8ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.ANY_LOCATION_1	REQUEST = ANY_REQUEST and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xffff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.IO_CSR_MMIO_1	REQUEST = ANY_REQUEST and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x80ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.LLC_HIT_NO_OTHER_CORE_1	REQUEST = ANY_REQUEST and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x1ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = ANY_REQUEST and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x2ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = ANY_REQUEST and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.LOCAL_CACHE_1	REQUEST = ANY_REQUEST and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x7ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY_REQUEST and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x10ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.OTHER_LOCAL_DRAM_1	REQUEST = ANY_REQUEST and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x40ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.REMOTE_CACHE_HITM_1	REQUEST = ANY_REQUEST and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x8ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_REQUEST.REMOTE_DRAM_1	REQUEST = ANY_REQUEST and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x20ff	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY RFO and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5022	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.ANY_CACHE_DRAM_1	REQUEST = ANY RFO and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f22	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = ANY RFO and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3022	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.ANY_LLC_MISS_1	REQUEST = ANY RFO and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf822	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.ANY_LOCATION_1	REQUEST = ANY RFO and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff22	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.IO_CSR_MMIO_1	REQUEST = ANY RFO and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8022	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.LLC_HIT_NO_OTHER_CORE_1	REQUEST = ANY RFO and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x122	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = ANY RFO and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x222	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = ANY RFO and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x422	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.LOCAL_CACHE_1	REQUEST = ANY RFO and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x722	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = ANY RFO and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1022	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.OTHER_LOCAL_DRAM_1	REQUEST = ANY RFO and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4022	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.REMOTE_CACHE_HITM_1	REQUEST = ANY RFO and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x822	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.ANY_RFO.REMOTE_DRAM_1	REQUEST = ANY RFO and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2022	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = CORE_WB and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5008	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.ANY_CACHE_DRAM_1	REQUEST = CORE_WB and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f08	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = CORE_WB and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3008	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.ANY_LLC_MISS_1	REQUEST = CORE_WB and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf808	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.ANY_LOCATION_1	REQUEST = CORE_WB and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff08	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.IO_CSR_MMIO_1	REQUEST = CORE_WB and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8008	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.LLC_HIT_NO_OTHER_CORE_1	REQUEST = CORE_WB and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x108	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = CORE_WB and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x208	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = CORE_WB and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x408	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.LOCAL_CACHE_1	REQUEST = CORE_WB and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x708	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = CORE_WB and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1008	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.OTHER_LOCAL_DRAM_1	REQUEST = CORE_WB and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4008	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.REMOTE_CACHE_HITM_1	REQUEST = CORE_WB and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x808	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.COREWB.REMOTE_DRAM_1	REQUEST = CORE_WB and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2008	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DATA_IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5077	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.ANY_CACHE_DRAM_1	REQUEST = DATA_IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f77	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = DATA_IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3077	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.ANY_LLC_MISS_1	REQUEST = DATA_IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf877	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.ANY_LOCATION_1	REQUEST = DATA_IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff77	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.IO_CSR_MMIO_1	REQUEST = DATA_IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8077	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.LLC_HIT_NO_OTHER_CORE_1	REQUEST = DATA_IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x177	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = DATA_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x277	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = DATA_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x477	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.LOCAL_CACHE_1	REQUEST = DATA_IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x777	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DATA_IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1077	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.OTHER_LOCAL_DRAM_1	REQUEST = DATA_IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4077	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.REMOTE_CACHE_HITM_1	REQUEST = DATA_IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x877	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IFETCH.REMOTE_DRAM_1	REQUEST = DATA_IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2077	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DATA_IN and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5033	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.ANY_CACHE_DRAM_1	REQUEST = DATA_IN and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f33	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = DATA_IN and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3033	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.ANY_LLC_MISS_1	REQUEST = DATA_IN and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf833	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.ANY_LOCATION_1	REQUEST = DATA_IN and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff33	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.IO_CSR_MMIO_1	REQUEST = DATA_IN and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8033	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.LLC_HIT_NO_OTHER_CORE_1	REQUEST = DATA_IN and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x133	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = DATA_IN and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x233	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = DATA_IN and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x433	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.LOCAL_CACHE_1	REQUEST = DATA_IN and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x733	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DATA_IN and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1033	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.OTHER_LOCAL_DRAM_1	REQUEST = DATA_IN and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4033	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.REMOTE_CACHE_HITM_1	REQUEST = DATA_IN and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x833	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DATA_IN.REMOTE_DRAM_1	REQUEST = DATA_IN and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2033	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_DATA and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5003	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.ANY_CACHE_DRAM_1	REQUEST = DEMAND_DATA and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f03	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = DEMAND_DATA and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3003	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.ANY_LLC_MISS_1	REQUEST = DEMAND_DATA and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf803	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.ANY_LOCATION_1	REQUEST = DEMAND_DATA and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff03	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.IO_CSR_MMIO_1	REQUEST = DEMAND_DATA and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8003	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.LLC_HIT_NO_OTHER_CORE_1	REQUEST = DEMAND_DATA and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x103	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = DEMAND_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x203	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = DEMAND_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x403	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.LOCAL_CACHE_1	REQUEST = DEMAND_DATA and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x703	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_DATA and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1003	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.OTHER_LOCAL_DRAM_1	REQUEST = DEMAND_DATA and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4003	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.REMOTE_CACHE_HITM_1	REQUEST = DEMAND_DATA and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x803	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA.REMOTE_DRAM_1	REQUEST = DEMAND_DATA and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2003	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_DATA_RD and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5001	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_CACHE_DRAM_1	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f01	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3001	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_LLC_MISS_1	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf801	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.ANY_LOCATION_1	REQUEST = DEMAND_DATA_RD and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff01	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.IO_CSR_MMIO_1	REQUEST = DEMAND_DATA_RD and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8001	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.LLC_HIT_NO_OTHER_CORE_1	REQUEST = DEMAND_DATA_RD and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x101	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = DEMAND_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x201	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = DEMAND_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x401	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.LOCAL_CACHE_1	REQUEST = DEMAND_DATA_RD and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x701	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_DATA_RD and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1001	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.OTHER_LOCAL_DRAM_1	REQUEST = DEMAND_DATA_RD and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4001	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.REMOTE_CACHE_HITM_1	REQUEST = DEMAND_DATA_RD and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x801	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_DATA_RD.REMOTE_DRAM_1	REQUEST = DEMAND_DATA_RD and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2001	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5004	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_CACHE_DRAM_1	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f04	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3004	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_LLC_MISS_1	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf804	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.ANY_LOCATION_1	REQUEST = DEMAND_IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff04	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.IO_CSR_MMIO_1	REQUEST = DEMAND_IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8004	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.LLC_HIT_NO_OTHER_CORE_1	REQUEST = DEMAND_IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x104	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = DEMAND_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x204	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = DEMAND_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x404	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.LOCAL_CACHE_1	REQUEST = DEMAND_IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x704	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1004	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.OTHER_LOCAL_DRAM_1	REQUEST = DEMAND_IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4004	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.REMOTE_CACHE_HITM_1	REQUEST = DEMAND_IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x804	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_IFETCH.REMOTE_DRAM_1	REQUEST = DEMAND_IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2004	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_RFO and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5002	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.ANY_CACHE_DRAM_1	REQUEST = DEMAND_RFO and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f02	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = DEMAND_RFO and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3002	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.ANY_LLC_MISS_1	REQUEST = DEMAND_RFO and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf802	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.ANY_LOCATION_1	REQUEST = DEMAND_RFO and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff02	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.IO_CSR_MMIO_1	REQUEST = DEMAND_RFO and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8002	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT_NO_OTHER_CORE_1	REQUEST = DEMAND_RFO and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x102	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = DEMAND_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x202	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = DEMAND_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x402	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.LOCAL_CACHE_1	REQUEST = DEMAND_RFO and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x702	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = DEMAND_RFO and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1002	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.OTHER_LOCAL_DRAM_1	REQUEST = DEMAND_RFO and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4002	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.REMOTE_CACHE_HITM_1	REQUEST = DEMAND_RFO and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x802	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.DEMAND_RFO.REMOTE_DRAM_1	REQUEST = DEMAND_RFO and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2002	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = OTHER and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5080	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.ANY_CACHE_DRAM_1	REQUEST = OTHER and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f80	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = OTHER and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3080	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.ANY_LLC_MISS_1	REQUEST = OTHER and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf880	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.ANY_LOCATION_1	REQUEST = OTHER and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff80	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.IO_CSR_MMIO_1	REQUEST = OTHER and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8080	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.LLC_HIT_NO_OTHER_CORE_1	REQUEST = OTHER and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x180	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = OTHER and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x280	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = OTHER and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x480	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.LOCAL_CACHE_1	REQUEST = OTHER and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x780	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = OTHER and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1080	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.OTHER_LOCAL_DRAM_1	REQUEST = OTHER and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4080	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.REMOTE_CACHE_HITM_1	REQUEST = OTHER and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x880	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.OTHER.REMOTE_DRAM_1	REQUEST = OTHER and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2080	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_DATA and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5050	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.ANY_CACHE_DRAM_1	REQUEST = PF_DATA and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f50	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = PF_DATA and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3050	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.ANY_LLC_MISS_1	REQUEST = PF_DATA and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf850	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.ANY_LOCATION_1	REQUEST = PF_DATA and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff50	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.IO_CSR_MMIO_1	REQUEST = PF_DATA and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8050	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.LLC_HIT_NO_OTHER_CORE_1	REQUEST = PF_DATA and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x150	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = PF_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x250	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = PF_DATA and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x450	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.LOCAL_CACHE_1	REQUEST = PF_DATA and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x750	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_DATA and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1050	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.OTHER_LOCAL_DRAM_1	REQUEST = PF_DATA and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4050	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.REMOTE_CACHE_HITM_1	REQUEST = PF_DATA and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x850	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA.REMOTE_DRAM_1	REQUEST = PF_DATA and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2050	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_DATA_RD and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5010	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.ANY_CACHE_DRAM_1	REQUEST = PF_DATA_RD and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f10	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = PF_DATA_RD and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3010	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.ANY_LLC_MISS_1	REQUEST = PF_DATA_RD and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf810	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.ANY_LOCATION_1	REQUEST = PF_DATA_RD and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff10	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.IO_CSR_MMIO_1	REQUEST = PF_DATA_RD and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8010	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.LLC_HIT_NO_OTHER_CORE_1	REQUEST = PF_DATA_RD and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x110	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = PF_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x210	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = PF_DATA_RD and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x410	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.LOCAL_CACHE_1	REQUEST = PF_DATA_RD and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x710	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_DATA_RD and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1010	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.OTHER_LOCAL_DRAM_1	REQUEST = PF_DATA_RD and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4010	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.REMOTE_CACHE_HITM_1	REQUEST = PF_DATA_RD and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x810	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_DATA_RD.REMOTE_DRAM_1	REQUEST = PF_DATA_RD and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2010	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_RFO and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5040	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.ANY_CACHE_DRAM_1	REQUEST = PF_RFO and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f40	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = PF_RFO and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3040	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.ANY_LLC_MISS_1	REQUEST = PF_RFO and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf840	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.ANY_LOCATION_1	REQUEST = PF_RFO and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff40	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.IO_CSR_MMIO_1	REQUEST = PF_RFO and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8040	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.LLC_HIT_NO_OTHER_CORE_1	REQUEST = PF_RFO and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x140	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = PF_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x240	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = PF_RFO and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x440	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.LOCAL_CACHE_1	REQUEST = PF_RFO and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x740	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_RFO and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1040	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.OTHER_LOCAL_DRAM_1	REQUEST = PF_RFO and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4040	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.REMOTE_CACHE_HITM_1	REQUEST = PF_RFO and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x840	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_IFETCH.REMOTE_DRAM_1	REQUEST = PF_RFO and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2040	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_IFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5020	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.ANY_CACHE_DRAM_1	REQUEST = PF_IFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f20	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = PF_IFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3020	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.ANY_LLC_MISS_1	REQUEST = PF_IFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf820	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.ANY_LOCATION_1	REQUEST = PF_IFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff20	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.IO_CSR_MMIO_1	REQUEST = PF_IFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8020	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.LLC_HIT_NO_OTHER_CORE_1	REQUEST = PF_IFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x120	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = PF_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x220	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = PF_IFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x420	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.LOCAL_CACHE_1	REQUEST = PF_IFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x720	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PF_IFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1020	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.OTHER_LOCAL_DRAM_1	REQUEST = PF_IFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4020	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.REMOTE_CACHE_HITM_1	REQUEST = PF_IFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x820	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PF_RFO.REMOTE_DRAM_1	REQUEST = PF_IFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2020	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.ALL_LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PREFETCH and RESPONSE = ALL_LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x5070	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.ANY_CACHE_DRAM_1	REQUEST = PREFETCH and RESPONSE = ANY_CACHE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x7f70	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.ANY_DRAM_AND_REMOTE_FWD_1	REQUEST = PREFETCH and RESPONSE = ANY_DRAM AND REMOTE_FWD	pmw_sp.chm	100000	0	0	0	0x1A7	0x3070	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.ANY_LLC_MISS_1	REQUEST = PREFETCH and RESPONSE = ANY_LLC_MISS	pmw_sp.chm	100000	0	0	0	0x1A7	0xf870	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.ANY_LOCATION_1	REQUEST = PREFETCH and RESPONSE = ANY_LOCATION	pmw_sp.chm	100000	0	0	0	0x1A7	0xff70	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.IO_CSR_MMIO_1	REQUEST = PREFETCH and RESPONSE = IO_CSR_MMIO	pmw_sp.chm	100000	0	0	0	0x1A7	0x8070	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.LLC_HIT_NO_OTHER_CORE_1	REQUEST = PREFETCH and RESPONSE = LLC_HIT_NO_OTHER_CORE	pmw_sp.chm	100000	0	0	0	0x1A7	0x170	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.LLC_HIT_OTHER_CORE_HIT_1	REQUEST = PREFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x270	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.LLC_HIT_OTHER_CORE_HITM_1	REQUEST = PREFETCH and RESPONSE = LLC_HIT_OTHER_CORE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x470	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.LOCAL_CACHE_1	REQUEST = PREFETCH and RESPONSE = LOCAL_CACHE	pmw_sp.chm	100000	0	0	0	0x1A7	0x770	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.LOCAL_DRAM_AND_REMOTE_CACHE_HIT_1	REQUEST = PREFETCH and RESPONSE = LOCAL_DRAM AND REMOTE_CACHE_HIT	pmw_sp.chm	100000	0	0	0	0x1A7	0x1070	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.OTHER_LOCAL_DRAM_1	REQUEST = PREFETCH and RESPONSE = OTHER_LOCAL_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x4070	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.REMOTE_CACHE_HITM_1	REQUEST = PREFETCH and RESPONSE = REMOTE_CACHE_HITM	pmw_sp.chm	100000	0	0	0	0x1A7	0x870	0	0	0	0	0	0
+0x1003F	0xBB	0x1	0x53	0x200	0	1	OFFCORE_RESPONSE.PREFETCH.REMOTE_DRAM_1	REQUEST = PREFETCH and RESPONSE = REMOTE_DRAM	pmw_sp.chm	100000	0	0	0	0x1A7	0x2070	0	0	0	0	0	0

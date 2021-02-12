@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="dicerhelpers1" lang="en">
+      <msg name='TotalNode'>Total</msg>
+      <msg name='%PreparingChildData'>Preparing child data</msg>
+      <msg name='%ExecutingQuery'>Executing query</msg>
+      <msg name='%QueryReferenceIsInvalid'>Query reference '<arg name='%1'/>' is invalid.</msg>
+      <msg name='%QueryCanNotBeFound'>Cannot find query '<arg name='%1'/>'</msg>
+      <msg name='%UnknownQueryType'>Unknown query type '<arg name='%1'/>'</msg>
+      <msg name='%UnsupportedTypeForQuery'>Unsupported type for query '<arg name='%1'/>'</msg>
+      <msg name='%QueryShouldBeOfType'>Query '<arg name='%1'/>' should be of '<arg name='%2'/>' type.</msg>
+      <msg name='%InstanceTableIsAbsentForQuery'>Cannot find instance table in query '<arg name='%1'/>'</msg>
+      <msg name='%InheritanceTypeMismatchForBaseQuery'>Inheritance type mismatch for base query '<arg name='%1'/>'</msg>
+      <msg name='%InvalidFormatForPath'>Invalid format for path '<arg name='%1'/>'</msg>
+      <msg name='%FileHasInvalidXMLSyntax'>Invalid XML syntax for file '<arg name='%1'/>'</msg>
+      <msg name='%FileHasInvalidExtension'>Invalid extension for file '<arg name='%1'/>'</msg>
+      <msg name='%ItemIsAbsentForQuery'>Cannot find item '<arg name='%1'/>' for query '<arg name='%2'/>'</msg>
+      <msg name='%UnsupportedItemForQuery'>Unsupported item '<arg name='%1'/>' for query '<arg name='%2'/>'</msg>
+      <msg name='%IncorrectItemValueForQuery'>Incorrect item value '<arg name='%1'/>' for query '<arg name='%2'/>'</msg>
+      <msg name='%ItemShouldBeOfStringType'>Item '<arg name='%1'/>' should be of string type.</msg>
+      <msg name='%DefaultingTo'>Using default value: '<arg name='%1'/>'</msg>
+      <msg name='%UnableToProcessRules'>Cannot process rules</msg>
+      <msg name='%ContextValuesMapIsNotSpecified'>Context values map is not specified.</msg>
+      <msg name='%ContextValueWasNotFound'>Cannot find context value '<arg name='%1'/>'</msg>
+      <msg name='%UnableToPopulateQuery'>Cannot populate query</msg>
+      <msg name='%UnableToPopulateRequiredData'>Cannot populate required data</msg>
+      <msg name='%NoColumnsWereSet'>No columns were set.</msg>
+      <msg name='%NoDatabaseEntriesForQuery'>No database entries for query '<arg name='%1'/>'</msg>
+      <msg name='%NoDataColumnsWereAdded'>No data columns were added.</msg>
+      <msg name='%ExpressionParsingErrorForQuery'>Expression parsing error for query '<arg name='%1'/>'</msg>
+      <msg name='%ExpressionIsEmpty'>Expression is empty.</msg>
+      <msg name='%ClosingQuoteNotFoundInExpressionSubpart'>
+        Cannot find closing quote for expression subpart '<arg name='%1'/>'
+      </msg>
+      <msg name='%QueryClosingClauseNotFoundInExpressionSubpart'>
+        Cannot find query closing clause for expression subpart '<arg name='%1'/>'
+      </msg>
+      <msg name='%UnexpectedTokensInExpressionSubpart'>
+        Unexpected tokens for expression subpart '<arg name='%1'/>'
+      </msg>
+      <msg name='%QueryRefShouldBeADataOrDerivedQuery'>
+        Query reference '<arg name='%1'/>' should be data or derived query.
+      </msg>
+      <msg name='%QueryReferenceShouldHaveSingleRestrictionValue'>
+        Query reference '<arg name='%1'/>' should have a single restriction value.
+      </msg>
+      <msg name='%UnknownKeyword'>Unknown keyword '<arg name='%1'/>'.</msg>
+      <msg name='%InvalidNumberOfArgumentsForFunctionCall'>
+          Invalid number of arguments in function call '<arg name='%1'/>'
+      </msg>
+      <msg name='%CannotParseNumericConstant'>Cannot parse numeric constant '<arg name='%1'/>'</msg>
+      <msg name='%CannotReadContextValue'>Cannot read context value '<arg name='%1'/>'</msg>
+      <msg name='%InvalidFormat'>Invalid format '<arg name='%1'/>'. Using default value: '<arg name='%2'/>'.</msg>
+      <msg name='%ColumnQueryIsNotApplicableForQrouping'>
+          '<arg name='%1'/>' column query is ignored: it is not applicable to grouping '<arg name='%2'/>'.
+      </msg>
+      <msg name='%FormatterSeconds'> s</msg>
+      <msg name='%FormatterMilliseconds'> ms</msg>
+      <msg name='%FormatterMicroseconds'> us</msg>
+      <msg name='%FormatterPercents'> %</msg>
+      <msg name='%FormatterUnknown'>[Unknown]</msg>
+      <msg name='%FormatterNotAvailable'>N/A</msg>
+      <msg name='%SelfTime'>Self</msg>
+      <msg name='%TotalTime'>Total</msg>
+      <msg name='%Result1'>Result 1</msg>
+      <msg name='%Result2'>Result 2</msg>
+      <msg name='%Difference'>Difference</msg>
+      <msg name='%ExpandBy'>where</msg>
+      <msg name='%RestrictBy'>is</msg>
+      <msg name='%QueryAll'>query all</msg>
+      <msg name="%format_mem_size">
+        <arg name="%1" type="mem" />
+        <arg name="%1" type="mem_unit" />
+      </msg>
+      <msg name="%format_as_MHz">
+        <arg name="%1" type="double" precision="1"/> MHz
+      </msg>
+      <msg name="%format_as_GHz">
+        <arg name="%1" type="double" precision="1"/> GHz
+      </msg>
+      <msg name='%WalkingTableTree'>Walking ITableTree</msg>
+      <msg name='%AvailableArguments'>Available values for '<arg name='%1'/>' option are:<br/><arg name='%2'/></msg>
+      <msg name='%GroupByOrderError'>'<arg name='%1'/>' can only be specified as the last grouping item.</msg>
+      <msg name='%GroupByOrderNotification'>The following items can be specified only as the final grouping level: <arg name='%1'/>.</msg>
+      <msg name='%ColumnFilterNotMatched'>The following column filters were not matched: <arg name='%1'/>. Please check spelling.</msg>
+      <msg name='%InvalidFilterCallstacks'>Invalid column filter. Only one valid data column should be specified.<br/>Possible column names are:<br/><arg name='%1'/></msg>
+      <msg name='%Others'>[Others]</msg>
+      <msg name='%NAValue'>N/A</msg>
+    </catalog>
+</xmc>

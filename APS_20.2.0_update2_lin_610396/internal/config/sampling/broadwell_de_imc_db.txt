@@ -1,0 +1,326 @@
+# Performance Monitoring Events for the Fifth Generation Intel Core Processors Based on the Broadwell-DE Microarchitecture - V7
+# 9/17/2017 4:48:42 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+iMC	0x0	0x0	UNC_M_DCLOCKTICKS	DRAM Clockticks	0,1,2,3	0x0	null	0
+iMC	0x1	0x1	UNC_M_ACT_COUNT.RD	DRAM Activate Count; Activate due to Read	0,1,2,3	0x0	null	0
+iMC	0x1	0x2	UNC_M_ACT_COUNT.WR	DRAM Activate Count; Activate due to Write	0,1,2,3	0x0	null	0
+iMC	0x1	0x8	UNC_M_ACT_COUNT.BYP	DRAM Activate Count; Activate due to Write	0,1,2,3	0x0	null	0
+iMC	0x10	0x0	UNC_M_RPQ_INSERTS	Read Pending Queue Allocations	0,1,2,3	0x0	null	0
+iMC	0x11	0x0	UNC_M_RPQ_CYCLES_NE	Read Pending Queue Not Empty	0,1,2,3	0x0	null	0
+iMC	0x2	0x1	UNC_M_PRE_COUNT.PAGE_MISS	DRAM Precharge commands.; Precharges due to page miss	0,1,2,3	0x0	null	0
+iMC	0x2	0x10	UNC_M_PRE_COUNT.BYP	DRAM Precharge commands.; Precharge due to bypass	0,1,2,3	0x0	null	0
+iMC	0x2	0x2	UNC_M_PRE_COUNT.PAGE_CLOSE	DRAM Precharge commands.; Precharge due to timer expiration	0,1,2,3	0x0	null	0
+iMC	0x2	0x4	UNC_M_PRE_COUNT.RD	DRAM Precharge commands.; Precharge due to read	0,1,2,3	0x0	null	0
+iMC	0x2	0x8	UNC_M_PRE_COUNT.WR	DRAM Precharge commands.; Precharge due to write	0,1,2,3	0x0	null	0
+iMC	0x21	0x0	UNC_M_WPQ_CYCLES_NE	Write Pending Queue Not Empty	0,1,2,3	0x0	null	0
+iMC	0x22	0x0	UNC_M_WPQ_CYCLES_FULL	Write Pending Queue Full Cycles	0,1,2,3	0x0	null	0
+iMC	0x23	0x0	UNC_M_WPQ_READ_HIT	Write Pending Queue CAM Match	0,1,2,3	0x0	null	0
+iMC	0x24	0x0	UNC_M_WPQ_WRITE_HIT	Write Pending Queue CAM Match	0,1,2,3	0x0	null	0
+iMC	0x4	0x1	UNC_M_CAS_COUNT.RD_REG	DRAM RD_CAS and WR_CAS Commands.; All DRAM RD_CAS (w/ and w/out auto-pre)	0,1,2,3	0x0	null	0
+iMC	0x4	0x10	UNC_M_CAS_COUNT.RD_WMM	DRAM RD_CAS and WR_CAS Commands.; Read CAS issued in WMM	0,1,2,3	0x0	null	0
+iMC	0x4	0x2	UNC_M_CAS_COUNT.RD_UNDERFILL	DRAM RD_CAS and WR_CAS Commands.; Underfill Read Issued	0,1,2,3	0x0	null	0
+iMC	0x4	0x20	UNC_M_CAS_COUNT.RD_RMM	DRAM RD_CAS and WR_CAS Commands.; Read CAS issued in RMM	0,1,2,3	0x0	null	0
+iMC	0x4	0x3	UNC_M_CAS_COUNT.RD	DRAM RD_CAS and WR_CAS Commands.; All DRAM Reads (RD_CAS + Underfills)	0,1,2,3	0x0	null	0
+iMC	0x4	0x4	UNC_M_CAS_COUNT.WR_WMM	DRAM RD_CAS and WR_CAS Commands.; DRAM WR_CAS (w/ and w/out auto-pre) in Write Major Mode	0,1,2,3	0x0	null	0
+iMC	0x4	0x8	UNC_M_CAS_COUNT.WR_RMM	DRAM RD_CAS and WR_CAS Commands.; DRAM WR_CAS (w/ and w/out auto-pre) in Read Major Mode	0,1,2,3	0x0	null	0
+iMC	0x4	0xC	UNC_M_CAS_COUNT.WR	DRAM RD_CAS and WR_CAS Commands.; All DRAM WR_CAS (both Modes)	0,1,2,3	0x0	null	0
+iMC	0x4	0xF	UNC_M_CAS_COUNT.ALL	DRAM RD_CAS and WR_CAS Commands.; All DRAM WR_CAS (w/ and w/out auto-pre)	0,1,2,3	0x0	null	0
+iMC	0x41	0x1	UNC_M_POWER_THROTTLE_CYCLES.RANK0	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x10	UNC_M_POWER_THROTTLE_CYCLES.RANK4	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x2	UNC_M_POWER_THROTTLE_CYCLES.RANK1	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x20	UNC_M_POWER_THROTTLE_CYCLES.RANK5	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x4	UNC_M_POWER_THROTTLE_CYCLES.RANK2	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x40	UNC_M_POWER_THROTTLE_CYCLES.RANK6	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x8	UNC_M_POWER_THROTTLE_CYCLES.RANK3	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x41	0x80	UNC_M_POWER_THROTTLE_CYCLES.RANK7	Throttle Cycles for Rank 0; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x42	0x0	UNC_M_POWER_PCU_THROTTLING		0,1,2,3	0x0	null	0
+iMC	0x43	0x0	UNC_M_POWER_SELF_REFRESH	Clock-Enabled Self-Refresh	0,1,2,3	0x0	null	0
+iMC	0x5	0x2	UNC_M_DRAM_REFRESH.PANIC	Number of DRAM Refreshes Issued	0,1,2,3	0x0	null	0
+iMC	0x5	0x4	UNC_M_DRAM_REFRESH.HIGH	Number of DRAM Refreshes Issued	0,1,2,3	0x0	null	0
+iMC	0x6	0x0	UNC_M_DRAM_PRE_ALL	DRAM Precharge All Commands	0,1,2,3	0x0	null	0
+iMC	0x7	0x1	UNC_M_MAJOR_MODES.READ	Cycles in a Major Mode; Read Major Mode	0,1,2,3	0x0	null	0
+iMC	0x7	0x2	UNC_M_MAJOR_MODES.WRITE	Cycles in a Major Mode; Write Major Mode	0,1,2,3	0x0	null	0
+iMC	0x7	0x4	UNC_M_MAJOR_MODES.PARTIAL	Cycles in a Major Mode; Partial Major Mode	0,1,2,3	0x0	null	0
+iMC	0x7	0x8	UNC_M_MAJOR_MODES.ISOCH	Cycles in a Major Mode; Isoch Major Mode	0,1,2,3	0x0	null	0
+iMC	0x8	0x1	UNC_M_PREEMPTION.RD_PREEMPT_RD	Read Preemption Count; Read over Read Preemption	0,1,2,3	0x0	null	0
+iMC	0x8	0x2	UNC_M_PREEMPTION.RD_PREEMPT_WR	Read Preemption Count; Read over Write Preemption	0,1,2,3	0x0	null	0
+iMC	0x83	0x1	UNC_M_POWER_CKE_CYCLES.RANK0	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x10	UNC_M_POWER_CKE_CYCLES.RANK4	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x2	UNC_M_POWER_CKE_CYCLES.RANK1	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x20	UNC_M_POWER_CKE_CYCLES.RANK5	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x4	UNC_M_POWER_CKE_CYCLES.RANK2	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x40	UNC_M_POWER_CKE_CYCLES.RANK6	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x8	UNC_M_POWER_CKE_CYCLES.RANK3	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x83	0x80	UNC_M_POWER_CKE_CYCLES.RANK7	CKE_ON_CYCLES by Rank; DIMM ID	0,1,2,3	0x0	null	0
+iMC	0x84	0x0	UNC_M_POWER_CHANNEL_DLLOFF	Channel DLLOFF Cycles	0,1,2,3	0x0	null	0
+iMC	0x85	0x0	UNC_M_POWER_CHANNEL_PPD	Channel PPD Cycles	0,1,2,3	0x0	null	0
+iMC	0x86	0x0	UNC_M_POWER_CRITICAL_THROTTLE_CYCLES	Critical Throttle Cycles	0,1,2,3	0x0	null	0
+iMC	0x9	0x0	UNC_M_ECC_CORRECTABLE_ERRORS	ECC Correctable Errors	0,1,2,3	0x0	null	0
+iMC	0x90	0x1	UNC_M_VMSE_WR_PUSH.WMM	VMSE WR PUSH issued; VMSE write PUSH issued in WMM	0,1,2,3	0x0	null	0
+iMC	0x90	0x2	UNC_M_VMSE_WR_PUSH.RMM	VMSE WR PUSH issued; VMSE write PUSH issued in RMM	0,1,2,3	0x0	null	0
+iMC	0x91	0x0	UNC_M_VMSE_MXB_WR_OCCUPANCY	VMSE MXB write buffer occupancy	0,1,2,3	0x0	null	0
+iMC	0xA0	0x1	UNC_M_RD_CAS_PRIO.LOW	Read CAS issued with LOW priority	0,1,2,3	0x0	null	0
+iMC	0xA0	0x2	UNC_M_RD_CAS_PRIO.MED	Read CAS issued with MEDIUM priority	0,1,2,3	0x0	null	0
+iMC	0xA0	0x4	UNC_M_RD_CAS_PRIO.HIGH	Read CAS issued with HIGH priority	0,1,2,3	0x0	null	0
+iMC	0xA0	0x8	UNC_M_RD_CAS_PRIO.PANIC	Read CAS issued with PANIC NON ISOCH priority (starved)	0,1,2,3	0x0	null	0
+iMC	0xA1	0x1	UNC_M_BYP_CMDS.ACT	ACT command issued by 2 cycle bypass	0,1,2,3	0x0	null	0
+iMC	0xA1	0x2	UNC_M_BYP_CMDS.CAS	CAS command issued by 2 cycle bypass	0,1,2,3	0x0	null	0
+iMC	0xA1	0x4	UNC_M_BYP_CMDS.PRE	PRE command issued by 2 cycle bypass	0,1,2,3	0x0	null	0
+iMC	0xB0	0x0	UNC_M_RD_CAS_RANK0.BANK0	RD_CAS Access to Rank 0; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB0	0x1	UNC_M_RD_CAS_RANK0.BANK1	RD_CAS Access to Rank 0; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB0	0x10	UNC_M_RD_CAS_RANK0.ALLBANKS	RD_CAS Access to Rank 0; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB0	0x11	UNC_M_RD_CAS_RANK0.BANKG0	RD_CAS Access to Rank 0; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB0	0x12	UNC_M_RD_CAS_RANK0.BANKG1	RD_CAS Access to Rank 0; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB0	0x13	UNC_M_RD_CAS_RANK0.BANKG2	RD_CAS Access to Rank 0; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB0	0x14	UNC_M_RD_CAS_RANK0.BANKG3	RD_CAS Access to Rank 0; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB0	0x2	UNC_M_RD_CAS_RANK0.BANK2	RD_CAS Access to Rank 0; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB0	0x3	UNC_M_RD_CAS_RANK0.BANK3	RD_CAS Access to Rank 0; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB0	0x4	UNC_M_RD_CAS_RANK0.BANK4	RD_CAS Access to Rank 0; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB0	0x5	UNC_M_RD_CAS_RANK0.BANK5	RD_CAS Access to Rank 0; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB0	0x6	UNC_M_RD_CAS_RANK0.BANK6	RD_CAS Access to Rank 0; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB0	0x7	UNC_M_RD_CAS_RANK0.BANK7	RD_CAS Access to Rank 0; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB0	0x8	UNC_M_RD_CAS_RANK0.BANK8	RD_CAS Access to Rank 0; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB0	0x9	UNC_M_RD_CAS_RANK0.BANK9	RD_CAS Access to Rank 0; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB0	0xA	UNC_M_RD_CAS_RANK0.BANK10	RD_CAS Access to Rank 0; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB0	0xB	UNC_M_RD_CAS_RANK0.BANK11	RD_CAS Access to Rank 0; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB0	0xC	UNC_M_RD_CAS_RANK0.BANK12	RD_CAS Access to Rank 0; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB0	0xD	UNC_M_RD_CAS_RANK0.BANK13	RD_CAS Access to Rank 0; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB0	0xE	UNC_M_RD_CAS_RANK0.BANK14	RD_CAS Access to Rank 0; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB0	0xF	UNC_M_RD_CAS_RANK0.BANK15	RD_CAS Access to Rank 0; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB1	0x0	UNC_M_RD_CAS_RANK1.BANK0	RD_CAS Access to Rank 1; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB1	0x1	UNC_M_RD_CAS_RANK1.BANK1	RD_CAS Access to Rank 1; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB1	0x10	UNC_M_RD_CAS_RANK1.ALLBANKS	RD_CAS Access to Rank 1; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB1	0x11	UNC_M_RD_CAS_RANK1.BANKG0	RD_CAS Access to Rank 1; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB1	0x12	UNC_M_RD_CAS_RANK1.BANKG1	RD_CAS Access to Rank 1; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB1	0x13	UNC_M_RD_CAS_RANK1.BANKG2	RD_CAS Access to Rank 1; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB1	0x14	UNC_M_RD_CAS_RANK1.BANKG3	RD_CAS Access to Rank 1; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB1	0x2	UNC_M_RD_CAS_RANK1.BANK2	RD_CAS Access to Rank 1; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB1	0x3	UNC_M_RD_CAS_RANK1.BANK3	RD_CAS Access to Rank 1; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB1	0x4	UNC_M_RD_CAS_RANK1.BANK4	RD_CAS Access to Rank 1; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB1	0x5	UNC_M_RD_CAS_RANK1.BANK5	RD_CAS Access to Rank 1; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB1	0x6	UNC_M_RD_CAS_RANK1.BANK6	RD_CAS Access to Rank 1; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB1	0x7	UNC_M_RD_CAS_RANK1.BANK7	RD_CAS Access to Rank 1; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB1	0x8	UNC_M_RD_CAS_RANK1.BANK8	RD_CAS Access to Rank 1; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB1	0x9	UNC_M_RD_CAS_RANK1.BANK9	RD_CAS Access to Rank 1; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB1	0xA	UNC_M_RD_CAS_RANK1.BANK10	RD_CAS Access to Rank 1; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB1	0xB	UNC_M_RD_CAS_RANK1.BANK11	RD_CAS Access to Rank 1; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB1	0xC	UNC_M_RD_CAS_RANK1.BANK12	RD_CAS Access to Rank 1; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB1	0xD	UNC_M_RD_CAS_RANK1.BANK13	RD_CAS Access to Rank 1; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB1	0xE	UNC_M_RD_CAS_RANK1.BANK14	RD_CAS Access to Rank 1; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB1	0xF	UNC_M_RD_CAS_RANK1.BANK15	RD_CAS Access to Rank 1; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB2	0x0	UNC_M_RD_CAS_RANK2.BANK0	RD_CAS Access to Rank 2; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB4	0x0	UNC_M_RD_CAS_RANK4.BANK0	RD_CAS Access to Rank 4; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB4	0x1	UNC_M_RD_CAS_RANK4.BANK1	RD_CAS Access to Rank 4; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB4	0x10	UNC_M_RD_CAS_RANK4.ALLBANKS	RD_CAS Access to Rank 4; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB4	0x11	UNC_M_RD_CAS_RANK4.BANKG0	RD_CAS Access to Rank 4; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB4	0x12	UNC_M_RD_CAS_RANK4.BANKG1	RD_CAS Access to Rank 4; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB4	0x13	UNC_M_RD_CAS_RANK4.BANKG2	RD_CAS Access to Rank 4; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB4	0x14	UNC_M_RD_CAS_RANK4.BANKG3	RD_CAS Access to Rank 4; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB4	0x2	UNC_M_RD_CAS_RANK4.BANK2	RD_CAS Access to Rank 4; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB4	0x3	UNC_M_RD_CAS_RANK4.BANK3	RD_CAS Access to Rank 4; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB4	0x4	UNC_M_RD_CAS_RANK4.BANK4	RD_CAS Access to Rank 4; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB4	0x5	UNC_M_RD_CAS_RANK4.BANK5	RD_CAS Access to Rank 4; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB4	0x6	UNC_M_RD_CAS_RANK4.BANK6	RD_CAS Access to Rank 4; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB4	0x7	UNC_M_RD_CAS_RANK4.BANK7	RD_CAS Access to Rank 4; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB4	0x8	UNC_M_RD_CAS_RANK4.BANK8	RD_CAS Access to Rank 4; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB4	0x9	UNC_M_RD_CAS_RANK4.BANK9	RD_CAS Access to Rank 4; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB4	0xA	UNC_M_RD_CAS_RANK4.BANK10	RD_CAS Access to Rank 4; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB4	0xB	UNC_M_RD_CAS_RANK4.BANK11	RD_CAS Access to Rank 4; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB4	0xC	UNC_M_RD_CAS_RANK4.BANK12	RD_CAS Access to Rank 4; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB4	0xD	UNC_M_RD_CAS_RANK4.BANK13	RD_CAS Access to Rank 4; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB4	0xE	UNC_M_RD_CAS_RANK4.BANK14	RD_CAS Access to Rank 4; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB4	0xF	UNC_M_RD_CAS_RANK4.BANK15	RD_CAS Access to Rank 4; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB5	0x0	UNC_M_RD_CAS_RANK5.BANK0	RD_CAS Access to Rank 5; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB5	0x1	UNC_M_RD_CAS_RANK5.BANK1	RD_CAS Access to Rank 5; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB5	0x10	UNC_M_RD_CAS_RANK5.ALLBANKS	RD_CAS Access to Rank 5; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB5	0x11	UNC_M_RD_CAS_RANK5.BANKG0	RD_CAS Access to Rank 5; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB5	0x12	UNC_M_RD_CAS_RANK5.BANKG1	RD_CAS Access to Rank 5; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB5	0x13	UNC_M_RD_CAS_RANK5.BANKG2	RD_CAS Access to Rank 5; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB5	0x14	UNC_M_RD_CAS_RANK5.BANKG3	RD_CAS Access to Rank 5; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB5	0x2	UNC_M_RD_CAS_RANK5.BANK2	RD_CAS Access to Rank 5; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB5	0x3	UNC_M_RD_CAS_RANK5.BANK3	RD_CAS Access to Rank 5; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB5	0x4	UNC_M_RD_CAS_RANK5.BANK4	RD_CAS Access to Rank 5; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB5	0x5	UNC_M_RD_CAS_RANK5.BANK5	RD_CAS Access to Rank 5; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB5	0x6	UNC_M_RD_CAS_RANK5.BANK6	RD_CAS Access to Rank 5; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB5	0x7	UNC_M_RD_CAS_RANK5.BANK7	RD_CAS Access to Rank 5; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB5	0x8	UNC_M_RD_CAS_RANK5.BANK8	RD_CAS Access to Rank 5; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB5	0x9	UNC_M_RD_CAS_RANK5.BANK9	RD_CAS Access to Rank 5; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB5	0xA	UNC_M_RD_CAS_RANK5.BANK10	RD_CAS Access to Rank 5; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB5	0xB	UNC_M_RD_CAS_RANK5.BANK11	RD_CAS Access to Rank 5; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB5	0xC	UNC_M_RD_CAS_RANK5.BANK12	RD_CAS Access to Rank 5; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB5	0xD	UNC_M_RD_CAS_RANK5.BANK13	RD_CAS Access to Rank 5; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB5	0xE	UNC_M_RD_CAS_RANK5.BANK14	RD_CAS Access to Rank 5; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB5	0xF	UNC_M_RD_CAS_RANK5.BANK15	RD_CAS Access to Rank 5; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB6	0x0	UNC_M_RD_CAS_RANK6.BANK0	RD_CAS Access to Rank 6; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB6	0x1	UNC_M_RD_CAS_RANK6.BANK1	RD_CAS Access to Rank 6; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB6	0x10	UNC_M_RD_CAS_RANK6.ALLBANKS	RD_CAS Access to Rank 6; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB6	0x11	UNC_M_RD_CAS_RANK6.BANKG0	RD_CAS Access to Rank 6; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB6	0x12	UNC_M_RD_CAS_RANK6.BANKG1	RD_CAS Access to Rank 6; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB6	0x13	UNC_M_RD_CAS_RANK6.BANKG2	RD_CAS Access to Rank 6; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB6	0x14	UNC_M_RD_CAS_RANK6.BANKG3	RD_CAS Access to Rank 6; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB6	0x2	UNC_M_RD_CAS_RANK6.BANK2	RD_CAS Access to Rank 6; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB6	0x3	UNC_M_RD_CAS_RANK6.BANK3	RD_CAS Access to Rank 6; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB6	0x4	UNC_M_RD_CAS_RANK6.BANK4	RD_CAS Access to Rank 6; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB6	0x5	UNC_M_RD_CAS_RANK6.BANK5	RD_CAS Access to Rank 6; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB6	0x6	UNC_M_RD_CAS_RANK6.BANK6	RD_CAS Access to Rank 6; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB6	0x7	UNC_M_RD_CAS_RANK6.BANK7	RD_CAS Access to Rank 6; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB6	0x8	UNC_M_RD_CAS_RANK6.BANK8	RD_CAS Access to Rank 6; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB6	0x9	UNC_M_RD_CAS_RANK6.BANK9	RD_CAS Access to Rank 6; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB6	0xA	UNC_M_RD_CAS_RANK6.BANK10	RD_CAS Access to Rank 6; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB6	0xB	UNC_M_RD_CAS_RANK6.BANK11	RD_CAS Access to Rank 6; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB6	0xC	UNC_M_RD_CAS_RANK6.BANK12	RD_CAS Access to Rank 6; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB6	0xD	UNC_M_RD_CAS_RANK6.BANK13	RD_CAS Access to Rank 6; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB6	0xE	UNC_M_RD_CAS_RANK6.BANK14	RD_CAS Access to Rank 6; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB6	0xF	UNC_M_RD_CAS_RANK6.BANK15	RD_CAS Access to Rank 6; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB7	0x0	UNC_M_RD_CAS_RANK7.BANK0	RD_CAS Access to Rank 7; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB7	0x1	UNC_M_RD_CAS_RANK7.BANK1	RD_CAS Access to Rank 7; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB7	0x10	UNC_M_RD_CAS_RANK7.ALLBANKS	RD_CAS Access to Rank 7; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB7	0x11	UNC_M_RD_CAS_RANK7.BANKG0	RD_CAS Access to Rank 7; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB7	0x12	UNC_M_RD_CAS_RANK7.BANKG1	RD_CAS Access to Rank 7; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB7	0x13	UNC_M_RD_CAS_RANK7.BANKG2	RD_CAS Access to Rank 7; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB7	0x14	UNC_M_RD_CAS_RANK7.BANKG3	RD_CAS Access to Rank 7; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB7	0x2	UNC_M_RD_CAS_RANK7.BANK2	RD_CAS Access to Rank 7; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB7	0x3	UNC_M_RD_CAS_RANK7.BANK3	RD_CAS Access to Rank 7; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB7	0x4	UNC_M_RD_CAS_RANK7.BANK4	RD_CAS Access to Rank 7; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB7	0x5	UNC_M_RD_CAS_RANK7.BANK5	RD_CAS Access to Rank 7; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB7	0x6	UNC_M_RD_CAS_RANK7.BANK6	RD_CAS Access to Rank 7; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB7	0x7	UNC_M_RD_CAS_RANK7.BANK7	RD_CAS Access to Rank 7; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB7	0x8	UNC_M_RD_CAS_RANK7.BANK8	RD_CAS Access to Rank 7; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB7	0x9	UNC_M_RD_CAS_RANK7.BANK9	RD_CAS Access to Rank 7; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB7	0xA	UNC_M_RD_CAS_RANK7.BANK10	RD_CAS Access to Rank 7; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB7	0xB	UNC_M_RD_CAS_RANK7.BANK11	RD_CAS Access to Rank 7; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB7	0xC	UNC_M_RD_CAS_RANK7.BANK12	RD_CAS Access to Rank 7; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB7	0xD	UNC_M_RD_CAS_RANK7.BANK13	RD_CAS Access to Rank 7; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB7	0xE	UNC_M_RD_CAS_RANK7.BANK14	RD_CAS Access to Rank 7; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB7	0xF	UNC_M_RD_CAS_RANK7.BANK15	RD_CAS Access to Rank 7; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB8	0x0	UNC_M_WR_CAS_RANK0.BANK0	WR_CAS Access to Rank 0; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB8	0x1	UNC_M_WR_CAS_RANK0.BANK1	WR_CAS Access to Rank 0; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB8	0x10	UNC_M_WR_CAS_RANK0.ALLBANKS	WR_CAS Access to Rank 0; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB8	0x11	UNC_M_WR_CAS_RANK0.BANKG0	WR_CAS Access to Rank 0; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB8	0x12	UNC_M_WR_CAS_RANK0.BANKG1	WR_CAS Access to Rank 0; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB8	0x13	UNC_M_WR_CAS_RANK0.BANKG2	WR_CAS Access to Rank 0; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB8	0x14	UNC_M_WR_CAS_RANK0.BANKG3	WR_CAS Access to Rank 0; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB8	0x2	UNC_M_WR_CAS_RANK0.BANK2	WR_CAS Access to Rank 0; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB8	0x3	UNC_M_WR_CAS_RANK0.BANK3	WR_CAS Access to Rank 0; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB8	0x4	UNC_M_WR_CAS_RANK0.BANK4	WR_CAS Access to Rank 0; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB8	0x5	UNC_M_WR_CAS_RANK0.BANK5	WR_CAS Access to Rank 0; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB8	0x6	UNC_M_WR_CAS_RANK0.BANK6	WR_CAS Access to Rank 0; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB8	0x7	UNC_M_WR_CAS_RANK0.BANK7	WR_CAS Access to Rank 0; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB8	0x8	UNC_M_WR_CAS_RANK0.BANK8	WR_CAS Access to Rank 0; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB8	0x9	UNC_M_WR_CAS_RANK0.BANK9	WR_CAS Access to Rank 0; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB8	0xA	UNC_M_WR_CAS_RANK0.BANK10	WR_CAS Access to Rank 0; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB8	0xB	UNC_M_WR_CAS_RANK0.BANK11	WR_CAS Access to Rank 0; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB8	0xC	UNC_M_WR_CAS_RANK0.BANK12	WR_CAS Access to Rank 0; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB8	0xD	UNC_M_WR_CAS_RANK0.BANK13	WR_CAS Access to Rank 0; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB8	0xE	UNC_M_WR_CAS_RANK0.BANK14	WR_CAS Access to Rank 0; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB8	0xF	UNC_M_WR_CAS_RANK0.BANK15	WR_CAS Access to Rank 0; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xB9	0x0	UNC_M_WR_CAS_RANK1.BANK0	WR_CAS Access to Rank 1; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xB9	0x1	UNC_M_WR_CAS_RANK1.BANK1	WR_CAS Access to Rank 1; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xB9	0x10	UNC_M_WR_CAS_RANK1.ALLBANKS	WR_CAS Access to Rank 1; All Banks	0,1,2,3	0x0	null	0
+iMC	0xB9	0x11	UNC_M_WR_CAS_RANK1.BANKG0	WR_CAS Access to Rank 1; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xB9	0x12	UNC_M_WR_CAS_RANK1.BANKG1	WR_CAS Access to Rank 1; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xB9	0x13	UNC_M_WR_CAS_RANK1.BANKG2	WR_CAS Access to Rank 1; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xB9	0x14	UNC_M_WR_CAS_RANK1.BANKG3	WR_CAS Access to Rank 1; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xB9	0x2	UNC_M_WR_CAS_RANK1.BANK2	WR_CAS Access to Rank 1; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xB9	0x3	UNC_M_WR_CAS_RANK1.BANK3	WR_CAS Access to Rank 1; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xB9	0x4	UNC_M_WR_CAS_RANK1.BANK4	WR_CAS Access to Rank 1; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xB9	0x5	UNC_M_WR_CAS_RANK1.BANK5	WR_CAS Access to Rank 1; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xB9	0x6	UNC_M_WR_CAS_RANK1.BANK6	WR_CAS Access to Rank 1; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xB9	0x7	UNC_M_WR_CAS_RANK1.BANK7	WR_CAS Access to Rank 1; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xB9	0x8	UNC_M_WR_CAS_RANK1.BANK8	WR_CAS Access to Rank 1; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xB9	0x9	UNC_M_WR_CAS_RANK1.BANK9	WR_CAS Access to Rank 1; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xB9	0xA	UNC_M_WR_CAS_RANK1.BANK10	WR_CAS Access to Rank 1; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xB9	0xB	UNC_M_WR_CAS_RANK1.BANK11	WR_CAS Access to Rank 1; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xB9	0xC	UNC_M_WR_CAS_RANK1.BANK12	WR_CAS Access to Rank 1; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xB9	0xD	UNC_M_WR_CAS_RANK1.BANK13	WR_CAS Access to Rank 1; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xB9	0xE	UNC_M_WR_CAS_RANK1.BANK14	WR_CAS Access to Rank 1; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xB9	0xF	UNC_M_WR_CAS_RANK1.BANK15	WR_CAS Access to Rank 1; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xBC	0x0	UNC_M_WR_CAS_RANK4.BANK0	WR_CAS Access to Rank 4; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xBC	0x1	UNC_M_WR_CAS_RANK4.BANK1	WR_CAS Access to Rank 4; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xBC	0x10	UNC_M_WR_CAS_RANK4.ALLBANKS	WR_CAS Access to Rank 4; All Banks	0,1,2,3	0x0	null	0
+iMC	0xBC	0x11	UNC_M_WR_CAS_RANK4.BANKG0	WR_CAS Access to Rank 4; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xBC	0x12	UNC_M_WR_CAS_RANK4.BANKG1	WR_CAS Access to Rank 4; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xBC	0x13	UNC_M_WR_CAS_RANK4.BANKG2	WR_CAS Access to Rank 4; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xBC	0x14	UNC_M_WR_CAS_RANK4.BANKG3	WR_CAS Access to Rank 4; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xBC	0x2	UNC_M_WR_CAS_RANK4.BANK2	WR_CAS Access to Rank 4; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xBC	0x3	UNC_M_WR_CAS_RANK4.BANK3	WR_CAS Access to Rank 4; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xBC	0x4	UNC_M_WR_CAS_RANK4.BANK4	WR_CAS Access to Rank 4; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xBC	0x5	UNC_M_WR_CAS_RANK4.BANK5	WR_CAS Access to Rank 4; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xBC	0x6	UNC_M_WR_CAS_RANK4.BANK6	WR_CAS Access to Rank 4; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xBC	0x7	UNC_M_WR_CAS_RANK4.BANK7	WR_CAS Access to Rank 4; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xBC	0x8	UNC_M_WR_CAS_RANK4.BANK8	WR_CAS Access to Rank 4; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xBC	0x9	UNC_M_WR_CAS_RANK4.BANK9	WR_CAS Access to Rank 4; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xBC	0xA	UNC_M_WR_CAS_RANK4.BANK10	WR_CAS Access to Rank 4; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xBC	0xB	UNC_M_WR_CAS_RANK4.BANK11	WR_CAS Access to Rank 4; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xBC	0xC	UNC_M_WR_CAS_RANK4.BANK12	WR_CAS Access to Rank 4; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xBC	0xD	UNC_M_WR_CAS_RANK4.BANK13	WR_CAS Access to Rank 4; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xBC	0xE	UNC_M_WR_CAS_RANK4.BANK14	WR_CAS Access to Rank 4; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xBC	0xF	UNC_M_WR_CAS_RANK4.BANK15	WR_CAS Access to Rank 4; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xBD	0x0	UNC_M_WR_CAS_RANK5.BANK0	WR_CAS Access to Rank 5; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xBD	0x1	UNC_M_WR_CAS_RANK5.BANK1	WR_CAS Access to Rank 5; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xBD	0x10	UNC_M_WR_CAS_RANK5.ALLBANKS	WR_CAS Access to Rank 5; All Banks	0,1,2,3	0x0	null	0
+iMC	0xBD	0x11	UNC_M_WR_CAS_RANK5.BANKG0	WR_CAS Access to Rank 5; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xBD	0x12	UNC_M_WR_CAS_RANK5.BANKG1	WR_CAS Access to Rank 5; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xBD	0x13	UNC_M_WR_CAS_RANK5.BANKG2	WR_CAS Access to Rank 5; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xBD	0x14	UNC_M_WR_CAS_RANK5.BANKG3	WR_CAS Access to Rank 5; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xBD	0x2	UNC_M_WR_CAS_RANK5.BANK2	WR_CAS Access to Rank 5; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xBD	0x3	UNC_M_WR_CAS_RANK5.BANK3	WR_CAS Access to Rank 5; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xBD	0x4	UNC_M_WR_CAS_RANK5.BANK4	WR_CAS Access to Rank 5; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xBD	0x5	UNC_M_WR_CAS_RANK5.BANK5	WR_CAS Access to Rank 5; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xBD	0x6	UNC_M_WR_CAS_RANK5.BANK6	WR_CAS Access to Rank 5; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xBD	0x7	UNC_M_WR_CAS_RANK5.BANK7	WR_CAS Access to Rank 5; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xBD	0x8	UNC_M_WR_CAS_RANK5.BANK8	WR_CAS Access to Rank 5; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xBD	0x9	UNC_M_WR_CAS_RANK5.BANK9	WR_CAS Access to Rank 5; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xBD	0xA	UNC_M_WR_CAS_RANK5.BANK10	WR_CAS Access to Rank 5; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xBD	0xB	UNC_M_WR_CAS_RANK5.BANK11	WR_CAS Access to Rank 5; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xBD	0xC	UNC_M_WR_CAS_RANK5.BANK12	WR_CAS Access to Rank 5; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xBD	0xD	UNC_M_WR_CAS_RANK5.BANK13	WR_CAS Access to Rank 5; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xBD	0xE	UNC_M_WR_CAS_RANK5.BANK14	WR_CAS Access to Rank 5; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xBD	0xF	UNC_M_WR_CAS_RANK5.BANK15	WR_CAS Access to Rank 5; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xBE	0x0	UNC_M_WR_CAS_RANK6.BANK0	WR_CAS Access to Rank 6; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xBE	0x1	UNC_M_WR_CAS_RANK6.BANK1	WR_CAS Access to Rank 6; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xBE	0x10	UNC_M_WR_CAS_RANK6.ALLBANKS	WR_CAS Access to Rank 6; All Banks	0,1,2,3	0x0	null	0
+iMC	0xBE	0x11	UNC_M_WR_CAS_RANK6.BANKG0	WR_CAS Access to Rank 6; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xBE	0x12	UNC_M_WR_CAS_RANK6.BANKG1	WR_CAS Access to Rank 6; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xBE	0x13	UNC_M_WR_CAS_RANK6.BANKG2	WR_CAS Access to Rank 6; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xBE	0x14	UNC_M_WR_CAS_RANK6.BANKG3	WR_CAS Access to Rank 6; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xBE	0x2	UNC_M_WR_CAS_RANK6.BANK2	WR_CAS Access to Rank 6; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xBE	0x3	UNC_M_WR_CAS_RANK6.BANK3	WR_CAS Access to Rank 6; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xBE	0x4	UNC_M_WR_CAS_RANK6.BANK4	WR_CAS Access to Rank 6; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xBE	0x5	UNC_M_WR_CAS_RANK6.BANK5	WR_CAS Access to Rank 6; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xBE	0x6	UNC_M_WR_CAS_RANK6.BANK6	WR_CAS Access to Rank 6; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xBE	0x7	UNC_M_WR_CAS_RANK6.BANK7	WR_CAS Access to Rank 6; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xBE	0x8	UNC_M_WR_CAS_RANK6.BANK8	WR_CAS Access to Rank 6; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xBE	0x9	UNC_M_WR_CAS_RANK6.BANK9	WR_CAS Access to Rank 6; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xBE	0xA	UNC_M_WR_CAS_RANK6.BANK10	WR_CAS Access to Rank 6; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xBE	0xB	UNC_M_WR_CAS_RANK6.BANK11	WR_CAS Access to Rank 6; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xBE	0xC	UNC_M_WR_CAS_RANK6.BANK12	WR_CAS Access to Rank 6; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xBE	0xD	UNC_M_WR_CAS_RANK6.BANK13	WR_CAS Access to Rank 6; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xBE	0xE	UNC_M_WR_CAS_RANK6.BANK14	WR_CAS Access to Rank 6; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xBE	0xF	UNC_M_WR_CAS_RANK6.BANK15	WR_CAS Access to Rank 6; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xBF	0x0	UNC_M_WR_CAS_RANK7.BANK0	WR_CAS Access to Rank 7; Bank 0	0,1,2,3	0x0	null	0
+iMC	0xBF	0x1	UNC_M_WR_CAS_RANK7.BANK1	WR_CAS Access to Rank 7; Bank 1	0,1,2,3	0x0	null	0
+iMC	0xBF	0x10	UNC_M_WR_CAS_RANK7.ALLBANKS	WR_CAS Access to Rank 7; All Banks	0,1,2,3	0x0	null	0
+iMC	0xBF	0x11	UNC_M_WR_CAS_RANK7.BANKG0	WR_CAS Access to Rank 7; Bank Group 0 (Banks 0-3)	0,1,2,3	0x0	null	0
+iMC	0xBF	0x12	UNC_M_WR_CAS_RANK7.BANKG1	WR_CAS Access to Rank 7; Bank Group 1 (Banks 4-7)	0,1,2,3	0x0	null	0
+iMC	0xBF	0x13	UNC_M_WR_CAS_RANK7.BANKG2	WR_CAS Access to Rank 7; Bank Group 2 (Banks 8-11)	0,1,2,3	0x0	null	0
+iMC	0xBF	0x14	UNC_M_WR_CAS_RANK7.BANKG3	WR_CAS Access to Rank 7; Bank Group 3 (Banks 12-15)	0,1,2,3	0x0	null	0
+iMC	0xBF	0x2	UNC_M_WR_CAS_RANK7.BANK2	WR_CAS Access to Rank 7; Bank 2	0,1,2,3	0x0	null	0
+iMC	0xBF	0x3	UNC_M_WR_CAS_RANK7.BANK3	WR_CAS Access to Rank 7; Bank 3	0,1,2,3	0x0	null	0
+iMC	0xBF	0x4	UNC_M_WR_CAS_RANK7.BANK4	WR_CAS Access to Rank 7; Bank 4	0,1,2,3	0x0	null	0
+iMC	0xBF	0x5	UNC_M_WR_CAS_RANK7.BANK5	WR_CAS Access to Rank 7; Bank 5	0,1,2,3	0x0	null	0
+iMC	0xBF	0x6	UNC_M_WR_CAS_RANK7.BANK6	WR_CAS Access to Rank 7; Bank 6	0,1,2,3	0x0	null	0
+iMC	0xBF	0x7	UNC_M_WR_CAS_RANK7.BANK7	WR_CAS Access to Rank 7; Bank 7	0,1,2,3	0x0	null	0
+iMC	0xBF	0x8	UNC_M_WR_CAS_RANK7.BANK8	WR_CAS Access to Rank 7; Bank 8	0,1,2,3	0x0	null	0
+iMC	0xBF	0x9	UNC_M_WR_CAS_RANK7.BANK9	WR_CAS Access to Rank 7; Bank 9	0,1,2,3	0x0	null	0
+iMC	0xBF	0xA	UNC_M_WR_CAS_RANK7.BANK10	WR_CAS Access to Rank 7; Bank 10	0,1,2,3	0x0	null	0
+iMC	0xBF	0xB	UNC_M_WR_CAS_RANK7.BANK11	WR_CAS Access to Rank 7; Bank 11	0,1,2,3	0x0	null	0
+iMC	0xBF	0xC	UNC_M_WR_CAS_RANK7.BANK12	WR_CAS Access to Rank 7; Bank 12	0,1,2,3	0x0	null	0
+iMC	0xBF	0xD	UNC_M_WR_CAS_RANK7.BANK13	WR_CAS Access to Rank 7; Bank 13	0,1,2,3	0x0	null	0
+iMC	0xBF	0xE	UNC_M_WR_CAS_RANK7.BANK14	WR_CAS Access to Rank 7; Bank 14	0,1,2,3	0x0	null	0
+iMC	0xBF	0xF	UNC_M_WR_CAS_RANK7.BANK15	WR_CAS Access to Rank 7; Bank 15	0,1,2,3	0x0	null	0
+iMC	0xC0	0x1	UNC_M_WMM_TO_RMM.LOW_THRESH	Transition from WMM to RMM because of low threshold; Transition from WMM to RMM because of starve counter	0,1,2,3	0x0	null	0
+iMC	0xC0	0x2	UNC_M_WMM_TO_RMM.STARVE	Transition from WMM to RMM because of low threshold	0,1,2,3	0x0	null	0
+iMC	0xC0	0x4	UNC_M_WMM_TO_RMM.VMSE_RETRY	Transition from WMM to RMM because of low threshold	0,1,2,3	0x0	null	0
+iMC	0xC1	0x0	UNC_M_WRONG_MM	Not getting the requested Major Mode	0,1,2,3	0x0	null	0

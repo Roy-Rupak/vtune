@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<root>
+    <metric name="cpu_op_freq">
+        <description>Operating frequency of all running cores during this time period in GHz.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.CORE</event>
+        <event alias="b">CPU_CLK_UNHALTED.REF_TSC</event>
+        <constant alias="c">system.tsc_freq</constant>      
+        <formula>(a/b*c)/1000000000</formula>
+    </metric>
+
+    <metric name="cpu_load">
+        <description>CPU  load of all running cores during this time period in %.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <formula>(a/t)*100</formula>
+    </metric>
+
+    <metric name="cpu_clk_unhalted_ref_tsc">
+        <description>Event CPU_CLK_UNHALTED.REF_TSC (added for GPA).</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <formula>a</formula>
+    </metric>
+
+    <metric name="idi_bw_read">
+        <description>IDI read bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_RESPONSE:request=ANY_DATA_RD:response=ANY_RESPONSE</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="idi_bw_write">
+        <description>IDI write bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_RESPONSE:request=ANY_REQUEST:response=ANY_RESPONSE</event>
+        <event alias="b">OFFCORE_RESPONSE:request=ANY_DATA_RD:response=ANY_RESPONSE</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="c">system.tsc_freq</constant>
+        <formula>(a-b)*64/(t/c)/1000000</formula>
+    </metric>
+
+    <metric name="idi_bw_total">
+        <description>IDI total bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_RESPONSE:request=ANY_REQUEST:response=ANY_RESPONSE</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="memory_bw_total_slice0">
+        <description>Read and write bandwidth for slice 0 in MB/sec.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_RW_SLICE0</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>(a*64)/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="memory_bw_total_slice1">
+        <description>Read and write bandwidth for slice 1 in MB/sec.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_RW_SLICE1</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>(a*64)/(t/b)/1000000</formula>
+    </metric>
+</root>

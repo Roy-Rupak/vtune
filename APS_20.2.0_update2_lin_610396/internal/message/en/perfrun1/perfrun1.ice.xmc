@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="perfrun1.ice" lang="en">
+    <msg name='ice-sw-trace'>Collect software traces of the Intel Neural Network Processor (NNP-I) and analyze software context of inference progress.</msg>
+    <msg name='FailedToGetDeviceErrorMsg'>Failed to get the device to work with via "nnpi_hwtrace read -status".</msg>
+    <msg name='FailedToGetDeviceStatusErrorMsg'>Failed to get the status on the device to work with via "nnpi_hwtrace read -status".</msg>
+    <msg name='FailedToRunNnpiHwTraceErrorMsg'>Failed to run "nnpi_hwtrace read -status" for unknown reason.</msg>
+    <msg name='FailedToGetPerfCountersConfigErrorMsg'>Failed to get a performance counters configuration from the device via "nnpi_hwtrace read -pmons".</msg>
+    <msg name='FailedToWritePerfCountersConfigErrorMsg'>Failed to write a performance counters configuration to the ice.events file in the result directory.</msg>
+    <msg name='FailedToStartHwCollectionErrorMsg'>Failed to start collection via "nnpi_hwtrace start".</msg>
+    <msg name='FailedToStopHwCollectionErrorMsg'>Failed to stop collection via "nnpi_hwtrace stop".</msg>
+    <msg name='FailedToStartCollectionErrorMsg'>Failed to start collection via "nnpi_trace start".</msg>
+    <msg name='FailedToStopCollectionErrorMsg'>Failed to stop collection via "nnpi_trace stop".</msg>
+  </catalog>
+</xmc>

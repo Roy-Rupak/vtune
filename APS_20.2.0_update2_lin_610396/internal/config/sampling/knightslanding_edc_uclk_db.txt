@@ -1,0 +1,10 @@
+# Performance Monitoring Events for Intel(R) Xeon Phi Processor Family based on the Intel(R) Many Integrated Core Architecture - V14
+# 12/20/2017 3:51:25 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	FILTER	INTERNAL
+EDC_UCLK	0x00	0x00	UNC_E_U_CLOCKTICKS	UCLK count	0,1,2,3	null	0
+EDC_UCLK	0x02	0x01	UNC_E_EDC_ACCESS.HIT_CLEAN	Counts the number of read requests and streaming stores that hit in MCDRAM cache and the data in MCDRAM is clean with respect to DDR. This event is only valid in cache and hybrid memory mode.	0,1,2,3	null	0
+EDC_UCLK	0x02	0x02	UNC_E_EDC_ACCESS.HIT_DIRTY	Counts the number of read requests and streaming stores that hit in MCDRAM cache and the data in MCDRAM is dirty with respect to DDR. This event is only valid in cache and hybrid memory mode.	0,1,2,3	null	0
+EDC_UCLK	0x02	0x04	UNC_E_EDC_ACCESS.MISS_CLEAN	Counts the number of read requests and streaming stores that miss in MCDRAM cache and the data evicted from the MCDRAM is clean with respect to DDR. This event is only valid in cache and hybrid memory mode.	0,1,2,3	null	0
+EDC_UCLK	0x02	0x08	UNC_E_EDC_ACCESS.MISS_DIRTY	Counts the number of read requests and streaming stores that miss in MCDRAM cache and the data evicted from the MCDRAM is dirty with respect to DDR. This event is only valid in cache and hybrid memory mode.	0,1,2,3	null	0
+EDC_UCLK	0x02	0x10	UNC_E_EDC_ACCESS.MISS_INVALID	Number of EDC Hits or Misses. Miss I	0,1,2,3	null	0

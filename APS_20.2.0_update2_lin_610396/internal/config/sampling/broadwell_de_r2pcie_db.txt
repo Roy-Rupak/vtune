@@ -1,0 +1,66 @@
+# Performance Monitoring Events for the Fifth Generation Intel Core Processors Based on the Broadwell-DE Microarchitecture - V7
+# 9/17/2017 4:48:42 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+R2PCIe	0x1	0x0	UNC_R2_CLOCKTICKS	Number of uclks in domain	0,1,2,3	0x0	null	0
+R2PCIe	0x10	0x10	UNC_R2_RxR_CYCLES_NE.NCB	Ingress Cycles Not Empty; NCB	0,1	0x0	null	0
+R2PCIe	0x10	0x20	UNC_R2_RxR_CYCLES_NE.NCS	Ingress Cycles Not Empty; NCS	0,1	0x0	null	0
+R2PCIe	0x11	0x10	UNC_R2_RxR_INSERTS.NCB	Ingress Allocations; NCB	0,1	0x0	null	0
+R2PCIe	0x11	0x20	UNC_R2_RxR_INSERTS.NCS	Ingress Allocations; NCS	0,1	0x0	null	0
+R2PCIe	0x12	0x1	UNC_R2_RING_AK_BOUNCES.UP	AK Ingress Bounced; Up	0,1,2,3	0x0	null	0
+R2PCIe	0x12	0x2	UNC_R2_RING_AK_BOUNCES.DN	AK Ingress Bounced; Dn	0,1,2,3	0x0	null	0
+R2PCIe	0x13	0x8	UNC_R2_RxR_OCCUPANCY.DRS	Ingress Occupancy Accumulator; DRS	0	0x0	null	0
+R2PCIe	0x23	0x1	UNC_R2_TxR_CYCLES_NE.AD	Egress Cycles Not Empty; AD	0	0x0	null	0
+R2PCIe	0x23	0x2	UNC_R2_TxR_CYCLES_NE.AK	Egress Cycles Not Empty; AK	0	0x0	null	0
+R2PCIe	0x23	0x4	UNC_R2_TxR_CYCLES_NE.BL	Egress Cycles Not Empty; BL	0	0x0	null	0
+R2PCIe	0x25	0x1	UNC_R2_TxR_CYCLES_FULL.AD	Egress Cycles Full; AD	0	0x0	null	0
+R2PCIe	0x25	0x2	UNC_R2_TxR_CYCLES_FULL.AK	Egress Cycles Full; AK	0	0x0	null	0
+R2PCIe	0x25	0x4	UNC_R2_TxR_CYCLES_FULL.BL	Egress Cycles Full; BL	0	0x0	null	0
+R2PCIe	0x26	0x1	UNC_R2_TxR_NACK_CW.DN_AD	Egress CCW NACK; AD CCW	0,1	0x0	null	0
+R2PCIe	0x26	0x10	UNC_R2_TxR_NACK_CW.UP_BL	Egress CCW NACK; BL CCW	0,1	0x0	null	0
+R2PCIe	0x26	0x2	UNC_R2_TxR_NACK_CW.DN_BL	Egress CCW NACK; BL CCW	0,1	0x0	null	0
+R2PCIe	0x26	0x20	UNC_R2_TxR_NACK_CW.UP_AK	Egress CCW NACK; BL CW	0,1	0x0	null	0
+R2PCIe	0x26	0x4	UNC_R2_TxR_NACK_CW.DN_AK	Egress CCW NACK; AK CCW	0,1	0x0	null	0
+R2PCIe	0x26	0x8	UNC_R2_TxR_NACK_CW.UP_AD	Egress CCW NACK; AK CCW	0,1	0x0	null	0
+R2PCIe	0x28	0x1	UNC_R2_SBO0_CREDITS_ACQUIRED.AD	SBo0 Credits Acquired; For AD Ring	0,1	0x0	null	0
+R2PCIe	0x28	0x2	UNC_R2_SBO0_CREDITS_ACQUIRED.BL	SBo0 Credits Acquired; For BL Ring	0,1	0x0	null	0
+R2PCIe	0x2A	0x1	UNC_R2_SBO0_CREDIT_OCCUPANCY.AD	SBo0 Credits Occupancy; For AD Ring	0	0x0	null	0
+R2PCIe	0x2A	0x2	UNC_R2_SBO0_CREDIT_OCCUPANCY.BL	SBo0 Credits Occupancy; For BL Ring	0	0x0	null	0
+R2PCIe	0x2C	0x1	UNC_R2_STALL_NO_SBO_CREDIT.SBO0_AD	Stall on No Sbo Credits; For SBo0, AD Ring	0,1	0x0	null	0
+R2PCIe	0x2C	0x2	UNC_R2_STALL_NO_SBO_CREDIT.SBO1_AD	Stall on No Sbo Credits; For SBo1, AD Ring	0,1	0x0	null	0
+R2PCIe	0x2C	0x4	UNC_R2_STALL_NO_SBO_CREDIT.SBO0_BL	Stall on No Sbo Credits; For SBo0, BL Ring	0,1	0x0	null	0
+R2PCIe	0x2C	0x8	UNC_R2_STALL_NO_SBO_CREDIT.SBO1_BL	Stall on No Sbo Credits; For SBo1, BL Ring	0,1	0x0	null	0
+R2PCIe	0x2D	0x1	UNC_R2_IIO_CREDIT.PRQ_QPI0		0,1	0x0	null	0
+R2PCIe	0x2D	0x2	UNC_R2_IIO_CREDIT.PRQ_QPI1		0,1	0x0	null	0
+R2PCIe	0x2D	0x4	UNC_R2_IIO_CREDIT.ISOCH_QPI0		0,1	0x0	null	0
+R2PCIe	0x2D	0x8	UNC_R2_IIO_CREDIT.ISOCH_QPI1		0,1	0x0	null	0
+R2PCIe	0x32	0x10	UNC_R2_IIO_CREDITS_USED.NCB	R2PCIe IIO Credits in Use; NCB	0,1	0x0	null	0
+R2PCIe	0x32	0x20	UNC_R2_IIO_CREDITS_USED.NCS	R2PCIe IIO Credits in Use; NCS	0,1	0x0	null	0
+R2PCIe	0x32	0x8	UNC_R2_IIO_CREDITS_USED.DRS	R2PCIe IIO Credits in Use; DRS	0,1	0x0	null	0
+R2PCIe	0x33	0x10	UNC_R2_IIO_CREDITS_ACQUIRED.NCB	R2PCIe IIO Credit Acquired; NCB	0,1	0x0	null	0
+R2PCIe	0x33	0x20	UNC_R2_IIO_CREDITS_ACQUIRED.NCS	R2PCIe IIO Credit Acquired; NCS	0,1	0x0	null	0
+R2PCIe	0x33	0x8	UNC_R2_IIO_CREDITS_ACQUIRED.DRS	R2PCIe IIO Credit Acquired; DRS	0,1	0x0	null	0
+R2PCIe	0x7	0x1	UNC_R2_RING_AD_USED.CW_EVEN	R2 AD Ring in Use; Clockwise and Even	0,1,2,3	0x0	null	0
+R2PCIe	0x7	0x2	UNC_R2_RING_AD_USED.CW_ODD	R2 AD Ring in Use; Clockwise and Odd	0,1,2,3	0x0	null	0
+R2PCIe	0x7	0x3	UNC_R2_RING_AD_USED.CW	R2 AD Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+R2PCIe	0x7	0x4	UNC_R2_RING_AD_USED.CCW_EVEN	R2 AD Ring in Use; Counterclockwise and Even	0,1,2,3	0x0	null	0
+R2PCIe	0x7	0x8	UNC_R2_RING_AD_USED.CCW_ODD	R2 AD Ring in Use; Counterclockwise and Odd	0,1,2,3	0x0	null	0
+R2PCIe	0x7	0xC	UNC_R2_RING_AD_USED.CCW	R2 AD Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+R2PCIe	0x7	0xF	UNC_R2_RING_AD_USED.ALL	R2 AD Ring in Use; All	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0x1	UNC_R2_RING_AK_USED.CW_EVEN	R2 AK Ring in Use; Clockwise and Even	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0x2	UNC_R2_RING_AK_USED.CW_ODD	R2 AK Ring in Use; Clockwise and Odd	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0x3	UNC_R2_RING_AK_USED.CW	R2 AK Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0x4	UNC_R2_RING_AK_USED.CCW_EVEN	R2 AK Ring in Use; Counterclockwise and Even	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0x8	UNC_R2_RING_AK_USED.CCW_ODD	R2 AK Ring in Use; Counterclockwise and Odd	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0xC	UNC_R2_RING_AK_USED.CCW	R2 AK Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+R2PCIe	0x8	0xF	UNC_R2_RING_AK_USED.ALL	R2 AK Ring in Use; All	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0x1	UNC_R2_RING_BL_USED.CW_EVEN	R2 BL Ring in Use; Clockwise and Even	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0x2	UNC_R2_RING_BL_USED.CW_ODD	R2 BL Ring in Use; Clockwise and Odd	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0x3	UNC_R2_RING_BL_USED.CW	R2 BL Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0x4	UNC_R2_RING_BL_USED.CCW_EVEN	R2 BL Ring in Use; Counterclockwise and Even	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0x8	UNC_R2_RING_BL_USED.CCW_ODD	R2 BL Ring in Use; Counterclockwise and Odd	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0xC	UNC_R2_RING_BL_USED.CCW	R2 BL Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+R2PCIe	0x9	0xF	UNC_R2_RING_BL_USED.ALL	R2 BL Ring in Use; All	0,1,2,3	0x0	null	0
+R2PCIe	0xA	0x3	UNC_R2_RING_IV_USED.CW	R2 IV Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+R2PCIe	0xA	0xC	UNC_R2_RING_IV_USED.CCW	R2 IV Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+R2PCIe	0xA	0xF	UNC_R2_RING_IV_USED.ANY	R2 IV Ring in Use; Any	0,1,2,3	0x0	null	0

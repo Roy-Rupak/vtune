@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="target_type" lang="en">
+      <msg name='%MrteMode'>Managed code profiling mode</msg>
+      <msg name='%MrteModeDescription'>Select a profiling mode. The Native mode does not attribute data to managed source. The Mixed mode attributes data to managed source where appropriate. The Managed mode tries to limit attribution to managed source when available.</msg>
+      <msg name='%DataLimitDescription'>Limit the amount of raw data to be collected by setting the maximum possible result size (in MB). PRODUCT_LEGAL_SHORT_NAME starts collecting data from the beginning of the target execution and ends when the limit for the result size is reached. For unlimited data size, specify 0.</msg>
+      <msg name='%RingBufferDescription'>Limit the amount of raw data to be collected by setting the timer enabling the analysis only for the last seconds before the target or collection is terminated.</msg>
+      <msg name='%FollowChild'>Analyze child processes</msg>
+      <msg name='%FollowChildDescription'>Collect data on processes launched by the target process (recommended for applications launched by a script).</msg>
+      <msg name='%FollowChildStrategy'>Advanced child processes configuration</msg>
+      <msg name='%FollowChildStrategyDescription'>Specify details for parent and child processes analysis. Format:&lt;process_name1&gt;:&lt;profiling_mode&gt;,&lt;process_name2&gt;:&lt;profiling_mode&gt;,... Available profiling mode values are: trace:trace, trace:notrace, notrace:notrace, notrace:trace. This option is not applicable to hardware event-based analysis types.</msg>
+      <msg name='%Native'>Native</msg>
+      <msg name='%Mixed'>Mixed</msg>
+      <msg name='%Managed'>Managed</msg>
+      <msg name='%Auto'>Auto</msg>
+      <msg name='%AllowMultipleRuns'>Allow multiple runs</msg>
+      <msg name='%AllowMultipleRunsDescription'>Enable multiple runs to achieve more precise results for hardware event-based collections. When disabled, the collector multiplexes events running a single collection, which lowers result precision.</msg>
+      <msg name='%TargetDurationType'>Duration time estimate</msg>
+      <msg name='%TargetDurationTypeDescription'>Estimate the application duration time. This value affects the size of collected data. For long running targets, sampling interval is increased to reduce the result size. For hardware event-based analysis types, the duration estimate affects a multiplier applied to the configured Sample after value.</msg>
+      <msg name='%LongRunning_OverOneThousandSeconds'>Over 3 hours</msg>
+      <msg name='%MediumRunning_UnderTenThousandSeconds'>Between 15 minutes and 3 hours</msg>
+      <msg name='%ShortRunning_UnderOneThousandSeconds'>Between 1 and 15 minutes</msg>
+      <msg name='%VeryShortRunning_UnderSixtySeconds'>Under 1 minute</msg>
+      <msg name='%AnalyzeSystemWide'>Analyze system-wide</msg>
+      <msg name='%AnalyzeSystemWideAttachDescription'>Enable to analyze all processes running on the system. When disabled, only the attached process and its children are analyzed.  This option is applicable to hardware event-based analysis types only.</msg>
+      <msg name='%AnalyzeSystemWideLaunchDescription'>Enable to analyze all processes running on the system. When disabled, only the target process is analyzed. This option is applicable to hardware event-based analysis types only.</msg>
+      <msg name='%SlowGoodFrameThresholdDescription'>Specify a threshold to separate Slow and Good frames. Frame rates lower than this threshold are marked as Slow. This threshold needs to be smaller than the Fast frames threshold.</msg>
+      <msg name='%GoodFastFrameThresholdDescription'>Specify a threshold to separate Good and Fast frames. Frame rates higher than this threshold are marked as Fast. This threshold needs to be larger than the Slow frames threshold.</msg>
+      <msg name='%SlowGoodFrameThreshold'>Slow frames threshold, frames/s</msg>
+      <msg name='%GoodFastFrameThreshold'>Fast frames threshold, frames/s</msg>
+      <msg name='%CpuMask'>CPU mask</msg>
+      <msg name='%CpuMaskDescription'>Specify CPU(s) to collect data on (for example: 2-8,10,12-14).  This option is applicable to hardware event-based analysis types only.</msg>
+      <msg name='%Launch'>Launch Application</msg>
+      <msg name='%System'>Profile System</msg>
+      <msg name='%Attach'>Attach to Process</msg>
+      <msg name='%AndroidRun'>Launch Android Package</msg>
+      <msg name='%AppWorkloadDescription'>Specify and configure your analysis target: an application or a script to execute.</msg>
+      <msg name='%AppWorkloadDescriptionMIC'>For the Intel Xeon Phi coprocessor (native) target, specify an absolute path to a native application or a script to be launched on the card.</msg>
+      <msg name='%AppWorkloadDescriptionMICOffload'>For the Intel Xeon Phi coprocessor (host launch) target, specify a host script launching an application on the card or a host application (offload, mpirun, or OpenCL) submitting work to the card.</msg>
+      <msg name='%ProcessAttachWorkloadDescription'>Specify the process to analyze. Performance data will be collected after attaching to the process.</msg>
+      <msg name='%SystemWideWorkloadDescription'>Configure settings for system-wide analysis. Select this analysis type to analyze system performance as a whole instead of particular applications or processes.</msg>
+      <msg name='%AndroidRunDescription'>Specify an Android package to profile. To see a list of available packages, run the command: adb shell pm list packages.</msg>
+      <msg name='%CustomCollector'>Custom collector</msg>
+      <msg name='%CustomCollectorDescription'>Provide a command line for launching an external collection tool. You can later import custom collection data (time intervals and counters) in a CSV format to the PRODUCT_LEGAL_SHORT_NAME result.</msg>
+      <msg name='%AnalyzeKvmGuest'>Analyze KVM guest OS</msg>
+      <msg name='%AnalyzeKvmGuestDescription'>Enable to analyze KVM guest OS running on the system. This option is applicable to hardware event-based analysis types only.</msg>
+      <msg name='%KvmGuestKallsyms'>Guest OS /proc/kallsyms</msg>
+      <msg name='%KvmGuestKallsymsDescription'>Specify a local path to the /proc/kallsyms file copied from the guest OS for proper symbol resolution.</msg>
+      <msg name='%KvmGuestModules'>Guest OS /proc/modules</msg>
+      <msg name='%KvmGuestModulesDescription'>Specify a local path to the /proc/modules file copied from the guest OS for proper symbol resolution.</msg>
+      <msg name='%TraceMpi'>Trace MPI</msg>
+      <msg name='%TraceMpikDescription'>Configure collectors to trace MPI code, and determine MPI rank IDs in case of a non-Intel MPI library implementation.</msg>
+      <msg name='%SniperRun'>Launch application</msg>
+      <msg name='%SniperRunShortName'>Launch application</msg>
+      <msg name='%SniperRunDescription'>Configure your application target for performance analysis on selected platform via the Sniper multi-core simulator.</msg>
+      <msg name='%ThisTargetTypeNotWorking'>This target type is not supported with Sniper simulation.</msg>
+      <msg name='%AdvancedConfigs'>Advanced options</msg>
+      <msg name='%AdvancedConfigsDecription'>Specify additional Sniper command line options. These options will be added at the end of the Sniper command line.</msg>
+      <msg name='%ModemSystem'>Profile System</msg>
+      <msg name='%ModemSystemWideWorkloadDescription'>Configure settings for modem system-wide analysis.</msg>
+      <msg name='%IstpTraceChannel'>Trace channel</msg>
+      <msg name='%MIPIPTIVersion'>MIPI-PTI</msg>
+      <msg name='%FinalizationMode'>Select finalization mode:</msg>
+      <msg name='%FinalizationModeDescription'>Finalization may take significant system resources. For a powerful target system, select full mode to apply immediately after collection. Otherwise, shorten finalization or defer it to run on another system (compute checksums only).</msg>
+      <msg name='%FinalizationModeDeferred'>Deferred to use another system</msg>
+      <msg name='%FinalizationModeFull'>Full</msg>
+      <msg name='%FinalizationModeSampleThinning'>Fast (lower post-processing overhead)</msg>
+      <msg name='%FinalizationModeNone'>None</msg>
+      <msg name='%WrapperScriptCollector'>Wrapper script:</msg>
+    </catalog>
+</xmc>

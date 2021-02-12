@@ -1,0 +1,10 @@
+# Performance Monitoring Architectural Events																					
+# Copyright (c) 2007 - 2016 Intel Corporation. All rights reserved.																					
+CODE	UMASK	NAME	DESCRIPTION	COUNTER	COUNTER_HT_OFF	OVERFLOW	MSR_INDEX	MSR_VALUE	PRECISE_EVENT	TAKEN_ALONE	SAV_LOWER_LIMIT	OTHER	LATENCY	DEFAULT	EM_TRIGGER	DATA_LA	L1_HIT_INDICATION	WORKAROUND	eLLC_PRESENT	MATRIX_EVENT	BRANCH_EVT
+0x3c	0x00	CPU_CLK_UNHALTED.THREAD_P	Thread cycles when thread is not in halt state	"0,1,2,3"	"0,1,2,3,4,5,6,7"	2000003	0	0	0	0	5	0x53	0	0	1	0	0	null	0	0	0
+0x3C	0x01	CPU_CLK_THREAD_UNHALTED.REF_XCLK	Reference cycles when the at least one thread on the physical core is unhalted (counts at 100 MHz rate)	"0,1,2,3"	"0,1,2,3,4,5,6,7"	2000003	0	0	0	0	5	0x73	0	0	3	0	0	null	0	0	0
+0xC0	0x00	INST_RETIRED.ANY_P	Number of instructions retired. General Counter   - architectural event	"0,1,2,3"	"0,1,2,3,4,5,6,7"	2000003	0	0	0	0	5	0x53	0	0	1	0	0	null	0	0	0
+0x2e	0x41	LONGEST_LAT_CACHE.MISS	Core-originated cacheable demand requests missed L3	"0,1,2,3"	"0,1,2,3,4,5,6,7"	100003	0	0	0	0	0	0x53	0	0	0	0	0	null	0	0	0
+0x2e	0x4F	LONGEST_LAT_CACHE.REFERENCE	Core-originated cacheable demand requests that refer to L3	"0,1,2,3"	"0,1,2,3,4,5,6,7"	100003	0	0	0	0	0	0x53	0	0	0	0	0	null	0	0	0
+0xC4	0x00	BR_INST_RETIRED.ALL_BRANCHES	All (macro) branch instructions retired.	"0,1,2,3"	"0,1,2,3,4,5,6,7"	400009	0	0	0	0	0	0x53	0	0	0	0	0	null	0	0	1
+0xC5	0x00	BR_MISP_RETIRED.ALL_BRANCHES	All mispredicted macro branch instructions retired.	"0,1,2,3"	"0,1,2,3,4,5,6,7"	400009	0	0	0	0	0	0x53	0	0	0	0	0	null	0	0	1

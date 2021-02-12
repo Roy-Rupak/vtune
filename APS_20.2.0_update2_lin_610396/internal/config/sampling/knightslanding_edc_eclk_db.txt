@@ -1,0 +1,7 @@
+# Performance Monitoring Events for Intel(R) Xeon Phi Processor Family based on the Intel(R) Many Integrated Core Architecture - V14
+# 12/20/2017 3:51:25 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	FILTER	INTERNAL
+EDC_ECLK	0x00	0x00	UNC_E_E_CLOCKTICKS	ECLK count	0,1,2,3	null	0
+EDC_ECLK	0x01	0x01	UNC_E_RPQ_INSERTS	Counts the number of read requests received by the MCDRAM controller. This event is valid in all three memory modes: flat, cache and hybrid. In cache and hybrid memory mode, this event counts all read requests as well as streaming stores that hit or miss in the MCDRAM cache.	0,1,2,3	null	0
+EDC_ECLK	0x02	0x01	UNC_E_WPQ_INSERTS	Counts the number of write requests received by the MCDRAM controller. This event is valid in all three memory modes: flat, cache and hybrid. In cache and hybrid memory mode, this event counts all streaming stores, writebacks and, read requests that miss in MCDRAM cache.	0,1,2,3	null	0

@@ -1,0 +1,28 @@
+# Performance Monitoring Events for Intel(R) Xeon Phi Processor Family based on the Intel(R) Many Integrated Core Architecture - V14
+# 12/20/2017 3:51:25 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	FILTER	INTERNAL
+M2PCIe	0x10	0x01	UNC_M2P_INGRESS_CYCLES_NE.CBO_IDI	Ingress Queue Cycles Not Empty. Counts the number of cycles when the M2PCIe Ingress is not empty.CBO_IDI	0,1,2,3	null	0
+M2PCIe	0x10	0x02	UNC_M2P_INGRESS_CYCLES_NE.CBO_NCB	Ingress Queue Cycles Not Empty. Counts the number of cycles when the M2PCIe Ingress is not empty.CBO_NCB	0,1,2,3	null	0
+M2PCIe	0x10	0x04	UNC_M2P_INGRESS_CYCLES_NE.CBO_NCS	Ingress Queue Cycles Not Empty. Counts the number of cycles when the M2PCIe Ingress is not empty.CBO_NCS	0,1,2,3	null	0
+M2PCIe	0x10	0x80	UNC_M2P_INGRESS_CYCLES_NE.ALL	Ingress Queue Cycles Not Empty. Counts the number of cycles when the M2PCIe Ingress is not empty.ALL	0,1,2,3	null	0
+M2PCIe	0x23	0x01	UNC_M2P_EGRESS_CYCLES_NE.AD_0	Egress (to CMS) Cycles Not Empty. Counts the number of cycles when the M2PCIe Egress is not empty.  AD_0	0,1	null	0
+M2PCIe	0x23	0x02	UNC_M2P_EGRESS_CYCLES_NE.AK_0	Egress (to CMS) Cycles Not Empty. Counts the number of cycles when the M2PCIe Egress is not empty.  AK_0	0,1	null	0
+M2PCIe	0x23	0x04	UNC_M2P_EGRESS_CYCLES_NE.BL_0	Egress (to CMS) Cycles Not Empty. Counts the number of cycles when the M2PCIe Egress is not empty.  BL_0	0,1	null	0
+M2PCIe	0x23	0x08	UNC_M2P_EGRESS_CYCLES_NE.AD_1	Egress (to CMS) Cycles Not Empty. Counts the number of cycles when the M2PCIe Egress is not empty.  AD_1	0,1	null	0
+M2PCIe	0x23	0x10	UNC_M2P_EGRESS_CYCLES_NE.AK_1	Egress (to CMS) Cycles Not Empty. Counts the number of cycles when the M2PCIe Egress is not empty.  AK_1	0,1	null	0
+M2PCIe	0x23	0x20	UNC_M2P_EGRESS_CYCLES_NE.BL_1	Egress (to CMS) Cycles Not Empty. Counts the number of cycles when the M2PCIe Egress is not empty.  BL_1	0,1	null	0
+M2PCIe	0x24	0x01	UNC_M2P_EGRESS_INSERTS.AD_0	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. AD_0	0,1,2,3	null	0
+M2PCIe	0x24	0x02	UNC_M2P_EGRESS_INSERTS.AK_0	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. AK_0	0,1,2,3	null	0
+M2PCIe	0x24	0x04	UNC_M2P_EGRESS_INSERTS.BL_0	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. BL_0	0,1,2,3	null	0
+M2PCIe	0x24	0x08	UNC_M2P_EGRESS_INSERTS.AK_CRD_0	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. AK_CRD_0	0,1,2,3	null	0
+M2PCIe	0x24	0x10	UNC_M2P_EGRESS_INSERTS.AD_1	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. AD_1	0,1,2,3	null	0
+M2PCIe	0x24	0x20	UNC_M2P_EGRESS_INSERTS.AK_1	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. AK_1	0,1,2,3	null	0
+M2PCIe	0x24	0x40	UNC_M2P_EGRESS_INSERTS.BL_1	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. BL_1	0,1,2,3	null	0
+M2PCIe	0x24	0x80	UNC_M2P_EGRESS_INSERTS.AK_CRD_1	Egress (to CMS) Ingress. Counts the number of number of messages inserted into the  the M2PCIe Egress queue. AK_CRD_1	0,1,2,3	null	0
+M2PCIe	0x25	0x01	UNC_M2P_EGRESS_CYCLES_FULL.AD_0	Egress (to CMS) Cycles Full. Counts the number of cycles when the M2PCIe Egress is full.  AD_0	0,1,2,3	null	0
+M2PCIe	0x25	0x02	UNC_M2P_EGRESS_CYCLES_FULL.AK_0	Egress (to CMS) Cycles Full. Counts the number of cycles when the M2PCIe Egress is full.  AK_0	0,1,2,3	null	0
+M2PCIe	0x25	0x04	UNC_M2P_EGRESS_CYCLES_FULL.BL_0	Egress (to CMS) Cycles Full. Counts the number of cycles when the M2PCIe Egress is full.  BL_0	0,1,2,3	null	0
+M2PCIe	0x25	0x08	UNC_M2P_EGRESS_CYCLES_FULL.AD_1	Egress (to CMS) Cycles Full. Counts the number of cycles when the M2PCIe Egress is full.  AD_1	0,1,2,3	null	0
+M2PCIe	0x25	0x10	UNC_M2P_EGRESS_CYCLES_FULL.AK_1	Egress (to CMS) Cycles Full. Counts the number of cycles when the M2PCIe Egress is full.  AK_1	0,1,2,3	null	0
+M2PCIe	0x25	0x20	UNC_M2P_EGRESS_CYCLES_FULL.BL_1	Egress (to CMS) Cycles Full. Counts the number of cycles when the M2PCIe Egress is full.  BL_1	0,1,2,3	null	0

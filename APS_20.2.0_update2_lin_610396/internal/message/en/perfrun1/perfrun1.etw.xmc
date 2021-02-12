@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.etw" lang="en">
+        <msg name='NTKernelETWCollector'>Accurate CPU time detection</msg>
+        <msg name='OutputMessage'><arg name='%1'/> was disabled. <arg name='%2'/> Please see the Troubleshooting section of the product documentation for details.</msg>
+        <msg name='TraceSessionStarted' meta='unofficial'>Trace session is already in use.</msg>
+        <msg name='NoSpaceLeftOnDevice'>No space is left on device.</msg>
+        <msg name='NoAdminPrivileges'>Administrative privileges are required.</msg>
+        <msg name='CorruptedDataFromETW'>When processing data from NT Kernel Logger, an unexpected sequence of events was found.</msg>
+        <msg name='EventLostsByETW'>The profiled application produces a large number of events that tax the ability of Event Tracing for Windows to keep up with the logging frequency. Several buffers with events were lost during collection.</msg>
+        <msg name='StackWalkDisabled'>This system is not fully configured for x64 stack tracing. Stacks for NT Kernel Logger events may be unavailable. In the Windows registry, please set DisablePagingExecutive value to 1. Then, reboot before re-tracing.</msg>
+        <msg name='InvalidTempFilePath'>The temporary file path is too long or invalid. Try to change the path of temporary directory.</msg>
+        <msg name='TimeSourceNotSupported' meta='unofficial'>Specified time source not supported.</msg>
+        <msg name='DXETWCollector' meta='unofficial'>Additional GPU data collection</msg>
+        <msg name='UnsupportedOperatingSystem' meta='unofficial'>Unsupported operating system.</msg>
+        <msg name='etw-config' meta='unofficial'>Enable advanced collection of GPU data.</msg>
+        <msg name='WSAETWCollector'>ETW data collection for the Windows Store Applications</msg>
+        <msg name='ClrETWStartFailed'>Cannot profile the managed part of the target process. Microsoft Common Language Runtime (CLR) ETW provider is not enabled. Only native part of the target process will be profiled. Suggestion: Please contact the Technical Support.</msg>
+        <msg name='JScriptETWStartFailed'>Cannot profile the managed part of the target process. Microsoft Java Script ETW provider is not enabled. Only native part of the target process will be profiled. Suggestion: Please contact the Technical Support.</msg>
+    </catalog>
+</xmc>

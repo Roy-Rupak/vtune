@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="aps_cli" lang="en">
+    <msg name="%InvalidDebugOption">Provided invalid debug options [<arg name='badOptions'/>]. Supported debug options are [<arg name='goodOptions'/>].</msg>
+    <msg name="%ToolInternalError"><arg name='lowLevelDescr'/>.</msg>
+    <msg name="%HelpMessage">
+Usage:  1. <arg name='toolName'/> [--result-dir=&lt;dir&gt; | -r=&lt;dir&gt;]  [--start-paused] [--collection-mode=&lt;mode&gt; | -c=&lt;mode&gt;] &lt;app&gt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;2. &lt;mpi_launcher&gt; &lt;mpi_parameters&gt; <arg name='toolName'/> [--result-dir=&lt;dir&gt; | -r=&lt;dir&gt;] [--collection-mode=&lt;mode&gt; | -c=&lt;mode&gt;] &lt;app&gt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;3. <arg name='toolName'/> --report=&lt;dir&gt; | -R=&lt;dir&gt;
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;4. <arg name='toolName'/> &lt;option&gt;
+1. Run analysis for an application or script &lt;app&gt; and store results in &lt;dir&gt;
+2. Run analysis for an MPI application &lt;app&gt; and store results in &lt;dir&gt;
+&#32;&#32;&#32;&#32;&#32;--collection-mode=&lt;mode&gt;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Specify a comma separated list of data to collect. Possible values: hwc - hardware counters, omp - OpenMP statistics, mpi - MPI statistics, all - all possible data (default).
+&#32;&#32;&#32;&#32;&#32;--start-paused&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Start data collection in the paused mode. Collection resumes when resume API call is reached.
+3. Show analysis report based on data from &lt;dir&gt;
+&#32;&#32;&#32;&#32;&#32;Tip: use
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;<arg name='toolName'/>-report &lt;options&gt; &lt;result_dir&gt;
+&#32;&#32;&#32;&#32;&#32;to review more MPI usage metrics. Additional details include statistics view by ranks, message sizes, collective operations, and communicators as well as the ability to explore rank-to-rank and node-to-node communication statistics.
+4. Show additional product info. Where &lt;option&gt; can be:
+&#32;&#32;&#32;&#32;&#32;--help, -h  show this help and exit
+&#32;&#32;&#32;&#32;&#32;--version   show version information and exit
+&#10;
+    </msg>
+    <msg name="%DoReportHint"><arg name='productName'/> collection completed successfully. Use the "aps --report=<arg name='resultDir'/>" command to generate textual and HTML reports for the profiling session.</msg>
+    <msg name="%CanNotProcessConfigs">Cannot process configs directory.</msg>
+    <msg name="%FailedToStartApp">Cannot run: <arg name='application'/></msg>
+    <msg name="%FailedToDoCollection">Cannot run the collection.</msg>
+    <msg name="%FailedToGenerateHwMetrics">Failed to generate hardware metrics.</msg>
+    <msg name="%FailedToDetectConfiguration">Failed to detect the collection configuration.</msg>
+    <msg name="%FailedToAccessSyncDir">Unable to access the folder '<arg name='dir'/>'. Please check your permission.</msg>
+    <msg name="%FailedToGenerateReport">Failed to generate the report.</msg>
+    <msg name="%FailedToParseOption">Option '<arg name='option'/>' does not allow value '<arg name='badValue'/>'. Possible values include: '<arg name='goodValues'/>'.</msg>
+ </catalog>
+</xmc>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="templates" lang="en">
+    <msg name="%Summary">Summary</msg>
+    <msg name="%AverageConcurrency">Average Concurrency</msg>
+    <msg name="%ElapsedTime">Elapsed Time</msg>
+    <msg name="%CPUTime">CPU Time</msg>
+    <msg name="%WaitTime">Wait Time</msg>
+    <msg name="%AvgCPUUsage">Average CPU Utilization</msg>
+    <msg name="%Spontaneous">&lt;spontaneous&gt;</msg>
+    <msg name="%Result_1">Result 1</msg>
+    <msg name="%Result_2">Result 2</msg>
+    <msg name="%Difference">Difference</msg>
+    <msg name="%DifferentAnalysisTypesError">Cannot compare results of different analysis types.</msg>
+    <msg name="%NoPMUData">Result directory does not contain hardware samples.</msg>
+    <msg name="%NoRequiredPMUData">
+      Result directory does not contain hardware samples of required events.<br/>Suggestion: Use the 'hw-events' report to see what hardware events are sampled.
+    </msg>
+    <msg name="%NoRequiredData">Result directory does not contain data applicable to this report.</msg>
+    <msg name="%NoPowerData">Result directory does not contain power data.</msg>
+    <msg name="%NoCPUData">Result directory does not contain CPU samples.</msg>
+    <msg name="%NoWaitData">Result directory does not contain wait data.</msg>
+    <msg name="%PMUDataPresent">
+      The result directory contains hardware event-based sampling data.<br/>This report can be applied to user-mode sampling and tracing data only.<br/>Suggestion: Use the 'hw-events' report instead.
+    </msg>
+    <msg name="%SkipIssuessFooter">If you want to skip descriptions of detected performance issues in the report, enter: PRODUCT_CL_TOOL_NAME -report summary -report-knob show-issues=false -r &lt;my_result_dir&gt;. Alternatively, you may view the report in the csv format: PRODUCT_CL_TOOL_NAME -report &lt;report_name&gt; -format=csv.</msg>
+    <msg name="%GroupByNotFound">Use '-R <arg name='%report_name'/> -r <arg name='%result_dir'/> -group-by=?' to see valid arguments for 'group-by'.  The specified argument for 'group-by' is not valid: </msg>
+    <msg name="%GroupByNotFoundPlural">Use '-R <arg name='%report_name'/> -r <arg name='%result_dir'/> to see valid arguments for 'group-by'.  The specified arguments for 'group-by' are not valid: </msg>
+    <msg name="%ThereIsNoMetric">This result does not have data that can be displayed with the following specified 'group-by' argument: </msg>
+    <msg name="%reportGroupByHeader">Available values for grouping (-group-by) and filtering (-filter):</msg>
+    <msg name="%reportShortDescription-hotspots">Display detailed view by default or selected groping (e.g. functions) with a column set corresponding to GUI Bottom-Up pane.</msg>
+    <msg name="%reportLongDescription-hotspots">
+      The hotspots report helps identify hotspots - code regions in the application that consume a lot of CPU time.<br/>
+    </msg>
+    <msg name="%reportShortDescription-affinity">Display binding of a thread to a range of sockets, physical, and logical cores (affinity).</msg>
+    <msg name="%reportShortDescription-hw-events">Display hardware events.</msg>
+    <msg name="%reportLongDescription-hw-events">
+      The hw-events report displays the event count for all collected hardware events.<br/>
+    </msg>
+    <msg name="%reportShortDescription-summary">Display data about overall performance.</msg>
+    <msg name="%reportShortDescription-callstacks">Display CPU or wait time for callstacks.</msg>
+    <msg name="%reportLongDescription-callstacks">The callstacks report displays full stack data for each hotspot function and helps identify the impact of each stack on the function CPU or wait time.<br/></msg>
+    <msg name="%reportShortDescription-top-down">Display a call tree for your target application and provide CPU and wait time for each function.</msg>
+    <msg name="%reportLongDescription-top-down">The top-down report represents call sequences (stacks) detected during collection phase starting from the application root (usually, the main() function). Use this report to see the impact of program units together with their callees.<br/>Only single group-by option can be specified for this report.<br/></msg>
+    <msg name="%reportShortDescription-gprof-cc">Display CPU or wait time in the gprof-like format.</msg>
+    <msg name="%reportLongDescription-gprof-cc">The gprof-cc report displays a call tree with the time spent in each function and its children.<br/></msg>
+    <msg name="%cycle">cycle</msg>
+    <msg name="%asWhole">as a whole</msg>
+    <msg name="%name">Name</msg>
+    <msg name="%index">Index</msg>
+    <msg name="%children">Children</msg>
+    <msg name="%indexByFunctionName">Index by function name</msg>
+    <msg name="%reportShortDescription-platform-power-analysis">Display CPU sleep time, wake-up reasons and CPU frequency scaling time.</msg>
+    <msg name="%reportLongDescription-platform-power-analysis">The platform-power-analysis type of report displays various statistics of CPU sleep states for power analysis and the time spent for each CPU frequency. The report provides both overall and per-core statistics.<br/></msg>
+    <msg name="%reportShortDescription-gpu-computing-tasks">Display GPU computing tasks.</msg>
+    <msg name="%reportLongDescription-gpu-computing-tasks">The gpu-computing-tasks report provides a list of computing tasks or their instances annotated with total and average time, instance count and average values of GPU hardware metrics (if applicable).<br/></msg>
+    <msg name="%reportShortDescription-dashboard">Prepare result for future use with Parallel Studio Dashboard performance trend charts.</msg>
+    <msg name="%error.invalidGroupByForDive">
+      Invalid value is passed with the -group-by option "<arg name='%values'/>" for source mode. Only the following combinations are allowed:
+      <br/> &#9;address
+      <br/> &#9;basic-block,address
+      <br/> &#9;function-range,basic-block,address
+      <br/>Please specify valid value.
+    </msg>
+    <msg name="%GEMetrics">Microarchitecture Exploration Metrics</msg>
+    <msg name="%TSXCyclesMetrics">TSX Cycles</msg>
+    <msg name="%TSXAbortMetrics">TSX Aborts</msg>
+    <msg name="%TSXHotspotsMetrics">TSX Hotspots</msg>
+    <msg name="%AverageBandwidth">Average DRAM Bandwidth</msg>
+    <msg name="%EventSummary">Event summary</msg>
+    <msg name="%UncoreEventSummary">Uncore Event summary</msg>
+    <msg name="%MissingRequiredArgumentForTimelineReport">
+      Error: the required argument "<arg name='%name'/>" is missing. Please provide it in the form: "-report-knob <arg name='%name'/>=&lt;value&gt;"
+    </msg>
+    <msg name="%InvalidOutputOfTimelineReport">Data error. The result may be corrupted.</msg>
+    <msg name="%UnsupportedLayerType">The requested query type is not supported. The following query types are supported: <arg name='%types'/>.</msg>
+    <msg name="%UnavailableTimeUnit">The requested time unit is either not supported or unavailable for the current result. Available time units are: <arg name='%units'/><br/>The report is using default time units.</msg>
+    <msg name="%InvalidPrecision">Ivalid value for precision "<arg name='%passedPrecision'/>" is provided. Please enter small positive integer values.</msg>
+    <msg name="%InapplicableTimelineQuery">Invalid <arg name='%type'/> query (<arg name='%value'/>) is provided. The query is either unknown or not applicable to the current result.</msg>
+    <msg name="%IncompatibleLayerTypeAndDrawByQuery">The requested parameter "query-type" (<arg name='%query_type'/>) and "column-by" query (<arg name='%query'/>) are incompatible.</msg>
+    <msg name="%reportShortDescription-vectspots">Display statistics that helps identify code regions for tracing on a HW simulator.</msg>
+    <msg name="%reportLongDescription-vectspots">Display statistics that helps identify code regions for tracing on a HW simulator. See report body for more details.<br/></msg>
+    <msg name="%MPSMetrics">MPS metrics</msg>
+    <msg name="%APSMetrics">APS metrics</msg>
+    <msg name="%APSMetricValueIsOK">The metric value is OK.</msg>
+    <msg name="%AffinityWasNotCollected">Thread affinity information was not collected so the affinity report cannot be generated for the result. Use ‘PRODUCT_CL_TOOL_NAME –collect hpc-performance -knob collect-affinity=true’ to collect thread affinity information.</msg>
+    <msg name="%SkippedFramesWarning">Warning: A high number of Skipped stack frames may result from insufficient size of the raw stack. Consider increasing the Stack size option value (-stack-size in command line) or setting the unlimited (0 in command line) stack size.</msg>
+  </catalog>
+</xmc>

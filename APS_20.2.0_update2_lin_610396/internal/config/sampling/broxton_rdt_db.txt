@@ -1,0 +1,8 @@
+# Performance Monitoring Events for Intel Xeon Processors Based on the Broxton Microarchitecture - V1.0
+# 4/26/2018 05:32:00 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2020 Intel Corporation. All rights reserved.
+UNIT	CODE	NAME	DESCRIPTION	COUNTER	EVENT_STATUS	COUNTER_TYPE	EVENT_SCOPE
+CMT	0x1	UNC_CMT_L3_CACHE_OCCUPANCY	L3 Cache Occupancy	0	0x00	STATIC	THREAD
+PQR	0x4	UNC_RDT_PQR_ASSOC	PQR ASSOC For CLOS and RMID	1,2,3	0x00	STATIC	THREAD
+CL2	0x5	UNC_CAT_L2_MASK	IA32 L2 MASK	1,2,3	0x00	STATIC	THREAD
+CL3	0x6	UNC_CAT_L3_MASK	IA32 L3 MASK	1,2,3	0x00	STATIC	THREAD

@@ -1,0 +1,7 @@
+# Performance Monitoring Events for Intel Eigth Processors Based on the SunnyCove Microarchitecture - V1.06
+# 3/27/2020 1:27:09 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER
+NCU	0x00	0x01	UNC_CLOCK.SOCKET	tbd	FIXED	0x40
+ARB	0x81	0x01	UNC_ARB_TRK_REQUESTS.ALL	Total number of all outgoing entries allocated. Accounts for Coherent and non-coherent traffic.	0,1	0x40
+ARB	0x84	0x01	UNC_ARB_COH_TRK_REQUESTS.ALL	Number of entries allocated. Account for Any type: e.g. Snoop,  etc.	0,1	0x40

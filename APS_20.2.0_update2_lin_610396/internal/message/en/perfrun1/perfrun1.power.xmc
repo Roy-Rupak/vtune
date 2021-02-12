@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.power" lang="en">
+        <msg name='%SoCWatchWasNotFound'>Intel SoC Watch collector required for Energy Analysis was not found. Specify the correct collector directory on the HOW pane.</msg>
+        <msg name='%FailedToStartEnergyCollection'>Failed to start energy metrics collection.</msg>
+        <msg name='%FailedToStopEnergyCollection'>Failed to stop energy metrics collection.</msg>
+        <msg name='pwr-config'>Specify power metrics configuration.</msg>
+        <msg name='%SocwatchReportedError'>Intel SoC Watch reported error<arg name='%1'/></msg>
+        <msg name='%SocwatchReportedWarning'>Intel SoC Watch reported warning<arg name='%1'/></msg>
+        <msg name='%SocwatchReportedFatal'>Intel SoC Watch reported fatal error<arg name='%1'/></msg>
+        <msg name='%UnsupportedPowerFeatures'>Collection of the following data is not supported on the current platform: <arg name='%1'/>.</msg>
+    </catalog>
+</xmc>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.aoclprofile" lang="en">
+      <msg name='aocl-profile'>Enable profiling data collection through the aocl profiling tool.</msg>
+      <msg name='aocl-source-file'>Path to .source file that can be found in the compilation output directory of FPGA application. This option is recommended for accurate attribution of performance statistics to the source lines. If not specified, the profiler will try to find the file in the current directory.</msg>
+      <msg name='SourceFileNotFound'>The provided path to the .source file was invalid.</msg>
+    </catalog>
+</xmc>

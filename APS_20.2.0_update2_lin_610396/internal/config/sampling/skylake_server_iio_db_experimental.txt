@@ -1,0 +1,311 @@
+# Performance Monitoring Events for Intel Xeon Processors Based on the Skylake Microarchitecture - V1.22
+# 3/27/2020 4:07:25 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS
+IIO	0x0	0x0	0x00	0x00	0x00	UNC_IIO_NOTHING	tbd	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x2	0x1	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_AND.BUS0	AND Mask/match for debug bus; Non-PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x2	0x10	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_AND.NOT_BUS0_BUS1	AND Mask/match for debug bus; !(Non-PCIE bus) and PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x2	0x2	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_AND.BUS1	AND Mask/match for debug bus; PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x2	0x20	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_AND.NOT_BUS0_NOT_BUS1	AND Mask/match for debug bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x2	0x4	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_AND.BUS0_NOT_BUS1	AND Mask/match for debug bus; Non-PCIE bus and !(PCIE bus)	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x2	0x8	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_AND.BUS0_BUS1	AND Mask/match for debug bus; Non-PCIE bus and PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x21	0x0	0x00	0x00	0x00	UNC_IIO_MASK_MATCH	Number packets that passed the Mask/Match Filter	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x3	0x1	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_OR.BUS0	OR Mask/match for debug bus; Non-PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x3	0x10	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_OR.NOT_BUS0_BUS1	OR Mask/match for debug bus; !(Non-PCIE bus) and PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x3	0x2	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_OR.BUS1	OR Mask/match for debug bus; PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x3	0x20	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_OR.NOT_BUS0_NOT_BUS1	OR Mask/match for debug bus; !(Non-PCIE bus) and !(PCIE bus)	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x3	0x4	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_OR.BUS0_NOT_BUS1	OR Mask/match for debug bus; Non-PCIE bus and !(PCIE bus)	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x3	0x8	0x00	0x00	0x00	UNC_IIO_MASK_MATCH_OR.BUS0_BUS1	OR Mask/match for debug bus; Non-PCIE bus and PCIE bus	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x40	0x0	0x00	0x00	0x00	UNC_IIO_VTD_OCCUPANCY	VTd Occupancy	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x10	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.L3_MISS	VTd Access; L3 miss	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x2	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.CTXT_MISS	VTd Access; context cache miss	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x20	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.TLB_MISS	VTd Access; TLB miss	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x4	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.L1_MISS	VTd Access; L1 miss	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x40	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.TLB_FULL	VTd Access; TLB is full	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x8	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.L2_MISS	VTd Access; L2 miss	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x41	0x80	0x00	0x00	0x00	UNC_IIO_VTD_ACCESS.TLB1_MISS	VTd Access; TLB miss	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x82	0x0	0x00	0x00	0x00	UNC_IIO_SYMBOL_TIMES	Symbol Times on Link	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x83	0x01	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.VTD0	Data requested of the CPU; Card writing to DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x01	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.VTD1	Data requested of the CPU; Card writing to DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x02	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.VTD0	Data requested of the CPU; Card writing to another Card (same or different stack)	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x02	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.VTD1	Data requested of the CPU; Card writing to another Card (same or different stack)	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x04	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.VTD0	Data requested of the CPU; Card reading from DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x04	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.VTD1	Data requested of the CPU; Card reading from DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x08	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.VTD0	Data requested of the CPU; Card reading from another Card (same or different stack)	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x08	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.VTD1	Data requested of the CPU; Card reading from another Card (same or different stack)	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x1	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.VTD0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x1	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.VTD1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMIC.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMIC.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMIC.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMIC.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMIC.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.VTD0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMIC.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.VTD1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x10	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART0	Data requested of the CPU; Atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x10	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART1	Data requested of the CPU; Atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x10	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART2	Data requested of the CPU; Atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x10	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.PART3	Data requested of the CPU; Atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x10	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.VTD0	Data requested of the CPU; Atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x10	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMIC.VTD1	Data requested of the CPU; Atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x2	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x2	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x2	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x2	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x2	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.VTD0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x2	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.VTD1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x20	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMICCMP.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x20	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMICCMP.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x20	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMICCMP.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x20	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.ATOMICCMP.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x20	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART0	Data requested of the CPU; Completion of atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x20	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART1	Data requested of the CPU; Completion of atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x20	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART2	Data requested of the CPU; Completion of atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x20	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.ATOMICCMP.PART3	Data requested of the CPU; Completion of atomic requests targeting DRAM	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x4	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.VTD0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x4	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.VTD1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MSG.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MSG.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MSG.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MSG.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MSG.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MSG.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MSG.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MSG.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MSG.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MSG.VTD0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MSG.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MSG.VTD1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x40	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MSG.PART0	Data requested of the CPU; Messages	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x40	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MSG.PART1	Data requested of the CPU; Messages	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x40	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MSG.PART2	Data requested of the CPU; Messages	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x40	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MSG.PART3	Data requested of the CPU; Messages	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x40	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MSG.VTD0	Data requested of the CPU; Messages	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x40	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MSG.VTD1	Data requested of the CPU; Messages	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x8	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x8	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x8	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x8	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x8	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.VTD0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x8	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.PEER_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.VTD1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x01	0x10	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.VTD0	Number Transactions requested of the CPU; Card writing to DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x01	0x20	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.VTD1	Number Transactions requested of the CPU; Card writing to DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x02	0x10	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_WRITE.VTD0	Number Transactions requested of the CPU; Card writing to another Card (same or different stack)	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x02	0x20	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_WRITE.VTD1	Number Transactions requested of the CPU; Card writing to another Card (same or different stack)	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x04	0x10	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_READ.VTD0	Number Transactions requested of the CPU; Card reading from DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x04	0x20	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_READ.VTD1	Number Transactions requested of the CPU; Card reading from DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x08	0x10	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_READ.VTD0	Number Transactions requested of the CPU; Card reading from another Card (same or different stack)	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x08	0x20	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_READ.VTD1	Number Transactions requested of the CPU; Card reading from another Card (same or different stack)	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x1	0x1	0x7	0x00	UNC_IIO_TXN_IN.MEM_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x1	0x2	0x7	0x00	UNC_IIO_TXN_IN.MEM_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x1	0x4	0x7	0x00	UNC_IIO_TXN_IN.MEM_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x1	0x8	0x7	0x00	UNC_IIO_TXN_IN.MEM_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x1	0x10	0x7	0x00	UNC_IIO_TXN_IN.MEM_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.VTD0	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x1	0x20	0x7	0x00	UNC_IIO_TXN_IN.MEM_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.VTD1	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x10	0x1	0x7	0x00	UNC_IIO_TXN_IN.ATOMIC.PART0	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x10	0x2	0x7	0x00	UNC_IIO_TXN_IN.ATOMIC.PART1	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x10	0x4	0x7	0x00	UNC_IIO_TXN_IN.ATOMIC.PART2	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x10	0x8	0x7	0x00	UNC_IIO_TXN_IN.ATOMIC.PART3	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x10	0x10	0x7	0x00	UNC_IIO_TXN_IN.ATOMIC.VTD0	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x10	0x20	0x7	0x00	UNC_IIO_TXN_IN.ATOMIC.VTD1	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x10	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMIC.PART0	Number Transactions requested of the CPU; Atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x10	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMIC.PART1	Number Transactions requested of the CPU; Atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x10	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMIC.PART2	Number Transactions requested of the CPU; Atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x10	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMIC.PART3	Number Transactions requested of the CPU; Atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x10	0x10	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMIC.VTD0	Number Transactions requested of the CPU; Atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x10	0x20	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMIC.VTD1	Number Transactions requested of the CPU; Atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x2	0x1	0x7	0x00	UNC_IIO_TXN_IN.PEER_WRITE.PART0	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x2	0x2	0x7	0x00	UNC_IIO_TXN_IN.PEER_WRITE.PART1	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x2	0x4	0x7	0x00	UNC_IIO_TXN_IN.PEER_WRITE.PART2	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x2	0x8	0x7	0x00	UNC_IIO_TXN_IN.PEER_WRITE.PART3	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x2	0x10	0x7	0x00	UNC_IIO_TXN_IN.PEER_WRITE.VTD0	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x2	0x20	0x7	0x00	UNC_IIO_TXN_IN.PEER_WRITE.VTD1	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x20	0x1	0x7	0x00	UNC_IIO_TXN_IN.ATOMICCMP.PART0	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x20	0x2	0x7	0x00	UNC_IIO_TXN_IN.ATOMICCMP.PART1	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x20	0x4	0x7	0x00	UNC_IIO_TXN_IN.ATOMICCMP.PART2	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x20	0x8	0x7	0x00	UNC_IIO_TXN_IN.ATOMICCMP.PART3	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x20	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMICCMP.PART0	Number Transactions requested of the CPU; Completion of atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x20	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMICCMP.PART1	Number Transactions requested of the CPU; Completion of atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x20	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMICCMP.PART2	Number Transactions requested of the CPU; Completion of atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x20	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.ATOMICCMP.PART3	Number Transactions requested of the CPU; Completion of atomic requests targeting DRAM	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x4	0x1	0x7	0x00	UNC_IIO_TXN_IN.MEM_READ.PART0	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x4	0x2	0x7	0x00	UNC_IIO_TXN_IN.MEM_READ.PART1	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x4	0x4	0x7	0x00	UNC_IIO_TXN_IN.MEM_READ.PART2	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x4	0x8	0x7	0x00	UNC_IIO_TXN_IN.MEM_READ.PART3	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x4	0x10	0x7	0x00	UNC_IIO_TXN_IN.MEM_READ.VTD0	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x4	0x20	0x7	0x00	UNC_IIO_TXN_IN.MEM_READ.VTD1	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x40	0x1	0x7	0x00	UNC_IIO_TXN_IN.MSG.PART0	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x40	0x2	0x7	0x00	UNC_IIO_TXN_IN.MSG.PART1	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x40	0x4	0x7	0x00	UNC_IIO_TXN_IN.MSG.PART2	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x40	0x8	0x7	0x00	UNC_IIO_TXN_IN.MSG.PART3	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x40	0x10	0x7	0x00	UNC_IIO_TXN_IN.MSG.VTD0	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x40	0x20	0x7	0x00	UNC_IIO_TXN_IN.MSG.VTD1	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x40	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MSG.PART0	Number Transactions requested of the CPU; Messages	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x40	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MSG.PART1	Number Transactions requested of the CPU; Messages	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x40	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MSG.PART2	Number Transactions requested of the CPU; Messages	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x40	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MSG.PART3	Number Transactions requested of the CPU; Messages	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x40	0x10	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MSG.VTD0	Number Transactions requested of the CPU; Messages	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x40	0x20	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MSG.VTD1	Number Transactions requested of the CPU; Messages	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x8	0x1	0x7	0x00	UNC_IIO_TXN_IN.PEER_READ.PART0	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x8	0x2	0x7	0x00	UNC_IIO_TXN_IN.PEER_READ.PART1	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x8	0x4	0x7	0x00	UNC_IIO_TXN_IN.PEER_READ.PART2	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x8	0x8	0x7	0x00	UNC_IIO_TXN_IN.PEER_READ.PART3	This event is deprecated. 	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x8	0x10	0x7	0x00	UNC_IIO_TXN_IN.PEER_READ.VTD0	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0x84	0x8	0x20	0x7	0x00	UNC_IIO_TXN_IN.PEER_READ.VTD1	This event is deprecated. 	0,1,2,3	0x53	chnl	0	0	0x01
+IIO	0xC0	0x01	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.VTD0	Data requested by the CPU; Core writing to Card's MMIO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x01	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.VTD1	Data requested by the CPU; Core writing to Card's MMIO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x02	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.VTD0	Data requested by the CPU; Another card (different IIO stack) writing to this card.	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x02	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.VTD1	Data requested by the CPU; Another card (different IIO stack) writing to this card.	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x04	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.VTD0	Data requested by the CPU; Core reading from Card's MMIO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x04	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.VTD1	Data requested by the CPU; Core reading from Card's MMIO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x08	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.VTD0	Data requested by the CPU; Another card (different IIO stack) reading from this card.	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x08	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.VTD1	Data requested by the CPU; Another card (different IIO stack) reading from this card.	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x1	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x1	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x1	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x1	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x1	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x1	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x10	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART0	Data requested by the CPU; Core writing to Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x10	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART1	Data requested by the CPU; Core writing to Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x10	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART2	Data requested by the CPU; Core writing to Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x10	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.PART3	Data requested by the CPU; Core writing to Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x10	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.VTD0	Data requested by the CPU; Core writing to Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x10	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_WRITE.VTD1	Data requested by the CPU; Core writing to Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x2	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x2	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x2	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x2	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x2	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x2	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x20	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART0	Data requested by the CPU; Core writing to Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x20	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART1	Data requested by the CPU; Core writing to Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x20	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART2	Data requested by the CPU; Core writing to Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x20	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.PART3	Data requested by the CPU; Core writing to Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x20	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.VTD0	Data requested by the CPU; Core writing to Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x20	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_WRITE.VTD1	Data requested by the CPU; Core writing to Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x4	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x4	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x4	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x4	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x4	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x4	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.MEM_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.CFG_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x40	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART0	Data requested by the CPU; Core reading from Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x40	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART1	Data requested by the CPU; Core reading from Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x40	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART2	Data requested by the CPU; Core reading from Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x40	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.PART3	Data requested by the CPU; Core reading from Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x40	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.VTD0	Data requested by the CPU; Core reading from Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x40	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.CFG_READ.VTD1	Data requested by the CPU; Core reading from Card's PCICFG space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x8	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x8	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x8	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x8	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x8	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x8	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.PEER_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART2	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART3	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x10	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_READ.VTD0	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x20	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_OUT.IO_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_BY_CPU.IO_READ.VTD1	2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC0	0x80	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART0	Data requested by the CPU; Core reading from Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x80	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART1	Data requested by the CPU; Core reading from Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x80	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART2	Data requested by the CPU; Core reading from Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x80	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_READ.PART3	Data requested by the CPU; Core reading from Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x80	0x10	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_READ.VTD0	Data requested by the CPU; Core reading from Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x80	0x20	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.IO_READ.VTD1	Data requested by the CPU; Core reading from Card's IO space	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x01	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.VTD0	Number Transactions requested by the CPU; Core writing to Card's MMIO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x01	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.VTD1	Number Transactions requested by the CPU; Core writing to Card's MMIO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x02	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.VTD0	Number Transactions requested by the CPU; Another card (different IIO stack) writing to this card.	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x02	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.VTD1	Number Transactions requested by the CPU; Another card (different IIO stack) writing to this card.	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x04	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.VTD0	Number Transactions requested by the CPU; Core reading from Card's MMIO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x04	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.VTD1	Number Transactions requested by the CPU; Core reading from Card's MMIO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x08	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.VTD0	Number Transactions requested by the CPU; Another card (different IIO stack) reading from this card.	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x08	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.VTD1	Number Transactions requested by the CPU; Another card (different IIO stack) reading from this card.	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x1	0x1	0x7	0x00	UNC_IIO_TXN_OUT.MEM_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x1	0x2	0x7	0x00	UNC_IIO_TXN_OUT.MEM_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x1	0x4	0x7	0x00	UNC_IIO_TXN_OUT.MEM_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x1	0x8	0x7	0x00	UNC_IIO_TXN_OUT.MEM_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x1	0x10	0x7	0x00	UNC_IIO_TXN_OUT.MEM_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x1	0x20	0x7	0x00	UNC_IIO_TXN_OUT.MEM_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x10	0x1	0x7	0x00	UNC_IIO_TXN_OUT.CFG_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x10	0x2	0x7	0x00	UNC_IIO_TXN_OUT.CFG_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x10	0x4	0x7	0x00	UNC_IIO_TXN_OUT.CFG_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x10	0x8	0x7	0x00	UNC_IIO_TXN_OUT.CFG_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x10	0x10	0x7	0x00	UNC_IIO_TXN_OUT.CFG_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x10	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART0	Number Transactions requested by the CPU; Core writing to Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x10	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART1	Number Transactions requested by the CPU; Core writing to Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x10	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART2	Number Transactions requested by the CPU; Core writing to Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x10	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.PART3	Number Transactions requested by the CPU; Core writing to Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x10	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.VTD0	Number Transactions requested by the CPU; Core writing to Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x10	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_WRITE.VTD1	Number Transactions requested by the CPU; Core writing to Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x2	0x1	0x7	0x00	UNC_IIO_TXN_OUT.PEER_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x2	0x2	0x7	0x00	UNC_IIO_TXN_OUT.PEER_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x2	0x4	0x7	0x00	UNC_IIO_TXN_OUT.PEER_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x2	0x8	0x7	0x00	UNC_IIO_TXN_OUT.PEER_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x2	0x10	0x7	0x00	UNC_IIO_TXN_OUT.PEER_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x2	0x20	0x7	0x00	UNC_IIO_TXN_OUT.PEER_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x1	0x7	0x00	UNC_IIO_TXN_OUT.IO_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x2	0x7	0x00	UNC_IIO_TXN_OUT.IO_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x4	0x7	0x00	UNC_IIO_TXN_OUT.IO_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x8	0x7	0x00	UNC_IIO_TXN_OUT.IO_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x10	0x7	0x00	UNC_IIO_TXN_OUT.IO_WRITE.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x20	0x7	0x00	UNC_IIO_TXN_OUT.IO_WRITE.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x20	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART0	Number Transactions requested by the CPU; Core writing to Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x20	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART1	Number Transactions requested by the CPU; Core writing to Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x20	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART2	Number Transactions requested by the CPU; Core writing to Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x20	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.PART3	Number Transactions requested by the CPU; Core writing to Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x20	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.VTD0	Number Transactions requested by the CPU; Core writing to Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x20	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_WRITE.VTD1	Number Transactions requested by the CPU; Core writing to Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x4	0x1	0x7	0x00	UNC_IIO_TXN_OUT.MEM_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x4	0x2	0x7	0x00	UNC_IIO_TXN_OUT.MEM_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x4	0x4	0x7	0x00	UNC_IIO_TXN_OUT.MEM_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x4	0x8	0x7	0x00	UNC_IIO_TXN_OUT.MEM_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x4	0x10	0x7	0x00	UNC_IIO_TXN_OUT.MEM_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x4	0x20	0x7	0x00	UNC_IIO_TXN_OUT.MEM_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x1	0x7	0x00	UNC_IIO_TXN_OUT.CFG_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x2	0x7	0x00	UNC_IIO_TXN_OUT.CFG_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x4	0x7	0x00	UNC_IIO_TXN_OUT.CFG_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x8	0x7	0x00	UNC_IIO_TXN_OUT.CFG_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x10	0x7	0x00	UNC_IIO_TXN_OUT.CFG_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x20	0x7	0x00	UNC_IIO_TXN_OUT.CFG_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x40	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART0	Number Transactions requested by the CPU; Core reading from Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x40	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART1	Number Transactions requested by the CPU; Core reading from Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x40	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART2	Number Transactions requested by the CPU; Core reading from Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x40	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.PART3	Number Transactions requested by the CPU; Core reading from Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x40	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.VTD0	Number Transactions requested by the CPU; Core reading from Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x40	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.CFG_READ.VTD1	Number Transactions requested by the CPU; Core reading from Card's PCICFG space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x8	0x1	0x7	0x00	UNC_IIO_TXN_OUT.PEER_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x8	0x2	0x7	0x00	UNC_IIO_TXN_OUT.PEER_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x8	0x4	0x7	0x00	UNC_IIO_TXN_OUT.PEER_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x8	0x8	0x7	0x00	UNC_IIO_TXN_OUT.PEER_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x8	0x10	0x7	0x00	UNC_IIO_TXN_OUT.PEER_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x8	0x20	0x7	0x00	UNC_IIO_TXN_OUT.PEER_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x1	0x7	0x00	UNC_IIO_TXN_OUT.IO_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x2	0x7	0x00	UNC_IIO_TXN_OUT.IO_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x4	0x7	0x00	UNC_IIO_TXN_OUT.IO_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART2	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x8	0x7	0x00	UNC_IIO_TXN_OUT.IO_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART3	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x10	0x7	0x00	UNC_IIO_TXN_OUT.IO_READ.VTD0	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_READ.VTD0	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x20	0x7	0x00	UNC_IIO_TXN_OUT.IO_READ.VTD1	This event is deprecated. Refer to new event UNC_IIO_TXN_REQ_BY_CPU.IO_READ.VTD1	0,1,2,3	0x53	fc, chnl	0	0	0x01
+IIO	0xC1	0x80	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART0	Number Transactions requested by the CPU; Core reading from Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x80	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART1	Number Transactions requested by the CPU; Core reading from Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x80	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART2	Number Transactions requested by the CPU; Core reading from Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x80	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_READ.PART3	Number Transactions requested by the CPU; Core reading from Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x80	0x10	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_READ.VTD0	Number Transactions requested by the CPU; Core reading from Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x80	0x20	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.IO_READ.VTD1	Number Transactions requested by the CPU; Core reading from Card's IO space	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC2	0x04	0x01	0x7	0x00	UNC_IIO_COMP_BUF_INSERTS.PORT0	PCIe Completion Buffer Inserts; Port 0	0,1,2,3	0x53	na	0	0	0x00
+IIO	0xC2	0x04	0x02	0x7	0x00	UNC_IIO_COMP_BUF_INSERTS.PORT1	PCIe Completion Buffer Inserts; Port 1	0,1,2,3	0x53	na	0	0	0x00
+IIO	0xC2	0x04	0x04	0x7	0x00	UNC_IIO_COMP_BUF_INSERTS.PORT2	PCIe Completion Buffer Inserts; Port 2	0,1,2,3	0x53	na	0	0	0x00
+IIO	0xC2	0x04	0x08	0x7	0x00	UNC_IIO_COMP_BUF_INSERTS.PORT3	PCIe Completion Buffer Inserts; Port 3	0,1,2,3	0x53	na	0	0	0x00
+IIO	0xE	0x0	0x00	0x00	0x00	UNC_IIO_LINK_NUM_RETRIES	Num Link Retries	0,1,2,3	0x53	na	0	0	0x00
+IIO	0xF	0x0	0x00	0x00	0x00	UNC_IIO_LINK_NUM_CORR_ERR	Num Link  Correctable Errors	0,1,2,3	0x53	na	0	0	0x00

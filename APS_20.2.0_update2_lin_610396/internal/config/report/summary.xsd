@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="recommendations" type="recommendationPlaceholder" minOccurs="0" maxOccurs="1" />
+        <xs:element name="metric" type="metricType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="metricType">
+    <xs:choice>
+      <xs:sequence>
+        <xs:choice minOccurs="0">
+          <xs:element name="table" type="tableType" minOccurs="0" />
+          <xs:element name="metric" type="metricType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:choice>
+      </xs:sequence>
+
+      <xs:sequence>
+        <xs:element name="value" type="xs:string" />
+        <xs:element name="formatted_value" type="xs:string" />
+        <xs:element name="issues" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="issue" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="metric" type="metricType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string" use="required" />
+  </xs:complexType>
+
+  <xs:complexType name="tableCellType">
+    <xs:sequence>
+      <xs:element name="value" type="xs:string" />
+      <xs:element name="formatted_value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tableType">
+    <xs:sequence>
+      <xs:element name="columns" type="tableHeaderType" minOccurs="0" />
+      <xs:element name="row" type="tableRowType" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tableHeaderType">
+    <xs:sequence>
+      <xs:element name="column" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tableRowType">
+    <xs:sequence>
+      <xs:element name="value" type="tableCellType" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recommendationPlaceholder">
+    <xs:sequence>
+        <xs:element name="recommendation" type="recommendationType" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="recommendationType">
+    <xs:sequence>
+        <xs:element name="text" type="xs:string" />
+        <xs:element name="metric" type="metricType" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

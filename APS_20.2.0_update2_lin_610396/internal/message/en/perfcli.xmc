@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="perfcli" lang="en">
+    <msg name='%InternalError'>Internal Error</msg>
+    <msg name='%LinuxTarget'>a.out</msg>
+    <msg name='%WindowsTarget'>C:\example.exe</msg>
+    <msg name='%LinuxModule'>libexample.so</msg>
+    <msg name='%WindowsModule'>example.dll</msg>
+    <msg name='%LinuxDirectory'>/example/bin</msg>
+    <msg name='%WindowsDirectory'>C:\example\bin</msg>
+    <msg name='%ClUsageInformation'>
+      <br/>
+      Usage: <arg name="cl_tool_name"/> &lt;-action&gt; [-action-option] [-global-option] [[--] target
+      [target options]]<br/>
+      <br/>
+      Type '<arg name="cl_tool_name"/> -help &lt;action&gt;' for help on a specific action.<br/>
+    </msg>
+    <msg name='%ExamplesHeader'>
+      <br/>Examples:<br/>
+    </msg>
+    <msg name='%ActionsHeader'>
+      <br/>Available Actions:<br/>
+    </msg>
+    <msg name='%ModifierHeader'>
+      <br/>Action Options:<br/>
+    </msg>
+    <msg name='%GlobalOptionHeader'>
+      <br/>Global Options:<br/>
+    </msg>
+    <msg name='%AnalysisTypeListHeader'>
+      <br/>Available Analysis Types:<br/>
+    </msg>
+    <msg name='%CollectorListHeader'>
+      <br/>Available collectors:<br/>
+    </msg>
+    <msg name='%ReportListHeader'>
+      <br/>Available Reports:<br/>
+    </msg>
+    <msg name='%ActionCollectList'>List available analysis types.</msg>
+    <msg name='%ActionImport'>Create a result directory by importing one or more legacy data files/directories.</msg>
+    <msg name='%ActionHelp'>Display help text.</msg>
+    <msg name='%ActionVersion'>Display product version.</msg>
+    <msg name='%ActionLongDescription-finalize'>
+      Re-start postprocessing (finalization) of the collected data. Use this option to find symbol information in the search directories updated with the -search-dir option.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-import'>
+      Create a result directory by importing one or more legacy data files/directories.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-collect'>
+      Perform a data collection of the specified analysis type.<br/>
+      See the list of available analysis types below.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-collect-with'>
+      Perform a data collection using the specified collector.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-report'>
+      Generate a formatted data report with the specified type and action options.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-help'>
+      Display help for a specific action.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-command'>
+      Perform one of the following commands on the running collection.  The result directory is used to connect with the running analysis.<br/>
+      <br/>
+      pause  - pause data collection<br/>
+      resume - resume paused data collection<br/>
+      stop   - stop collection<br/>
+      status - print status of collection<br/>
+      mark   - place time-stamped mark in the data that can be referenced during analysis<br/>
+    </msg>
+    <msg name='%ActionLongDescription-collect-list'>
+      This option is deprecated. Use '-help collect' instead.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-knob-list'>
+      This option is deprecated. Use '-help collect &lt;analysis type&gt;' instead.<br/>
+    </msg>
+    <msg name='%ActionLongDescription-report-list'>
+      This option is deprecated. Use '-help report' instead.<br/>
+    </msg>
+    <msg name='%ActionExamples-finalize'>
+      <br/>
+      1) Finalize the result in result directory r001hs using symbol information located in <arg name="example_dir"/>.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -finalize -r r001hs -search-dir <arg name="example_dir"/><br/>
+    </msg>
+    <msg name='%ActionExamples-import'>
+      <br/>
+      1) Import sample_data.tb5 and store it in the result directory r000.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -import sample_data.tb5 -r r000<br/>
+    </msg>
+    <msg name='%ActionExamples-collect'>
+      <br/>
+      1) Perform the hotspots collection on the given target.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect hotspots <arg name="target"/><br/>
+      <br/>
+      The default naming template for result directories is r@@@{at}, where:<br/>
+      @@@ is an increasing numeric sequence automatically assigned by <arg name="cl_tool_name"/>;<br/>
+      {at} is an abbreviation of the analysis type.<br/>
+      <br/>
+      2) Collect the results into the 'r001tr' result directory.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect threading -r r001tr <arg name="target"/><br/>
+      <br/>
+      Use '-help collect &lt;analysis type&gt;' for more information about each analysis type.<br/>
+    </msg>
+    <msg name='%ActionExamples-collect-with'>
+      <br/>
+      1) Perform hardware sampling event-based collection on the given target.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect-with runsa <arg name="target"/><br/>
+      <br/>
+      2) Perform user-mode sampling and tracing collection on the given target.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect-with runss <arg name="target"/><br/>
+    </msg>
+    <msg name='%ActionExamples-report'>
+      <br/>
+      1) Generate the 'hotspots' report for the result directory 'r000hs'.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -report hotspots -r r000hs<br/>
+      <br/>
+      2) Group the data by module.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -report hotspots -r r000hs -group-by module<br/>
+      <br/>
+      3) Filter the output by the specified module.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -report hotspots -r r000hs -filter module=<arg name="module"/><br/>
+      <br/>
+      4) Report the difference of two result directories.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -report hotspots -r r001hs -r r002hs<br/>
+      <br/>
+      5) Group the data by GPU computing tasks.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -report hotspots -r r000gh -group-by computing-task<br/>
+      <br/>
+      Use '-help report &lt;report name&gt;' for more information about each report.<br/>
+    </msg>
+    <msg name='%ActionExamples-help'>
+      <br/>
+      1) Display help for the collect action.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -help collect<br/>
+    </msg>
+    <msg name='%ActionExamples-initial'>
+      <br/>
+      1) Perform the hotspots collection based on user mode sampling on the given target.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect hotspots <arg name="target"/><br/>
+      <br/>
+      2) Perform the hotspot collection based on hardware event based sampling with non-default sampling interval 0.5 ms.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect hotspots -knob sampling-mode=hw -knob sampling-interval=0.5 <arg name="target"/><br/>
+      <br/>
+      3) Generate the 'hotspots' report for the result directory 'r000hs'.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -report hotspots -r r000hs<br/>
+      <br/>
+      4) Perform the microarchitecture exploration collection on remote target with IP address 255.255.255.255 under user "vtune_user".<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -target-system ssh:vtune_user@255.255.255.255 -collect uarch-exploration <arg name="target"/><br/>
+      <br/>
+      5) Profile system with memory access analysis for 20 seconds after collection is launched.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect memory-access -d 20<br/>
+      <br/>
+      6) Perform the gpu-hotspots collection attaching to the process with PID 1234.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -collect gpu-hotspots -target-pid 1234<br/>
+      <br/>
+      7) Perform the hpc performance characterization collection on MPI application '<arg name="target"/>' run with Intel MPI launcher.<br/>
+      <br/>
+      &#32;&#32;&#32;mpirun -n 48 -ppn 24 <arg name="cl_tool_name"/> -collect hpc-performance -data-limit=0 -r my_result_dir <arg name="target"/><br/>
+      <br/>
+      8) Display help for the collect action.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -help collect<br/>
+      <br/>
+      9) Display available knobs for threading analysis.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -help collect threading<br/>
+    </msg>
+    <msg name='%ActionExamples-command'>
+      <br/>
+      1) Pause data collection that is currently collecting data into result directory r000hs.<br/>
+      <br/>
+      &#32;&#32;&#32;<arg name="cl_tool_name"/> -command pause -r r000hs<br/>
+    </msg>
+    <msg name='%OptionDebug'>Output debug information.</msg>
+    <msg name='%OptionResultDir'>Specify result directory path. The default name for a result directory is r@@@{at}, where @@@ is the incremented number of the result, and {at} is a two- or three-letter abbreviation for the analysis type.</msg>
+    <msg name='%OptionUserDataDir'>Specify the base directory for result paths provided by --result-dir option. By default, the current working directory is used.</msg>
+    <msg name='%ClToolName'>Command Line Tool</msg>
+    <msg name='%NeedAtLeastOneAction'>At least one action should be specified.</msg>
+    <msg name='%TooManyActions'>Only one action should be specified.</msg>
+    <msg name='%TooManyResultDirectories'>Only one result directory should be specified.</msg>
+    <msg name="%HelpReportNotFound">Report '<arg name="report_name"/>' not found.</msg>
+    <msg name="%HelpReportNoHelp">No additional description for report '<arg name="report_name"/>' is available.</msg>
+    <msg name="%HelpAnalysisNotFound">Analysis type '<arg name="analysis_type"/>' not found.</msg>
+    <msg name="%HelpCollectorNotFound">Collector '<arg name="collector"/>' not found.</msg>
+    <msg name="%HelpCollectorNoHelp">No additional description for collector '<arg name="collector"/>' is available.</msg>
+    <msg name="%HelpAnalysisNoHelp">No additional description for analysis type '<arg name="analysis_type"/>' is available.</msg>
+    <msg name="%reportGroupByHelpCommand">Use -R <arg name='report_name'/> -r &lt;result-dir&gt; -group-by=? to see applicable arguments for grouping.</msg>
+    <msg name='%InvalidUserDataDir'>Specified user data directory `<arg name='user_dir'/>' does not exist or cannot be read.</msg>
+    <msg name='%LocaleError'>The current locale set on this system is not supported by the <arg name="product_name" />.
+      &#10;Suggestion: Set the locale environment variable and restart the <arg name="product_name" />.
+      &#10;
+      &#10;For example, to set "C" locale or a UTF-8 locale like "en_US.UTF-8", type:
+      &#10;&#32;&#32;&#32;&#32;&#32;&gt; export LC_CTYPE="C"
+      &#10;or
+      &#10;&#32;&#32;&#32;&#32;&#32;&gt; export LC_CTYPE="en_US.UTF-8"
+      &#10;
+    </msg>
+    <msg name='%logWindow.analysisCompletedWithWarnings.Header'>Data collection completed with warnings</msg>
+    <msg name='%logWindow.analysisCompletedWithWarnings.Body'>
+      Please see warning messages for details.
+    </msg>
+    <msg name="%Error.CollectionFailed.Header">Collection failed</msg>
+    <msg name="%Error.CollectionFailed.Body">
+      Collection failed. The data cannot be displayed.
+    </msg>
+    <msg name='%logWindow.analysisCompletedSuccessfully'>Data collection completed successfully</msg>
+    <msg name='%Notice.FinalizationComplete.Header'>Finalization completed successfully</msg>
+    <msg name='%Notice.FinalizationComplete.Body'>Result is ready for analysis.</msg>
+    <msg name='%Notice.FinalizationCompleteWithWarnings.Header'>Finalization completed with warnings</msg>
+    <msg name='%Notice.FinalizationCompleteWithWarnings.Body'>Result finalization has completed with warnings that may affect the representation of analysis data. Please see details below.</msg>
+    <msg name='%Notice.FinalizationFailed.Header'>Failed to finalize the result</msg>
+    <msg name='%Warning.DeprecatedProductName'>Warning: The command line '<arg name="old_product_prefix"/>cl' is deprecated. Use '<arg name="cl_tool_name"/>' instead.</msg>
+  </catalog>
+</xmc>

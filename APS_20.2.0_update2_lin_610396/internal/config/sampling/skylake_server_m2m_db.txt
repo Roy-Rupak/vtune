@@ -1,0 +1,38 @@
+# Performance Monitoring Events for Intel Xeon Processors Based on the Skylake Microarchitecture - V1.22
+# 3/27/2020 4:07:25 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS
+M2M	0x1	0x00	0x00	0x00	0x00	UNC_M2M_RxC_AD_INSERTS	AD Ingress (from CMS) Queue Inserts	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x15	0x03	0x00	0x00	0x00	UNC_M2M_TxC_BL_INSERTS.ALL	BL Egress (to CMS) Allocations; All	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x16	0x03	0x00	0x00	0x00	UNC_M2M_TxC_BL_OCCUPANCY.ALL	BL Egress (to CMS) Occupancy; All	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2	0x00	0x00	0x00	0x00	UNC_M2M_RxC_AD_OCCUPANCY	AD Ingress (from CMS) Occupancy	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x22	0x2	0x00	0x00	0x00	UNC_M2M_BYPASS_M2M_Egress.NOT_TAKEN	Traffic in which the M2M to iMC Bypass was not taken	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x23	0x0	0x00	0x00	0x00	UNC_M2M_DIRECT2CORE_TAKEN	Messages sent direct to core (bypassing the CHA)	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x24	0x0	0x00	0x00	0x00	UNC_M2M_DIRECT2CORE_NOT_TAKEN_DIRSTATE	Cycles when direct to core mode (which bypasses the CHA) was disabled	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x25	0x0	0x00	0x00	0x00	UNC_M2M_DIRECT2CORE_TXN_OVERRIDE	Number of reads in which direct to core transaction were overridden	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x26	0x00	0x00	0x00	0x00	UNC_M2M_DIRECT2UPI_TAKEN	Messages sent direct to the Intel UPI	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x27	0x00	0x00	0x00	0x00	UNC_M2M_DIRECT2UPI_NOT_TAKEN_DIRSTATE	Cycles when direct to Intel UPI was disabled	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x28	0x00	0x00	0x00	0x00	UNC_M2M_DIRECT2UPI_NOT_TAKEN_CREDITS	Number of reads in which direct to Intel UPI transactions were overridden	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x29	0x00	0x00	0x00	0x00	UNC_M2M_DIRECT2UPI_TXN_OVERRIDE	Number of reads that a message sent direct2 Intel UPI was overridden	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2D	0x1	0x00	0x00	0x00	UNC_M2M_DIRECTORY_LOOKUP.ANY	Multi-socket cacheline Directory lookups (any state found)	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2D	0x2	0x00	0x00	0x00	UNC_M2M_DIRECTORY_LOOKUP.STATE_I	Multi-socket cacheline Directory lookup (cacheline found in I state)	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2D	0x4	0x00	0x00	0x00	UNC_M2M_DIRECTORY_LOOKUP.STATE_S	Multi-socket cacheline Directory lookup (cacheline found in S state)	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2D	0x8	0x00	0x00	0x00	UNC_M2M_DIRECTORY_LOOKUP.STATE_A	Multi-socket cacheline Directory lookups (cacheline found in A state)	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x1	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.ANY	Multi-socket cacheline Directory update from/to Any state	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x10	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.S2A	Multi-socket cacheline Directory update from S to A	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x2	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.I2S	Multi-socket cacheline Directory update from I to S	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x20	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.A2I	Multi-socket cacheline Directory update from A to I	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x4	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.I2A	Multi-socket cacheline Directory update from I to A	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x40	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.A2S	Multi-socket cacheline Directory update from A to S	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x2E	0x8	0x00	0x00	0x00	UNC_M2M_DIRECTORY_UPDATE.S2I	Multi-socket cacheline Directory update from S to I	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x37	0x1	0x00	0x00	0x00	UNC_M2M_IMC_READS.NORMAL	Reads to iMC issued at Normal Priority (Non-Isochronous)	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x37	0x4	0x00	0x00	0x00	UNC_M2M_IMC_READS.ALL	Reads to iMC issued	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x38	0x10	0x00	0x00	0x00	UNC_M2M_IMC_WRITES.ALL	Writes to iMC issued	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x38	0x2	0x00	0x00	0x00	UNC_M2M_IMC_WRITES.PARTIAL	Partial Non-Isochronous writes to the iMC	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x38	0x80	0x00	0x00	0x00	UNC_M2M_IMC_WRITES.NI	M2M Writes Issued to iMC; All, regardless of priority.	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x5	0x00	0x00	0x00	0x00	UNC_M2M_RxC_BL_INSERTS	BL Ingress (from CMS) Allocations	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x56	0x0	0x00	0x00	0x00	UNC_M2M_PREFCAM_DEMAND_PROMOTIONS	Prefecth requests that got turn into a demand request	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x57	0x0	0x00	0x00	0x00	UNC_M2M_PREFCAM_INSERTS	Inserts into the Memory Controller Prefetch Queue	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x6	0x00	0x00	0x00	0x00	UNC_M2M_RxC_BL_OCCUPANCY	BL Ingress (from CMS) Occupancy	0,1,2,3	0x53	na	0	0	0x00
+M2M	0x9	0x00	0x00	0x00	0x00	UNC_M2M_TxC_AD_INSERTS	AD Egress (to CMS) Allocations	0,1,2,3	0x53	na	0	0	0x00
+M2M	0xA	0x00	0x00	0x00	0x00	UNC_M2M_TxC_AD_OCCUPANCY	AD Egress (to CMS) Occupancy	0,1,2,3	0x53	na	0	0	0x00

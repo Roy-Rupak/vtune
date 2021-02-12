@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Relax NG schema definition for threshold configuration
+  $Id: $
+-->
+<grammar xmlns:boolean="http://www.w3.org/2001/XMLSchema#boolean" xmlns:double="http://www.w3.org/2001/XMLSchema#double" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="bag">
+      <zeroOrMore>
+        <element name="minValueThresholds">
+          <optional>
+            <!-- If true - values are already min-value-scaled. -->
+            <attribute name="boolean:scaled">
+              <data type="boolean"/>
+            </attribute>
+          </optional>
+          <optional>
+            <!--
+              Empty domain values for domain-enabled thresholds means that
+              threshold set applies to all domains.
+            -->
+            <attribute name="domain">
+              <data type="string"/>
+            </attribute>
+          </optional>
+          <oneOrMore>
+            <choice>
+              <!-- Double value -->
+              <element name="double:minValueThreshold">
+                <ref name="thresholdNameAttribute"/>
+                <data type="double"/>
+              </element>
+              <!-- Context value reference -->
+              <element name="minValueThreshold">
+                <ref name="thresholdNameAttribute"/>
+                <data type="string"/>
+              </element>
+            </choice>
+          </oneOrMore>
+        </element>
+      </zeroOrMore>
+    </element>
+  </start>
+  <define name="thresholdNameAttribute">
+    <attribute name="name">
+      <choice>
+        <value>%Idle</value>
+        <value>%Poor</value>
+        <value>%Ok</value>
+        <value>%Ideal</value>
+        <value>%Over</value>
+        <value>%SlowFrame</value>
+        <value>%GoodFrame</value>
+        <value>%FastFrame</value>
+      </choice>
+    </attribute>
+  </define>
+</grammar>

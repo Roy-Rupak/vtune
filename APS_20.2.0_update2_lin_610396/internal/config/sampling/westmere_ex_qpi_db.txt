@@ -1,0 +1,5 @@
+HELP_ID	CODE	UMASK	OTHER	RIX	RIX_VALID	QLX	QLX_VALID	NAME	COMMON	COUNTER	DESCRIPTION	HELP_FILE	UNIT	TYPE	SCOPE
+0x1009C	0x1	0x0	0x00	0x40000000	1	0x0	0	UNC_R_OUT_NULL_IDLE_EN	0	"0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"	Counts Output port sends NULL flit	corei7.chm	qpi	gen	core 
+0x1009C	0x1	0x0	0x00	0x80000000	1	0x0	0	UNC_R_FLT_SENT_EN	0	"0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"	Counts Output port sends NULL flit	corei7.chm	qpi	gen	core 
+0x1009C	0x1	0x0	0x00	0x0	0	0x9	1	UNC_R_TARGET_AVAILABLE	0	"0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"	Times target available at output port	corei7.chm	qpi	gen	core
+0x1009C	0x1	0x0	0x00	0xc4	1	0x0	0	UNC_R_INP_RCVD_VN_MSGC_SEL.ANY.DRS	0	"0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"	ANY Data Response Messages	corei7.chm	qpi	gen	core

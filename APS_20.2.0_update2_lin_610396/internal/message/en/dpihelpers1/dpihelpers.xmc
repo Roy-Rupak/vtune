@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="dpihelpers1" lang="en">
+        <msg name='TotalNode'>Total</msg>
+        <msg name='%PreparingChildNodes'>Preparing child nodes</msg>
+        <msg name='%PreparingChildData'>Preparing child data</msg>
+        <msg name='%SortingChildNodesInInputTrees'>Sorting child nodes in input trees</msg>
+        <msg name='%MergingChildNodes'>Merging child nodes</msg>
+        <msg name='%MergingChildNodesFromInputTree'>Merging child nodes from input tree '<arg name='%1'/>'</msg>
+        <msg name='%FinallyCreatingChildNodes'>Creating child nodes</msg>
+        <msg name='%PreparingOutputTree'>Preparing output tree</msg>
+        <msg name='%ParsingColumnsInInputTree'>Parsing columns in input tree</msg>
+        <msg name='%CreatingTopLevelColumns'>Creating top-level columns</msg>
+        <msg name='%CreatingTopLevelRows'>Creating top-level rows</msg>
+        <msg name='%QueryReferenceIsInvalid'>Query reference '<arg name='%1'/>' is invalid</msg>
+        <msg name='%QueryCanNotBeFound'>Cannot find query '<arg name='%1'/>'</msg>
+        <msg name='%UnknownQueryType'>Unknown query type '<arg name='%1'/>'</msg>
+        <msg name='%UnsupportedTypeForQuery'>Unsupported type for query '<arg name='%1'/>'</msg>
+        <msg name='%QueryShouldBeOfType'>Query '<arg name='%1'/>' should be of '<arg name='%2'/>' type.</msg>
+        <msg name='%SingletonVectorQueryExpected'>Valid vector query of size 1 expected under '<arg name='%1'/>', got size <arg name='%2'/>.</msg>
+        <msg name='%InstanceTableIsAbsentForQuery'>Cannot find instance table in query '<arg name='%1'/>'</msg>
+        <msg name='%InheritanceTypeMismatchForBaseQuery'>Inheritance type mismatch for base query '<arg name='%1'/>'</msg>
+        <msg name='%InvalidFormatForPath'>Invalid format for path '<arg name='%1'/>'</msg>
+        <msg name='%FileHasInvalidXMLSyntax'>Invalid XML syntax for file '<arg name='%1'/>'</msg>
+        <msg name='%FileHasInvalidExtension'>Invalid extension for file '<arg name='%1'/>'.</msg>
+        <msg name='%ItemIsAbsentForQuery'>Cannot find item '<arg name='%1'/>' for query '<arg name='%2'/>'</msg>
+        <msg name='%UnsupportedItemForQuery'>Unsupported item '<arg name='%1'/>' for query '<arg name='%2'/>'</msg>
+        <msg name='%QueryIsAlreadyDefined'>Query '<arg name='%1'/>' is already defined</msg>
+        <msg name='%AreEqual'>they are equal</msg>
+        <msg name='%NotLocalized'>Not localized <arg name='%1'/> : <arg name='%2'/></msg>
+        <msg name='%IncorrectItemValueForQuery'>Incorrect item value '<arg name='%1'/>' for query '<arg name='%2'/>'</msg>
+        <msg name='%ItemShouldBeOfStringType'>Item '<arg name='%1'/>' should be of string type.</msg>
+        <msg name='%DefaultingTo'>Using default value: '<arg name='%1'/>'</msg>
+        <msg name='%UnableToProcessRules'>Cannot process rules</msg>
+        <msg name='%ContextValuesMapIsNotSpecified'>Context values map is not specified.</msg>
+        <msg name='%ContextValueWasNotFound'>Cannot find context value '<arg name='%1'/>'</msg>
+        <msg name='%UnableToPopulateQuery'>Cannot populate query</msg>
+        <msg name='%UnableToPopulateRequiredData'>Cannot populate required data</msg>
+        <msg name='%NoColumnsWereSet'>No columns were set.</msg>
+        <msg name='%NoDatabaseEntriesForQuery'>No database entries for query '<arg name='%1'/>'</msg>
+        <msg name='%NoDataColumnsWereAdded'>No data columns were added.</msg>
+        <msg name='%ExpressionParsingErrorForQuery'>Expression parsing error for query '<arg name='%1'/>'</msg>
+        <msg name='%ExpressionIsEmpty'>Expression is empty.</msg>
+        <msg name='%ClosingQuoteNotFoundInExpressionSubpart'>
+          Cannot find closing quote for expression subpart '<arg name='%1'/>'
+        </msg>
+        <msg name='%QueryClosingClauseNotFoundInExpressionSubpart'>
+          Cannot find query closing clause for expression subpart '<arg name='%1'/>'
+        </msg>
+        <msg name='%UnexpectedTokensInExpressionSubpart'>
+          Unexpected tokens for expression subpart '<arg name='%1'/>'
+        </msg>
+        <msg name='%QueryRefShouldBeADataOrDerivedQuery'>
+          Query reference '<arg name='%1'/>' should be data or derived query.
+        </msg>
+        <msg name='%QueryReferenceShouldHaveSingleRestrictionValue'>
+          Query reference '<arg name='%1'/>' should have a single restriction value.
+        </msg>
+        <msg name='%UnknownKeyword'>Unknown keyword '<arg name='%1'/>'</msg>
+        <msg name='%InvalidNumberOfArgumentsForFunctionCall'>
+            Invalid number of arguments in function call '<arg name='%1'/>'
+        </msg>
+        <msg name='%CannotParseNumericConstant'>Cannot parse numeric constant '<arg name='%1'/>'</msg>
+        <msg name='%InvalidFormat'>Invalid format '<arg name='%1'/>'. Using default value: '<arg name='%2'/>'.</msg>
+        <msg name='%ColumnQueryIsNotApplicableForQrouping'>
+            '<arg name='%1'/>' column query is ignored: it is not applicable to grouping '<arg name='%2'/>'.
+        </msg>
+        <msg name='%ExpandBy'>where</msg>
+        <msg name='%RestrictBy'>is</msg>
+        <msg name='%QueryAll'>query all</msg>
+        <msg name='%FormatterSeconds'> s</msg>
+        <msg name='%FormatterMilliseconds'> ms</msg>
+        <msg name='%FormatterMicroseconds'> usec</msg>
+        <msg name='%FormatterPercents'> %</msg>
+        <msg name='%FormatterUnknown'>[Unknown]</msg>
+        <msg name='%FormatterNotAvailable'>N/A</msg>
+        <msg name='%SelfTime'>Self</msg>
+        <msg name='%TotalTime'>Total</msg>
+        <msg name='%Result1'>Result 1</msg>
+        <msg name='%Result2'>Result 2</msg>
+        <msg name='%Difference'>Difference</msg>
+        <msg name="%format_mem_size">
+           <arg name="%1" type="mem" />
+           <arg name="%1" type="mem_unit" />
+        </msg>
+        <msg name="%format_bandwidth_as_GB"><arg name="%1"/> GB&#47;s</msg>
+        <msg name="%format_as_MHz">
+          <arg name="%1"/> MHz
+        </msg>
+        <msg name="%format_as_GHz">
+          <arg name="%1"/> GHz
+        </msg>
+        <msg name='%WalkingTableTree'>Walking ITableTree</msg>
+        <msg name='%AggregateSum'>Sum</msg>
+        <msg name='%AggregateAvg'>Avg</msg>
+        <msg name='%AggregateMin'>Min</msg>
+        <msg name='%AggregateMax'>Max</msg>
+        <msg name='%AggregateWeightedAvg'>Weighted Avg</msg>
+        <msg name='%ExpansionSuffix'>by</msg>
+        <msg name='%InvalidIssueDefinition'>
+           Invalid query definition. The query id = '<arg name='%1'/>' has invalid issue definition. It has definition only for issue text or for issue expression.
+        </msg>
+    </catalog>
+</xmc>

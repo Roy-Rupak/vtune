@@ -1,0 +1,42 @@
+HELP_ID	CODE	COUNTER	NAME	DESCRIPTION	HELP_FILE
+0x10001	0x0	0,1	UNC_GT_IDI.DEMAND_READ_DATA	Use in conjuction with OFFCORE_REQUESTS_OUTSTANDING to determine average latency in the uncore	pmn.chm
+0x10001	0x1	0,1	UNC_GT_IDI.DEMAND_READ_INST	"Read instruction request this cycle"	pmn.chm
+0x10001	0x2	0,1	UNC_GT_IDI.ALL_RFO	demand and prefetch RFOs	pmn.chm
+0x10001	0x3	0,1	UNC_GT_IDI.MEM_UC	UC memory transactions	pmn.chm
+0x10001	0x4	0,1	UNC_GT_SQ.ALL	Any memory transaction that reached the SQ	pmn.chm
+0x10001	0x5	0,1	UNC_GT_SQ.SQ_FULL	Offcore requests buffer cannot take more entries for this thread.	pmn.chm
+0x10001	0x6	0,1	UNC_GT_SQ.SQ_NOT_EMPTY	TBD	pmn.chm
+0x10001	0x7	0,1	UNC_GT_SNP.SNPDATA	SnpData (reads)	pmn.chm
+0x10001	0x8	0,1	UNC_GT_SNP.SNPINV	SnpInv (RFOs and partial writes)	pmn.chm
+0x10001	0x9	0,1	UNC_GT_SNP.SNPCODE	SnpCode (code fetches and monitor transactions)	pmn
+0x10001	0xa	0,1	UNC_GT_SNP.FULL	Counts the number of cycles when the snoop queue is full and a new request snoop pending.	pmn.chm
+0x10001	0xb	0,1	UNC_GT_SNP.FULL_CYCLES	Counts the number of cycles when the snoop queue is full.	pmn.chm
+0x10001	0xc	0,1	UNC_GT_SNP.RSPIHITI	RspIHitI IDI response was returned to Uncore	pmn.chm
+0x10001	0xd	0,1	UNC_GT_SNP.RSPIHITFSE	RspIHitFSE IDI response was returned to Uncore	pmn.chm
+0x10001	0xe	0,1	UNC_GT_SNP.RSPSHITFSE	RspSHitFSE IDI response was returned to Uncore	pmn.chm
+0x10001	0xf	0,1	UNC_GT_SNP.RSPSFWDM	RspSFwdM IDI response was returned to Uncore	pmn.chm
+0x10001	0x10	0,1	UNC_GT_SNP.RSPIFWDM	RspIFwdM IDI response was returned to Uncore	pmn.chm
+0x10001	0x11	0,1	UNC_GT_IDI.WBM2E	Raw number of WBM2E transactions sent by the Core to IDI	pmn.chm
+0x10001	0x12	0,1	UNC_GT_IDI.PARTIALS	Partial transactions sent to IDI (PRd, WiL)	pmn.chm
+0x10001	0x13	0,1	UNC_GT_SQ.BOGUS	Number of time MLC sent Bogus data to Uncore	pmn.chm
+0x10001	0x14	0,1	UNC_GT_DT.TIMEOUT_TRIGGER	TBD	pmn.chm
+0x10001	0x15	0,1	UNC_GT_MLC.CORRECTABLE_ERROR	Any correctable error	pmn.chm
+0x10001	0x16	0,1	UNC_GT_IDI.ODLAT_TRIG_0	TBD	pmn.chm
+0x10001	0x17	0,1	UNC_GT_IDI.ODLAT_TRIG_1	TBD	pmn.chm
+0x10001	0x18	0,1	UNC_GT_SNP.ODLAT_TRIG_2	TBD	pmn.chm
+0x10001	0x19	0,1	UNC_GT_SNP.ODLAT_TRIG_3	TBD	pmn.chm
+0x10001	0x1b	0,1	UNC_GT_PM.WAKEUPS	RC6 exits	pmn.chm
+0x10001	0x20	0,1	UNC_GT_FENCE.IA_FENCE	Number of IA fences executed	pmn.chm
+0x10001	0x21	0,1	UNC_GT_PM.P_STATES	Number of P-State transitions	pmn.chm
+0x10001	0x22	0,1	UNC_GT_FENCE.DISPLAY_FENCE	Number of Display fences executed	pmn.chm
+0x10001	0x23	0,1	UNC_GT_FENCE.IA_DISPLAY_FENCE_DURING	umber of clocks spent during display fence	pmn.chm
+0x10001	0x24	0,1	UNC_GT_FENCE.LLC_WB_INV	Number of LLC WB invalidates	pmn.chm
+0x10001	0x25	0,1	UNC_GT_SQ.ADDRESS_MATCHES	Number of clocks spent while there is an address match in SQ	pmn.chm
+0x10001	0x26	0,1	UNC_GT_IDI.TLB_FETCHES	Number of TLB requests	pmn.chm
+0x10001	0x27	0,1	UNC_GT_MBC.CYCLE_COUNT	Number of cycles spent	pmn.chm
+0x10001	0x28	0,1	UNC_GT_SQ.UNCORE_DATA_CYCLES	Number of cycles data received from uncore	pmn.chm
+0x10001	0x29	0,1	UNC_GT_SQ.SQDB_DATA_CYCLES	Number of cycles data received from SQDB	pmn.chm
+0x10001	0x2a	0,1	UNC_GT_SQ.GFX_DATA_CYCLES	Number of cycles data received from GFX core	pmn.chm
+0x10001	0x2c	0,1	UNC_GT_MATRIX.ALL_UNCORE	Number of accesses to memory hierarchy (reads and writes)	pmn.chm
+0x10001	0x2d	0,1	UNC_GT_MATRIX.READ_UNCORE	Number of reads	pmn.chm
+0x10001	0x2e	0,1	UNC_GT_MATRIX.WRITE_UNCORE	Number of writes	pmn.chm

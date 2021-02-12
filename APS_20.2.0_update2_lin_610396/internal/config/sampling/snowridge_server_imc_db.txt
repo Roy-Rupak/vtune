@@ -1,0 +1,11 @@
+# Performance Monitoring Events for Intel Next Generation Atom-based Processors - V1.07
+# 3/10/2020 11:58:06 AM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS	COUNTER_TYPE
+iMC	0x00	0x00	0x00	0x00	0x00	UNC_M_CLOCKTICKS	DRAM Clockticks	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+iMC	0x02	0x04	0x00	0x00	0x00	UNC_M_PRE_COUNT.RD	DRAM Precharge commands. : Precharge due to read	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+iMC	0x02	0x08	0x00	0x00	0x00	UNC_M_PRE_COUNT.WR	DRAM Precharge commands. : Precharge due to write	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+iMC	0x02	0x10	0x00	0x00	0x00	UNC_M_PRE_COUNT.PGT	DRAM Precharge commands. : Precharge due to page table	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+iMC	0x02	0x1C	0x00	0x00	0x00	UNC_M_PRE_COUNT.ALL	DRAM Precharge commands.	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+iMC	0x04	0x0f	0x00	0x00	0x00	UNC_M_CAS_COUNT.RD	All DRAM read CAS commands issued (including underfills)	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+iMC	0x04	0x30	0x00	0x00	0x00	UNC_M_CAS_COUNT.WR	All DRAM write CAS commands issued	0,1,2,3	0x53	na	0	0	0x00	PGMABLE

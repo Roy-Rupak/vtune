@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="dicerengine2" lang="en">
+        <msg name='%ResultPathNotExists'>Result path `<arg name='%1'/>' does not exist.</msg>
+        <msg name='%UsingResultPath'>Using result path `<arg name='%1'/>'</msg>
+        <msg name='%ReportNotFound'>Cannot find report `<arg name='%1'/>': check report name spelling using -help report.</msg>
+        <msg name='%ReportTemplateNotFound'>Cannot find report template `<arg name='%1'/>'.</msg>
+        <msg name='%TooManyResultDirectories'>Too many result directories. Specify not more than two directories.</msg>
+        <msg name='%InvalidImportPath'>Import path `<arg name='%1'/>' does not exist or cannot be read.</msg>
+        <msg name='%CannotDoImportForMultipleResults'>Too many result directories. Specify only one result.</msg>
+        <msg name='%InvalidFinalizationStep'>Invalid finalization step `<arg name='%1'/>'. Available steps: [<arg name='%2'/>].</msg>
+        <msg name='%ResultNotFinalized'>Cannot process not finalized result. Finalize the result using --finalize option.</msg>
+        <msg name='%InvalidUserDataDir'>Specified user data directory `<arg name='%1'/>' does not exist or cannot be read.</msg>
+        <msg name='%KnobValueFileNotFound'>Knob value file `<arg name='%1'/>' does not exist or cannot be read.</msg>
+        <msg name='%InvalidKnobValue'>Knob value `<arg name='%1'/>' is not valid.  Please refer to '--help' for details.</msg>
+        <msg name='%CannotCreateConfigRegistry'>Cannot create configuration registry.</msg>
+        <msg name='%CannotGetPredefinedReportList'>Cannot get predefined report list.</msg>
+        <msg name='%FinalizingHugeResult%'>The result contains a lot of raw data. Finalization may take a long time to complete.</msg>
+        <msg name='%FinalizingHugeResultOnSlowHost%'>The result contains a lot of raw data. Finalization may take much time. Use the -finalization-mode=deferred option to finalize the result on a faster single-thread performance machine.</msg>
+        <msg name='%SkippingReportGenerationDueToNoLicense%'>Skipped generation of report `<arg name='%1'/>': no valid license can be found (<arg name='%2'/>).</msg>
+        <msg name='%CannotGenerateReportDueToNoLicense%'>Failed to generate report `<arg name='%1'/>': no valid license can be found (<arg name='%2'/>).</msg>
+        <msg name='%DeprecatedCommandLineOption'>The command line option `<arg name='%1'/>' is deprecated and should not be used.</msg>
+        <msg name='%DeprecatedCommandLineOptionAlt'>The command line option `<arg name='%1'/>' is deprecated. Use `<arg name='%1'/>' instead.</msg>
+        <msg name='%ProgressGatheringAvailableReports'>Gathering available reports</msg>
+        <msg name='%ProgressGatheringAvailableTransformations'>Gathering available transformations</msg>
+        <msg name='%ProgressGatheringAvailableResolutionTypes'>Gathering available resolution types</msg>
+        <msg name='%ProgressExecutingActions'>Executing actions</msg>
+        <msg name='%ProgressGeneratingReport'>Generating a report</msg>
+        <msg name='%ProgressSettingKnobValues'>Setting knob values</msg>
+        <msg name='%SettingKnobValuesDone'>Knob values have been set</msg>
+        <msg name='%ReportListEmptyMessage'>No reports available</msg>
+        <msg name='%ReportListHeader'>Available reports:</msg>
+        <msg name='%ReportCustomTag'>custom</msg>
+        <msg name='%ReportPredefinedTag'>predefined</msg>
+        <msg name='%ResolutionTypeListEmptyMessage'>No resolution types available</msg>
+        <msg name='%ResolutionTypeListHeader'>Available resolution types:</msg>
+        <msg name='%TransformationListEmptyMessage'>No transformations available</msg>
+        <msg name='%TransformationListHeader'>Available transformations:</msg>
+        <msg name='%IgnoringRequestedTransformations'>Transformation step is disabled. Requested transformations are ignored.</msg>
+        <msg name='%IgnoringRequestedResolutionTypes'>Resolution step is disabled. Requested resolution types are ignored.</msg>
+        <msg name='%ListingTransformationsIsNotImplemented'>Listing available transformations is not implemented.</msg>
+        <msg name='%OptionResultDir'>Specify result directory path.</msg>
+        <msg name='%OptionResolve'>Turn on/off the resolution step of finalization.</msg>
+        <msg name='%OptionTransform'>Turn on/off the transformation step of finalization.</msg>
+        <msg name='%OptionUseTransformation'>Use this transformation(s) to finalize the result.</msg>
+        <msg name='%OptionUseResolutionType'>Use this resolution type(s) to finalize the result.</msg>
+        <msg name='%OptionUseFinalizationStep'>Specify finalization steps to use. Possible steps: [<arg name='%1'/>]. By default, all steps are done.</msg>
+        <msg name='%OptionForceHuge'>Force loading results with a lot of raw data.</msg>
+        <msg name='%OptionDiscardRawData'>Discard raw collector data from the result upon finalization.</msg>
+        <msg name='%OptionAutoFinalize'>The option is deprecated. Please use -finalization-mode=none instead. Turn on/off automatic result finalization after data collection/import. --no-auto-finalize option also turns off the summary report (--no-summary).</msg>
+        <msg name='%UsingAutofinalizeWithFinalizationMode'>The auto-finalize(no-auto-finalize) option is deprecated and cannot be used with the finalization-mode option. Option auto-finalize ignored.</msg>
+        <msg name='%OptionFinalizationMode'>Define finalization mode: full - perform full finalization; fast (default) - reduce loaded sample count to speed up post-processing; deferred - calculate only binary checksum for finalization on another machine; none - skip finalization.</msg>
+        <msg name='%OptionSummary'>Turn on/off showing the summary report after data collection/import.</msg>
+        <msg name='%OptionUserDataDir'>Specify the base directory for result paths provided by --result-dir option. By default, the current working directory is used.</msg>
+        <msg name='%ActionFinalize'>Re-finalize the result.</msg>
+        <msg name='%ActionReFinalize'>Re-finalize the result. This option is deprecated. Use --finalize option instead.</msg>
+        <msg name='%ActionReportList'>List known reports.</msg>
+        <msg name='%ActionTransformationList'>List known data transformations.</msg>
+        <msg name='%ActionResolutionTypeList'>List known data resolution types.</msg>
+        <msg name='%ActionReport'>Generate a report with the specified name.</msg>
+        <msg name='%ActionImport'>Create a result directory by importing one or more legacy data files/directories.</msg>
+        <msg name='%ActionDumpQuery'>Dump XML representation for query library queries which IDs match the specified regular expression.</msg>
+        <msg name='%ActionArchive'>Archive binary/symbol files used by the result into the result directory.</msg>
+        <msg name='%ActionCheckpoint'>Save results to the file system.</msg>
+        <msg name='%ActionReportFromTemplate'>Generate a report from the specified template path.</msg>
+        <msg name='%OptionReadOnly'>Turn on/off read-only mode for opening the result.</msg>
+    </catalog>
+</xmc>

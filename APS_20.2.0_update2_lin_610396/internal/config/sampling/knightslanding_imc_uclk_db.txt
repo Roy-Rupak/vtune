@@ -1,0 +1,5 @@
+# Performance Monitoring Events for Intel(R) Xeon Phi Processor Family based on the Intel(R) Many Integrated Core Architecture - V12
+# 2/9/2017 3:37:38 PM
+# Copyright (c) 2007 - 2016 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	FILTER	INTERNAL
+iMC_UCLK	0x00	0x00	UNC_M_U_CLOCKTICKS	UCLK count	0,1,2,3	null	0

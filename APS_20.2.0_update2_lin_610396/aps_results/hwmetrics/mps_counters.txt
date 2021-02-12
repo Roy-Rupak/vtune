@@ -1,0 +1,47 @@
+Intel(R) VTune(TM) Amplifier summary
+Number of nodes;1
+
+/data/rroy/tool/APS_20.2.0_update2_lin_610396/internal/bin64/vtune -R summary -r /data/rroy/tool/APS_20.2.0_update2_lin_610396/aps_results/hwmetrics/results.inv07,-1.* -q -format csv -csv-delimiter semicolon
+Hierarchy Level;Metric Name;Metric Value
+0;Elapsed Time;0.094998
+1;SP GFLOPS;0.0
+1;DP GFLOPS;0.000000
+1;x87 GFLOPS;0.000024
+1;IPC;1.375427
+1;Average CPU Frequency;1301419878.819758
+1;Total Thread Count;
+1;CPU Time;0.017726
+0;Effective Physical Core Utilization;2.0% (0.393 out of 20)
+1;Effective Logical Core Utilization;0.5% (0.187 out of 40)
+0;Memory Bound;100.0
+1;Cache Bound;11.4
+1;DRAM Bound;1.2
+1;NUMA: % of Remote Accesses;48.5
+0;Vectorization;0.0
+1;Instruction Mix;
+2;SP FLOPs;0.0
+3;Packed;0.0
+4;128-bit;0.0
+4;256-bit;0.0
+3;Scalar;0.0
+2;DP FLOPs;0.0
+3;Packed;0.0
+4;128-bit;0.0
+4;256-bit;0.0
+3;Scalar;100.0
+2;x87 FLOPs;0.0
+2;Non-FP;100.0
+1;FP Arith/Mem Rd Instr. Ratio;0.000141
+1;FP Arith/Mem Wr Instr. Ratio;0.000352
+0;Collection and Platform Info;
+1;Application Command Line;python "a.py" 
+1;Operating System;"3.10.0-957.21.3.el7.x86_64 NAME="CentOS Linux" VERSION="7 (Core)" ID="centos" ID_LIKE="rhel fedora" VERSION_ID="7" PRETTY_NAME="CentOS Linux 7 (Core)" ANSI_COLOR="0;31" CPE_NAME="cpe:/o:centos:centos:7" HOME_URL="https://www.centos.org/" BUG_REPORT_URL="https://bugs.centos.org/"  CENTOS_MANTISBT_PROJECT="CentOS-7" CENTOS_MANTISBT_PROJECT_VERSION="7" REDHAT_SUPPORT_PRODUCT="centos" REDHAT_SUPPORT_PRODUCT_VERSION="7" "
+1;Computer Name;inv07
+1;Result Size;3016225
+1;Collection start time;19:05:44 12/02/2021 UTC
+1;Collection stop time;19:05:44 12/02/2021 UTC
+1;Collector Type;Driverless Perf per-process counting
+1;CPU;
+2;Name;Intel(R) Xeon(R) Processor code named Broadwell
+2;Frequency;2400000323
+2;Logical CPU Count;40

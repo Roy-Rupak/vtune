@@ -1,0 +1,21 @@
+# Performance Monitoring Events for Intel Next Generation Atom-based Processors - V1.07
+# 3/10/2020 11:58:05 AM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS	COUNTER_TYPE
+IIO	0x01	0x00	0x00	0x00	0x00	UNC_IIO_CLOCKTICKS	Clockticks of the integrated IO (IIO) traffic controller	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART0	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART1	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART2	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART3	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART4	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART5	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x40	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART6	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x01	0x80	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART7	Four byte data request of the CPU : Card writing to DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART0	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART1	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART2	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART3	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x10	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART4	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x20	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART5	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x40	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART6	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE
+IIO	0x83	0x04	0x80	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART7	Four byte data request of the CPU : Card reading from DRAM	0,1	0x53	na	0	0	0x00	PGMABLE

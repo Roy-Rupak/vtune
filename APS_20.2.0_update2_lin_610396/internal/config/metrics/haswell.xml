@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<root>
+    <metric name="cpu_op_freq">
+        <description>Operating frequency of all running cores during this time period in GHz.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="b">CPU_CLK_UNHALTED.REF_TSC</event>
+        <constant alias="c">system.tsc_freq</constant>
+        <formula>(a/b*c)/1000000000</formula>
+    </metric>
+
+    <metric name="cpu_load">
+        <description>CPU  load of all running cores during this time period in %.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <formula>(a/t)*100</formula>
+    </metric>
+
+    <metric name="cpu_clk_unhalted_ref_tsc">
+        <description>Event CPU_CLK_UNHALTED.REF_TSC (added for GPA).</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <formula>a</formula>
+    </metric>
+
+    <metric name="cpi">
+        <description>Cycles per Instruction Retired, or CPI, is a fundamental performance metric indicating approximately how much time each executed instruction took, in units of cycles.  Modern superscalar processors issue up to four instructions per cycle, suggesting a theoretical best CPI of 0.25. But various effects (long-latency memory, floating-point, or SIMD operations; non-retired instructions due to branch mispredictions; instruction starvation in the front-end) tend to pull the observed CPI up. A CPI of 1 is generally considered acceptable for HPC applications but different application domains will have very different expected values. Nonetheless, CPI is an excellent metric for judging an overall potential for application performance tuning.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="branch_mispredict_ratio">
+        <description>Ratio of branch mispredict to the number of branch instructions retired.</description>
+        <scope>per_unit</scope>
+        <event alias="a">BR_MISP_RETIRED.ALL_BRANCHES</event>
+        <event alias="b">BR_INST_RETIRED.ALL_BRANCHES</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="loads_per_instr">
+        <description>Number of load operations retired per instruction.</description>
+        <scope>per_unit</scope>
+        <event alias="a">MEM_UOPS_RETIRED.ALL_LOADS</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="stores_per_instr">
+        <description>Number of store operations retired per instruction.</description>
+        <scope>per_unit</scope>
+        <event alias="a">MEM_UOPS_RETIRED.ALL_STORES</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="l1d_mpi">
+        <description>Number of misses per instruction to L1 data cache. Includes data and RFO with prefetches.</description>
+        <scope>per_unit</scope>
+        <event alias="a">L1D.REPLACEMENT</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="l2_mpi">
+        <description>Number of misses per instruction to L2 (data and instruction) cache. Includes data and RFO with prefetches.</description>
+        <scope>per_unit</scope>
+        <event alias="a">L2_LINES_IN.ALL</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="llc_mpi">
+        <description>The LLC (last-level cache) is the last, and longest-latency, level in the memory hierarchy before main memory (DRAM).  Any memory requests missing here must be serviced by local or remote DRAM, with significant latency. The LLC Miss metric shows a ratio of cycles with outstanding LLC misses to all cycles.</description>
+        <scope>per_unit</scope>
+        <event alias="a">UNC_CBO_CACHE_LOOKUP.ANY_I</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="memory_read">
+        <description>The amount of data read from the attached DRAM in MB.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_DATA_READS</event>
+        <formula>a*64/1000000</formula>
+    </metric>
+
+    <metric name="memory_write">
+        <description>The amount of data stored to the attached DRAM in MB.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_DATA_WRITES</event>
+        <formula>a*64/1000000</formula>
+    </metric>
+
+    <metric name="memory_total">
+        <description>The amount of data read from or stored to the attached DRAM in MB.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_DATA_READS</event>
+        <event alias="b">UNC_IMC_DRAM_DATA_WRITES</event>
+        <formula>(a+b)*64/1000000</formula>
+    </metric>
+
+    <metric name="memory_read_ratio">
+        <description>Memory reads against all requests</description>
+        <event alias="a">UNC_IMC_DRAM_DATA_READS</event>
+        <event alias="b">UNC_IMC_DRAM_DATA_WRITES</event>
+        <formula>a/(a+b)</formula>
+    </metric>
+
+    <metric name="frontend_bound">
+        <description>[TMA] Frontend bound percentage.</description>
+        <scope>per_unit</scope>
+        <event alias="a">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <event alias="b">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*a/(4*b)</formula>
+    </metric>
+
+    <metric name="bad_speculation">
+        <description>[TMA] Bad speculation percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">UOPS_ISSUED.ANY</event>
+        <event alias="b">UOPS_RETIRED.RETIRE_SLOTS</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*(a-b+(4*c))/(4*d)</formula>
+    </metric>
+
+    <metric name="backend_bound">
+        <description>[TMA] Backend bound percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <event alias="b">UOPS_ISSUED.ANY</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100-(100*(a+b+4*c)/(4*d))</formula>
+    </metric>
+
+</root>

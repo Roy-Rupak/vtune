@@ -1,0 +1,168 @@
+﻿import sys
+import perfconfigs.common as common
+import dicerhelpers1.qlibrary as qlibrary
+import dicerhelpers1.formatter as dicerhelpers_formatter
+import pythonhelpers1 as pythonhelpers
+
+import timelinedataprovider1.provider as timelinedataprovider
+from timelinedataprovider1.timeline_table_formatter import print_timeline_table
+import PRODUCT_ABBR_timelinedataprovider_python1 as tldp
+
+import pythonhelpers1.genhelpers as genhelpers
+import dpihelpers1.output as dpi_output
+import dpihelpers1.table_formatter as dpi_table_formatter
+import dpihelpers1.simple_table as simple_table
+import dpihelpers1.environment as dpi_environment
+import dpihelpers1.formatter as dpi_formatter
+import dpihelpers1.query as query
+import dpihelpers1.errors as dpi_error
+import reporter2.reporter as reporter
+
+class Translator():
+    def __init__(self):
+        self._translator = None
+
+    def __call__(self, message, parameters = None):
+        if self._translator is None:
+            self._translator = reporter.translate('templates')
+
+        return self._translator(message, parameters) if parameters is not None\
+            else self._translator(message)
+
+translator = Translator()
+
+def get_arg(name, default = None, required = False):
+    args = environment.cmd_args['knob_list']
+    while name not in args.keys():
+        if '_' in name: #allowing underscore and minus as delimiter
+            name = name.replace('_', '-')
+            continue
+        if not required:
+            return default
+        else:
+            print(translator("%MissingRequiredArgumentForTimelineReport", {'%name': name }))
+            sys.exit(-1)
+
+    if str(default).isdigit(): #converting to number basing on default's type
+        return int(args[name])
+    elif type(default) == bool:
+        return True if args[name].lower() == 'true' else False
+    else:
+        return args[name]
+
+def pr(v):
+  if isinstance(v, str) and not v.startswith('/'):
+    v = '/' + v
+  return v
+
+def dump_table(tt):
+    table_formatter = dpi_environment.output_env.get_table_formatter()
+    table_formatter.format_table(tt)
+
+#tldp's drawBy appears as columnBy in the CLI report (timeline tables are vertical)
+draw_by = get_arg('column_by', required=True)
+#tldp's summary rowBy is groupBy of the CLI report
+row_by = get_arg('group_by')
+#tldp's summary columnBy serves as sort query between multiple timeline tables in the report
+column_by = get_arg('sort_column_by', draw_by)
+
+#input parameters validation
+schemaChecker = qlibrary.SchemaChecker(environment)
+
+provided_queries = {
+    'column-by': draw_by,
+    'group-by': row_by,
+    'sort-column-by': column_by
+}
+
+for k, v in provided_queries.items():
+    if v is None:
+        continue
+    splitted_query=(str(v)).split("/")
+    for item in splitted_query:
+        q = query_library.get_query(item)
+        ret = schemaChecker.check_query("<queryRef>/%s</queryRef>" % item)
+        if not ret or q is None:
+            raise dpi_error.UserError(translator("%InapplicableTimelineQuery",
+             {'%type': k, '%value': str(v)}))
+
+#get requested layer type from user's input
+layer_type = get_arg('query_type', 'overtime') #can be also 'interval' and 'active_count'
+
+if not layer_type in timelinedataprovider.Provider.supported_layer_types:
+    print(translator("%UnsupportedLayerType",
+    {'%types': ", ".join(timelinedataprovider.Provider.supported_layer_types)}))
+    sys.exit(-1)
+
+#TO-DO: uncomment this when actual criterion is clear
+#if (layer_type == "interval" or layer_type == "active_count") and not isinstance(drawBy_query, qlibrary.info_query):
+#    print translator("%IncompatibleLayerTypeAndDrawByQuery", {'%query_type': layer_type, '%query': str(draw_by)})
+#    sys.exit(-1)
+
+#knob specifying whether rows that present in the db
+#but have no data on them should present in the output
+queryForAllRows = get_arg('all_rows', False)
+
+#output time format
+timeConverter = tldp.getTimeConvertor(environment.data_input[0])
+formatter = dicerhelpers_formatter.Formatter(query.CellContentType.VALUE, timeConverter=timeConverter)
+availableTimeFormats = formatter.getAvailableTimeFormatOptions()
+
+#elapsed tsc is the current "native" timeline data provider's time format, it's always supported
+default_time_format = 'elapsed-tsc'
+#if conversion to seconds is supported, then use it instead
+if 'second' in availableTimeFormats:
+    default_time_format = 'second'
+
+time_format = get_arg('time_format', default_time_format)
+
+if time_format not in availableTimeFormats:
+    print(translator("%UnavailableTimeUnit", {'%units':
+        ", ".join(availableTimeFormats)}))
+    time_format = default_time_format
+
+#for seconds in double user can optionally specify precision
+precision = None
+if time_format == 'second':
+    precision = get_arg('time_precision', 3)
+    if not isinstance(precision, int) or precision <= 0:
+        print(translator("%InvalidPrecision", {'passedPrecision': precision}))
+        precision = 3
+
+configurator = timelinedataprovider.Configurator()
+configurator.set_parameters(pr(column_by), pr(row_by), pr(draw_by), queryForAllRows)
+
+provider = timelinedataprovider.Provider(environment, configurator.as_variant_bag())
+
+duration = provider.get_duration()
+
+query_for_names = get_arg('object_names', False)
+
+provider.set_query_param(
+    get_arg('start', 0),
+    get_arg('end', duration),
+    get_arg('bin_count', 30),
+    query_for_names
+)
+
+use_old_style = get_arg('use_old_style', False)
+
+summary = provider.get_row_summary() if row_by else None
+data_list = provider.get_data(layer_type)
+
+is_csv_output = (environment.cmd_args['output_format'] == "csv")
+
+if sys.platform != "win32":
+    time_format = str(time_format)
+
+formatter_data = dpi_formatter.FormatterData(float_precision=precision,
+    time_converter=timeConverter, time_format=time_format, csv_output=is_csv_output)
+
+if use_old_style:
+    if summary:
+        dump_table(summary)
+    for data in data_list:
+        dump_table(data)
+else:
+    if not print_timeline_table(summary, data_list, formatter_data):
+        print(translator("%InvalidOutputOfTimelineReport"))

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="viewpoint" lang="en">
+        <msg name="%MemoryConsumption">Memory Consumption</msg>
+        <msg name="%MemoryConsumptionDescription">Memory consumed by the application over time.</msg>
+        <msg name="%AllocCount">Allocations</msg>
+        <msg name="%AllocSize">Allocation Size</msg>
+        <msg name="%DeallocSize">Deallocation Size</msg>
+        <msg name="%AllocSizeDelta">Allocation/Deallocation Delta</msg>
+        <msg name="%AllocSizeDeltaDescription">Memory consumption delta for an interval selected on the timeline with the Filter In by Selection option. It shows a sum of memory allocations created inside the interval and released outside.</msg>
+        <msg name="%MemoryObjectAllocSourceFileLine">Allocation Source Line</msg>
+        <msg name="%MemoryObject">Memory Object</msg>
+        <msg name="%MemoryObjectContribution">Memory Consumption</msg>
+        <msg name="%MemoryObjectContributionDesription">Memory consumed by the object during the application execution.</msg>
+    </catalog>
+</xmc>

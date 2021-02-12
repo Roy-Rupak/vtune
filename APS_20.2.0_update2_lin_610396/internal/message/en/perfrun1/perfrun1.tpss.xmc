@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.tpss" lang="en">
+        <msg name='stackwalk'>Specify stack unwinding method. Possible values: online - unwind stacks during collection; offline - unwind stacks after collection is finished.</msg>
+        <msg name='BadOptionValue'>`<arg name='%1'/>' option has an invalid value: `<arg name='%2'/>'.</msg>
+        <msg name='filter-include'>Filter data during collection. Possible values: contended=&lt;on|off&gt; - filter out uncontended events; contended_nostack=&lt;time&gt; - filter out stacks for contended events that take less than &lt;time&gt; microseconds; wait=&lt;time&gt; - ignore transitions and blocks with wait time less than &lt;time&gt; microseconds; wait_nostack=&lt;time&gt; - filter out stacks for waits that take less than &lt;time&gt; microseconds.</msg>
+        <msg name='debug-pin'>Debug PIN tool and runtime.</msg>
+        <msg name='debug-exception'>Disallow the application to set own abnormal termination handler.</msg>
+        <msg name='trace-type'>Specify the trace file granularity. Possible values: per-thread - per-thread trace file generation; per-process - per-process trace file generation.</msg>
+        <msg name='instrumentation-type'>Specify type of instrumentation.</msg>
+        <msg name='altstack'>Enable or disable usage of altstacks for profiling signal handlers.</msg>
+        <msg name='profiling-signal'>Alternate profiling signal.</msg>
+        <msg name='guard-pulse-event'>Enable handling of PulseEvent API in order not to miss signals made by the API during Hotspots collection.</msg>
+        <msg name='NotSupportedWSAError'>The Basic Hotspots analysis type is not supported for Windows Store Applications.</msg>
+        <msg name='memory-strategy'>Specify a minimal memory object size to be traced and a hash table size for faster objects search; for example: --memory-strategy obj-size-min=1024,hash-table-size=4096.</msg>
+        <msg name='DockerProfilingIsNotSupported'>This analysis type is not supported for Linux containers and Docker applications.  </msg>
+        <msg name='gpu-profiling-type'>Specify a type of deep GPU profiling: none, bblatency, memlatency, instcount.</msg>
+        <msg name='gpu-kernels-to-profile'>Specify a comma-separated list of GPU kernel names and invocations to be profiled in the following format: kernel_name[#start_idx#step#stop_idx], where kernel_name is the name of GPU kernel; start_idx is the number of the first invocation; and stop_idx is the number of the last invocation to be profiled.</msg>
+        <msg name='GpuProfilingCannotBeConfigured'>Deep GPU profiling cannot be enabled. Please make sure that <arg name='%1'/> program tracing is enabled.</msg>
+        <msg name='GpuProfilingNotSupported'>Deep GPU profiling is not supported.</msg>
+        <msg name='GpuProfilingUnsupportedHardware'>Current hardware does not support deep GPU profiling.</msg>
+        <msg name='NotPrivilegedDockerContainer'>This analysis type needs the Docker container to run either with the SYS_PTRACE capability or in the privileged mode.</msg>
+        <msg name='LxcContainerNotSupported'>This analysis type is not supported for LXC containers.</msg>
+        <msg name='opencl-trace-mode'>Specify OpenCL kernel tracing modes: &#39;default&#39; to trace OpenCL kernels for Intel Graphics Driver only; &#39;epoch&#39; for any non-Intel graphics, where OpenCL kernels will be traced and OpenCL profiling API timestamps will be interpreted as Unux Epoch time in nanoseconds; &#39;completion&#39; to trace OpenCL kernels for any Graphics Driver and bind OpenCL profiling API timestamps to the timestamp of OpenCL completion callback.</msg>
+    </catalog>
+</xmc>

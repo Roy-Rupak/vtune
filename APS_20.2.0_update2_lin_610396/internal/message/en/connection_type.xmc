@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="connection_type" lang="en">
+    <msg name='%AdbConnection'>Android Device (ADB)</msg>
+    <msg name='%AdbConnectionShortName'>Android</msg>
+    <msg name='%AdbConnectionDescription'>Collect data on a remote Android system using ADB connection.</msg>
+    <msg name='%AdbDeviceAlias'>Android device</msg>
+    <msg name='%AdbTargetExample'>android - for Android systems.</msg>
+    <msg name='%LocalhostConnection'>Local Host</msg>
+    <msg name='%LocalhostConnectionShortName'>localhost</msg>
+    <msg name='%LocalhostConnectionDescription'>Collect data on a local host.</msg>
+    <msg name='%LocalhostDeviceAlias'>local machine</msg>
+    <msg name='%SshConnection'>Remote Linux (SSH)</msg>
+    <msg name='%SshConnectionShortName'>SSH</msg>
+    <msg name='%SshConnectionDescription'>Collect data on a remote Linux machine using SSH connection.</msg>
+    <msg name='%SshDeviceAlias'>remote machine</msg>
+    <msg name='%SshTargetExample'>ssh:user@target - for Linux systems, where &lt;user&gt; is a user name and &lt;target&gt; is a network name of the remote system accessed via SSH (usually IP address).</msg>
+    <msg name='%MicConnection'>Intel Xeon Phi coprocessor (native)</msg>
+    <msg name='%MicConnectionShortName'>MIC</msg>
+    <msg name='%MicConnectionDescription'>Collect data on an offload, mpirun or OpenCL application launched from the host and submitting work to the Intel Xeon Phi coprocessor.</msg>
+    <msg name='%MicDeviceAlias'>Intel Xeon Phi coprocessor</msg>
+    <msg name='%MicTargetExample'>mic-native:card - for Intel Xeon Phi coprocessor, where &lt;card&gt; is a card network name or card number.</msg>
+    <msg name='%MicOffloadConnection'>Intel Xeon Phi coprocessor (host launch)</msg>
+    <msg name='%MicOffloadConnectionShortName'>MIC-offload</msg>
+    <msg name='%MicOffloadConnectionDescription'>Collect data on the Intel Xeon Phi coprocessor for an offload application or MPI rank launched from the host.</msg>
+    <msg name='%MicOffloadDeviceAlias'>Intel Xeon Phi coprocessor</msg>
+    <msg name='%MicOffloadTargetExample'>mic-host-launch:card - for Intel Xeon Phi coprocessor, where &lt;card&gt; is a card network name or card number.</msg>
+    <msg name='%EmulatorConnection'>remote (CLI configuration only)</msg>
+    <msg name='%EmulatorConnectionShortName'>other</msg>
+    <msg name='%EmulatorConnectionDescription'>Configure your analysis for a remote collection on the selected microarchitecture and click the Get Command Line button to generate a ready-to-use command line. No connection to the host system is required. Copy the command line and run it directly on your remote system (for example, cluster node).</msg>
+    <msg name='%EmulatorDeviceAlias'>microarchitecture</msg>
+    <msg name='%EmulatorTargetExample'></msg>
+    <msg name='%device'>Device</msg>
+    <msg name='%targetInstallDir'>PRODUCT_LEGAL_SHORT_NAME installation directory on the remote system</msg>
+    <msg name='%targetInstallDirDescription'>Specify a path to PRODUCT_LEGAL_SHORT_NAME on the remote system. If the default location is used, this path is automatically supplied.</msg>
+    <msg name='%targetTmpDir'>Temporary directory on the remote system</msg>
+    <msg name='%targetTmpDirDescription'>Specify a directory on the remote system where performance results are temporarily stored. By default, /tmp directory is used.</msg>
+    <msg name='%unpluggedDescription'>Enable collection on an unplugged device to exclude ADB connection and power impact on the results. When this option is used, you configure and launch an analysis from the host but data collection starts after disconnecting the device from the USB cable or a network. Collection results are automatically transferred to the host as soon as you plug in the device back.</msg>
+    <msg name='%unpluggedMode'>Analyze unplugged device</msg>
+    <msg name='%RealConnection'>Accessible Targets</msg>
+    <msg name='%RealConnectionFolderDescription'>Select either the current host system or a system accessible from the current system via a remote connection as the target.</msg>
+    <msg name='%OtherPMU'>Arbitrary Targets</msg>
+    <msg name='%OtherPMUFolderDescription'>Create a command line configuration for a target not currently accessible to this system. You can select any of the supported hardware platforms and operating systems, configure corresponding target and analysis options, and generate a command line by clicking the Command Line button in the Analysis Type tab. The generated command line will be saved in the buffer and can be used later on the intended host.</msg>
+    <msg name='%knlMicCard'>Intel(R) Xeon Phi(TM) Processor code named Knights Landing</msg>
+    <msg name='%kncMicCard'>Intel(R) Xeon Phi(TM) Processor code named Knights Corner</msg>
+    <msg name='%OtherPMUConnection'>Arbitrary Host (not connected)</msg>
+    <msg name='%Simulation'>Simulated Targets</msg>
+    <msg name='%SimulationFolderDescription'>Select targets for performance analysis via a simulator.</msg>
+    <msg name='%SniperConnection'>Sniper Simulation</msg>
+    <msg name='%SniperConnectionShortName'>Sniper simulation</msg>
+    <msg name='%SniperConnectionDescription'>Configure your target for performance analysis via the Sniper multi-core simulator to analyze the performance of your parallel workloads on sellected processor</msg>
+    <msg name='%SniperDeviceAlias'>simulator</msg>
+    <msg name='%SniperTargetExample'>sniper - for Sniper simulation.</msg>
+    <msg name='%Windows'>Windows</msg>
+    <msg name='%Linux'>GNU/Linux</msg>
+    <msg name='%IntegrityConnection'>GHS INTEGRITY Connection</msg>
+    <msg name='%IntegrityConnectionShortName'>INTEGRIY</msg>
+    <msg name='%IntegrityConnectionDescription'></msg>
+    <msg name='%IntegrityDeviceAlias'>INTEGRITY device</msg>
+    <msg name='%IntegrityTargetExample'>ghs:deviceIP@debuggerPort - for GHS INTEGRITY connection, where &lt;deviceIP&gt; is IP address of a target device and &lt;debuggerPort&gt; is a debugger port that has to be opened in MULTI Debugger with &quot;socket &lt;debuggerPort&gt;&quot; command.</msg>
+    <msg name='%TcpIpConnection'>Communication Agent (TCP/IP)</msg>
+    <msg name='%TcpIpConnectionShortName'>TCP_IP</msg>
+    <msg name='%TcpIpConnectionDescription'></msg>
+    <msg name='%TcpIpTargetExample'>tcp:target - for remote system TCP/IP connection, where &lt;target&gt; is a network name of the remote system (usually IP address or host name).</msg>
+    <msg name='%TargetPorts'>Target port</msg>
+    <msg name='%TargetPortsDescription'>Specify a network port used by the target collector on the remote system.</msg>
+    <msg name='%TcpIpDeviceAlias'>remote TCP/IP machine</msg>
+    <msg name='%AgentConnection'>Remote System</msg>
+    <msg name='%AgentConnectionDescription'>Collect data on a remote system via VTune Profiler Agent.</msg>
+    <msg name='%AgentDeviceAlias'>remote agent</msg>
+    <msg name='%agentConnection.hostname.label'>Hostname / IP address</msg>
+    <msg name='%agentConnection.hostname.description'>Specify the hostname or IP address of a remote system.</msg>
+    <msg name='%agentConnection.installDir.label'>Deployment directory</msg>
+    <msg name='%agentConnection.installDir.description'>Specify a directory on the remote system where VTune Profiler Agent will be deployed.</msg>
+    <msg name='%agentConnection.shared-agent.label'>Share the agent with all PRODUCT_LEGAL_SHORT_NAME users</msg>
+    <msg name='%agentConnection.stopAgentAfterCollection.label'>Stop VTune Profiler Agent after collection</msg>
+    <msg name='%agentConnection.stopAgentAfterCollection.description'>Specify if VTune Profiler Agent should be stopped when the collection is complete.</msg>
+    <msg name='%ssh.username.label'>Username</msg>
+    <msg name='%ssh.username.description'>Specify user account on the remote system.</msg>
+    <msg name='%ssh.port.label'>Port</msg>
+    <msg name='%ssh.port.description'>Specify SSH port on the remote system.</msg>
+    <msg name='%ssh.auth-type.public-key'>Public key authentication</msg>
+    <msg name='%ssh.auth-type.password'>Password authentication</msg>
+    <msg name='%ssh.private-key.label'>Private key</msg>
+    <msg name='%ssh.private-key-passphrase.label'>Private key passphrase</msg>
+    <msg name='%ssh.password.label'>Password</msg>
+    <msg name='%EmulatorCantCollectData'>This target system type is used to produce a command line analysis configuration for the selected microarchitecture. You cannot start this analysis from the host. To collect data on the remote system with no connection to the host, copy the generated command line and run it directly on the remote system.</msg>
+    <msg name='%ACADescription'><![CDATA[ The Communication Agent connection type is used to establish a connection between PRODUCT_LEGAL_SHORT_NAME running on the host system and an Analysis Communication Agent running on an arbitrary target operating system using a TCP/IP connection. Note that this connection is insecure. It is recommended to use this connection in a secure lab environment where other collection types are not available due to the lack of SSH or a read-only file system. Please see the <a web-link="https://github.com/intel/aca" cli="https://github.com/intel/aca">Analysis Communication Agent</a> documentation for details. ]]></msg>
+  </catalog>
+</xmc>

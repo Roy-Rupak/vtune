@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<root>
+    <metric name="cpu_op_freq">
+        <description>Operating frequency of all running cores during this time period in GHz.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="b">CPU_CLK_UNHALTED.REF_TSC</event>
+        <constant alias="c">system.tsc_freq</constant>
+        <formula>(a/b*c)/1000000000</formula>
+    </metric>
+
+    <metric name="cpu_load">
+        <description>CPU  load of all running cores during this time period in %.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <formula>(a/t)*100</formula>
+    </metric>
+
+    <metric name="cpu_clk_unhalted_ref_tsc">
+        <description>Event CPU_CLK_UNHALTED.REF_TSC (added for GPA).</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <formula>a</formula>
+    </metric>
+
+    <metric name="cpi">
+        <description>Cycles per Instruction Retired, or CPI, is a fundamental performance metric indicating approximately how much time each executed instruction took, in units of cycles.  Modern superscalar processors issue up to four instructions per cycle, suggesting a theoretical best CPI of 0.25. But various effects (long-latency memory, floating-point, or SIMD operations; non-retired instructions due to branch mispredictions; instruction starvation in the front-end) tend to pull the observed CPI up. A CPI of 1 is generally considered acceptable for HPC applications but different application domains will have very different expected values. Nonetheless, CPI is an excellent metric for judging an overall potential for application performance tuning.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="branch_mispredict_ratio">
+        <description>Ratio of branch mispredict to the number of branch instructions retired.</description>
+        <scope>per_unit</scope>
+        <event alias="a">BR_MISP_RETIRED.ALL_BRANCHES</event>
+        <event alias="b">BR_INST_RETIRED.ALL_BRANCHES</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="loads_per_instr">
+        <description>Number of load operations retired per instruction.</description>
+        <scope>per_unit</scope>
+        <event alias="a">MEM_INST_RETIRED.ALL_LOADS</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="stores_per_instr">
+        <description>Number of store operations retired per instruction.</description>
+        <scope>per_unit</scope>
+        <event alias="a">MEM_INST_RETIRED.ALL_STORES</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="l1d_mpi">
+        <description>Number of misses per instruction to L1 data cache. Includes data and RFO with prefetches.</description>
+        <scope>per_unit</scope>
+        <event alias="a">L1D.REPLACEMENT</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="l2_mpi">
+        <description>Number of misses per instruction to L2 (data and instruction) cache. Includes data and RFO with prefetches.</description>
+        <scope>per_unit</scope>
+        <event alias="a">L2_LINES_IN.ALL</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="llc_mpi">
+        <description>The LLC (last-level cache) is the last, and longest-latency, level in the memory hierarchy before main memory (DRAM).  Any memory requests missing here must be serviced by local or remote DRAM, with significant latency. The LLC Miss metric shows a ratio of cycles with outstanding LLC misses to all cycles.</description>
+        <scope>per_unit</scope>
+        <event alias="a">UNC_CBO_CACHE_LOOKUP.ANY_I</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="itlb_mpi">
+        <description>Instruction Translation Lookaside Buffer MPI.</description>
+        <scope>per_unit</scope>
+        <event alias="a">ITLB_MISSES.WALK_COMPLETED</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="dtlb_load_mpi">
+        <description>Data Translation Lookaside Buffer load MPI.</description> 
+        <scope>per_unit</scope>
+        <event alias="a">DTLB_LOAD_MISSES.WALK_COMPLETED</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="dtlb_store_mpi">
+        <description>Data Translation Lookaside Buffer store MPI.</description> 
+        <scope>per_unit</scope>
+        <event alias="a">DTLB_STORE_MISSES.WALK_COMPLETED</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="memory_read">
+        <description>The amount of data read from the attached DRAM in MB.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_DATA_READS</event>
+        <formula>a*64/1000000</formula>
+    </metric>
+
+    <metric name="memory_write">
+        <description>The amount of data stored to the attached DRAM in MB.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_DATA_WRITES</event>
+        <formula>a*64/1000000</formula>
+    </metric>
+
+    <metric name="memory_total">
+        <description>The amount of data read from or stored to the attached DRAM in MB.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_DATA_READS</event>
+        <event alias="b">UNC_IMC_DRAM_DATA_WRITES</event>
+        <formula>(a+b)*64/1000000</formula>
+    </metric>
+
+    <metric name="idi_bw_read">
+        <description>IDI read bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_REQUESTS.ALL_DATA_RD</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="idi_bw_write">
+        <description>IDI write bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_REQUESTS.ALL_REQUESTS</event>
+        <event alias="b">OFFCORE_REQUESTS.ALL_DATA_RD</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="c">system.tsc_freq</constant>
+        <formula>(a-b)*64/(t/c)/1000000</formula>
+    </metric>
+
+    <metric name="idi_bw_total">
+        <description>IDI total bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_REQUESTS.ALL_REQUESTS</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="gt_idi_bw_read">
+        <description>GT IDI read bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">UNC_GT_MATRIX.READ_UNCORE</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="gt_idi_bw_write">
+        <description>GT IDI write bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">UNC_GT_MATRIX.WRITE_UNCORE</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/(t/b)/1000000</formula>
+    </metric>
+
+    <metric name="gt_idi_bw_total">
+        <description>GT IDI total bandwidth in MB/sec.</description>
+        <scope>per_unit</scope>
+        <event alias="a">UNC_GT_MATRIX.READ_UNCORE</event>
+        <event alias="b">UNC_GT_MATRIX.WRITE_UNCORE</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="c">system.tsc_freq</constant>
+        <formula>(a+b)*64/(t/c)/1000000</formula>
+    </metric>
+
+    <metric name="io_bw_total">
+        <description>Total IO read and write bandwidth in MB/sec.</description>
+        <scope>system</scope>
+        <event alias="a">UNC_IMC_DRAM_IO_REQUESTS</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <constant alias="b">system.tsc_freq</constant>
+        <formula>a*64/1000000/(t/b)</formula>
+    </metric>
+
+    <metric name="frontend_bound">
+        <description>[TMA] Frontend bound percentage.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="c">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*c/(4*(a/threads))</formula>
+    </metric>
+
+    <metric name="frontend_latency">
+        <description>[TMA] Frontend latency percentage.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="c">IDQ_UOPS_NOT_DELIVERED.CYCLES_0_UOPS_DELIV.CORE</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*c/(a/threads)</formula>
+    </metric>
+
+    <metric name="icache_misses">
+        <description>[TMA] Icache misses percentage: To introduce new uOps into the pipeline, the core must either fetch them from a decoded instruction cache, or fetch the instructions themselves from memory and then decode them. In the latter path, the requests to memory first go through the L1I (level 1 instruction) cache that caches the recent code working set. Front-end stalls can accrue when fetched instructions are not present in the L1I. Possible reasons are a large code working set or fragmentation between hot and cold code. In the latter case, when a hot instruction is fetched into the L1I, any cold code on its cache line is brought along with it. This may result in the eviction of other, hotter code.</description>
+        <scope>per_unit</scope>
+        <event alias="a">ICACHE_16B.IFDATA_STALL</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*a/d</formula>
+    </metric>
+
+    <metric name="itlb_misses">
+        <description>[TMA] ITLB misses percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">ICACHE_64B.IFTAG_STALL</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*a/d</formula>
+    </metric>
+
+    <metric name="frontend_bw">
+        <description>[TMA] Frontend bandwidth percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="c">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <event alias="d">IDQ_UOPS_NOT_DELIVERED.CYCLES_0_UOPS_DELIV.CORE</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*(c-4*d)/(4*(a/threads))</formula>
+    </metric>
+
+    <metric name="bad_speculation">
+        <description>[TMA] Bad speculation percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">UOPS_ISSUED.ANY</event>
+        <event alias="b">UOPS_RETIRED.RETIRE_SLOTS</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES_ANY</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*(a-b+(4*c/threads))/(4*d/threads)</formula>
+    </metric>
+
+    <metric name="branch_mispredicts">
+        <description>[TMA] Branch mispredict percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">UOPS_ISSUED.ANY</event>
+        <event alias="b">UOPS_RETIRED.RETIRE_SLOTS</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES_ANY</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="e">BR_MISP_RETIRED.ALL_BRANCHES</event>
+        <event alias="f">MACHINE_CLEARS.COUNT</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>(e/(e+f))*100*(a-b+(4*c/threads))/(4*d/threads)</formula>
+    </metric>
+
+    <metric name="backend_bound">
+        <description>[TMA] Backend bound percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <event alias="b">UOPS_ISSUED.ANY</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES_ANY</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="e">UOPS_RETIRED.RETIRE_SLOTS</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100-(100*(b-e+4*(c/threads)+a+e)/(4*d/threads))</formula>
+    </metric>
+
+    <metric name="memory_bound">
+        <description>[TMA] Memory bound percentage</description>
+        <scope>per_unit</scope>
+        <event alias="a">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <event alias="b">UOPS_ISSUED.ANY</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES_ANY</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="e">UOPS_RETIRED.RETIRE_SLOTS</event>
+        <event alias="f">CYCLE_ACTIVITY.STALLS_MEM_ANY</event>
+        <event alias="g">EXE_ACTIVITY.BOUND_ON_STORES</event>
+        <event alias="j">EXE_ACTIVITY.1_PORTS_UTIL</event>
+        <event alias="k">EXE_ACTIVITY.2_PORTS_UTIL</event>
+        <event alias="m">EXE_ACTIVITY.EXE_BOUND_0_PORTS</event>
+        <event alias="p">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="q">INST_RETIRED.ANY</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*(1-((b-e+4*(c/threads)+a+e)/(4*d/threads)))*(f+g)/(m+j+(((q/p)&gt;1.8)?k:0)+f+g)</formula>
+    </metric>
+
+    <metric name="l1_bound">
+        <description>[TMA] L1 bound percentage: This metric shows how often machine was stalled without missing the L1 data cache. The L1 cache typically has the shortest latency. However, in certain cases like loads blocked on older stores, a load might suffer a high latency even though it is being satisfied by the L1.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CYCLE_ACTIVITY.STALLS_MEM_ANY</event>
+        <event alias="b">CYCLE_ACTIVITY.STALLS_L1D_MISS</event>
+        <event alias="c">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*(a-b)/c</formula>
+    </metric>
+
+    <metric name="l2_bound">
+        <description>[TMA] L2 bound percentage: This metric shows how often machine was stalled on L2 cache. Avoiding cache misses (L1 misses/L2 hits) will improve the latency and increase performance.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CYCLE_ACTIVITY.STALLS_L1D_MISS</event>
+        <event alias="b">CYCLE_ACTIVITY.STALLS_L2_MISS</event>
+        <event alias="c">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*(a-b)/c</formula>
+    </metric>
+
+    <metric name="l3_bound">
+        <description>[TMA] L3 bound percentage: This metric shows how often CPU was stalled on L3 cache, or contended with a sibling Core. Avoiding cache misses (L2 misses/L3 hits) improves the latency and increases performance.</description>
+        <scope>per_unit</scope>
+        <event alias="a">CYCLE_ACTIVITY.STALLS_L2_MISS</event>
+        <event alias="c">CYCLE_ACTIVITY.STALLS_L3_MISS</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*(a-c)/d</formula>
+    </metric>
+
+    <metric name="memory_bw">
+        <description>[TMA] memory bandwidth percentage: This metric represents a fraction of cycles during which an application could be stalled due to approaching bandwidth limits of the main memory (DRAM). This metric does not aggregate requests from other threads/cores/sockets (see Uncore counters for that). Consider improving data locality in NUMA multi-socket systems.</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_REQUESTS_OUTSTANDING.L3_MISS_DEMAND_DATA_RD_GE_6</event>
+        <event alias="b">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*([1*a ,1*b].min)/b</formula>
+    </metric>
+
+    <metric name="mem_latency">
+        <description>[TMA] Memory latency percentage: This metric represents a fraction of cycles during which an application could be stalled due to the latency of the main memory (DRAM). This metric does not aggregate requests from other threads/cores/sockets (see Uncore counters for that). Consider optimizing data layout or using Software Prefetches (through the compiler).</description>
+        <scope>per_unit</scope>
+        <event alias="a">OFFCORE_REQUESTS_OUTSTANDING.L3_MISS_DEMAND_DATA_RD_GE_6</event>
+        <event alias="b">OFFCORE_REQUESTS_OUTSTANDING.CYCLES_WITH_L3_MISS_DEMAND_DATA_RD</event>
+        <event alias="c">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*(([1*b ,1*c].min)-([1*a ,1*c].min))/c</formula>
+    </metric>
+
+    <metric name="stores_bound">
+        <description>[TMA] Store bound percenatge: This metric shows how often CPU was stalled on store operations. Even though memory store accesses do not typically stall out-of-order CPUs; there are few cases where stores can lead to actual stalls. Consider False Sharing analysis as your next step.</description>
+        <scope>per_unit</scope>
+        <event alias="a">EXE_ACTIVITY.BOUND_ON_STORES</event>
+        <event alias="b">CPU_CLK_UNHALTED.THREAD</event>
+        <formula>100*(a/b)</formula>
+    </metric>
+
+    <metric name="dtlb_store">
+        <description>[TMA] DTLB store percentage.</description>
+        <scope>per_unit</scope>
+        <event alias="a">DTLB_STORE_MISSES.STLB_HIT</event>
+        <event alias="b">DTLB_STORE_MISSES.WALK_ACTIVE</event>
+        <event alias="c">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*(7*a+b)/(c/threads)</formula>
+    </metric>
+
+    <metric name="core_bound">
+        <description>[TMA] Core bound precentage.</description>
+        <scope>per_unit</scope>
+        <event alias="a">IDQ_UOPS_NOT_DELIVERED.CORE</event>
+        <event alias="b">UOPS_ISSUED.ANY</event>
+        <event alias="c">INT_MISC.RECOVERY_CYCLES_ANY</event>
+        <event alias="d">CPU_CLK_UNHALTED.THREAD_ANY</event>
+        <event alias="e">UOPS_RETIRED.RETIRE_SLOTS</event>
+        <event alias="f">CYCLE_ACTIVITY.STALLS_MEM_ANY</event>
+        <event alias="g">EXE_ACTIVITY.BOUND_ON_STORES</event>
+        <event alias="j">EXE_ACTIVITY.1_PORTS_UTIL</event>
+        <event alias="k">EXE_ACTIVITY.2_PORTS_UTIL</event>
+        <event alias="m">EXE_ACTIVITY.EXE_BOUND_0_PORTS</event>
+        <event alias="p">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="q">INST_RETIRED.ANY</event>
+        <constant alias="threads">system.sockets[0].cores[0].threads.size</constant>
+        <formula>100*(1-((b-e+4*(c/threads)+a+e)/(4*d/threads)))*(1-((f+g)/(m+j+(((q/p)&gt;1.8)?k:0)+f+g)))</formula>
+    </metric>
+
+</root>

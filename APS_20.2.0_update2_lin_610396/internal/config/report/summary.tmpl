@@ -1,0 +1,395 @@
+"""
+Copyright 2012-2013 Intel Corporation All Rights Reserved.
+
+The source code, information and material ("Material") contained
+herein is owned by Intel Corporation or its suppliers or licensors,
+and title to such Material remains with Intel Corporation or its
+suppliers or licensors. The Material contains proprietary information
+of Intel or its suppliers and licensors. The Material is protected by
+worldwide copyright laws and treaty provisions. No part of the
+Material may be used, copied, reproduced, modified, published,
+uploaded, posted, transmitted, distributed or disclosed in any way
+without Intel's prior express written permission.
+
+No license under any patent, copyright or other intellectual property
+rights in the Material is granted to or conferred upon you, either
+expressly, by implication, inducement, estoppel or otherwise. Any
+license under such intellectual property rights must be express and
+approved by Intel in writing.
+
+Unless otherwise agreed by Intel in writing, you may not remove or
+alter this notice or any other notice embedded in Materials by Intel
+or Intel's suppliers or licensors in any way.
+"""
+import perfconfigs.common as common
+
+
+def is_xml_report():
+    import dpihelpers1.environment as dpi_environment
+    from reporter2.output_env import OutputFormat
+
+    return dpi_environment.output_env.format == OutputFormat.xml
+
+
+def is_html_report():
+    import dpihelpers1.environment as dpi_environment
+    from reporter2.output_env import OutputFormat
+
+    return dpi_environment.output_env.format == OutputFormat.html
+
+if common.is_context_value(environment, "initialViewpoint", "%OpenMPHotspotsViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%SNBGeneralExplorationViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%HardwareIssuesViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%KNCGeneralExplorationViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%IceViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%SNBBandwidthViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%DiskIOViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%ThreadingEfficiencyViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%HotspotsByCPUUsageViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%InKernelProfilingViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%CpuGpuInteractionViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%SystemOverviewViewpointName") or \
+        common.is_context_value(environment, "initialViewpoint", "%PerfSnapshotViewpointName") or \
+        common.is_context_value(environment, "PMU", "sniper") or \
+        is_xml_report() or is_html_report():
+    #it is all-sufficient new summary report.
+    #it can be copied as separate report.
+    import viewpointhelpers1.vpmanager as viewpointhelpers
+    import perfconfigs.common_summary as common_summary
+    import dpihelpers1.environment as dpi_environment
+    import dicerhelpers1.qlibrary as qlibrary
+
+    templates_msg_cat = reporter.translate("templates")
+    viewpoint_msg_cat = reporter.translate("viewpoint")
+
+    import reporter2.cmd_checker as cmd_checker
+    checker = cmd_checker.CmdChecker(environment)
+    checker.check_input_parameters(supported_options = checker.standart_options | set(['filter']),
+        supported_knobs=['show-issues', 'show-recommendations'])
+
+    #apply filters
+    filtering = qlibrary.Filtering(environment)
+    filtering.apply_default_filters()
+
+    #get variant bag from viewpoint
+    vp_manager = viewpointhelpers.ViewpointManager(environment)
+    viewpoint_vb = vp_manager.get_viewpoint()
+    viewpoint_vb.variant['#tag_name']='bag'
+
+    #get summary section
+    summary = viewpoint_vb.select(r"//bag/paneLibrary/*[@id='summaryPane']")
+    vb = summary.nodes[0]
+
+    adv_footer = None
+    import reporter2.output_env as output_env
+    (show_issues, valid) = output_env.get_boolean_report_knob(environment, "show-issues")
+    if show_issues is None:
+        adv_footer = templates_msg_cat("%SkipIssuessFooter")
+
+    #Parse section and create drawers
+    supported_sections = ["undefined", "tree"]
+    if common.is_context_value(environment, "initialViewpoint", "%SNBBandwidthViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%IceViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%DiskIOViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%OpenMPHotspotsViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%ThreadingEfficiencyViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%HotspotsByCPUUsageViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%InKernelProfilingViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%CpuGpuInteractionViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%SystemOverviewViewpointName") or \
+       common.is_context_value(environment, "initialViewpoint", "%PerfSnapshotViewpointName") or \
+       is_xml_report() or is_html_report():
+        supported_sections += ["grid", "recommendation"]
+
+    parser = common_summary.Parser(vb, environment, "//config/", supported_sections)
+    drawer = parser.create_drawer(adv_footer=adv_footer)
+
+    #create formatter and draw the data
+    formatter = dpi_environment.output_env.get_summary_formatter()
+    drawer.draw(formatter, 0)
+
+else:
+    #old summary report starts here
+    #Should be removed when new summary report above will be adopted to all viewpoints.
+
+    import dicerhelpers1.qlibrary as qlibrary
+    import pythonhelpers1 as pythonhelpers
+    import dpihelpers1.output as dpi_output
+    import dpihelpers1.table_formatter as dpi_table_formatter
+    import dpihelpers1.environment as dpi_environment
+    import dpihelpers1.errors as dpi_error
+    import dpihelpers1.simple_table as simple_table
+    import dpihelpers1.table as dpi_table
+    import reporter2.cmd_checker as cmd_checker
+    import reporter2.output_env as output_env
+    import dpihelpers1.formatter as dpi_formatter
+
+    checker = cmd_checker.CmdChecker(environment)
+    checker.check_input_parameters(supported_options = checker.standart_options|set(['filter']))
+
+    viewpoint_msg_cat = reporter.translate("viewpoint")
+    templates_msg_cat = reporter.translate("templates")
+
+    #apply filters
+    filtering = qlibrary.Filtering(environment)
+    filtering.apply_default_filters()
+
+    summary_helpers = common.SummaryHelpers()
+
+    #------------------------------------
+    # Utils
+    #------------------------------------
+    def get_reduced_metric(environment, col, row="/RootGrouping"):
+        ttq = qlibrary.TableTreeQuery(environment, summary_helpers.wrap_query(col), summary_helpers.wrap_query(row))
+        tt = ttq.execute(qlibrary.tt_query_mode.QUERY_BOTTOM_UP | qlibrary.tt_query_mode.TABULAR_BOTTOM_UP)
+
+        if tt.rows.empty():
+           return None
+
+        first_row = None
+        for row in tt.rows:
+           first_row = row
+           break
+
+        item = None
+        for i, column in enumerate(tt.columns):
+            item = first_row.get_content(column)
+
+        return item
+
+    def get_average_metric(environment, column_by, row_by):
+        ttq = qlibrary.TableTreeQuery(environment, summary_helpers.wrap_query(column_by), summary_helpers.wrap_query(row_by))
+        tt = ttq.execute(qlibrary.tt_query_mode.QUERY_BOTTOM_UP | qlibrary.tt_query_mode.TABULAR_BOTTOM_UP)
+
+        total_time = 0.0
+        weighted_time = 0.0
+
+        try:
+           for row in tt.rows:
+               row_as_vector = []
+               for i, column in enumerate(tt.columns):
+                   row_as_vector.append(row.cell_value(column))
+
+               weighted_time += row_as_vector[0] * row_as_vector[1]
+               total_time += row_as_vector[1]
+
+           avg = 0.0
+           if total_time > 0.0:
+               avg = weighted_time / total_time
+
+        except:
+            avg = 0
+
+        return avg
+
+    #------------------------------------
+    # Data producers
+    #------------------------------------
+
+    class DataSummary:
+        def __init__(self):
+            self._display_name = ""
+
+        def get_display_name(self):
+            return self._display_name
+
+        def is_present(self, environment):
+            return False
+
+        def get_data(self, environment):
+            return 0.0
+
+    class ReducedMetric(DataSummary):
+        def __init__(self):
+            self._column_by = ""
+            self._row_by = "/RootGrouping"
+
+        def is_present(self, environment):
+            sc = qlibrary.SchemaChecker(environment)
+            return sc.check_query(summary_helpers.wrap_query(self._column_by))
+
+        def get_data(self, environment):
+            return get_reduced_metric(environment, self._column_by, self._row_by)
+
+
+    class AverageMetric(DataSummary):
+        def __init__(self):
+            self._column_by = ""
+            self._row_by = ""
+
+        def is_present(self, environment):
+            sc = qlibrary.SchemaChecker(environment)
+            return sc.check_query(summary_helpers.wrap_query(self._column_by) + summary_helpers.wrap_query(self._row_by))
+
+        def get_data(self, environment):
+            return get_average_metric(environment, self._column_by, self._row_by)
+
+    #------------------------------------
+    # Elapsed Time
+    #------------------------------------
+    class ElapsedTimeSummary(ReducedMetric):
+        def __init__(self):
+            ReducedMetric.__init__(self)
+            self._display_name = templates_msg_cat("%ElapsedTime") + ":"
+            self._column_by = "/TotalElapsedTime"
+
+    #------------------------------------
+    # Paused Time
+    #------------------------------------
+    class PausedTimeSummary(ReducedMetric):
+        def __init__(self):
+            ReducedMetric.__init__(self)
+            self._display_name = viewpoint_msg_cat("%PausedTime") + ":"
+            self._column_by = "/PausedTime"
+
+    #------------------------------------
+    # CPU Time
+    #------------------------------------
+    class CpuTimeSummary(ReducedMetric):
+        def __init__(self):
+            ReducedMetric.__init__(self)
+            self._display_name = templates_msg_cat("%CPUTime") + ":"
+            self._column_by = "/CPUTime"
+
+    #------------------------------------
+    # Wait Time
+    #------------------------------------
+    class WaitTimeSummary(ReducedMetric):
+        def __init__(self):
+            ReducedMetric.__init__(self)
+            self._display_name = templates_msg_cat("%WaitTime") + ":"
+            self._column_by = "/WaitTime"
+
+    #------------------------------------
+    # Average concurrency
+    #------------------------------------
+    class AverageConcurrencySummary(AverageMetric):
+        def __init__(self):
+            AverageMetric.__init__(self)
+            self._display_name = templates_msg_cat("%AverageConcurrency") + ":"
+            self._column_by = "/ConcurrencyElapsedTime"
+            self._row_by = "/Concurrency"
+
+    #------------------------------------
+    # CPU Usage
+    #------------------------------------
+    class CpuUsageSummary(AverageMetric):
+        def __init__(self):
+            AverageMetric.__init__(self)
+            self._display_name = templates_msg_cat("%AvgCPUUsage") + ":"
+            self._column_by = "/CpuUsageElapsedTime"
+            self._row_by = "/CPUUsage"
+
+    #------------------------------------
+    # CPI
+    #------------------------------------
+    class CPISummary(ReducedMetric):
+        def __init__(self):
+            ReducedMetric.__init__(self)
+            self._display_name = viewpoint_msg_cat("%CPI") + ":"
+            self._column_by = "/CPI"
+
+
+    def prepare_main_data_section(environment):
+        data_to_display = [
+            AverageConcurrencySummary(),
+            ElapsedTimeSummary(),
+            PausedTimeSummary(),
+            CpuTimeSummary(),
+            WaitTimeSummary(),
+            CpuUsageSummary(),
+            CPISummary(),
+        ]
+
+        columns = [simple_table.SimpleColumn.create_grouping("")]
+        if len(environment.data_input) > 1:
+            columns.append(simple_table.SimpleColumn.create_info("Difference"))
+            for result in environment.data_input:
+                result_info = qlibrary.ResultInfo(result)
+                columns.append(simple_table.SimpleColumn.create_info(result_info.get_display_name()))
+
+        else:
+            columns.append(simple_table.SimpleColumn.create_info(""))
+
+        creator = simple_table.TableTreeCreator(columns)
+        for d in data_to_display:
+            if d.is_present(environment):
+                row = [d.get_display_name()]
+
+                if len(environment.data_input) > 1:
+                    row.append("") #reserve place for diff
+
+                for i, result in enumerate(environment.data_input):
+                    temp_env = common.TempEnvironment(environment, i)
+                    row.append(d.get_data(temp_env))
+
+                if len(environment.data_input) > 1:
+                    row[1] = row[2] - row[3]
+
+                creator.add_row(1, row)
+        return creator.get()
+
+
+    #-----------------------------------
+    # Events summary columns
+    #-----------------------------------
+    core_events_summary_column_by = """
+    """
+
+    if common.is_context_value(environment, "isHybridCores", True):
+        core_events_summary_column_by += "<queryRef>/PMUEventCoreType</queryRef>"
+    core_events_summary_column_by += "<queryRef>/PMUEventCount</queryRef>"
+    core_events_summary_column_by += "<queryRef>/PMUSampleCount</queryRef>"
+
+    if len(environment.data_input) == 1:
+        #We have an issue with showing following metrics in diff. Current implementation of diff helper use info columns as key in mergeing
+        #Seems we should initialize diff helper somehow different.
+        #So add it only for single result mode
+        core_events_summary_column_by += "<queryRef>/PMUEventsPerSample</queryRef>"
+    core_events_summary_column_by += "<queryRef>/PMUEventIsPrecise</queryRef>"
+
+    #-----------------------------------
+    # Uncore Events summary columns
+    #-----------------------------------
+    uncore_events_summary_column_by = """
+        <queryRef>/UncoreEventCount</queryRef>
+    """
+
+    #-----------------------------------
+    # GPU Usage columns
+    #-----------------------------------
+    gpu_usage_column_by = """
+        <queryRef>/GPUDXTime</queryRef>
+    """
+
+    #------------------------------------
+    # Main
+    #------------------------------------
+
+    summary_helpers.print_vector_query(environment, templates_msg_cat('%GEMetrics'), 'GEMetricsSummary', 'GEMetricsChecker', ignore_empty=False)
+    summary_helpers.print_vector_query(environment, viewpoint_msg_cat('%ResultInfo'), 'ResultInfo')
+    summary_helpers.print_vector_query(environment, viewpoint_msg_cat('%CPU'), 'CPUInfo')
+    summary_helpers.print_vector_query(environment, templates_msg_cat('%TSXCyclesMetrics'), 'TSXCyclesMetrics', 'TSXCyclesMetricsChecker', ignore_empty=False)
+    summary_helpers.print_vector_query(environment, templates_msg_cat('%TSXAbortMetrics'), 'TSXAbortMetrics', 'TSXMetricsChecker', ignore_empty=False)
+    summary_helpers.print_vector_query(environment, templates_msg_cat('%TSXHotspotsMetrics'), 'TSXHotspotsMetrics', 'TSXHotspotsMetricsChecker', ignore_empty=False)
+
+    if not (common.is_context_value(environment, "gpuCounters", u"none") or \
+        common.is_context_value(environment, "gpuCounters", u"off")) or \
+        common.is_context_value(environment, "gpuUsage", True):
+            summary_helpers.print_vector_query(environment, viewpoint_msg_cat('%GPU'), "GPUAdapterInfo", ignore_empty=False)
+            if common.is_context_value(environment, "collectGpuOpenCl", True):
+                summary_helpers.print_vector_query(environment, viewpoint_msg_cat('%GPUOpenCLInfo'), "GPUOpenCLInfo", ignore_empty=False)
+
+    summary_helpers.print_title(templates_msg_cat('%Summary'))
+    utable = prepare_main_data_section(environment)
+    table_formatter = dpi_environment.output_env.get_table_formatter()
+    table_formatter.format_table(utable)
+
+    summary_helpers.print_events_summary(environment, summary_helpers.wrap_query("/SummaryBandwidth"), "/UncorePackage", templates_msg_cat("%AverageBandwidth"))
+
+    if not common.is_context_value(environment, "initialViewpoint", "%HotspotsByCPUUsageViewpointName"):
+        summary_helpers.print_events_summary(environment, core_events_summary_column_by, "/PMUEventTypeDistinct",templates_msg_cat('%EventSummary'))
+        summary_helpers.print_events_summary(environment, uncore_events_summary_column_by,"/UncoreEventType", templates_msg_cat('%UncoreEventSummary'))
+
+    if common.is_context_value(environment, "gpuUsage", True):
+        summary_helpers.print_events_summary(environment, gpu_usage_column_by, "/GPUNode", viewpoint_msg_cat('%GPUEnginesUsageTime'))

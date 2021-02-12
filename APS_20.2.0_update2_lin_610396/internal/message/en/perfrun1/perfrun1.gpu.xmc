@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.gpu" lang="en">
+        <msg name='gpu-config'>Specify types of GPU data to be collected. Possible values: preset1, preset2.</msg>
+        <msg name='gpu-debug'>Enable self-testing of the GPGPU profiling collector.</msg>
+        <msg name='gpu-counting'>Collect GPU data in the counting mode.</msg>
+        <msg name='%ConstructionFailed'>Cannot start collection of GPU events</msg>
+        <msg name='%StartCmdFailed'>Cannot start collection of GPU events</msg>
+        <msg name='%StopCmdFailed'>Cannot stop collection of GPU events</msg>
+        <msg name='%AttachCmdFailed'>Cannot start collection of GPU events</msg>
+        <msg name='%DetachCmdFailed'>Cannot stop collection of GPU events</msg>
+        <msg name='%PauseCmdFailed'>Cannot pause collection of GPU events</msg>
+        <msg name='%ResumeCmdFailed'>Cannot resume collection of GPU events</msg>
+        <msg name='%BadOptionValue'>`<arg name='%1'/>' option has an invalid value: `<arg name='%2'/>'.</msg>
+        <msg name='%NonUniversalCollectorUnsupportedEventMultiplexing'>Current hardware does not support GPU event multiplexing.</msg>
+    </catalog>
+</xmc>

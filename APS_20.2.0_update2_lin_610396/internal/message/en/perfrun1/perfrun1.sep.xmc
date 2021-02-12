@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.sep" lang="en">
+        <msg name='bts-count'>Specify the &lt;integer&gt; number of BTS records collected after each sample or context switch (VTSS++ only).</msg>
+        <msg name='cpu-list'>List supported CPUs.</msg>
+        <msg name='os-mode-only'>Enable sampling data collection for OS-mode processes only.</msg>
+        <msg name='user-mode-only'>Enable sampling data collection for user-mode processes only.</msg>
+        <msg name='BadUserOsOnlyMode'>Command line options user-mode-only and os-mode-only cannot be specified together.</msg>
+        <msg name='cpu-mask'>Specify which CPU(s) &lt;string&gt; to collect data on. For example, specify "2-8,10,12-14" to sample only CPUs 2 through 8, 10, and 12 through 14.</msg>
+        <msg name='event-config'>Perform data collection for the events with &lt;string&gt; configured using the format &lt;event name1&gt;":modifier1=val:modifier2=val/constraint1={:modifier3=val:modifier4=val}...,"&lt;event name2&gt;":... Specify the events(s) to monitor and embed the event names within double quotes("). [:modifier=val] specifies individual event modifiers along with the respective values for a given platform. Note that the modifiers can be generic to an event as well as specific to a constraint (or an event qualifier). The constraint specific special modifiers appear after [/constraint=]. The modifiers can be in decimal or hexadecimal format.  Only specific modifiers accept the value as a string. Each event specification is delimited by a comma (,). For a list of supported modifiers and constraints, refer to the documentation.</msg>
+        <msg name='uncore-event-config'>Perform uncore data collection in ebc count mode for the events with &lt;string&gt; configured using the format "&lt;event name1&gt;"...,"&lt;event name2&gt;":... Specify the events(s) to monitor and embed the event names within double quotes(").</msg>
+        <msg name='chipset-event-config'>Perform data collection for the chipset events with &lt;string&gt; configured using the format "&lt;event name1&gt;"...,"&lt;event name2&gt;":... Specify the events(s) to monitor and embed the event names within double quotes(").</msg>
+        <msg name='event-list'>List events for which a sampling data collection can be performed on this platform.</msg>
+        <msg name='uncore-event-list'>List uncore events for which a sampling data collection can be performed on this platform.</msg>
+        <msg name='event-mux-timeslice'>Specify the event multiplexing time slice value as &lt;integer&gt;. The time slice specifies the duration between cycles for each event multiplexing group. The default value is 50 milliseconds. This option is valid only for timer-based event multiplexing.</msg>
+        <msg name='event-mux-factor'>Specify the event multiplexing factor as &lt;integer&gt;. It controls the switching of event multiplexing groups. The default factor is 50. This option is valid only for trigger-based event multiplexing.</msg>
+        <msg name='event-mux-tfactor'>Specify the event multiplexing tfactor as &lt;integer&gt; to set the length of the interval between interrupts. The larger the tfactor value, the larger the period between interrupts. Currently this option is only available on Intel platforms codenamed Knights Corner.</msg>
+        <msg name='event-mux-trigger'>Specify the name of the trigger event for event multiplexing as &lt;string&gt;. This option is valid only for trigger-based event multiplexing. The default trigger is CPU_CLK_UNHALTED.CORE (or CPU_CLK_UNHALTED.THREAD).</msg>
+        <msg name='BadTimeSliceFactorOption'>The -event-mux-timeslice and -event-mux-factor or -event-mux-tfactor options cannot be specified together.</msg>
+        <msg name='BadTimeSliceTriggerOption'>The -event-mux-timeslice and -event-mux-trigger options cannot be specified together.</msg>
+        <msg name='CannotCreateTemporaryDirectory'>Cannot create temporary directory `<arg name='%1'/>' due to the following error: `<arg name='%2'/>'.</msg>
+        <msg name='SepErrorMessage'><arg name='%1'/></msg>
+        <msg name='nmi-watchdog-disable'>To enable hardware event-based sampling, PRODUCT_LEGAL_SHORT_NAME has disabled the NMI watchdog timer. The watchdog timer will be re-enabled after collection completes.</msg>
+        <msg name='platform-value-list'>Display details of supported platforms.</msg>
+        <msg name='count'>Enable counting mode.</msg>
+        <msg name='count-emon'>Enable counting mode and output the data in EMON format.</msg>
+        <msg name='BadMuxGroupConfig'>Cannot configure sampling event groups. The collection is terminated.<br/>Use -knob event-config=? to see the list of available events for the target.</msg>
+        <msg name='BadEventMuxCountOption'>Event counting is currently incompatible with event multiplexing.</msg>
+        <msg name='BadEventMuxTFactorOption'>--event-mux-tfactor must be between 0 and 15.</msg>
+        <msg name='event-value-list'>Display event information.</msg>
+        <msg name='event-based-counts'>Enable event-based counting mode. During sampling data collection, event counts data is collected for the list of events specified in -event-config option.</msg>
+        <msg name='sample-after-multiplier'>Specify the sample after multiplier as &lt;double&gt;. This multiplier modifies the sample after value for all the events specified in -event-config option. The values can range from 0.1 to 100.0.</msg>
+        <msg name='uncore-sampling-interval'>Specify the uncore sampling interval as &lt;integer&gt;. This value set the uncore sampling interval for all the uncore events specified in -event-config option.</msg>
+        <msg name='full-pebs-capture'>Capture full pebs information.</msg>
+        <msg name='last-branch-records'>Capture Last Branch Records information.</msg>
+        <msg name='stackwalk'>Specify stack unwinding method. Possible value: lbr - unwind stacks during collection.</msg>
+        <msg name='stackwalk_freebsd'>Specify stack unwinding method. Possible value: lbr - unwind stacks during collection; framepointer - unwind stacks using frame pointers whithout using debug information (FreeBSD only).</msg>
+        <msg name='target-list'>List available targets for performing sampling collection.</msg>
+        <msg name='target'>Specify target for the sampling data collection. All other command line options are applied to the value specified for this option.</msg>
+        <msg name='BadTarget'>Incorrect target value `<arg name='%1'/>' is specified for -target option.</msg>
+        <msg name='collector'>Specify a driver to be used for profiling session.</msg>
+        <msg name='pmu-type'>Specify the targeted PMU name as &lt;string&gt;.</msg>
+        <msg name='platform-type'>Specify the targeted platform number as &lt;number&gt;.</msg>
+        <msg name='modifier-list'>Specify the event name &lt;string&gt; for which the modifiers list is requested.</msg>
+        <msg name='pmu-list'>List supported PMUs.</msg>
+        <msg name='p-state-trigger'>Specify the name of the trigger event for P-state data as &lt;string&gt;. The default trigger is CPU_CLK_UNHALTED.REF_TSC.</msg>
+    </catalog>
+</xmc>

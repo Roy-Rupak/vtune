@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="analysis_type" lang="en">
+      <msg name='%PerfSnapshotWorkflowName'>PERFORMANCE SNAPSHOT</msg>
+      <msg name='%PerfSnapshotWorkflowDescription'>Want to characterize and identify relevant analysis types for your workload?</msg>
+      <msg name='%AlgorithmAnalysisWorkflowName'>ALGORITHM</msg>
+      <msg name='%AlgorithmAnalysisWorkflowDescription'>Want to find out where your application spends time and optimize your algorithms?</msg>
+      <msg name='%IOAnalysisWorkflowName'>I/O</msg>
+      <msg name='%IOAnalysisWorkflowDescription'>Want to see how efficiently your code is using I/O?</msg>
+      <msg name='%AcceleratorsAnalysisWorkflowName'>ACCELERATORS</msg>
+      <msg name='%AcceleratorsAnalysisWorkflowDescription'>Want to explore GPU/FPGA usage for your application?</msg>
+      <msg name='%HotspotsAnalysisWorkflowName'>Hotspots</msg>
+      <msg name='%HotspotsAnalysisWorkflowDescription'>Want to find out where your application spends time and optimize your algorithms?</msg>
+      <msg name='%MicroarchitectureAnalysisWorkflowName'>MICROARCHITECTURE</msg>
+      <msg name='%MicroarchitectureAnalysisWorkflowDescription'>Want to see how efficiently your code is using the underlying hardware?</msg>
+      <msg name='%ParallelismAnalysisWorkflowName'>PARALLELISM</msg>
+      <msg name='%ParallelismAnalysisWorkflowDescription'>Want to assess the compute efficiency of your multi-threaded application?</msg>
+      <msg name='%PlatformProfilingATypes'>PLATFORM ANALYSES</msg>
+      <msg name='%PlatformProfilingATypesDescription'>Want to explore CPU, GPU and power usage for your application/system?</msg>
+      <msg name='%ModemAnalysisWorkflowName'>Modem analysis</msg>
+      <msg name='%ModemAnalysisWorkflowDescription'>Want to explore modem usage?</msg>
+      <msg name='%OtherAnalysisWorkflowName'>OTHER ANALYSES</msg>
+      <msg name='%OtherAnalysisWorkflowDescription'>Want to profile applications using Intel Transactional Synchronization Extensions or run on systems with Intel Software Guard Extensions?</msg>
+      <msg name='%UTCustomAnalysisTypes'>CUSTOM ANALYSES</msg>
+      <msg name='%UTCustomAnalysisTypesDescription'>Want to configure collector options?</msg>
+      <msg name='%AlgorithmAnalysisWorkflowDescription'>&lt;div align='center'&gt;Select and run any of the algorithm analysis types to identify where your algorithm choices are affecting the performance of your application.&lt;/div&gt;</msg>
+      <msg name='%Core2AdvancedAnalysisTypes'>Intel Core 2 Processor Analysis</msg>
+      <msg name='%Core2AdvancedAnalysisTypesDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis types targeted for the Intel Core 2 processor family to understand where your application is not using hardware resources effectively.&lt;/div&gt;</msg>
+      <msg name='%Corei7AdvancedAnalysisTypes'>Nehalem / Westmere Analysis</msg>
+      <msg name='%Corei7AdvancedAnalysisTypesDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis types targeted for processors based on the Intel microarchitecture code name Nehalem / Westmere to understand where your application is not using hardware resources efficiently.&lt;/div&gt;</msg>
+      <msg name='%SNBAdvancedAnalysisTypes'>Sandy Bridge Analysis</msg>
+      <msg name='%SNBAdvancedAnalysisTypesDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis types targeted for processors based on the Intel microarchitecture code name Sandy Bridge to understand where your application is not using hardware resources efficiently.&lt;/div&gt;</msg>
+      <msg name='%HaswellAdvancedAnalysisTypes'>Haswell Analysis</msg>
+      <msg name='%HaswellAdvancedAnalysisTypesDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis types targeted for processors based on the Intel microarchitecture code name Haswell to understand where your application is not using hardware resources efficiently.&lt;/div&gt;</msg>
+      <msg name='%AtomAdvancedAnalysisTypes'>Intel Atom Processor Analysis</msg>
+      <msg name='%AtomAdvancedAnalysisTypesDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis type(s) targeted for Intel Atom processors to understand where your application is not using hardware resources efficiently.&lt;/div&gt;</msg>
+      <msg name='%PowerAnalysisTypes'>Energy Analysis</msg>
+      <msg name='%PowerAnalysisTypesDescription'>&lt;div align='center'&gt;For Energy Analysis on Linux, Android and Windows targets, &lt;a href='&lt;bag handlerId="client"&gt; &lt;data clientCommandId="open_help" helpId="intel.phe.configs.energyworkflow_f1165"/&gt; &lt;/bag&gt;'&gt;collect data using Intel SoC Watch&lt;/a&gt; then, &lt;br&gt; &lt;img src='collectdlg-import'/&gt; &lt;a href='&lt;bag handlerId="client"&gt;&lt;data clientCommandId="cmdid_Import"/&gt;&lt;/bag&gt;'&gt;Import Data&lt;/a&gt; to a PRODUCT_LEGAL_SHORT_NAME project, and view the results.&lt;/div&gt;</msg>
+      <msg name='%CPUSpecificWorkflowName'>CPU Specific Analysis</msg>
+      <msg name='%CPUSpecificDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis types for specific processors to understand where your application is not using hardware resources efficiently.&lt;/div&gt;</msg>
+      <msg name='%SoCAdvancedAnalysisTypes'>SoC Advanced Analysis</msg>
+      <msg name='%SoCAdvancedAnalysisTypesDescription'>&lt;div align='center'&gt;Select and run any of the advanced hardware-level analysis types to understand where your application is not using hardware resources efficiently.&lt;/div&gt;</msg>
+      <msg name='%ComputeIntensiveAnalysisWorkflowName'>Compute-Intensive Application Analysis</msg>
+      <msg name='%ComputeIntensiveAnalysisWorkflowDescription'>Select and run an analysis for compute-intensive or throughput applications to understand how efficiently they utilize hardware resources.</msg>
+      <msg name='%CpuGpuInteractionAtypeName'>GPU Offload (preview)</msg>
+      <msg name='%CpuGpuInteractionAtypeDescription'>Explore code execution on various CPU and GPU cores on your platform, estimate how your code benefits from offloading to the GPU, and identify whether your application is CPU or GPU bound.</msg>
+      <msg name='%GpuOffloadAtypeName'>GPU Offload (preview)</msg>
+      <msg name='%GpuOffloadAtypeDescription'>Explore code execution on various CPU and GPU cores on your platform, estimate how your code benefits from offloading to the GPU, and identify whether your application is CPU or GPU bound.</msg>
+      <msg name='%EnableHostSideStackCollection'>Collect CPU-side stacks</msg>
+      <msg name='%GpuProfilingExpHotspotsAtypeName'>GPU Compute/Media Hotspots (preview)</msg>
+      <msg name='%GpuProfilingExpHotspotsDescription'>Analyze the most time-consuming GPU kernels, characterize GPU usage based on GPU hardware metrics, identify performance issues caused by memory latency or inefficient kernel algorithms, and analyze GPU instruction frequency per certain instruction types.</msg>
+      <msg name='%GpuComputeMediaHotspotsAtypeName'>GPU Compute/Media Hotspots (preview)</msg>
+      <msg name='%GpuComputeMediaHotspotsDescription'>Analyze the most time-consuming GPU kernels, characterize GPU utilization based on GPU hardware metrics, identify performance issues caused by memory latency or inefficient kernel algorithms, and analyze GPU instruction frequency per certain instruction types.</msg>
+      <msg name='%GpuPerformanceInsights'>Show GPU performance insights</msg>
+      <msg name='%GpuPerformanceInsightsDescription'>Get additional performance insights such as the efficiency of hardware usage, and learn next steps. Note: this option collects Processor Graphics events.</msg>
+      <msg name='%GpuTraceProgrammingAPIs'>Trace GPU Programming APIs</msg>
+      <msg name='%EnableInterruptsCollection'>Analyze interrupts</msg>
+      <msg name='%EnableInterruptsCollectionDescription'>Collect interrupt events that alter a normal execution flow of a program. Such events can be generated by hardware devices or by CPUs. Use this data to identify slow interrupts that affect your code performance.</msg>
+    </catalog>
+</xmc>

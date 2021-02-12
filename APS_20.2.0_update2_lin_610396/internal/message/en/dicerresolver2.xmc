@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+	<catalog name="dicerresolver2" lang="en">
+		<msg name='%ProgressResolve'>Resolving module symbols</msg>
+		<msg name='%ProgressUnresolve'>Processing resolution information</msg>
+		<msg name='%ProgressResolveGlobal'>Processing global resolution information</msg>
+		<msg name='%ProgressUnresolveGlobal'>Removing global resolution information</msg>
+		<msg name='%ProgressResolveModule'>Resolving information for `<arg name='%module_name'/>'</msg>
+		<msg name='%ProgressUnresolveModule'>Removing resolution information for `<arg name='%module_name'/>'</msg>
+		<msg name='%ProgressResolveDangling'>Resolving information for dangling locations</msg>
+		<msg name='%ProgressUnresolveDangling'>Removing resolution information for dangling locations</msg>
+		<msg name='%ProgressResolveBottomUser'>Resolving bottom user stack information</msg>
+		<msg name='%ProgressResolveThreadName'>Resolving thread name information</msg>
+		<msg name='%ProgressResolveCStateObjName'>Resolving C-State timer information</msg>
+		<msg name='%ProgressResolveSyncObjectName'>Resolving sync object name information</msg>
+		<msg name='%ProgressResolveCallTargetName'>Resolving call target names for dynamic code</msg>
+		<msg name='%ProgressResolveInterruptName'>Resolving interrupt name information</msg>
+		<msg name='%DynamicCode'>[Outside any known module]</msg>
+		<msg name='%KernelDynamicCode'>[Kernel dynamic code]</msg>
+		<msg name='%UnknownFrames'>[Unknown stack frame(s)]</msg>
+		<msg name='%SkippedFrames'>[Skipped stack frame(s)]</msg>
+		<msg name='%GuessedFrames'>[Guessed stack frame(s)]</msg>
+		<msg name='%StitchedFrames'>[Stitch point frame]</msg>
+		<msg name='%ThreadTitle'>Thread</msg>
+		<msg name='%OutsideLoop'>[Outside any loop]</msg>
+		<msg name='%CannotLoadSymbols'>Cannot load symbols from `<arg name='%module_name'/>'. Make sure the file format is valid.</msg>
+		<msg name='%CannotLocateSymbolsForBinary'>Cannot locate debugging symbols for file `<arg name='%module_name'/>'.</msg>
+                <msg name='%CannotMatchFileWithChecksumMismatch'>Cannot match the module with the symbol file `<arg name='%1'/>'. Make sure to specify the correct path to the symbol file in the Binary/Symbol Search list of directories.</msg>
+                <msg name='%FailedToReadSymbolsFromKallsyms'>`<arg name='%1'/>' does not expose kernel pointers. Make sure /proc/sys/kernel/kptr_restrict value is 0. See the product documentation for more details.</msg>
+		<msg name='%FailedToReadDebugInfo'>Failed to read debug information from `<arg name='%1'/>'.</msg>
+		<msg name='%InvalidDotnetCorePdb'>`<arg name='%1'/>' is not a valid .NET Core symbol file.</msg>
+	</catalog>
+</xmc>

@@ -1,0 +1,5 @@
+MSR_INDEX	HELP_ID	NAME	DESCRIPTION	COUNTER_TYPE	HELP_FILE	MAX_COUNTER
+0x611	0x10001	UNC_PACKAGE_ENERGY_STATUS	Running counter of package energy	STATIC	pmn.chm	0xffffffffLL
+0x639	0x10001	UNC_PRIMARY_PLANE_ENERGY_STATUS	Running counter of IA core energy	STATIC	pmn.chm	0xffffffffLL
+0x641	0x10001	UNC_SECONDARY_PLANE_ENERGY_STATUS	Running counter of GT core energy	STATIC	pmn.chm	0xffffffffLL
+0x1B2	0x10001	UNC_PACKAGE_THERM_STATUS	Thermal Status for Digital thermometer	STATIC	pmn.chm	0x1ffffffLL

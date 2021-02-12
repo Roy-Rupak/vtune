@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="dbinterface1" lang="en">
+    <msg name='%TsxAbortInstruction'>Instruction</msg>
+    <msg name='%TsxAbortDataConflict'>Data Conflict</msg>
+    <msg name='%TsxAbortCapacity'>Capacity</msg>
+    <msg name='%TsxAbortOther'>Other</msg>
+    <msg name='%TransferComputingTaskPurpose'>Transfer</msg>
+    <msg name='%ComputeComputingTaskPurpose'>Compute</msg>
+    <msg name='%RenderComputingTaskPurpose'>Render</msg>
+    <msg name='%SynchronizationComputingTaskPurpose'>Synchronization</msg>
+    <msg name='%GPUWaitDomainName'>GPU Wait</msg>
+    <msg name='%GPUComputeSVMUsageNone'></msg>
+    <msg name='%GPUComputeSVMUsageCoarseBuffer'>Coarse-Grained Buffer</msg>
+    <msg name='%GPUComputeSVMUsageFineBuffer'>Fine-Grained Buffer</msg>
+    <msg name='%GPUComputeSVMUsageFineSystem'>Fine-Grained System</msg>
+    <msg name='%Ready'>Ready</msg>
+    <msg name='%Running'>Running</msg>
+    <msg name='%Suspended'>Suspended</msg>
+    <msg name='%LoadingDataFiles'>Loading data files</msg>
+    <msg name='%Yield'>Synchronization</msg>
+    <msg name='%Preempted'>Preemption</msg>
+    <msg name='%Iowait'>I/O Wait</msg>
+    <msg name='%Active'>Active</msg>
+    <msg name='%Peel'>Peel</msg>
+    <msg name='%Body'>Body</msg>
+    <msg name='%Remainder'>Remainder</msg>
+    <msg name='%Regular'>&#32;</msg>
+    <msg name='%Undefined'>&#32;</msg>
+    <msg name='%Scalar'>Scalar</msg>
+    <msg name='%Vector'>Vectorized</msg>
+    <msg name='%Execution'>Execution</msg>
+    <msg name='%GPUInstructionControlFlow'>Control Flow</msg>
+    <msg name='%GPUInstructionSend'>Send</msg>
+    <msg name='%GPUInstructionSync'>Synchronization</msg>
+    <msg name='%GPUInstructionInt16AndHP'>Int16 &amp; HP Float</msg>
+    <msg name='%GPUInstructionInt32AndSP'>Int32 &amp; SP Float</msg>
+    <msg name='%GPUInstructionInt64AndDP'>Int64 &amp; DP Float</msg>
+    <msg name='%GPUInstructionOther'>Other</msg>
+  </catalog>
+</xmc>

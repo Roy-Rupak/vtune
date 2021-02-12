@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Get Started with Application Performance Snapshot - Linux* OS"/>
+<meta name="prodname" content="Application Performance Snapshot"/>
+<meta name="version" content="2020"/>
+<meta name="series" content=""/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="get_started_with_aps"/>
+<meta name="DC.Language" content="en-US"/>
+<link rel="stylesheet" type="text/css" href="resources/intel_gsp_styles.css"/>
+<title>Get Started with Application Performance Snapshot - Linux* OS</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1"/>
+
+</head>
+<body class="titlepage" id="get_started_with_aps"><a name="get_started_with_aps"><!-- --></a>
+
+
+<div id="banner">
+<div id="bannerblock">
+<img src="resources/intel_logo.png" class="intellogo" alt="Intel logo"/>
+<!--No product image to be included-->
+<h1 class="title">Get Started with Application Performance Snapshot - 
+	 Linux* OS</h1>
+</div>
+</div>
+<div id="contentblock">
+<div id="mainmenu"><h3>Contents</h3><p><a class="mainmenulinks" href="#GUID-C81D3756-A820-4396-9623-3744EA01F5E7"/></p>
+<p><a class="mainmenulinks" href="#GUID-9ACEF65A-8746-45D1-B1E1-890737B66ABD">Prerequisites</a></p>
+<p><a class="mainmenulinks" href="#GUID-60971A4A-D94C-47F1-8E20-B8D51AE8E0A7">Analyzing Shared Memory Applications</a></p>
+<p><a class="mainmenulinks" href="#GUID-263285D4-EA1F-471F-A984-510370E59C52">Analyzing MPI Applications</a></p>
+<p><a class="mainmenulinks" href="#NEXTSTEP">Next Steps</a></p>
+<p><a class="mainmenulinks" href="#GUID-AD66B355-700A-44A8-8D2E-6D49A76659A2">Quick Metrics Reference</a></p>
+<p><a class="mainmenulinks" href="#GUID-AEF78C73-3820-4FDC-B5D2-2A0B582B4E33">Documentation and Resources</a></p>
+<p><a class="mainmenulinks" href="#GUID-DB4ECD02-FA94-4FA2-B102-E12494510971"> Legal Information</a></p>
+</div>
+<div id="GUID-C81D3756-A820-4396-9623-3744EA01F5E7"><p> Use Application Performance Snapshot for a quick view into a shared memory 
+		  <span> or MPI</span> application's use of available hardware (CPU, FPU, and Memory). Application Performance Snapshot analyzes the time your application spends on 
+		  <span>MPI, MPI and 
+		  </span>OpenMP* imbalance, memory access efficiency, 
+		  FPU usage<span>, and I/O and memory footprint</span>. After analysis, it displays basic performance enhancement opportunities for systems using Intel® platforms. Use this tool as a first step in application performance analysis to get a simple snapshot of key optimization areas and learn about profiling tools that specialize in particular aspects of application performance. 
+		</p>
+<p>Application Performance Snapshot is available as a free product download from the Intel® Developer Zone (<a href="https://software.intel.com/performance-snapshot" target="_blank">https://software.intel.com/performance-snapshot</a>). It is also available pre-installed as these products: 
+		</p>
+<ul id="GUID-5553CA53-4AAE-4A92-A36B-B1940ACF15B1"><li id="LI_51D40E11945744E79A201B5C41BD9EBC"><p><span id="PRODUCT_NAME"><a name="PRODUCT_NAME"><!-- --></a>
+Intel® VTune™ 
+				  <span> Profiler</span></span></p>
+</li>
+<li id="LI_D9A1784BF66348379EC5DFB0D49CF7D2"><p>Intel® Parallel Studio 
+			 </p>
+</li>
+<li id="LI_EA2F86710038488693539C63DEEEE402"><p>Intel® oneAPI Base Toolkit (Beta) 
+			 </p>
+</li>
+<li id="LI_464F4442F02045C58E5F6738A13A2301"><p>Intel® System Bring-up Toolkit (Beta) 
+			 </p>
+</li>
+</ul>
+<p/>
+<p><a name="IMAGE_90394A56913F42A49BA97B9907720F5B"><!-- --></a>
+<img id="IMAGE_90394A56913F42A49BA97B9907720F5B" src="GUID-DC7D6BB3-174D-408C-B778-712EA61F3D9E-low.png"/></p>
+</div>
+<div id="GUID-9ACEF65A-8746-45D1-B1E1-890737B66ABD">
+<h2><a name="GUID-9ACEF65A-8746-45D1-B1E1-890737B66ABD"><!-- --></a>Prerequisites</h2>
+<p>(Optional) Use the following software to get an advanced metric set when running Application Performance Snapshot: 
+		</p>
+<ul id="UL_CBA4E45E5B0842F2A9D7CE776B36C08B"><li id="LI_934B12F00136486B9A9FD8C53987CBD6"><p>Recommended compilers: Intel® C/C++ or Fortran Compiler (other compilers can be used, but information about OpenMP* imbalance is only available from the Intel OpenMP library) 
+			 </p>
+</li>
+<li id="LI_E77AEE40EA604729A0AC4DB4A3CFEB8B"><p>Intel® MPI library version 2017 or later. Other MPICH-based MPI implementations can be used, but information about MPI imbalance is only available from the Intel MPI library. 
+			 </p>
+</li>
+</ul>
+<p>(Optional) Enable system-wide monitoring to reduce collection overhead and collect memory bandwidth measurements. Use one of these options to enable system-wide monitoring: 
+		</p>
+<ul id="GUID-C3E2C73E-890D-4600-8ED1-2E59539CE923"><li id="LI_FB6B1561A9844C1FB215A60DAF550440"><p>Set the 
+				<samp class="codeph">/proc/sys/kernel/perf_event_paranoid</samp> value to 0 (or less), or 
+			 </p>
+</li>
+<li id="LI_2391CEC3A9B54B55B835787A373939CE"><p>Install the 
+				Intel® VTune™ 
+		   Profiler drivers. Driver sources are available in 
+				<samp class="codeph">&lt;APS_install_dir&gt;/internal/sepdk/src</samp>. Installation instructions are available online at 
+				<a href="https://software.intel.com/en-us/vtune-help-building-and-installing-the-sampling-drivers-for-linux-targets" target="_blank">https://software.intel.com/en-us/vtune-help-building-and-installing-the-sampling-drivers-for-linux-targets</a>. 
+			 </p>
+<div class="Note"><span class="notetitle">Note:</span> <p>The Intel® Omni-Path Fabric (Intel® OP Fabric) metrics are only available with the 
+				  Intel® VTune™ 
+		   Profiler drivers installed. 
+				</p>
+</div>
+</li>
+</ul>
+<p>Before running the tool, you need to set up your environment: 
+		</p>
+<a name="GUID-953A0610-3BEC-4B13-AE67-AA2888A87495"><!-- --></a>
+<ol id="GUID-953A0610-3BEC-4B13-AE67-AA2888A87495"><li id="LI_6D655510F9074DD79495F12FCDF61BDB"><p>Open a command prompt. 
+			 </p>
+</li>
+<li id="LI_969A4FC539904A1BA9994FAB367D9AF3"><p>Set the appropriate environment variables to run the tool. 
+			 </p>
+<p>Run 
+				<span class="filepath"><var>&lt;install-dir&gt;</var>/apsvars.sh</span>, where 
+				<var>&lt;install-dir&gt;</var> is the location where Application Performance Snapshot is installed either as a standalone package or part of Intel® Parallel Studio or . 
+			 </p>
+<p>Example: 
+			 </p>
+<pre><code class="language-plain">$ source /opt/intel/performance_snapshots/apsvars.sh</code></pre></li>
+</ol>
+</div>
+<div id="GUID-60971A4A-D94C-47F1-8E20-B8D51AE8E0A7">
+<h2><a name="GUID-60971A4A-D94C-47F1-8E20-B8D51AE8E0A7"><!-- --></a>Analyzing Shared Memory Applications</h2>
+<p><a name="IMAGE_543704744BFC4CFBB2618B5EB73DF7A2"><!-- --></a>
+<img id="IMAGE_543704744BFC4CFBB2618B5EB73DF7A2" src="GUID-98E2E05B-ABA4-4973-883A-5A2B008DA99A-low.png"/></p>
+<a name="GUID-B1DE0E71-7620-4323-B866-835EE94F491B"><!-- --></a>
+<ol id="GUID-B1DE0E71-7620-4323-B866-835EE94F491B"><li id="LI_9F6BC85ECE3945398EB32306412A0DA0"><p>Run the following command: 
+			 </p>
+<p><samp class="codeph">$ aps 
+				  <var>&lt;my app&gt; &lt;app parameters&gt;</var></samp></p>
+<p>where 
+				<var>&lt;my app&gt;</var> is the location of your application and 
+				<var>&lt;app parameters&gt;</var> are your application parameters. 
+			 </p>
+<p> Application Performance Snapshot launches the application and runs the data collection. 
+			 </p>
+</li>
+<li id="LI_427CBE00E4B6489EB1B952EACE287AFE"><p>After the analysis completes, a report appears in the command window. You can also open a HTML report with the same information in a supported browser. The path to the HTML report is included in the command window. 
+				<span>For example, 
+				</span></p>
+<span><samp class="codeph">$ firefox aps_result_01012017_1234.html</samp></span></li>
+<li id="LI_426DBBD4421549029BD2384F8A10731E"><p>Analyze the data shown in the report. See the metric descriptions below or hover over a metric in the HTML report for more information. 
+			 </p>
+</li>
+<li id="LI_375D2BC8DE654E98B6FBA881DC4E7477"><p>Determine appropriate next steps based on result analysis. Common next steps may include application tuning or using another performance analysis tool for more detailed information, such as 
+				Intel® VTune™ 
+		   Profiler or Intel® Advisor. 
+			 </p>
+</li>
+</ol>
+</div>
+<div id="GUID-263285D4-EA1F-471F-A984-510370E59C52">
+<h2><a name="GUID-263285D4-EA1F-471F-A984-510370E59C52"><!-- --></a>Analyzing MPI Applications</h2>
+<p><a name="IMAGE_188855C2809D47029F0982D416BF4EAD"><!-- --></a>
+<img id="IMAGE_188855C2809D47029F0982D416BF4EAD" src="GUID-F8F764F8-1C29-41A3-872E-CF3DE79D999E-low.png"/></p>
+<a name="GUID-CB22D517-2DC4-4C6C-B71B-ECCF42ABCD6E"><!-- --></a>
+<ol id="GUID-CB22D517-2DC4-4C6C-B71B-ECCF42ABCD6E"><li id="LI_B77A4DE3451349899BEF506894175E7C"><p>Run the following command to collect data about your MPI application: 
+				<samp class="codeph">$ 
+				  <var>&lt;mpi launcher&gt; &lt;mpi parameters&gt; 
+				  </var> aps 
+				  <var>&lt;my app&gt; &lt;app parameters&gt;</var></samp></p>
+<p>where: 
+			 </p>
+<ul id="UL_D41DEC105E3D4472905D0571DC701B07"><li id="LI_1EF0A7E6798B40AE9EC63D834B6188FC"><p><var>&lt;mpi launcher&gt;</var> is an MPI job launcher such as mpirun, srun, or aprun. 
+				  </p>
+</li>
+<li id="LI_D5224DCEF1AE46209B0B77F8FE0D1E6D"><p><var>&lt;mpi parameters&gt;</var> are the MPI launcher parameters. 
+				  </p>
+<div class="Note"><span class="notetitle">Note:</span> <p><samp class="codeph">aps</samp> must be the last 
+						<var>&lt;mpi launcher&gt;</var> parameter. 
+					 </p>
+</div>
+</li>
+<li id="LI_AAC9C04D1DBE4BF09F0CC76E8C2B1D45"><p><var>&lt;my app&gt;</var> is the location of your application. 
+				  </p>
+</li>
+<li id="LI_E172D0B0A3174822A2987BCE40D9A439"><p><var>&lt;app parameters&gt;</var> are your application parameters. 
+				  </p>
+</li>
+</ul>
+<p>Application Performance Snapshot launches the application and runs the data collection. After the analysis completes, a 
+				<samp class="codeph">aps_result_<var>&lt;date&gt;</var></samp> directory is created. 
+			 </p>
+</li>
+<li id="LI_BD80E5341C2D42E984106B976E406E99"><p>Run the following command to complete the analysis: 
+				<samp class="codeph">$ aps --report=aps_result_<var>&lt;date&gt;</var></samp></p>
+<p>After the analysis completes, a report appears in the command window. You can also open a HTML report with the same information in a supported browser. 
+			 </p>
+</li>
+<li id="LI_9D87D91589094EDC85C1ABE72DD0F616"><p>Analyze the data shown in the report. See the metric descriptions below or hover over a metric in the HTML report for more information. 
+			 </p>
+<div class="Note"><span class="notetitle">Tip:</span> <p>If your application is MPI-bound, run the following command to get more details about message passing such as message sizes, data transfers between ranks or nodes, and time in collective operations: 
+				</p>
+<p><samp class="codeph">$ aps-report 
+					 <var>&lt;option&gt;</var> app_result_<var>&lt;date&gt;</var></samp></p>
+<p>For example, to generate a graphic representation of rank-to-rank communication, use: 
+				  <samp class="codeph">$ aps-report -x --format=html 
+					 <var>&lt;result name&gt;</var></samp></p>
+<p><a name="IMAGE_34F96FB5F4AC4B6EAADDB59C0CC1FE19"><!-- --></a>
+<img id="IMAGE_34F96FB5F4AC4B6EAADDB59C0CC1FE19" src="GUID-9221A639-8046-4EAD-9B63-5D4BD390312A-low.png"/></p>
+<p>Use 
+				  <samp class="codeph">$ aps-report --help</samp> to see the available options. 
+				</p>
+</div>
+</li>
+<li id="LI_1018037A4B264B8F8BB5B28DED97BA71"><p> Determine appropriate next steps based on result analysis. Common next steps may include communication tuning with the 
+				<samp class="codeph">mpitune</samp> utility or using another performance analysis tool for more detailed information, such as Intel® Trace Analyzer and Collector or 
+				Intel® VTune™ 
+		   Profiler. 
+			 </p>
+</li>
+</ol>
+</div>
+<div id="NEXTSTEP">
+<h2><a name="NEXTSTEP"><!-- --></a>Next Steps</h2>
+<p><a name="IMAGE_D00666C10B384D608CA2B2B5B60913F0"><!-- --></a>
+<img id="IMAGE_D00666C10B384D608CA2B2B5B60913F0" src="GUID-56C80296-921B-4E7C-9FD2-8BDF5F5DE5A1-low.png"/></p>
+<ul id="GUID-7AD96344-6447-4F3C-BED6-CB9314DB4CC0"><li id="LI_2AD68CF734EE429280382095ECDBF9C5"><p>Improve accuracy and limit collected data by running Application Performance Snapshot using the pause/resume functionality or a selective collection. For instance, begin the application paused using the 
+				<samp class="codeph">-start-paused</samp> option and add 
+				<samp class="codeph">_itt_resume()</samp> or 
+				<samp class="codeph">MPI_Pcontrol(1)</samp> to your application after a warmup phase. See the 
+				<a href="https://software.intel.com/en-us/application-snapshot-user-guide" target="_blank">Application Performance Snapshot User's Guide</a> for more information. 
+			 </p>
+</li>
+<li id="LI_F36E9658AAD7425C8B0124E3CC5BC21C"><p><strong><a href="https://software.intel.com/en-us/intel-trace-analyzer" target="_blank">Intel Trace Analyzer and Collector</a></strong>: Graphical tool for understanding MPI application behavior, quickly identifying bottlenecks, improving correctness, and achieving high performance for parallel cluster applications running on Intel architecture. Improve weak and strong scaling for applications.<a href="https://software.intel.com/en-us/get-started-with-itac-for-linux" target="_blank"> Get started</a>. 
+			 </p>
+</li>
+<li id="LI_7D4BE414FBCD43C0960DAF076F328536"><p><strong><a href="https://software.intel.com/en-us/intel-vtune-amplifier-xe" target="_blank">Intel VTune Profiler</a></strong>: Provides a deep insight into a node-level performance including algorithmic hotspot analysis, OpenMP* threading, general exploration microarchitecture analysis, memory access efficiency, and more. It supports C/C++, Fortran, Java*, Python*, and profiling in containers. 
+				<a href="https://software.intel.com/en-us/get-started-with-vtune-linux-os" target="_blank">Get started</a>. 
+			 </p>
+</li>
+<li id="LI_8830F194C3504E26A305438C362ACBAA"><p><strong><a href="https://software.intel.com/en-us/intel-advisor-xe" target="_blank">Intel Advisor</a></strong>: Provides two tools to help ensure your Fortran, C, and C++ applications realize full performance potential on modern processors. 
+				<a href="https://software.intel.com/en-us/get-started-with-advisor" target="_blank">Get started</a>. 
+			 </p>
+<ul id="GUID-CBF91383-88BE-4F53-A690-0F1BBEF1B08D"><li id="LI_122C099E38684C97902DECA0564AD681"><p>Vectorization Advisor: Optimization tool to identify loops that will benefit most from vectorization, analyze what is blocking effective vectorization, and forecast the benefit of alternative data reorganizations. 
+				  </p>
+</li>
+<li id="LI_B6363E92886D4D719029B9B98C535773"><p>Threading Advisor: Threading design and prototyping tool to analyze, design, tune, and check threading design options without disrupting a regular environment. 
+				  </p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="GUID-AD66B355-700A-44A8-8D2E-6D49A76659A2">
+<h2><a name="GUID-AD66B355-700A-44A8-8D2E-6D49A76659A2"><!-- --></a>Quick Metrics Reference</h2>
+<p>The following metrics are collected with Application Performance Snapshot. Additional detail about each of these metrics is available in the 
+		  <a href="https://software.intel.com/en-us/vtune-amplifier-help-cpu-metrics-reference" target="_blank">Intel VTune Profiler online help</a>. 
+		</p>
+<p><strong>Elapsed Time</strong>: Execution time of specified application in seconds. Execution time does not include any time the collection was paused. 
+		</p>
+<p><strong>SP GFLOPS</strong>: Number of single precision giga-floating point operations calculated per second. All double operations are converted to two single operations. SP GFLOPS metrics are only available for 3rd Generation Intel® Core™ processors, 5th Generation Intel processors, and 6th Generation Intel processors. 
+		</p>
+<p><strong>Cycles per Instruction Retired (CPI)</strong>: The amount of time each executed instruction took measured by cycles. A CPI of 1 is considered acceptable for high performance computing (HPC) applications, but different application domains will have varied expected values. The CPI value tends to be greater when there is long-latency memory, floating-point, or SIMD operations, non-retired instructions due to branch mispredictions, or instruction starvation at the front end. 
+		</p>
+<p><strong>MPI Time</strong>: Average time per process spent in MPI calls. This metric does not include the time spent in 
+		  <samp class="codeph"> MPI_Finalize</samp>. High values could be caused by high wait times inside the library, active communications, or sub-optimal settings of the MPI library. The metric is available for MPICH-based MPIs. 
+		</p>
+<p><strong>MPI Imbalance</strong>: CPU time spent by ranks spinning in waits on communication operations. A high value can be caused by application workload imbalance between ranks, or non-optimal communication schema or MPI library settings. This metric is available only for Intel® MPI Library version 2017 and later. 
+		</p>
+<p><strong>OpenMP Imbalance</strong>: Percentage of elapsed time that your application wastes at OpenMP* synchronization barriers because of load imbalance. This metric is only available for Intel® OpenMP* Runtime Library. 
+		</p>
+<p><strong>Intel Omni-Path Fabric Interconnect Bandwidth and Packet Rate</strong>: Average interconnect bandwidth and packet rate per compute node, broken down by outgoing and incoming values. High values close to the interconnect limit might lead to higher latency network communications. The interconnect metrics are available for Intel Omni-Path Fabric when the 
+		  Intel® VTune™ 
+		   Profiler driver is installed. 
+		</p>
+<p><strong>CPU Utilization</strong>: Estimate of the utilization of all logical CPU cores on the system by your application. Use this metric to help evaluate the parallel efficiency of your application. A utilization of 100% means that your application keeps all of the logical CPU cores busy for the entire time that it runs. Note that the metric does not distinguish between useful application work and the time that is spent in parallel runtimes. 
+		</p>
+<p><strong>Memory Stalls</strong>: Indicates how memory subsystem issues affect application performance. This metric measures a fraction of slots where pipeline could be stalled due to demand load or store instructions. If the metric value is high, review the Cache and DRAM Stalls and the percent of remote accesses metrics to understand the nature of memory-related performance bottlenecks. If the average memory bandwidth numbers are close to the system bandwidth limit, optimization techniques for memory bound applications may be required to avoid memory stalls. 
+		</p>
+<p><strong>FPU Utilization</strong>: The effective FPU usage while the application was running. Use the FPU Utilization value to evaluate the vector efficiency of your application. The value is calculated by estimating the percentage of operations that are performed by the FPU. A value of 100% means that the FPU is fully loaded. Any value under 50% requires additional analysis. FPU metrics are only available for 3rd Generation Intel Core processors, 5th Generation Intel processors, and 6th Generation Intel processors. 
+		</p>
+<p><strong>I/O Operations</strong>: The time spent by the application while reading data from the disk or writing data to the disk. 
+		  <strong>Read</strong> and 
+		  <strong>Write</strong> values denote mean and maximum amounts of data read and written during the elapsed time. This metric is only available for MPI applications. 
+		</p>
+<p><strong>Memory Footprint</strong>: Average per-rank and per-node consumption of both virtual and resident memory. 
+		</p>
+</div>
+<div id="GUID-AEF78C73-3820-4FDC-B5D2-2A0B582B4E33">
+<h2><a name="GUID-AEF78C73-3820-4FDC-B5D2-2A0B582B4E33"><!-- --></a>Documentation and Resources</h2>
+
+<div class="tablenoborder"><a name="GUID-734FB752-8D27-4CB6-B0B5-00F20D96C31F"><!-- --></a>
+<table cellpadding="4" summary="" id="GUID-734FB752-8D27-4CB6-B0B5-00F20D96C31F" frame="border" border="1" cellspacing="0" rules="all"><thead align="left"><tr><th class="cellrowborder" valign="top" width="33.78378378378378%" id="d29e421"><p>Resource 
+					 </p>
+</th>
+<th class="cellrowborder" valign="top" width="66.21621621621621%" id="d29e424"><p>Description 
+					 </p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="33.78378378378378%" headers="d29e421 "><p><a href="https://software.intel.com/en-us/forums/intel-performance-snapshot" target="_blank">Intel Performance Snapshot User Forum</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="66.21621621621621%" headers="d29e424 "><p>User forum dedicated to all Intel Performance Snapshot tools, including Application Performance Snapshot. 
+					 </p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.78378378378378%" headers="d29e421 "><p><a href="https://software.intel.com/sites/products/snapshots/application-snapshot/" target="_blank">Application Performance Snapshot</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="66.21621621621621%" headers="d29e424 "><p>Application Performance Snapshot product page. See this page for support and online documentation. 
+					 </p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="33.78378378378378%" headers="d29e421 "><p><a href="https://software.intel.com/en-us/application-snapshot-user-guide" target="_blank">Application Performance Snapshot User's Guide</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="66.21621621621621%" headers="d29e424 "><p>Learn more about Application Performance Snapshot, including details on specific metrics and best practices for application optimization. 
+					 </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="GUID-DB4ECD02-FA94-4FA2-B102-E12494510971">
+<h2><a name="GUID-DB4ECD02-FA94-4FA2-B102-E12494510971"><!-- --></a> Legal Information</h2>
+<p>Intel, the Intel logo, Intel Atom, Intel Core, Intel Xeon Phi, VTune and Xeon are trademarks of Intel Corporation in the U.S. and/or other countries. 
+    </p>
+<p>*Other names and brands may be claimed as the property of others. 
+    </p>
+<p> Microsoft, Windows, and the Windows logo are trademarks, or registered trademarks of Microsoft Corporation in the United States and/or other countries. 
+    </p>
+<p><strong>Copyright 2016-2019 Intel Corporation 
+		  </strong></p>
+<p> This software and the related documents are Intel copyrighted materials, and your use of them is governed by the express license under which they were provided to you (<strong>License</strong>). Unless the License provides otherwise, you may not use, modify, copy, publish, distribute, disclose or transmit this software or the related documents without Intel's prior written permission. 
+    </p>
+<p> This software and the related documents are provided as is, with no express or implied warranties, other than those that are expressly stated in the License. 
+    </p>
+</div>
+</div>
+
+</body>
+</html>

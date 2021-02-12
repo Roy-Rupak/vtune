@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="dicerengine2" lang="en">
+        <msg name='%ResultOpenInReadOnlyMode'>Opening `<arg name='%1'/>' in read-only mode.</msg>
+        <msg name='%ResultDirMissingMarkerFile'>Cannot find marker file in the result directory `<arg name='%1'/>'.</msg>
+        <msg name='%SkippingUnknownResolutionType'>Resolution type `<arg name='%1'/>' is unknown and will be skipped.</msg>
+        <msg name='%InvalidBinarySymbolFile'>Symbol file is not valid.</msg>
+        <msg name='%SkippingReadOnlyResultResultDuringArchiving'>Archiving the read-only result `<arg name='%1'/>' was skipped.</msg>
+        <msg name='%NoGrouperKeysFound'>Cannot find data to precompute. Skipping the precomputation step.</msg>
+        <msg name='%CannotOpenDatabase'>Cannot open result database `<arg name='%1'/>'.</msg>
+        <msg name='%CannotUpgradeDatabaseSchema'>Cannot upgrade database schema.</msg>
+        <msg name='%NonUpgradableDatabaseSchema'>Database schema is not upgradable.</msg>
+        <msg name='%CannotRefinalizeResultWithoutRawData'>Cannot re-finalize the result: it has no raw collector data.</msg>
+        <msg name='%CannotCreateDatabase'>Cannot create result database `<arg name='%1'/>'.</msg>
+        <msg name='%CorruptedDatabase'>Result database is corrupted `<arg name='%1'/>'. Try to re-finalize the result.</msg>
+        <msg name='%InternalDatabaseError'>Internal database error: `<arg name='%1'/>'. Try to re-finalize the result.</msg>
+        <msg name='%CannotCheckpointDatabase'>Cannot save result database `<arg name='%1'/>'.</msg>
+        <msg name='%CannotLoadDataFile'>Cannot load data file `<arg name='%1'/>' (<arg name='%2'/>).</msg>
+        <msg name='%DataFileLoadedWithWarnings'>Data file was loaded with warnings `<arg name='%1'/>' (<arg name='%2'/>)</msg>
+        <msg name='%CannotOpenNonFinalizedReadOnlyResult'>Cannot open non-finalized result directory in read-only mode.</msg>
+        <msg name='%FileMappingIsNotSupported'>The result cannot be finalized in the file system that does not support file memory mapping. You can copy the result to a file system with file memory mapping support and use "PRODUCT_CL_TOOL_NAME -finalize -r &lt;result_directory&gt;" to proceed with finalization, or re-run the analysis using the "-r" option to specify the result directory on a file system with file memory mapping support.</msg>
+        <msg name='%CannotUnfinalizeReadOnlyResult'>Cannot re-finalize a read-only result.</msg>
+        <msg name='%CannotArchiveFileWithChecksumMismatch'>Cannot archive file `<arg name='%1'/>': checksum mismatch.</msg>
+        <msg name='%CannotMatchFileWithChecksumMismatch'>Cannot match the module with the symbol file `<arg name='%1'/>': checksum is different. Make sure to specify the correct path to the symbol file in the Binary/Symbol Search list of directories.</msg>
+        <msg name='%CannotArchiveUnreadableBinaryFile'>The binary `<arg name='%1'/>' does not exist or does not have read permissions.</msg>
+        <msg name='%CannotArchiveUnreadableSymbolFile'>The symbol file `<arg name='%1'/>' does not exist or does not have read permissions.</msg>
+        <msg name='%CannotArchiveSymbolFileWithBinaryMismatch'>Cannot archive file `<arg name='%1'/>': mismatch with <arg name='%2'/>.</msg>
+        <msg name='%FilesystemProblemsWhenArchivingFile'>Cannot archive result file `<arg name='%1'/>'. Make sure you have enough disk space.</msg>
+        <msg name='%UnknownAttributionModeFallingBackToDefault'>Call stack mode `<arg name='%1'/>' does not exist. Resetting to default `<arg name='%2'/> mode.</msg>
+        <msg name='%InvalidColorReference'>Invalid color string/reference: `<arg name='%1'/>'. Check configuration file content.</msg>
+        <msg name='%InvalidPatternReference'>Invalid pattern string/reference: `<arg name='%1'/>'. Check configuration file content.</msg>
+        <msg name='%InvalidColorRingId'>Invalid color ring ID: `<arg name='%1'/>'. Check configuration file content.</msg>
+        <msg name='%CannotLocateBinaryFile'>Cannot locate file `<arg name='%1'/>'.</msg>
+        <msg name='%CannotLocateSymbolsForBinary'>Cannot locate debugging information for file `<arg name='%1'/>'.</msg>
+        <msg name='%CannotLocateDebugInfoForLinuxKernel'>Cannot locate debugging information for the Linux kernel. Source-level analysis will not be possible. Function-level analysis will be limited to kernel symbol tables. See the Enabling Linux Kernel Analysis topic in the product online help for instructions.</msg>
+        <msg name='%CannotLocateSymbolTablesAndDebugInfoForLinuxKernel'>Function and source-level analysis for the Linux kernel will not be possible since neither debug version of the kernel nor kernel symbol tables are found. See the Enabling Linux Kernel Analysis topic in the product online help for instructions.</msg>
+        <msg name='%FinalizationOnOtherHostWarning'>The current result was collected on another host. For proper symbol resolution, please specify search directories for the binaries of interest using the -search-dir command line option or "Binary/Symbol Search" dialog in GUI.</msg>
+        <msg name='%NoPowerLicense'>Analysis of Intel Energy Profiler data requires Intel VTune Amplifier for Systems available in Intel System Studio.</msg>
+        <msg name='%NoData'>No data is collected. Possible reasons:<br/>
+           - Workload is too small. No samples are collected.<br/>
+           - The application environment is not specified correctly.<br/>
+           - The executable file has been stripped so cannot be profiled with algorithm analysis types.<br/>
+           See the Troubleshooting help topic for more details.<br/>
+           Also consider checking the collection log for additional information.
+        </msg>
+        <msg name='%ProgressClearingDatabase'>Clearing the database</msg>
+        <msg name='%ProgressLoadingDatabaseData'>Loading raw data to the database</msg>
+        <msg name='%ProgressFinalizingResults'>Finalizing results</msg>
+        <msg name='%ProgressFinalizingResult'>Finalizing the result</msg>
+        <msg name='%ProgressSavingResults'>Saving results</msg>
+        <msg name='%ProgressSavingResult'>Saving the result</msg>
+        <msg name='%ProgressTransformResolve'>Processing profile metrics and debug information</msg>
+        <msg name='%ProgressGeneratingReport'>Generating a report</msg>
+        <msg name='%ProgressArchivingResults'>Archiving results</msg>
+        <msg name='%ProgressArchivingResult'>Archiving the result</msg>
+        <msg name='%ProgressMsgArchivingFile'>Archiving file `<arg name='%1'/>'</msg>
+        <msg name='%ProgressPrecomputingGrouperData'>Precomputing frequently used data</msg>
+        <msg name='%ProgressDiscardingInstanceData'>Discarding redundant overtime data</msg>
+        <msg name='%ProgressUpdatingResult'>Updating database schema from older version</msg>
+        <msg name='%ProgressConvertingResult'>Converting database format from older version</msg>
+        <msg name='%ProgressImportingResult'>Importing a new result</msg>
+        <msg name='%ProgressImportingResultFile'>Importing file `<arg name='%1'/>'</msg>
+        <msg name='%ProgressImportingResultDir'>Importing directory `<arg name='%1'/>'</msg>
+        <msg name='%ProgressDiscardingRawData'>Discarding raw collector data</msg>
+        <msg name='%ProgressSettingResultsKnobValue'>Setting data model parameters</msg>
+        <msg name='%ProgressSettingResultKnobValue'>Setting data model parameters</msg>
+        <msg name='%ProgressEvaluatingContextValues'>Updating precomputed scalar metrics</msg>
+        <msg name='%TimingSuffix'><arg name='%1'/> took <arg name='%2'/> seconds.</msg>
+        <msg name='%GettingRemoteFile'>Locating file `<arg name='%1'/>' on the remote system</msg>
+        <msg name='%UpdateResultDone'>Database schema has been updated from older version</msg>
+        <msg name='%ClearDatabaseDone'>The database has been cleared</msg>
+        <msg name='%LoadDataDone'>Raw data has been loaded to the database</msg>
+        <msg name='%TransformationsDone'>Data transformations have been finished</msg>
+        <msg name='%DeferredTransformationsDone'>Deferred data transformations have been finished</msg>
+        <msg name='%ConversionDone'>Data conversion has been finished</msg>
+        <msg name='%SetKnobsDone'>Data model parameters have been set</msg>
+        <msg name='%ResolutionDone'>Symbol resolution has been finished</msg>
+        <msg name='%CheckpointDone'>Redundant overtime data has been discarded</msg>
+        <msg name='%PrecomputeDone'>Precomputing frequently used data has been finished</msg>
+        <msg name='%DiscardRawDataDone'>Raw collector data has been discarded</msg>
+        <msg name='%ElapsedTimeDumpSuffix'><arg name='%1'/>, elapsed time is <arg name='%2'/> seconds.</msg>
+        <msg name='%CannotGetGlobalSettingStorage'>Cannot access product settings storage.</msg>
+        <msg name='%SkippingUnexpectedFile'>Skipping unexpected file: `<arg name='%1'/>'.</msg>
+        <msg name='%SkippingBadFinalizationConfigurationEntry'>Skipping bad finalization configuration entry: `<arg name='%1'/>'.</msg>
+        <msg name='%SkippingBadResolverParamsEntry'>Skipping bad resolver parameters entry: `<arg name='%1'/>'.</msg>
+        <msg name='%CannotCreateResolutionCtx'>Cannot create a resolution context.</msg>
+        <msg name='%CannotCreateFileSearchEnvironment'>Cannot create file search environment object.</msg>
+        <msg name='%CannotCreateFileSearchObject'>Cannot create file search object.</msg>
+        <msg name='%CannotAddAlias'>Cannot add alias for the database directory.</msg>
+        <msg name='%CannotInitializeResolver'>Cannot initialize the resolver.</msg>
+        <msg name='%CannotConvertDatabase'>Cannot convert database from older format.</msg>
+        <msg name='%CannotConvertFromDicerDatabase'>You are attempting to open the result in the outdated format generated with VTune Amplifier 2011. To open the result in the current product, you need to re-resolve it. If application binaries used for collection are not available, resolution will be incomplete, which affects analysis accuracy. To avoid this, you may convert the result with VTune Amplifier 2013 (Update 17 is recommended) and then open it with the current version.</msg>
+        <msg name='%CannotRunTransformation'>Cannot run data transformation `<arg name='%1'/>'.</msg>
+        <msg name='%CannotRegisterManipulatorFile'>Cannot register manipulator file `<arg name='%1'/>'.</msg>
+        <msg name='%CannotLoadManipulatorFiles'>Cannot load manipulator files.</msg>
+        <msg name='%CannotRegisterPlugins'>Cannot register product database plug-ins.</msg>
+        <msg name='%CannotArchiveNonFinalizedResult'>Cannot archive non-finalized result directory `<arg name='%1'/>'.</msg>
+        <msg name='%CannotCreateReport'>The report '<arg name='%1'/>' is not applicable to the result <arg name='%2'/>.</msg>
+        <msg name='%ErrorTextPrefix'>Error </msg>
+        <msg name='%eFalse'>False</msg>
+        <msg name='%eOk'>OK</msg>
+        <msg name='%eCancelled'>Operation was cancelled</msg>
+        <msg name='%eNoMemory'>Insufficient memory</msg>
+        <msg name='%eUnexpected'>Unexpected internal error / invalid state</msg>
+        <msg name='%eNotInitialized'>Uninitialized object usage</msg>
+        <msg name='%eNoDiskSpace'>Not enough disk space</msg>
+        <msg name='%eNoPermission'>Insufficient permissions</msg>
+        <msg name='%eNotFound'>Not found</msg>
+        <msg name='%eInvalidResult'>Invalid result directory</msg>
+        <msg name='%eAlreadyExists'>Already exists</msg>
+        <msg name='%eDirNotFound'>Cannot find directory</msg>
+        <msg name='%eDirNotReadable'>No read permissions for directory</msg>
+        <msg name='%eDirNotWritable'>No write permissions for directory</msg>
+        <msg name='%eDirCreateError'>Cannot create directory</msg>
+        <msg name='%eDirUnlinkError'>Cannot remove directory</msg>
+        <msg name='%eFileNotFound'>Cannot find file</msg>
+        <msg name='%eFileNotReadable'>No read permissions for file</msg>
+        <msg name='%eFileNotWritable'>No write permissions for file</msg>
+        <msg name='%eFileCreateError'>Cannot create file</msg>
+        <msg name='%eFileUnlinkError'>Cannot remove file</msg>
+        <msg name='%eFileCorrupted'>Corrupted file format</msg>
+        <msg name='%eBadArgument'>Invalid argument</msg>
+        <msg name='%eBadPointer'>Invalid or null pointer</msg>
+        <msg name='%eBadInstallation'>Corrupted product installation</msg>
+        <msg name='%eMissingEntry'>Missing configuration entry</msg>
+        <msg name='%eUnexpectedEntry'>Unexpected configuration entry</msg>
+        <msg name='%eDatabaseSchema'>Incompatible database schema</msg>
+        <msg name='%eNotImpl'>Not implemented</msg>
+        <msg name='%eModuleNotFound'>Cannot find module</msg>
+        <msg name='%eProcedureNotFound'>Cannot find procedure</msg>
+        <msg name='%eRawDataNotFound'>Cannot find raw collector data</msg>
+        <msg name='%eRawDataLoadError'>Cannot load raw collector data</msg>
+        <msg name='%eNoLicense'>No valid license</msg>
+        <msg name='%eFileTypeImportError'>Cannot import this type of file into an already finalized result directory</msg>
+        <msg name='%eCorruptedDatabase'>Result database is corrupted. Try to re-finalize the result.</msg>
+        <msg name='%eUserError'>User input error</msg>
+        <msg name='%eNoData'>No data</msg>
+        <msg name='%eInapplicableReport'>Inapplicable report</msg>
+        <msg name='%eCfgMgrError'>Configuration Manager error</msg>
+        <msg name='%eFileFinderError'>File Finder error</msg>
+        <msg name='%eReporterError'>Reporter error</msg>
+        <msg name='%eResultDirMgrError'>Result directory manager error</msg>
+        <msg name='%eDbiError'>Database interface error</msg>
+        <msg name='%eDpiError'>Data provider interface error</msg>
+        <msg name='%eDEFAULT'>Unknown error</msg>
+        <msg name='.tb6'>Sampling tb6 raw data (*.tb6)</msg>
+        <msg name='.tb7'>Sampling tb7 raw data (*.tb7)</msg>
+        <msg name='.pwr'>Intel SoC Watch Android or Chrome OS processed data (*.pwr)</msg>
+        <msg name='.perf'>Linux Perf data (*.perf)</msg>
+        <msg name='.cnc'>ICE Command and Control data (*.cnc)</msg>
+        <msg name='.mer'>GreenHills Event Analyzer trace (*.mer)</msg>
+        <msg name='%CollectorSep'>Event-based sampling driver</msg>
+        <msg name='%CollectorSepCounting'>Event-based counting driver</msg>
+        <msg name='%CollectorPerf'>Driverless Perf per-process sampling</msg>
+        <msg name='%CollectorPerfCounting'>Driverless Perf per-process counting</msg>
+        <msg name='%CollectorPerfSystemWide'>Driverless Perf system-wide sampling</msg>
+        <msg name='%CollectorPerfSystemWideCounting'>Driverless Perf system-wide counting</msg>
+        <msg name='%CollectorTpss'>User-mode sampling and tracing</msg>
+    </catalog>
+</xmc>

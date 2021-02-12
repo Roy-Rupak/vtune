@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.itt" lang="en">
+        <msg name='itt-config'>Specify a sub-set of ITT API to collect.</msg>
+        <msg name='itt-debug'>Set pseudo-breakpoint at ITT API collector's start to enable the debugger to attach early.</msg>
+    </catalog>
+</xmc>

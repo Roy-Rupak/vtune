@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="analysis_type" lang="en">
+      <msg name='%CollectSignals'>Collect signals</msg>
+      <msg name='%CollectSignalsDescription'>Select to view synchronization transitions in the timeline and identify signalling call stacks for associated waits. The collector instruments signalling APIs, which causes higher runtime overhead and increases result size.</msg>
+    </catalog>
+</xmc>

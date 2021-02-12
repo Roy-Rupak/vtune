@@ -1,0 +1,31 @@
+# Performance Monitoring Events for Performance Monitoring Events for Intel Xeon Processors Based on the Cascadelake Microarchitecture with Intel Optane DC persistent memory - V1.09
+# 3/28/2020 1:07:15 AM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS
+iMC	0x0	0x0	0x00	0x00	0x00	UNC_M_CLOCKTICKS	Clockticks of the memory controller which uses a programmable counter	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x1	0x2	0x00	0x00	0x00	UNC_M_ACT_COUNT.WR	DRAM Page Activate commands sent due to a write request	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x10	0x0	0x00	0x00	0x00	UNC_M_RPQ_INSERTS	Read Pending Queue Allocations	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x2	0x1	0x00	0x00	0x00	UNC_M_PRE_COUNT.PAGE_MISS	Precharges due to page miss	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x2	0x4	0x00	0x00	0x00	UNC_M_PRE_COUNT.RD	Precharge due to read	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x20	0x0	0x00	0x00	0x00	UNC_M_WPQ_INSERTS	Write Pending Queue Allocations	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x4	0x1	0x00	0x00	0x00	UNC_M_CAS_COUNT.RD_REG	All DRAM Read CAS Commands issued (does not include underfills)	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x4	0x2	0x00	0x00	0x00	UNC_M_CAS_COUNT.RD_UNDERFILL	DRAM Underfill Read CAS Commands issued	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x4	0x3	0x00	0x00	0x00	UNC_M_CAS_COUNT.RD	All DRAM Read CAS Commands issued (including underfills)	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x4	0x4	0x00	0x00	0x00	UNC_M_CAS_COUNT.WR_WMM	DRAM CAS (Column Address Strobe) Commands.; DRAM WR_CAS (w/ and w/out auto-pre) in Write Major Mode	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x4	0xC	0x00	0x00	0x00	UNC_M_CAS_COUNT.WR	All DRAM Write CAS commands issued	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x4	0xF	0x00	0x00	0x00	UNC_M_CAS_COUNT.ALL	All DRAM CAS Commands issued	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x43	0x0	0x00	0x00	0x00	UNC_M_POWER_SELF_REFRESH	Clock-Enabled Self-Refresh	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x80	0x0	0x00	0x00	0x00	UNC_M_RPQ_OCCUPANCY	Read Pending Queue Occupancy	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x81	0x0	0x00	0x00	0x00	UNC_M_WPQ_OCCUPANCY	Write Pending Queue Occupancy	0,1,2,3	0x53	na	0	0	0x00
+iMC	0x85	0x0	0x00	0x00	0x00	UNC_M_POWER_CHANNEL_PPD	Channel PPD Cycles	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xD3	0x1	0x00	0x00	0x00	UNC_M_TAGCHK.HIT	All hits to Near Memory(DRAM cache) in Memory Mode	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xD3	0x2	0x00	0x00	0x00	UNC_M_TAGCHK.MISS_CLEAN	All Clean line misses to Near Memory(DRAM cache) in Memory Mode	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xD3	0x4	0x00	0x00	0x00	UNC_M_TAGCHK.MISS_DIRTY	All dirty line misses to Near Memory(DRAM cache) in Memory Mode	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xE0	0x1	0x00	0x00	0x00	UNC_M_PMM_RPQ_OCCUPANCY.ALL	Read Pending Queue Occupancy of all read requests for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xE3	0x0	0x00	0x00	0x00	UNC_M_PMM_RPQ_INSERTS	Read requests allocated in the PMM Read Pending Queue for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xE4	0x1	0x00	0x00	0x00	UNC_M_PMM_WPQ_OCCUPANCY.ALL	Write Pending Queue Occupancy of all write requests for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xE7	0x0	0x00	0x00	0x00	UNC_M_PMM_WPQ_INSERTS	Write requests allocated in the PMM Write Pending Queue for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xEA	0x1	0x00	0x00	0x00	UNC_M_PMM_CMD1.ALL	All commands for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xEA	0x2	0x00	0x00	0x00	UNC_M_PMM_CMD1.RD	Regular reads(RPQ) commands for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xEA	0x4	0x00	0x00	0x00	UNC_M_PMM_CMD1.WR	Write commands for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00
+iMC	0xEA	0x8	0x00	0x00	0x00	UNC_M_PMM_CMD1.UFILL_RD	Underfill read commands for Intel Optane DC persistent memory	0,1,2,3	0x53	na	0	0	0x00

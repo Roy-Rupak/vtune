@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="analysis_type" lang="en">
+      <msg name='%CollectFpgaBlueStreamEvents'>Collect FPGA blue stream events</msg>
+      <msg name='%CollectFpgaBlueStreamDescription'>Collect FPGA blue stream events.</msg>
+      <msg name='%CollectPCIeBandwidth'>Analyze PCIe bandwidth</msg>
+      <msg name='%CollectPCIeBandwidthDescription'>Collect the events required to compute PCIe bandwidth.</msg>
+      <msg name='%RestrictPCIeBandwidthByClass'>Device class</msg>
+      <msg name='%RestrictPCIeBandwidthByClassDescription'>Analyze PCIe bandwidth on the selected device class only.</msg>
+      <msg name='%CollectMemBandwidth'>Analyze memory bandwidth</msg>
+      <msg name='%CollectMemBandwidthDescription'>Collect the events required to compute memory bandwidth.</msg>
+      <msg name='%CollectMemObjects'>Analyze memory objects</msg>
+      <msg name='%CollectMemObjectsDescription'>Track memory objects lifecyle to attribute memory access source/destination</msg>
+      <msg name='%BasicBlockAnalysis'>Analyze basic blocks</msg>
+      <msg name='%BasicBlockAnalysisDescription'>Group data by basic blocks.</msg>
+      <msg name='%CollectIoMode'>Collect I/O API data</msg>
+      <msg name='%CollectIoModeDescription'>Enable to identify where threads are waiting or compute thread concurrency. The collector instruments APIs, which causes higher overhead and increases result size.</msg>
+      <msg name='%CollectSamplesMode'>Collect CPU sampling data</msg>
+      <msg name='%CollectSamplesModeDescription'>Enable to periodically sample the application. Samples can be collected with or without stacks.</msg>
+      <msg name='%MrteType'>Managed runtime type to analyze</msg>
+      <msg name='%MrteTypeDescription'>Choose a type of managed runtime to analyze.</msg>
+      <msg name='%MrteTypeJava'>Java</msg>
+      <msg name='%MrteTypeDotNet'>.NET</msg>
+      <msg name='%MrteTypePython'>Python</msg>
+      <msg name='%MrteTypeJavaNet'>Java, .NET</msg>
+      <msg name='%MrteTypeJavaPython'>Java, Python</msg>
+      <msg name='%MrteTypeNetPython'>.NET, Python</msg>
+      <msg name='%MrteTypeJavaNetPython'>Java, .NET, Python</msg>
+      <msg name='%CollectSignalsMode'>Collect signalling API data</msg>
+      <msg name='%CollectSignalsModeDescription'>Enable to view synchronization transitions in the timeline and signalling call stacks for associated waits. The collector instruments signalling APIs, which causes higher overhead and increases result size.</msg>
+      <msg name='%CollectWaitsMode'>Collect synchronization API data</msg>
+      <msg name='%CollectWaitsModeDescription'>Enable to identify where threads are waiting or compute thread concurrency. The collector instruments APIs, which causes higher overhead and increases result size.</msg>
+      <msg name='%AccurateCPUTimeDetection'>Collect highly accurate CPU time</msg>
+      <msg name='%AccurateCPUTimeDetectionDescription'>Collect more accurate CPU time data. This option requires additional disk space and post-processing time. Administrator privileges are required.</msg>
+      <msg name='%UseCountingMode'>Limit PMU collection to counting</msg>
+      <msg name='%UseCountingModeDescription'>Choose between collecting detailed context data for each PMU event (such as code or hardware context) or the counts of events. Counting mode introduces less overhead but gives less information.</msg>
+      <msg name='%UseAggregatedCountingMode'>Enable counting with over-time bandwidth analysis</msg>
+      <msg name='%UseAggregatedCountingModeDescription'>This is a drop-in replacement for counting mode that also computes a bandwidth histogram for selected uncore metrics.</msg>
+      <msg name='%UseGpuCountingMode'>Enable GPU counting mode</msg>
+      <msg name='%UseGpuCountingModeDescription'>Collect only summary values of GPU counters instead of over-time data.</msg>
+      <msg name='%UsePerf'>Enable driverless sampling collection</msg>
+      <msg name='%UsePerfDescription'>Collect sampling data with the Perf-based driverless collector even if the PRODUCT_LEGAL_SHORT_NAME sampling driver is loaded into the OS kernel.</msg>
+      <msg name='%UseEventBasedCounts'>Use event-based counts</msg>
+      <msg name='%UseEventBasedCountsDescription'>Enable selective event-based counting mode where only particular events trigger Performance Monitoring Interrupt, all other event counts are read within an interrupt for the reference clocks event. This mode reduces collection overhead and trace size.</msg>
+      <msg name='%WithStacks'>With stacks</msg>
+      <msg name='%WithoutStacks'>Without stacks</msg>
+      <msg name='%SyncObjectsOnly'>Collect sync objects only</msg>
+      <msg name='%Disabled'>No</msg>
+      <msg name='%PerfMonVersionWarning'>Cannot enable event-based sampling collection: Architectural Performance Monitoring version is 0. Make sure the &lt;a web-link="https://software.intel.com/en-us/vtune-amplifier-help-on-virtual-machine" cli="vPMU feature is enabled"&gt;vPMU feature is enabled&lt;/a&gt; in your hypervisor.</msg>
+      <msg name='%HyperVOldSystemWarning'>Cannot enable event-based sampling collection: Architectural Performance Monitoring version is 0. Make sure to &lt;a help-link="config.error_no_pmu_collection" cli="disable the Hyper-V feature"&gt;disable the Hyper-V feature&lt;/a&gt; or upgrade your system to satisfy &lt;a help-link="config.hyper_v_profiling" cli="analysis requirements."&gt;analysis requirements.&lt;/a&gt;</msg>
+      <msg name='%HyperVGuardsWarning'>The event-based sampling collection may provide incomplete results due to Device Guard and Credential Guard features enabled in this OS. For accuracy, consider &lt;a help-link="config.error_no_pmu_collection" cli="disabling these security features."&gt;disabling these security features.&lt;/a&gt;</msg>
+      <msg name='%EbsNotFollowingChildUnsupported'>Sampling collection involves analyzing child processes.</msg>
+      <msg name='%EnablePEBSCollection'>Collect PEBS data </msg>
+      <msg name='%EnablePEBSCollectionDescription'>Collect event context information.</msg>
+      <msg name='%EnableLBRCollection'>Collect LBR records </msg>
+      <msg name='%EnableLBRCollectionDescription'>Capture Last Branch Records information.</msg>
+      <msg name='%SepSupportsMrteMixedUnderLaunchAndAttachModeOnly'>Hardware event-based sampling collection does not support mixed analysis of the Microsoft runtime environment in the System-wide mode.</msg>
+      <msg name='%SepSupportsNativeOrMixedMrteModeOnly'>Hardware event-based sampling collection does not support pure managed analysis of the Microsoft runtime environment. This run will be treated as mixed analysis.</msg>
+      <msg name='%TpssSupportsMrteManagedUnderLaunchModeOnly'>User-mode sampling and tracing collection supports managed analysis of the Microsoft runtime environment only for Application to Launch mode.</msg>
+      <msg name='%TpssSupportsMrteMixedUnderLaunchModeOnly'>User-mode sampling and tracing collection supports mixed analysis of the Microsoft runtime environment only for Application to Launch mode.</msg>
+      <msg name='%TpssSupportsMrteNativeOnlyOnLinux'>User-mode sampling and tracing collection does not support pure managed analysis or mixed analysis of the runtime environment. This run will be treated as native analysis.</msg>
+      <msg name='%SepSupportsMrteNativeOnlyOnLinux'>Hardware event-based sampling collection does not support pure managed analysis or mixed analysis of the runtime environment. This run will be treated as native analysis.</msg>
+      <msg name='%Stackwalk'>Stack unwinding mode</msg>
+      <msg name='%StackwalkDescription'>Choose between online (during collection) and offline (after collection) modes to analyze stacks. Offline mode reduces analysis overhead and is typically recommended.</msg>
+      <msg name='%StackUnwindOffline'>After collection</msg>
+      <msg name='%StackUnwindOnline'>During collection</msg>
+      <msg name='%PmuEventConfig'>PMU events to collect</msg>
+      <msg name='%PmuEventConfigDescription'>Configure PMU events to collect with the hardware event-based sampling collector. Use event-config=? to see the list of available events for the target.</msg>
+      <msg name='%ChipsetEventConfig'>Chipset events</msg>
+      <msg name='%ChipsetEventConfigDescription'>Specify Chipset events to monitor with the hardware event-based sampling collector.</msg>
+      <msg name='%SamplingInterval'>CPU sampling interval, ms</msg>
+      <msg name='%SamplingIntervalDescription'>Specify an interval (in milliseconds) between CPU samples.</msg>
+      <msg name='%IncorrectSamplingInterval'>Zero sampling interval value is only supported for the Perf-based driverless collection and cannot be enabled if the PRODUCT_LEGAL_SHORT_NAME sampling driver is loaded into the OS kernel.</msg>
+      <msg name='%XenForceZeroSamplingInterval'>Integrated Perf sampling interval will be used to enable the Perf-based driverless collection for the target system running under Xen Hypervisor.</msg>
+      <msg name='%UncoreSamplingInterval'>Uncore sampling interval, ms</msg>
+      <msg name='%UncoreSamplingIntervalDescription'>Specify an interval (in milliseconds) between uncore event samples.</msg>
+      <msg name='%RunssUnsupportedTargetLaunch'>This analysis type does not support Launch Application target type. Please use Launch Android Package or Attach to Process target types.</msg>
+      <msg name='%RunssUnsupportedTargetType'>This analysis type does not support system-wide profiling. Please specify an application to launch or a process to attach to.</msg>
+      <msg name='%RunsaUnsupportedTargetType'>This is an unsupported analysis target. Please specify either an application to launch, a process to attach to, or perform system-wide profiling.</msg>
+      <msg name='%RunsaCommonUnsupportedTargetType'>This analysis target is not supported. Please specify a target from <arg name='arg0'/>.</msg>
+      <msg name='%OldSepDriverLoaded'><![CDATA[ Your version of the sampling driver is not compatible with the current version of the PRODUCT_LEGAL_SHORT_NAME. Consider installing the compatible <a help-link="intel.phe.configs.sep_drivers">sampling driver</a>. Otherwise, the driverless collection with limited analysis support will be enabled by default.]]></msg>
+      <msg name='%SepDriverUnavailable'>Cannot enable Hardware Event-based Sampling due to a problem with the driver (sep*/sepdrv*). Check that the driver is running and the driver group is in the current user group list. See the "Sampling Drivers" help topic for further details.</msg>
+      <msg name='%SepRequiresRootPrivilegesOnMacOS'>Root privileges are required to run analysis based on hardware event-based sampling on macOS.</msg>
+      <msg name='%VTSSPPDriverUnavailable'>Cannot enable advanced capabilities for Hardware Event-based Sampling due to a problem with the driver (vtss/vtsspp). Check that the driver is running and the driver group is in the current user group list. See the "Sampling Drivers" help topic for further details.</msg>
+      <msg name='%CallCountsNeedCallStacks'>Call count collection depends on call stack collection. Ensure that the Collect stacks configuration option is enabled.</msg>
+      <msg name='%NoCallStacksForMemBandwidth'>Memory bandwidth collection cannot be combined either with call stacks or context switches. Make sure only one of these options is enabled for the analysis.</msg>
+      <msg name='%RunssUnsupportedMultipleRunsMode'>Call stack collection cannot be performed in multiple runs. Please disable either multiple runs or call stack collection.</msg>
+      <msg name='%MemObjectsUnsupportedMultipleRunsMode'>Memory objects analysis cannot be performed in multiple runs. Please disable either multiple runs or memory objects analysis.</msg>
+      <msg name='%RingBufferUnsupportedMultipleRunsMode'>Collected data size cannot be limited by the timer option if multiple runs are allowed. Please disable multiple runs.</msg>
+      <msg name='%RingBufferUnsupportedForPmuAnalysis'>Collected data size cannot be limited by the timer option for this analysis type. Please use the result size to limit the collected data.</msg>
+      <msg name='%RunssUnsupportedSystemWideContextSwitchesMode'>Call stack collection cannot be performed together with system wide context switches. Please disable any of them.</msg>
+      <msg name='%NoSEPUnsupportedMultipleRunsMode'>Driverless collection cannot be performed in multiple runs. Please either disable multiple runs or install PRODUCT_LEGAL_SHORT_NAME sampling drivers and run collection without stacks. See "Sampling and Power Drivers" help topic for further details.</msg>
+      <msg name='%TripCountsCanNotBeEstimated'>Loop trip counts cannot be statistically estimated on this platform.</msg>
+      <msg name='%CallCountsAndTripcountsUnavailableOn32Bit'>Call counts and trip counts cannot be collected on 32-bit Linux systems.</msg>
+      <msg name='%RunssDisplayName'>User-mode Sampling and Tracing</msg>
+      <msg name='%RunsaDisplayName'>Hardware Event-based Sampling</msg>
+      <msg name='%RunsaDisplayNameKNF'>Knights Ferry Hardware Event-based Sampling</msg>
+      <msg name='%RunsaDisplayNameKNC'>Knights Corner Hardware Event-based Sampling</msg>
+      <msg name='%EtwAccessDenied'><![CDATA[ <a help-link="configs.accurate_cpu_time_warnings" cli="Highly accurate CPU time collection">Highly accurate CPU time collection</a> is disabled for this analysis. To enable this feature, run the product with the administrative privileges.]]></msg>
+      <msg name='%EtwUnknownError'>Accurate CPU time detection cannot be enabled. Please disable collection of accurate CPU time or see the troubleshooting section of the product documentation for details.</msg>
+      <msg name='%EnableStackCollection'>Collect stacks</msg>
+      <msg name='%EnableStackCollectionDescription'>Enable collection of call stacks.</msg>
+      <msg name='%StackSize'>Stack size, in bytes</msg>
+      <msg name='%StackSizeUnlimitedValue'>Unlimited</msg>
+      <msg name='%StackSizeDescriptionAT'>Specify the size of a raw stack (in bytes) to process. Zero value in command line means unlimited size. You may set arbitrary stack size value in the custom analysis configuration.</msg>
+      <msg name='%StackSizeDescription'>Specify the size of a raw stack (in bytes) to process. Zero value means unlimited size.</msg>
+      <msg name='%CollectCallCounts'>Estimate call counts</msg>
+      <msg name='%CollectCallCountsCollectionDescription'>Obtain statistical estimation of call counts based on hardware events.</msg>
+      <msg name='%CollectTripCounts'>Estimate trip counts</msg>
+      <msg name='%CollectTripCountsCollectionDescription'>Obtain statistical estimation of loop trip counts based on hardware events.</msg>
+      <msg name='%CollectLBRCallstack'>Collect LBR call stacks</msg>
+      <msg name='%CollectLBRCallstackDescription'>Collect stacks using Last Branch Record registers.</msg>
+      <msg name='%CollectFullProcTrace'>Profile with Full Intel Processor Trace</msg>
+      <msg name='%CollectFullProcTraceDescription'>Profile with Full Intel Processor Trace.</msg>
+      <msg name='%EnableCycleAccurateMode'>Enable Intel Processor Trace Cycle Accurate Mode</msg>
+      <msg name='%EnableCycleAccurateModeDescription'>Enable Intel Processor Trace Cycle Accurate Mode to associate clock cycles with each indirect branch (TIP packets) and the first branch in each taken/not-taken(TNT) conditional branch packet.</msg>
+      <msg name='%EnableRing0ProfilingMode'>Profile kernel</msg>
+      <msg name='%EnableRing0ProfilingDescription'>Enable kernel profiling.</msg>
+      <msg name='%collectPTforTSX'>Use Intel Processor Trace to analyze transactional regions</msg>
+      <msg name='%CollectPTforTSXDescription'>Analyze hotspots inside transactions using Intel Processor Trace.</msg>
+      <msg name='%collectHwTrace'>Profile with Hardware Tracing</msg>
+      <msg name='%IPTUnavailable'>Hardware Tracing is not available on this platform. Please check the system requirements for more details.</msg>
+      <msg name='%CollectCStateData'>Collect sleep data</msg>
+      <msg name='%CollectCStateDataDescription'>Enable power analysis collection with sleep state data.</msg>
+      <msg name='%Auto'>Auto</msg>
+      <msg name='%WithUserTimerSchedulingStacks'>With user timer scheduling stacks</msg>
+      <msg name='%WithKernelTimerSchedulingStacks'>With kernel timer scheduling stacks</msg>
+      <msg name='%WithUserAndKernelTimerSchedulingStacks'>With user and kernel timer scheduling stacks</msg>
+      <msg name='%WithoutTimerSchedulingStacks'>Without timer scheduling stacks</msg>
+      <msg name='%CollectPStateData'>Collect CPU frequency data</msg>
+      <msg name='%CollectPStateDataDescription'>Enable power analysis collection with CPU frequency data, if possible.</msg>
+      <msg name='%PStateNotAvailableWarning'>CPU frequency data collection is not supported on this platform.</msg>
+      <msg name='%PGOPlatformUnsupported'>PGO Analysis is not supported on this platform. Please refer to the product documentation to make sure that all requirements are satisfied.</msg>
+      <msg name='%PowerPlatformUnsupported'>Power Analysis is not supported on this platform. Please refer to the product documentation to make sure that all requirements are satisfied.</msg>
+      <msg name='%PowerDriverUnavailable'>Power driver is inaccessible. Make sure the driver is installed and you have permissions to access it.</msg>
+      <msg name='%PowerOSNotSupportedError'>This analysis type is only defined for Linux operating system. For a remote analysis, you may use the Get Command Line option. See the Running Analysis Remotely help topic for more details.</msg>
+      <msg name='%KernelCallStacksNotSupported'>Kernel Call stacks cannot be provided since kernel frame pointers are not available on this platform. However, this does not apply to a remote collection scenario. For more information, please refer to the product documentation.</msg>
+      <msg name='%CollectUserTasksEventsCountersMode'>Analyze user tasks, events, and counters</msg>
+      <msg name='%CollectUserTasksEventsCountersModeDescription'>Analyze the tasks, events, and counters specified in your code via the ITT API. This option causes a higher overhead and increases the result size.</msg>
+      <msg name='%CollectFramesMode'>Analyze frames and OpenMP regions</msg>
+      <msg name='%CollectFramesModeDescription'>Analyze frames specified in your code via Frames API and OpenMP regions. This option causes higher overhead and increases result size.</msg>
+      <msg name='%CollectUserSyncMode'>Analyze user synchronization</msg>
+      <msg name='%CollectUserSyncModeDescription'>Enable User synchronization API profiling to analyze thread synchronization. This option causes higher overhead and increases result size.</msg>
+      <msg name='%CollectUserSyncModeError'>User synchronization API profiling cannot be started. To enable the User synchronization API collection, make sure the 'Collect synchronization API data' or 'Collect signalling API data' options are set to 'With stacks' or 'Without stacks'.</msg>
+      <msg name='%MicCardsToCollect'>List of Intel Xeon Phi coprocessor cards</msg>
+      <msg name='%MicCardsToCollectDescription'>Specify a comma-separated list of Intel Xeon Phi coprocessor card IDs for data collection (for example, 0,1,2,3).</msg>
+      <msg name='%GpuCounters'>Analyze Processor Graphics hardware events</msg>
+      <msg name='%GpuCountersDescription'>Analyze performance data from Processor Graphics based on the preset counter set. This option is available only for supported platforms with the Intel Graphics Driver installed.</msg>
+      <msg name='%GpuRemoteDesktopWarning'>You are going to run an analysis via Remote Desktop. For successful data collection in this mode, make sure your application can run properly via Remote Desktop. If the application fails to run, consider using VNC, local host collection, or any other reliable solution.</msg>
+      <msg name='%GpuRemoteDesktopError'>Processor Graphics analysis is not available when running under Remote Desktop.</msg>
+      <msg name='%GpuDriverNotResponding'>Processor Graphics analysis is only available on systems with Intel Graphics and Intel Graphics Driver installed.</msg>
+      <msg name='%GpuUnsupportedHardware'>Processor Graphics analysis is not available on this version of Intel graphics. See the product Release Notes for details.</msg>
+      <msg name='%GpuMetricsDisabledInBios'>Some GPU metrics are currently disabled by the BIOS. See the product Release Notes for details.</msg>
+      <msg name='%GpuCountersNotSupported'>This platform does not support Processor Graphics hardware events collection requested by predefined GPU metric group or as part of GPU performance insights. Please see the software/hardware requirements in the product Release Notes.</msg>
+      <msg name='%GpuCountersAgentNotAvailable'>Cannot collect GPU hardware metrics. Make sure the TCP/IP target collector (amplxe-runss) from the target package is set up on the target system.</msg>
+      <msg name='%i915InCustomLocationWarning'>Cannot verify a possibility of GPU hardware metrics collection because Intel Graphics kernel module is not detected.</msg>
+      <msg name='%GpuInsufficientPermissions'>Root privileges are required to run GPU hardware metrics collection.</msg>
+      <msg name='%GpuInsufficientPermissionsLinux'>Cannot collect GPU hardware metrics due to a lack of permissions. Use root privileges (recommended) or &lt;a help-link="intel.phe.configs.gpu_hotspots" cli="re-configure your current permissions"&gt;re-configure your current permissions&lt;/a&gt; to make sure you are a member of the video user group and /proc/sys/dev/i915/perf_stream_paranoid value is set to 0.</msg>
+      <msg name='%GpuMissingDriver'>Intel Graphics kernel module is not detected.</msg>
+      <msg name='%SelectedGpuNotFound'>The selected GPU adapter was not found. Make sure the AMPLXE_TARGET_GPU environment variable is set and the value is correct. &lt;a help-link="https://software.intel.com/content/www/us/en/develop/articles/vtune-profiler-beta-release-notes.html" cli="See the product Release Notes for details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%MetricsNotAvailableForSelectedGpu'> Cannot collect GPU hardware metrics for the selected GPU adapter. &lt;a help-link="https://software.intel.com/content/www/us/en/develop/documentation/vtune-help/top/troubleshooting/error-cannot-collect-gpu-hw-metrics-for-gpu-adapter.html" cli="See Error Message: Cannot Collect GPU Hardware Metrics for the selected gpu adapter help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuKernelNotPatched'>The current version of Intel Graphics Driver does not support GPU hardware metrics collection. Please refer to Intel Media SDK Getting Started Guide for Linux installation details. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuKernelNotSupported'>The current version of Intel Graphics Driver does not support GPU hardware metrics collection. Supported versions are 3.10, 3.14.5, 4.4, 4.7, 4.14 and newer. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibInitErrorLinux'>Cannot collect GPU hardware metrics because libmd.so cannot be initialized. Make sure the Intel SDK for OpenCL applications is installed correctly. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibInitErrorLinuxNewKernel'>Cannot collect GPU hardware metrics because libmd.so cannot be initialized. Make sure you have installed Metrics Discovery API library from &lt;a web-link="https://github.com/intel/metrics-discovery" cli="https://github.com/intel/metrics-discovery"&gt;https://github.com/intel/metrics-discovery&lt;/a&gt; correctly. &lt;a help-link="intel.phe.configs.troubleshooting_libmd" cli="See Error Message: Cannot Collect GPU Hardware Metrics help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibLoadFailedLinux'>Cannot collect GPU hardware metrics because libmd.so cannot be loaded. Make sure the Intel SDK for OpenCL applications is installed correctly. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibLoadFailedLinuxNewKernel'>Cannot collect GPU hardware metrics because libmd.so cannot be loaded. Make sure you have installed Metrics Discovery API library from &lt;a web-link="https://github.com/intel/metrics-discovery" cli="https://github.com/intel/metrics-discovery"&gt;https://github.com/intel/metrics-discovery&lt;/a&gt; correctly. &lt;a help-link="intel.phe.configs.troubleshooting_libmd" cli="See Error Message: Cannot Collect GPU Hardware Metrics help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibLoadFailedWindows'>Cannot collect GPU hardware metrics because Metrics Discovery API library cannot be loaded. Make sure the Intel Graphics Driver is installed correctly. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibLoadFailed'>Cannot collect GPU hardware metrics because Metrics Discovery API library cannot be loaded. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibNotFoundLinux'>Cannot collect GPU hardware metrics because libmd.so was not found. Make sure the Intel SDK for OpenCL applications is installed. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibNotFoundLinuxNewKernel'>Cannot collect GPU hardware metrics because libmd.so was not found. Make sure you have installed Metrics Discovery API library from &lt;a web-link="https://github.com/intel/metrics-discovery" cli="https://github.com/intel/metrics-discovery"&gt;https://github.com/intel/metrics-discovery&lt;/a&gt;. &lt;a help-link="intel.phe.configs.troubleshooting_libmd" cli="See Error Message: Cannot Collect GPU Hardware Metrics help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibNotFoundWindows'>Cannot collect GPU hardware metrics because Metrics Discovery API library was not found. Make sure the Intel Graphics Driver is installed. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuLibNotFound'>Cannot collect GPU hardware metrics because Metrics Discovery API library was not found. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuUnsupportedInterfaceVersionLinux'>Cannot collect GPU hardware metrics because your version of the Metrics Discovery API library is obsolete. Make sure the Intel SDK for OpenCL applications is installed correctly. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuUnsupportedInterfaceVersionLinuxNewKernel'>Cannot collect GPU hardware metrics because your version of the Metrics Discovery API library is obsolete. Make sure you have installed the latest version of Metrics Discovery API library from &lt;a web-link="https://github.com/intel/metrics-discovery" cli="https://github.com/intel/metrics-discovery"&gt;https://github.com/intel/metrics-discovery&lt;/a&gt; correctly. &lt;a help-link="intel.phe.configs.troubleshooting_libmd" cli="See Error Message: Cannot Collect GPU Hardware Metrics help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuUnsupportedInterfaceVersionWindows'>Cannot collect GPU hardware metrics because your version of the Metrics Discovery API library is obsolete. Please update Intel Graphics Driver before collection. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuUnsupportedInterfaceVersion'>Cannot collect GPU hardware metrics because your version of the Metrics Discovery API library is obsolete. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli="See Prerequisites section in GPU Compute/Media Hotspots Analysis help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%GpuSamplingInterval'>GPU sampling interval, ms</msg>
+      <msg name='%GpuSamplingIntervalDescription'>Specify an interval (in milliseconds) between GPU samples.</msg>
+      <msg name='%GpuCollectOverview'>Overview</msg>
+      <msg name='%GpuCollectComputeBasic'>Compute Basic (with global/local memory accesses)</msg>
+      <msg name='%GpuCollectComputeExtended'>Compute Extended</msg>
+      <msg name='%GpuCollectPreset3'>Preset 3</msg>
+      <msg name='%GpuCollectRenderBasic'>Render Basic (preview)</msg>
+      <msg name='%GpuCollectPreset5'>Preset 5</msg>
+      <msg name='%GPUCollectFrequency'>GPU frequency</msg>
+      <msg name='%GpuCollectFullCompute'>Full Compute</msg>
+      <msg name='%GpuFullComputeSetNeedsMultipleRunsMode'>Full Compute set can be collected only when multiple runs are allowed. &lt;a help-link="configs.allow_multiple_runs_or_multiplex_events" cli="See Allow Multiple Runs or Multiplex Events help topic for more details."&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%CollectGpuOpenCl'>Trace OpenCL and Intel Media SDK programs (Intel Graphics Driver only)</msg>
+      <msg name='%CollectGpuOpenClModeDescription'>Analyze OpenCL and Intel Media SDK programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%CollectGpuMetal'>Trace Metal programs (Intel Graphics Driver only) (preview)</msg>
+      <msg name='%CollectGpuMetalModeDescription'>Analyze Metal programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%CollectGpuLevelZero'>Trace Level Zero programs (Intel Graphics Driver only)</msg>
+      <msg name='%CollectGpuLevelZeroModeDescription'>Analyze Level Zero programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%CollectGpuCm'>Analyze CM runtime</msg>
+      <msg name='%CollectGpuCmModeDescription'>Analyze C for Media (CM) Runtime tasks for Intel Graphics Accelerator in the timeline.</msg>
+      <msg name='%CollectAndroidGpuRuntimes'>Trace Android GPU runtimes (Intel Graphics Driver only)</msg>
+      <msg name='%CollectAndroidGpuRuntimesModeDescription'>Analyze programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%RunsaUnsupportedTargetTypeForMultiRunMode'>Collecting data in multiple runs is possible only if an application to launch is specified.</msg>
+      <msg name='%RunssGpuProfilingNotSupported'>This analysis type does not support this target type. Please use Launch Application target type.</msg>
+      <msg name='%RunssGpuProfilingAttachNotSupported'>This analysis type does not support Attach to Process target type. Please use Launch Application target type.</msg>
+      <msg name='%RunssGpuProfilingSystemWideNotSupported'>This analysis type does not support system-wide profiling. Please use Launch Application target type.</msg>
+      <msg name='%StackStitching'>Stitch stacks</msg>
+      <msg name='%StackStitchingDescription'>For Intel TBB-based applications, restructure the call flow to attach stacks to a point introducing a parallel workload.</msg>
+      <msg name='%GpuDX'>Analyze detailed GPU utilization</msg>
+      <msg name='%GpuDXDescription'>Analyze frame rate and usage of Processor Graphics engines based on DirectX pipeline events.</msg>
+      <msg name='%GpuDXAccessDenied'>To collect events required for detailed GPU utilization analysis, run the product with the administrative privileges.</msg>
+      <msg name='%GpuDXUnknownError'>Events required for detailed GPU utilization analysis cannot be collected on this operating system.</msg>
+      <msg name='%WSAAccessDenied'>Windows Store application data collection is disabled for this analysis. To enable this feature, run the product with the administrative privileges.</msg>
+      <msg name='%EventMode'>Event mode</msg>
+      <msg name='%EventModeDescription'>Limit event-based sampling collection to OS or USER mode.</msg>
+      <msg name='%EventModeAll'>All</msg>
+      <msg name='%EventModeUser'>USER</msg>
+      <msg name='%EventModeOs'>OS</msg>
+      <msg name='%ITTTasksWillNotCollectInAttachOrSystemMode'>Collection of user API tasks cannot be performed for "Profile System" or "Attach to Process" target types.  Use "Launch Application" type to collect user tasks information.</msg>
+      <msg name='%RingBuffer'>Ring buffer limit, sec</msg>
+      <msg name='%RingBufferDescription'>Set a tracing duration threshold for the ring buffer to limit the amount of collected data.</msg>
+      <msg name='%EventInfo'>Collect event info</msg>
+      <msg name='%EventInfoDescription'>Enable to copy event info for analysis results migrated to a machine with a different operating system.</msg>
+      <msg name='%SystemWideContextSwitch'>Analyze system-wide context switches</msg>
+      <msg name='%SystemWideContextSwitchDescription'>Analyze detailed scheduling layout for all threads on the system and identify the nature of context switches for a thread (preemption or synchronization).</msg>
+      <msg name='%CswitchMode'>Context switches mode</msg>
+      <msg name='%CswitchModeDescription'>Specify context switches data loading mode.</msg>
+      <msg name='%CswitchModeNone'>None</msg>
+      <msg name='%CswitchModeActive'>Active</msg>
+      <msg name='%CswitchModeInactive'>Inactive</msg>
+      <msg name='%CswitchModeBoth'>Both</msg>
+      <msg name='%CswitchFtraceNotAvailable'>Collection of context switches cannot be enabled.</msg>
+      <msg name='%CswitchNoDebugFS'>Collection of context switches is not possible because debugFS is not mounted to the default location (/sys/kernel/debug/).</msg>
+      <msg name='%CswitchNoFtraceAccess'>Collection of context switches is not possible due to a lack of privileges. Root privileges are required.</msg>
+      <msg name='%CswitchAndroidUpdateOrRootingNeeded'>Collection of context switches is not possible. Please gain root access to the device or update the Android OS version.</msg>
+      <msg name='%CollectIoWaits'>Analyze I/O waits</msg>
+      <msg name='%CollectIoWaitsDescription'>Analyze the percentage of time each thread and CPU spends in I/O wait state.</msg>
+      <msg name='%IGFXFtraceEvents'>Analyze detailed GPU utilization (Intel Graphics only)</msg>
+      <msg name='%IGFXFtraceEventsDescription'>Analyze frame rate and usage of Intel Graphics engines based on ftrace events.</msg>
+      <msg name='%IGFXFtraceNotAvailable'>Collection of events required for detailed GPU utilization analysis cannot be enabled.</msg>
+      <msg name='%IGFXFtraceNotAvailableLinux'>Events required for detailed GPU utilization analysis cannot be collected because i915 Ftrace events are not available for undefined reason.</msg>
+      <msg name='%IGFXNoDebugFS'>Events for detailed GPU utilization analysis cannot be collected because debugFS is not mounted to the default location (/sys/kernel/debug/).</msg>
+      <msg name='%IGFXNoFtraceAccess'>Events for detailed GPU utilization analysis cannot be collected due to a lack of privileges. Root privileges are required.</msg>
+      <msg name='%IGFXDriverNotSigned'>Events for detailed GPU utilization analysis cannot be collected because i915 driver is not properly signed.</msg>
+      <msg name='%IGFXAndroidUpdateOrRootingNeeded'>Events for detailed GPU utilization analysis cannot be collected. Please gain root access to the device or update the Android OS version.</msg>
+      <msg name='%IGFXCollectionNotPossible'>Events for detailed GPU utilization analysis cannot be collected.</msg>
+      <msg name='%UnsupportedGFX'>Events for detailed GPU utilization analysis can be collected for Intel GPUs only.</msg>
+      <msg name='%UnknownFtraceError'>Unknown debugFS error.</msg>
+      <msg name='%IGFXEventsNotAvailable'>Events for detailed GPU utilization analysis cannot be collected because these events are not available through debugFS.</msg>
+      <msg name='%IGFXDtraceEvents'>Analyze detailed GPU utilization (Intel Graphics Driver only)</msg>
+      <msg name='%IGFXDtraceEventsDescription'>Analyze usage of Intel Graphics engines based on dtrace events.</msg>
+      <msg name='%IGFXDtraceEventsNotAvailable'>Events required for detailed GPU utilization analysis are not available through dtrace.</msg>
+      <msg name='%VSyncNotAvailable'>VSync events cannot be collected.</msg>
+      <msg name='%RunssHotspotsNotSupported'><![CDATA[Hotspots analysis with User-Mode Sampling is not supported on this platform. See the <a web-link="https://software.intel.com/en-us/articles/intel-vtune-amplifier-release-notes" cli="Release Notes">Release Notes</a> for software/hardware requirements. You may also try Hotspots analysis in Hardware Event-Based Sampling mode.]]></msg>
+      <msg name='%RunssBasicHotspotsNotSupported'>Basic Hotspots analysis is not supported on this platform. Please see the software/hardware requirements in the product Release Notes.</msg>
+      <msg name='%RunssConcurrencyNotSupported'>Concurrency analysis is not supported on this platform. Please see the software/hardware requirements in the product Release Notes.</msg>
+      <msg name='%RunssLocksWaitsNotSupported'>Locks and Waits analysis is not supported on this platform. Please see the software/hardware requirements in the product Release Notes.</msg>
+      <msg name='%RunssThreadingNotSupported'><![CDATA[Threading analysis with User-Mode Sampling is not supported on this platform. See the <a web-link="https://software.intel.com/en-us/articles/intel-vtune-amplifier-release-notes" cli="Release Notes">Release Notes</a> for software/hardware requirements. You may also try Threading analysis in Hardware Event-Based Sampling mode.]]></msg>
+      <msg name='%RunssPtraceScopeLimited'>Cannot start data collection because the scope of ptrace system call application is limited. To enable profiling, please set /proc/sys/kernel/yama/ptrace_scope to 0. See the Release Notes for instructions on enabling it permanently.</msg>
+      <msg name='%CollectTSXCycles'>Capture transactional cycles</msg>
+      <msg name='%CollectTSXCyclesDescription'>Collect the events required to analyze transactional success.</msg>
+      <msg name='%NoCallStacksForTSXCycles'>Simultaneous collection of call stacks and Intel TSX cycles is not supported. Make sure only one of these options is enabled for the analysis.</msg>
+      <msg name='%AnalyzeActivePowerConsumption'>Analyze active power consumption</msg>
+      <msg name='%AnalyzeIdlePowerConsumption'>Analyze idle power consumption</msg>
+      <msg name='%AnalyzeActivePowerConsumptionDescription'>Analyze the energy taken by processor cores, graphics, DRAM, or the entire processor package while executing your application.</msg>
+      <msg name='%AnalyzeIdlePowerConsumptionDescription'>Analyze the time spent in processor sleep states while executing your application.</msg>
+      <msg name='%CallCountsIsNotPossibleForNativeMIC'>Collection with call counts is not supported for native applications on Intel Xeon Phi coprocessor.</msg>
+      <msg name='%VTSSIsNotPossibleForOffloadMIC'>Collection with stacks and call counts is not supported for offload applications on Intel Xeon Phi coprocessor.</msg>
+      <msg name='%RunssHotspotsSwModeNotSupported'>User-Mode Sampling collection does not support system-wide profiling. Please specify Hardware Event-Based Sampling in the analysis type configuration to profile system.</msg>
+      <msg name='%AtraceEventConfig'>Android framework events</msg>
+      <msg name='%AtraceEventConfigDescriptionSA'>Specify Android framework events to monitor with the hardware event-based sampling collector.</msg>
+      <msg name='%AtraceEventConfigDescriptionSS'>Specify Android framework events to monitor with the user-mode sampling and tracing collector.</msg>
+      <msg name='%AndroidFrameworkEventsIsNotSupported'>Android framework events collection is supported on Android systems ver. 4.3 and higher.</msg>
+      <msg name='%AndroidFrameworkEventsWithVTSS'>Android framework events collection is not supported with the stack collection enabled.</msg>
+      <msg name='%FtraceEventConfig'>Linux Ftrace events</msg>
+      <msg name='%FtraceEventConfigDescriptionSA'>Specify Linux Ftrace events to monitor with the hardware event-based sampling collector.</msg>
+      <msg name='%FtraceEventConfigDescriptionSS'>Specify Linux Ftrace events to monitor with the user-mode sampling and tracing collector.</msg>
+      <msg name='%LinuxFtraceEventsWithVTSS'>Linux Ftrace events collection is not supported with the stack collection enabled.</msg>
+      <msg name='%PerfSystemWideNoPermAT'>This analysis type requires either an access to system-wide monitoring in the Linux perf subsystem or installation of the PRODUCT_LEGAL_SHORT_NAME drivers (see the "Sampling Drivers" help topic for further details). Please set the /proc/sys/kernel/perf_event_paranoid value to 0 or less to continue without installing the drivers.</msg>
+      <msg name='%PerfNoPermAT'>This analysis type requires either an access to kernel-mode monitoring in the Linux perf subsystem or installation of the PRODUCT_LEGAL_SHORT_NAME drivers (see the "Sampling Drivers" help topic for further details). Please set the /proc/sys/kernel/perf_event_paranoid value to 1 or less to continue without installing the drivers.</msg>
+      <msg name='%PerfWithStacksNoPermAT'>To run this analysis, either set the Stack size option to the unlimited value (0 in command line), or provide access to kernel-mode monitoring with the /proc/sys/kernel/perf_event_paranoid value set to 1 or less.</msg>
+      <msg name='%PerfSystemWideNoPerm'>System-wide collection is not possible due to a lack of credentials. Consider setting the /proc/sys/kernel/perf_event_paranoid value to 0 or less.</msg>
+      <msg name='%PerfNoPerm'>Collection is not possible due to a lack of credentials. Consider setting the /proc/sys/kernel/perf_event_paranoid value to 1 or less.</msg>
+      <msg name='%BandwidthPerfSystemWideNoPerm'>Not enough permissions to run uncore events collection. Consider setting the /proc/sys/kernel/perf_event_paranoid value to 0 or less.</msg>
+      <msg name='%BandwidthIsNotWorkWithoutSampling'><![CDATA[Memory bandwidth collection requires the sampling driver to be enabled on the system. Disable the "Analyze memory bandwidth" knob to proceed with the analysis or install the sampling driver on the system. See the <a web-link="https://software.intel.com/en-us/vtune-amplifier-help-sep-driver" cli="Sampling Drivers">"Sampling Drivers"</a> help topic for more details. Note that memory bandwidth collection is not possible if you are profiling inside a virtualized environment.]]></msg>
+      <msg name='%BandwidthIsNotWorkWithoutSamplingMA'><![CDATA[Cannot collect memory bandwidth data. Make sure the sampling driver is installed and enabled on your system. See the <a web-link="https://software.intel.com/en-us/vtune-amplifier-help-sep-driver" cli="Sampling Drivers">"Sampling Drivers"</a> help topic for more details. Note that memory bandwidth collection is not possible if you are profiling inside a virtualized environment.]]></msg>
+      <msg name='%PerfNoActivePowerConsumption'>Active power consumption data cannot be collected. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver to collect this data.</msg>
+      <msg name='%PerfNoIdlePowerConsumption'>Idle power consumption data cannot be collected. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver to collect this data.</msg>
+      <msg name='%PerfNoCSwitchSW'>Context switch data cannot be collected when system-wide profiling is enabled. Edit the Project Properties to modify this option.</msg>
+      <msg name='%PerfNoCSwitchDriver'>Context switch data cannot be collected since PRODUCT_LEGAL_SHORT_NAME sampling driver is not installed.</msg>
+      <msg name='%PerfDefaultStackSize'>Stack size option will be changed to 1024 during data collection. If you need a different size please specify it explicity in the analysis type.</msg>
+      <msg name='%PerfCannotSetUnlimitedStackSize'>Unlimited stack size (0) not allowed in driverless mode.</msg>
+      <msg name='%SystemWideCannotSetUnlimitedStackSize'>Unlimited stack size (0) not allowed in the system-wide mode.</msg>
+      <msg name='%SystemWideCannoCollectStackWindows'>Call stack collection is not available when system-wide profiling is enabled. Disable Collect stacks option in HOW pane. Alternatively, disable system-wide profiling in WHAT pane. In Launch Application mode, uncheck Analyze system-wide option under advanced settings. You cannot perform call stack collection in Profile System mode.</msg>
+      <msg name='%PerfResettingStackSize'>Unlimited stack size (0) not allowed if the PRODUCT_LEGAL_SHORT_NAME sampling driver is not loaded. Stack size option will be changed to 1024 during data collection.</msg>
+      <msg name='%PerfNoLBRCallstack'>LBR call stack data cannot be collected. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver to collect this data.</msg>
+      <msg name='%PerfEventFailOldKernel'>Collection is not possible because running OS kernel version is too old. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver or updating the OS kernel to collect data.</msg>
+      <msg name='%PerfEventFailMEMLoadsIVB'>Collection of events from MEM_LOAD_UOPS_RETIRED.,MEM_LOAD_UOPS_LLC_HIT_RETIRED.,MEM_LOAD_UOPS_LLC_MISS_RETIRED.* classes is not possible in the driverless mode. Please load the PRODUCT_LEGAL_SHORT_NAME sampling driver, or configure a custom analysis without events listed above.</msg>
+      <msg name='%EnableCSwitch'>Collect context switches</msg>
+      <msg name='%EnableCSwitchDescription'>Collect context switches.</msg>
+      <msg name='%NoDebugFS'>Ftrace collection is not possible because debugFS is not mounted to the default location (/sys/kernel/debug/).</msg>
+      <msg name='%NoFtraceAccess'>Ftrace collection is not possible due to a lack of credentials. Root privileges are required.</msg>
+      <msg name='%PowerIsNotSupportedForGivenTarget'>Cannot collect any power data on given target.</msg>
+      <msg name='%GENDebugInfoIsNotAvailable'>Current graphics driver does not enable Source/Assembly analysis for OpenCL kernels running on Intel Graphics.</msg>
+      <msg name='%CollectPreciseClockticks'>Collect precise clockticks</msg>
+      <msg name='%CollectPreciseClockticksDescription'>Collect the event that emulates precise clockticks and could be useful, for example, to analyze hotspots in transactions.</msg>
+      <msg name='%KvmGuestWithoutSymbols'>KVM guest OS profiling is not possible without guest OS symbols. Please provide a path to copy of the guest /proc/kallsyms and/or /proc/modules file.</msg>
+      <msg name='%KvmGuestAndMemBwNotSupported'>Simultaneous analysis of KVM guest OS and memory bandwidth is not supported. Make sure only one of these options is enabled for the analysis.</msg>
+      <msg name='%KvmGuestAndPowerNotSupported'>Simultaneous analysis of KVM guest OS and power consumption is not supported. Make sure only one of these options is enabled for the analysis.</msg>
+      <msg name='%KvmGuestAndCountNotSupported'>Simultaneous analysis of KVM guest OS and call/trip counts is not supported. Make sure only one of these options is enabled for the analysis.</msg>
+      <msg name='%PreciseMultiplexing'>Use precise multiplexing</msg>
+      <msg name='%PreciseMultiplexingDescription'>Use multiplexing algorithm with groups switching on each sample.</msg>
+      <msg name='%SofiaUserTasksWithSepNotSupported'>Collection of user API tasks cannot be performed for hardware event-based sampling analysis on SoFIA 3G.</msg>
+      <msg name='%SofiaAtraceWithSepNotSupported'>Android framework events collection cannot be performed for hardware event-based sampling analysis on SoFIA 3G.</msg>
+      <msg name='%SofiaFtraceWithSepNotSupported'>Linux Ftrace events collection cannot be performed for hardware event-based sampling analysis on SoFIA 3G.</msg>
+      <msg name='%analyzeFPU'>Analyze vectorization</msg>
+      <msg name='%analyzeFPUDescription'>Analyze how intensively the Floating Point Unit (FPU) is used by your program.</msg>
+      <msg name='%CanNotDisplayFPUForThisProcessor'>Vectorization analysis is not supported for this microprocessor.</msg>
+      <msg name='%AdvabncedLoopAnalysis'>Analyze loops</msg>
+      <msg name='%AdvancedLoopAnalysisDescription'>Extend loop analysis to collect advanced loops information such as instruction set usage and display analysis results by loops and functions.</msg>
+      <msg name='%NoSignalAltstack'>Disable using alternative stacks for signal handlers</msg>
+      <msg name='%NoSignalAltstackDescription'>Disable using alternative stacks for signal handlers. Consider this option for profiling standard Python 3 code on Linux.</msg>
+      <msg name='%PythonHotspotsNotSupported'>Python code analysis is not supported on this platform. Please see the software/hardware requirements in the product Release Notes.</msg>
+      <msg name='%PythonHotspotsOnlineStackwalkNotSupported'>Stack unwinding during collection for Python profiling is not supported on Linux systems.</msg>
+      <msg name='%ForceSystemWideDiskIO'>Disk Input and Output analysis is supported in system-wide mode only. Please enable the Analyze system-wide option in the target configuration.</msg>
+        <msg name='%VTSAIsNotPossibleForSniper'>Collection with stacks and call counts is not supported for sniper simulation.</msg>
+        <msg name='%VTSSIsNotPossibleForSniper'>Collection with stacks and call counts is not supported for sniper simulation.</msg>
+        <msg name='%SniperConnectionTypeOnly'>This collector can be used only with sniper connection.</msg>
+        <msg name='%SniperDisplayName'>Sniper simulation</msg>
+        <msg name='%SamplingAfterValue'>Sampling interval</msg>
+        <msg name='%SamplingAfterValueDescription'>Specify an interval between CPU samples.</msg>
+        <msg name='%AnalyzeMemAccess'>Memory access analysis</msg>
+        <msg name='%AnalyzeMemAccessDescription'>Enable memory access analysis.</msg>
+      <msg name='%DramBandwidthLimits'>Evaluate max DRAM bandwidth</msg>
+      <msg name='%DramBandwidthLimitsDescription'>Evaluate maximum achievable local DRAM bandwidth before the collection starts. This data is used to scale bandwidth metrics on the timeline and calculate thresholds.</msg>
+      <msg name='%DramBandwidthLimitsAgentNotAvailable'>Cannot identify the max DRAM bandwidth. Make sure the TCP/IP target collector (amplxe-runss) from the target package is set up on the target system.</msg>
+      <msg name='%DramBandwidthLimitsNotSupported'>Evaluation of the max DRAM bandwidth is not supported on this target platform.</msg>
+      <msg name='%NvmeTracingNotSupported'>Tracing of NVMe devices is available for Linux kernel 3.19.0 and higher. The kernel version of your target is lower. I/O data for your NVMe devices may be unavailable in the analysis result unless back-porting of NVMe driver is done.</msg>
+      <msg name='%StackTypeCollect'>Stack type</msg>
+      <msg name='%StackTypeCollectDescription'>Choose between software stack and hardware LBR-based stack types. Software stacks have no depth limitations and provide more data while hardware stacks introduce less overhead. Typically, software stack type is recommended unless the collection overhead becomes significant. Note that hardware LBR stack type may not be available on all platforms.</msg>
+      <msg name='%StackTypeCollectSoftware'>Software</msg>
+      <msg name='%StackTypeCollectLbr'>LBR</msg>
+      <msg name='%StackTypeCollectSoftwareLbr'>Software and LBR</msg>
+      <msg name='%StackTypeCollectFramePointer'>Frame Pointer</msg>
+      <msg name='%LBRCallstacksUnavailable'>Hardware LBR stack type is not available on this platform.</msg>
+      <msg name='%LBRCallstacksDepthLimitation'>Stack flow analysis on this platform is limited to the hardware LBR-based stack type that has a depth limitation.</msg>
+      <msg name='%SoftwareLBRCallstacksUnavailable'>Mixed Software and Hardware LBR stacks mode is not available when Stack size option is set to the unlimited (0) value.</msg>
+      <msg name='%BasicRTOSAnalysis'>Trace basic ThreadX task scheduling activity</msg>
+      <msg name='%ExtendedRTOSAnalysis'>Trace extended ThreadX synchronization activity</msg>
+      <msg name='%ExprofIrqAnalysis'>Trace interrupt requests and service routines</msg>
+      <msg name='%FunctionAnalysis'>Trace entry and leave points for instrumented functions</msg>
+      <msg name='%ExprofBWAnalysis'>Trace bandwidth of the data exchanged through the instrumented interfaces</msg>
+      <msg name='%ExprofCustomEvents'>Trace custom events</msg>
+      <msg name='%ExprofPerfCounters'>Trace values of configurable performance counters</msg>
+      <msg name='%ExprofFixedCounters'>Trace values of fixed performance counters</msg>
+      <msg name='%ExprofClocks'>Trace value changes for various clocks in the system</msg>
+      <msg name='%ExprofTiming'>Trace markers used to verify correct timing of the system</msg>
+      <msg name='%ExprofPwr'>Trace power and sleep related events</msg>
+      <msg name='%ExprofSysMon'>Trace SysMon activity</msg>
+      <msg name='%ExprofSpinlock'>Trace spin-lock usage (requested, obtained, released)</msg>
+      <msg name='%ExprofPBM'>Trace modem packet buffer activity</msg>
+      <msg name='%ExprofSWTimer'>Trace SW timer usage for all timer types</msg>
+      <msg name='%ExprofCollectLBRs'>Collect LBRs</msg>
+      <msg name='%ExprofCollectMemObj'>Collect DLA</msg>
+      <msg name='%ModemConnectionTypeOnly'>ExactProfiling is applicable only for modem connection.</msg>
+      <msg name='%UnknownModemConnection'>Unknown modem connection</msg>
+      <msg name='%EmptyExprofEventConfig'>No events requested</msg>
+      <msg name='%InvalidTraceChannel'>Empty or invalid trace channel provided</msg>
+      <msg name='%ExprofLBRsCollectedOnlyDuringPMUCollection'>Collection of LBR is only possible during event-based sampling collection</msg>
+      <msg name='%ExProfDisplayName'>Exact profiling</msg>
+      <msg name='%AnalyzeOpenMPRegions'>Analyze OpenMP regions</msg>
+      <msg name='%AnalyzeOpenMPRegionsDescription'>Instrument and analyze OpenMP regions to detect inefficiencies such as imbalance, lock contention, or overhead on performing scheduling, reduction and atomic operations.</msg>
+      <msg name='%iptCollectEvents'>Collect event for code regions of interest</msg>
+      <msg name='%iptCollectEventsDescription'>Enable event collection for code regions of interest.</msg>
+      <msg name='%iptRegionsToLoad'>Max number of code regions for detailed analysis</msg>
+      <msg name='%iptRegionsToLoadDescription'>Specify the max number (0-5000) of code regions of interest to load for detailed analysis. Enter 0 for detailed analysis of all code regions.</msg>
+      <msg name='%maxRegionDuration'>Max duration (in milliseconds) of code region for detailed analysis</msg>
+      <msg name='%maxRegionDurationDescription'>Specify max duration (0.001-1000ms) for code regions of interest to use for detailed analysis.</msg>
+      <msg name='%processKernelBinaries'>Process kernel binaries</msg>
+      <msg name='%processKernelBinariesDescription'>Process code from kernel binaries, only entry points will be processed otherwise.</msg>
+      <msg name='%RecomedndFinalizationModeDeferred'>The platform you chose might have slow finalization performance. Consider using the Select a system for result finalization option to choose deferred finalization on a machine with better single-threaded performance.</msg>
+      <msg name='%AnalyzeMemoryConsumption'>Analyze memory consumption</msg>
+      <msg name='%AnalyzeMemoryConsumptionDescription'>Collect and analyze information about memory objects with the highest memory consumption.</msg>
+      <msg name='%PCIeBandwidthUnavailable'>PCIe bandwidth analysis cannot be enabled since PRODUCT_LEGAL_SHORT_NAME sampling driver (sep*/sepdrv*) is not installed. See the "Sampling Drivers" help topic for more details.</msg>
+      <msg name='%DramBandwidthLimitsAttachWarning'>Measuring peak bandwidth may be not accurate in the attach mode since the system can be heavily loaded at the time of the measurement. Accurate peak DRAM bandwidth is important for further analysis. When collection is done, check the Bandwidth Utilization Histogram on the Summary view and make sure the Low/Medium/High utilization thresholds are correct for your system and manually adjust them, if required.</msg>
+      <msg name='%DramBandwidthLimitsNotEnabledWarning'>Measuring peak DRAM bandwidth is not enabled for the bandwidth data collection. Accurate peak DRAM bandwidth is important for further analysis. Enable this measurement or explore the Bandwidth Utilization Histogram on the Summary view after collection and make sure the Low/Medium/High utilization thresholds are correct for your system. You can manually adjust them, if required.</msg>
+      <msg name='%BandwidthLimitsCollectionIsEnabledByDefaultWarning'>Measuring peak bandwidth is enabled by default. Accurate peak DRAM bandwidth is important for further analysis but it involves launching a small benchmark which leads to increased collection time. If you would like to omit it, disable this feauture in custom analysis.</msg>
+      <msg name='%IGFXDriverForciblyLoaded'>Events for detailed GPU utilization analysis cannot be collected because Intel Graphics Driver is forcibly loaded. Make sure the driver is signed properly and the kernel configuration option is set as CONFIG_MODULE_SIG_FORCE=y.</msg>
+      <msg name='%IGFXDriverForciblyLoadedSystemAllow'>Events for detailed GPU utilization analysis cannot be collected because Intel Graphics Driver is forcibly loaded.</msg>
+      <msg name='%IGFXDriverForciblyLoadedSystemDeny'>Events for detailed GPU utilization analysis cannot be collected because Intel Graphics Driver is forcibly loaded. Your system cannot load unsigned drivers. Consider signing the driver or setting the kernel configuration option as CONFIG_MODULE_SIG_FORCE=y.</msg>
+      <msg name='%IGFXTracepointsConfigOff'>Detailed GPU utilization collection requires driver trace-points to be enabled in the driver kernel module. Make sure the kernel configuration option is set as CONFIG_DRM_I915_LOW_LEVEL_TRACEPOINTS=y. &lt;a help-link="configs.gpu_analysis_intel_graphics" cli=""&gt;Learn more&lt;/a&gt;</msg>
+      <msg name='%IGFXDebugFSExistenceError'>Events for detailed GPU utilization analysis cannot be collected because debugFS is not mounted. See the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic.&lt;/a&gt; for further details.</msg>
+      <msg name='%IGFXDebugFSAccessError'>Events for detailed GPU utilization analysis cannot be collected due to a lack of credentials. Make sure you have read/write access to debugFS. You may either run the analysis with root privileges (recommended) or follow the configuration instructions provided in the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic.&lt;/a&gt;</msg>
+      <msg name='%IGFXDebugFSConfigError'>Events for detailed GPU utilization analysis cannot be collected because debugFS is disabled in kernel configuration. Use CONFIG_DEBUG_FS=y to enable debugFS.</msg>
+      <msg name='%IGFXDebugFSInvalidTypeError'>Events for detailed GPU utilization analysis cannot be collected because debugFS is not a valid type of filesystem. Make sure the kernel configuration enables debugFS: CONFIG_DEBUG_FS=y.</msg>
+      <msg name='%IGFXFtraceAccessError'>Events for detailed GPU utilization analysis cannot be collected due to a lack of privileges. Root privileges are required.</msg>
+      <msg name='%IGFXFtraceConfigError'>Events for detailed GPU utilization analysis cannot be collected because Ftrace is disabled in the kernel configuration. Use CONFIG_FTRACE=y to enable Ftrace.</msg>
+      <msg name='%IGFXFtraceUnknownError'>Events required for detailed GPU utilization analysis cannot be collected because Ftrace is inaccessible for undefined reason.</msg>
+      <msg name='%CswitchDebugFSExistenceError'>Collection of context switches is not possible because debugFS is not mounted. See the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic.&lt;/a&gt; for further details.</msg>
+      <msg name='%CswitchDebugFSAccessError'>Collection of context switches is not possible due to a lack of credentials. Make sure you have read/write access to debugFS. You may either run the analysis with root privileges (recommended) or follow the configuration instructions provided in the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic.&lt;/a&gt;</msg>
+      <msg name='%CswitchDebugFSConfigError'>Collection of context switches is not possible because debugFS is disabled in the kernel configuration. Use CONFIG_DEBUG_FS=y to enable debugFS.</msg>
+      <msg name='%CswitchDebugFSInvalidTypeError'>Collection of context switches is not possible because debugFS is not a valid type of filesystem. Make sure debugFS is enabled in the kernel configuration: CONFIG_DEBUG_FS=y.</msg>
+      <msg name='%CswitchFtraceAccessError'>Collection of context switches is not possible due to a lack of privileges. Root privileges are required.</msg>
+      <msg name='%CswitchFtraceConfigError'>Collection of context switches is not possible because Ftrace is disabled in the kernel configuration. Use CONFIG_FTRACE=y to enable Ftrace.</msg>
+      <msg name='%CswitchFtraceUnknownError'>Collection of context switches cannot be enabled.</msg>
+      <msg name='%IoWaitDebugFSExistenceError'>Collection of I/O waits is not possible because debugFS is not mounted. See the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic.&lt;/a&gt; for further details.</msg>
+      <msg name='%IoWaitDebugFSAccessError'>Collection of I/O waits is not possible due to a lack of credentials. Make sure you have read/write access to debugFS. You may either run the analysis with root privileges (recommended) or follow the configuration instructions provided in the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic.&lt;/a&gt;</msg>
+      <msg name='%IoWaitDebugFSConfigError'>Collection of I/O waits is not possible because debugFS is disabled in the kernel configuration. Use CONFIG_DEBUG_FS=y to enable debugFS.</msg>
+      <msg name='%IoWaitDebugFSInvalidTypeError'>Collection of I/O waits is not possible because debugFS is not a valid type of filesystem. Make sure debugFS is enabled in the kernel configuration: CONFIG_DEBUG_FS=y.</msg>
+      <msg name='%IoWaitFtraceAccessError'>Collection of I/O waits is not possible due to a lack of privileges. Root privileges are required.</msg>
+      <msg name='%IoWaitFtraceConfigError'>Collection of I/O waits is not possible because Ftrace is disabled in the kernel configuration. Use CONFIG_FTRACE=y to enable Ftrace.</msg>
+      <msg name='%IoWaitFtraceUnknownError'>Collection of I/O waits cannot be enabled.</msg>
+      <msg name='%DebugFSExistenceError'>Ftrace collection is not possible because debugFS is not mounted. See the &lt;a help-link="intel.phe.configs.kernel_analysis" cli="Linux and Android Kernel Analysis help topic."&gt;Linux and Android Kernel Analysis help topic&lt;/a&gt; for further details.</msg>
+      <msg name='%DebugFSAccessError'>Ftrace collection is not possible due to a lack of credentials. Make sure you have read/write access to debugFS. You may either run the analysis with root privileges (recommended) or follow the configuration instructions provided in the Linux and Android Kernel Analysis help topic.</msg>
+      <msg name='%DebugFSConfigError'>Ftrace collection is not possible because debugFS is disabled in the kernel configuration. Use CONFIG_DEBUG_FS=y to enable debugFS.</msg>
+      <msg name='%DebugFSInvalidTypeError'>Ftrace collection is not possible because debugFS is not a valid type of filesystem. Make sure debugFS is enabled in the kernel configuration: CONFIG_DEBUG_FS=y.</msg>
+      <msg name='%FtraceAccessError'>Ftrace collection is not possible due to a lack of privileges. Root privileges are required.</msg>
+      <msg name='%FtraceConfigError'>Ftrace collection is not possible because Ftrace is disabled in the kernel configuration. Use CONFIG_FTRACE=y to enable Ftrace.</msg>
+      <msg name='%FtraceUnknownError'>Ftrace collection cannot be enabled.</msg>
+      <msg name='%IcePmonsConfig'>NNP-I hardware events</msg>
+      <msg name='%IcePmonsConfigDescription'>Specify NNP-I hardware performance counters to monitor.</msg>
+      <msg name='%DurationTypeDeprecated'>The Duration Time Estimate option is deprecated. Use the CPU Sampling Interval option on the Analysis Type configuration pane instead.</msg>
+      <msg name='%DurationTypeIgnored'>The Duration Time Estimate option will be ignored. The CPU Sampling Interval option will be used instead.</msg>
+      <msg name='%CannotDetectTargetConfiguration'>Amplifier cannot detect remote machine configuration.</msg>
+      <msg name='%enableThreadAffinity'>Collect thread affinity</msg>
+      <msg name='%PMUNotAvailableWarningTpss'>Hardware collection of CPU events is not possible on this system. Configured events will be ignored.</msg>
+      <msg name='%PMUNotAvailablePermissionWarningTpss'>To collect hardware CPU events, run the product as administrator.</msg>
+      <msg name='%DriverPermissionErrorWindows'>To collect hardware events, run the product as administrator.</msg>
+      <msg name='%AffinitySystemWidetargetError'>Affinity collection does not support system-wide profiling. Disable affinity collection or specify an application or process to analyze.</msg>
+      <msg name='%AffinityAnalyzeSystemError'>Affinity collection does not support system-wide profiling. Disable the "Analyze system-wide" option or disable affinity collection.</msg>
+      <msg name='%enableParallelFsCollection'>Collect Parallel File System counters</msg>
+      <msg name='%PreferDriverlessCollection'>Enable driverless collection</msg>
+      <msg name='%PreferDriverlessCollectionDescription'>Use driverless hardware event-based collection when possible.</msg>
+      <msg name='%PerfNoCSwitchOnThisKernel'>Context switch data cannot be collected using the Perf-based driverless collection if the kernel version is less than 4.3. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver using the root credentials.</msg>
+      <msg name='%PerfUseVTSSForContextSwitches'>Context switch data cannot be collected in the current driverless mode if the kernel version is less than 4.3 or /proc/sys/kernel/perf_event_paranoid value is greater than 1. Update your system configuration for driverless collection or consider switching to the Intel sampling driver by setting an unlimited (0) value for the Stack size option.</msg>
+      <msg name='%PerfContextSwitcheTypesMightBeUnavailable'>For analyses using the Perf-based driverless collection, the preemption and synchronization context switches may not be differentiated on kernels older than 4.17. To identify the context switch types on such kernels, switch to the driver-based collection by setting the Stack size option to the unlimited (0) value.</msg>
+      <msg name='%PerfSettingEventModeToUser'>Kernel-level modules cannot be analyzed for this configuration. To enable the kernel-level analysis, either make sure the Intel sampling driver is loaded and set an unlimited (0) value for the Stack size option (if stack collection is required) or provide access to kernel-mode monitoring with the /proc/sys/kernel/perf_event_paranoid value set to 1 or less.</msg>
+      <msg name='%PerfNoCSwitchBecausePerfParanoid'>Context switch data cannot be collected in the Perf-based driverless mode if /proc/sys/kernel/perf_event_paranoid value is greater than 1.</msg>
+      <msg name='%AnalyzeEnergyConsumption'>Analyze power usage</msg>
+      <msg name='%AnalyzeEnergyConsumptionDescription'>Track power consumption by processor over time to see if it can cause CPU throttling.</msg>
+      <msg name='%AnalyzeThrottlingReasons'>Analyze throttling reasons</msg>
+      <msg name='%AnalyzeThrottlingReasonsDescription'>Identify reasons for system throttling when performance is uncharacteristically low with a drop in frequency. Explore whether the system is exceeding safe thermal or power limits.</msg>
+      <msg name='%EnableCStateCollection'>Collect C-State events</msg>
+      <msg name='%EnableCStateCollectionDescription'>Collect CPU Idle events to analyze CPU sleep states transitions.</msg>
+      <msg name='%EnableInterruptsCollection'>Analyze interrupts</msg>
+      <msg name='%EnableInterruptsCollectionDescription'>Collect interrupt events that alter a normal execution flow of a program. Such events can be generated by hardware devices or by CPUs. Use this data to identify slow interrupts that affect your code performance.</msg>
+      <msg name='%ForceSystemWideWarning'>The option to analyze all processes running on the system is enabled for this analysis type by default.</msg>
+      <msg name='%KptrRestrictLimit'>Access to /proc/kallsyms file is limited. Consider changing /proc/sys/kernel/kptr_restrict to 0 to enable resolution of OS kernel and kernel module symbols.</msg>
+      <msg name='%CollectingHugeData'>This analysis collects a lot of raw data. Make sure you have enough disk space in the result folder.</msg>
+      <msg name='%FpgaSourceFile'>Path to .source file</msg>
+      <msg name='%FpgaSourceFileDescription'>Specify the path to a .source file available in the compilation output directory of FPGA application. This option is recommended for accurate attribution of performance statistics to the source lines. If not specified, the profiles searches for the files in the working directory.</msg>
+      <msg name='%UseAOCLProfile'>Use AOCL Profiler</msg>
+      <msg name='%CollectTopology'>Collect topology</msg>
+      <msg name='%CollectTopologyDescription'>Collect HW topology</msg>
+      <msg name='%CollectCAT'>Analyze cache allocation</msg>
+      <msg name='%CollectCATDescription'>Collect the events required to compute cache allocation usage.</msg>
+      <msg name='%CATUnavailable'>Cache allocation analysis cannot be enabled since PRODUCT_LEGAL_SHORT_NAME sampling driver (sep*/sepdrv*) is not installed. See the "Sampling Drivers" help topic for more details.</msg>
+      <msg name='%CATUnavailableInEBC'>Cache allocation analysis cannot be enabled in selective event-based counting mode.</msg>
+      <msg name='%CollectOsCounters'>Collect OS counters</msg>
+      <msg name='%CollectOsCountersDescription'>Collect OS performance counters</msg>
+      <msg name='%AnalyzePersistentMemory'>Collect persistent memory counters</msg>
+      <msg name='%AnalyzePersistentMemoryDescription'>Collect persistent memory performance counters</msg>
+      <msg name='%IpmWatchNotReady'>Intel PM Watch unable to start due to missing library dependecies. Please refer to https://github.com/intel/intel-pmwatch#dependencies to make sure that all requirements are satisfied.</msg>
+      <msg name='%PMemNotAvailable'>Persistent memory not detected on the target system.</msg>
+      <msg name='%EmonPresetDescription'>Specify a preset for EMON collector. For available presets, run: emon -preset-list.</msg>
+      <msg name='%EmonCSVTraceFormatDescription'>Use CSV format for EMON trace file.</msg>
+      <msg name='%ReadWrapperScriptFileContentError'>Could not read the contents of the wrapper script file provided. Please check if the file exists and whether it is accessible and non-empty.</msg>
+    </catalog>
+</xmc>

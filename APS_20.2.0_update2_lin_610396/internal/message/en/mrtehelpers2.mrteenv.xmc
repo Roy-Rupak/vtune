@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="mrtehelpers3.mrteenv" lang="en">
+    <msg name='MrteModeList'>Display the list of supported Java*/.NET* collection modes.</msg>
+    <msg name='MrteMode'>
+        Specify Java/.NET collection mode. Possible values are:
+        &#10;
+        &#10;native - collect information only for native code.
+        &#10;managed - collect information only for managed code.
+        &#10;mixed - collect information for both managed and native code.
+        &#10;auto - choose the mode based on binary type.
+    </msg>
+    </catalog>
+</xmc>

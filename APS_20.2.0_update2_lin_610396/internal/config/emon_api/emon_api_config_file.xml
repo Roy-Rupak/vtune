@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+<!-- EMON API Configuration File -->
+
+    <emon_config>
+        <emon_event>INST_RETIRED.ANY</emon_event>
+        <emon_event>CPU_CLK_UNHALTED.REF_TSC</emon_event>
+        <emon_event>CPU_CLK_UNHALTED.THREAD</emon_event>
+        <duration>0.1</duration>
+        <start_paused>0</start_paused>
+        <output_file>emon_api.txt</output_file>
+        <print_system_time>1</print_system_time>
+        <additional_options>-experimental</additional_options>
+    </emon_config>
+
+    <metric name="CPI">
+        <event alias="a">CPU_CLK_UNHALTED.THREAD</event>
+        <event alias="b">INST_RETIRED.ANY</event>
+        <formula>a/b</formula>
+    </metric>
+
+    <metric name="CPU_UTILIZATION">
+        <event alias="a">CPU_CLK_UNHALTED.REF_TSC</event>
+        <time alias="t">TIME_STAMP_IN_CYCLES</time>
+        <formula>100*a/t</formula>
+    </metric>
+
+
+</root>

@@ -1,0 +1,9 @@
+# Performance Monitoring Events for the Fourth Generation Intel Core Processors Based on the Haswell Microarchitecture - V19
+# 6/18/2015 9:58:16 AM
+# Copyright (c) 2007 - 2014 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	eLLC_PRESENT
+iMPH-U	0x80	0x01	UNC_ARB_TRK_OCCUPANCY.ALL	Each cycle count number of all Core outgoing valid entries. Such entry is defined as valid from it's allocation till first of IDI0 or DRS0 messages is sent out. Accounts for Coherent and non-coherent traffic.	0,	0x40	0
+iMPH-U	0x81	0x01	UNC_ARB_TRK_REQUESTS.ALL	Total number of Core outgoing entries allocated. Accounts for Coherent and non-coherent traffic.	0,1	0x40	0
+iMPH-U	0x81	0x20	UNC_ARB_TRK_REQUESTS.WRITES	Number of Writes allocated - any write transactions: full/partials writes and evictions.	0,1	0x40	0
+iMPH-U	0x83	0x01	UNC_ARB_COH_TRK_OCCUPANCY.All	Each cycle count number of valid entries in Coherency Tracker queue from allocation till deallocation. Aperture requests (snoops) appear as NC decoded internally and become coherent (snoop L3, access memory)	0,	0x40	0
+NCU	0x0	0x01	UNC_CLOCK.SOCKET	This 48-bit fixed counter counts the UCLK cycles	FIXED	0x40	0

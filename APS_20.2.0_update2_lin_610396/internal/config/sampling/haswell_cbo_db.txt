@@ -1,0 +1,29 @@
+# Performance Monitoring Events for the Fourth Generation Intel Core Processors Based on the Haswell Microarchitecture - V29
+# 10/3/2018 10:24:08 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	eLLC_PRESENT
+CBO	0x22	0x21	UNC_CBO_XSNP_RESPONSE.MISS_EXTERNAL	An external snoop misses in some processor core.	0,1	0x40	0
+CBO	0x22	0x24	UNC_CBO_XSNP_RESPONSE.HIT_EXTERNAL	An external snoop hits a non-modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x28	UNC_CBO_XSNP_RESPONSE.HITM_EXTERNAL	An external snoop hits a modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x41	UNC_CBO_XSNP_RESPONSE.MISS_XCORE	A cross-core snoop initiated by this Cbox due to processor core memory request which misses in some processor core.	0,1	0x40	0
+CBO	0x22	0x44	UNC_CBO_XSNP_RESPONSE.HIT_XCORE	A cross-core snoop initiated by this Cbox due to processor core memory request which hits a non-modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x48	UNC_CBO_XSNP_RESPONSE.HITM_XCORE	A cross-core snoop initiated by this Cbox due to processor core memory request which hits a modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x81	UNC_CBO_XSNP_RESPONSE.MISS_EVICTION	A cross-core snoop resulted from L3 Eviction which misses in some processor core.	0,1	0x40	0
+CBO	0x22	0x84	UNC_CBO_XSNP_RESPONSE.HIT_EVICTION	A cross-core snoop resulted from L3 Eviction which hits a non-modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x88	UNC_CBO_XSNP_RESPONSE.HITM_EVICTION	A cross-core snoop resulted from L3 Eviction which hits a modified line in some processor core.	0,1	0x40	0
+CBO	0x34	0x11	UNC_CBO_CACHE_LOOKUP.READ_M	L3 Lookup read request that access cache and found line in M-state.	0,1	0x40	0
+CBO	0x34	0x16	UNC_CBO_CACHE_LOOKUP.READ_ES	L3 Lookup read request that access cache and found line in E or S-state.	0,1	0x40	0
+CBO	0x34	0x18	UNC_CBO_CACHE_LOOKUP.READ_I	L3 Lookup read request that access cache and found line in I-state.	0,1	0x40	0
+CBO	0x34	0x1f	UNC_CBO_CACHE_LOOKUP.READ_MESI	L3 Lookup read request that access cache and found line in any MESI-state.	0,1	0x40	0
+CBO	0x34	0x21	UNC_CBO_CACHE_LOOKUP.WRITE_M	L3 Lookup write request that access cache and found line in M-state.	0,1	0x40	0
+CBO	0x34	0x26	UNC_CBO_CACHE_LOOKUP.WRITE_ES	L3 Lookup write request that access cache and found line in E or S-state.	0,1	0x40	0
+CBO	0x34	0x28	UNC_CBO_CACHE_LOOKUP.WRITE_I	L3 Lookup write request that access cache and found line in I-state.	0,1	0x40	0
+CBO	0x34	0x2f	UNC_CBO_CACHE_LOOKUP.WRITE_MESI	L3 Lookup write request that access cache and found line in MESI-state.	0,1	0x40	0
+CBO	0x34	0x41	UNC_CBO_CACHE_LOOKUP.EXTSNP_M	L3 Lookup external snoop request that access cache and found line in M-state.	0,1	0x40	0
+CBO	0x34	0x46	UNC_CBO_CACHE_LOOKUP.EXTSNP_ES	L3 Lookup external snoop request that access cache and found line in E or S-state.	0,1	0x40	0
+CBO	0x34	0x48	UNC_CBO_CACHE_LOOKUP.EXTSNP_I	L3 Lookup external snoop request that access cache and found line in I-state.	0,1	0x40	0
+CBO	0x34	0x4f	UNC_CBO_CACHE_LOOKUP.EXTSNP_MESI	L3 Lookup external snoop request that access cache and found line in MESI-state.	0,1	0x40	0
+CBO	0x34	0x81	UNC_CBO_CACHE_LOOKUP.ANY_M	L3 Lookup any request that access cache and found line in M-state.	0,1	0x40	0
+CBO	0x34	0x86	UNC_CBO_CACHE_LOOKUP.ANY_ES	L3 Lookup any request that access cache and found line in E or S-state.	0,1	0x40	0
+CBO	0x34	0x88	UNC_CBO_CACHE_LOOKUP.ANY_I	L3 Lookup any request that access cache and found line in I-state.	0,1	0x40	0
+CBO	0x34	0x8f	UNC_CBO_CACHE_LOOKUP.ANY_MESI	L3 Lookup any request that access cache and found line in MESI-state.	0,1	0x40	0

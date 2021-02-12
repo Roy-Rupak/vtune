@@ -1,0 +1,1088 @@
+# Performance Monitoring Events for Intel Xeon Processors Based on the Skylake Microarchitecture - V1.22
+# 3/27/2020 4:07:25 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS
+CHA	0x11	0x04	0x00	0x00	0x00	UNC_CHA_RxC_OCCUPANCY.IPQ	Ingress (from CMS) Occupancy; IPQ	0	0x53	na	0	0	0x00
+CHA	0x11	0x4	0x00	0x00	0x00	UNC_H_RxC_OCCUPANCY.IPQ	This event is deprecated. Refer to new event UNC_CHA_RxC_OCCUPANCY.IPQ	0	0x53	na	0	0	0x01
+CHA	0x11	0x40	0x00	0x00	0x00	UNC_H_RxC_OCCUPANCY.RRQ	This event is deprecated. Refer to new event UNC_CHA_RxC_OCCUPANCY.RRQ	0	0x53	na	0	0	0x01
+CHA	0x11	0x40	0x00	0x00	0x00	UNC_CHA_RxC_OCCUPANCY.RRQ	Ingress (from CMS) Occupancy; RRQ	0	0x53	na	0	0	0x00
+CHA	0x11	0x80	0x00	0x00	0x00	UNC_H_RxC_OCCUPANCY.WBQ	This event is deprecated. Refer to new event UNC_CHA_RxC_OCCUPANCY.WBQ	0	0x53	na	0	0	0x01
+CHA	0x11	0x80	0x00	0x00	0x00	UNC_CHA_RxC_OCCUPANCY.WBQ	Ingress (from CMS) Occupancy; WBQ	0	0x53	na	0	0	0x00
+CHA	0x13	0x02	0x00	0x00	0x00	UNC_CHA_RxC_INSERTS.IRQ_REJ	Ingress (from CMS) Allocations; IRQ Rejected	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x13	0x04	0x00	0x00	0x00	UNC_CHA_RxC_INSERTS.IPQ	Ingress (from CMS) Allocations; IPQ	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x13	0x10	0x00	0x00	0x00	UNC_H_RxC_INSERTS.PRQ	This event is deprecated. Refer to new event UNC_CHA_RxC_INSERTS.PRQ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x13	0x10	0x00	0x00	0x00	UNC_CHA_RxC_INSERTS.PRQ	Ingress (from CMS) Allocations; PRQ	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x13	0x2	0x00	0x00	0x00	UNC_H_RxC_INSERTS.IRQ_REJ	This event is deprecated. Refer to new event UNC_CHA_RxC_INSERTS.IRQ_REJ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x13	0x20	0x00	0x00	0x00	UNC_H_RxC_INSERTS.PRQ_REJ	This event is deprecated. Refer to new event UNC_CHA_RxC_INSERTS.PRQ_REJ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x13	0x20	0x00	0x00	0x00	UNC_CHA_RxC_INSERTS.PRQ_REJ	Ingress (from CMS) Allocations; PRQ	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x13	0x4	0x00	0x00	0x00	UNC_H_RxC_INSERTS.IPQ	This event is deprecated. Refer to new event UNC_CHA_RxC_INSERTS.IPQ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x13	0x40	0x00	0x00	0x00	UNC_H_RxC_INSERTS.RRQ	This event is deprecated. Refer to new event UNC_CHA_RxC_INSERTS.RRQ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x13	0x40	0x00	0x00	0x00	UNC_CHA_RxC_INSERTS.RRQ	Ingress (from CMS) Allocations; RRQ	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x13	0x80	0x00	0x00	0x00	UNC_H_RxC_INSERTS.WBQ	This event is deprecated. Refer to new event UNC_CHA_RxC_INSERTS.WBQ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x13	0x80	0x00	0x00	0x00	UNC_CHA_RxC_INSERTS.WBQ	Ingress (from CMS) Allocations; WBQ	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x17	0x01	0x00	0x00	0x00	UNC_CHA_CORE_PMA.C1_STATE	Core PMA Events; C1  State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x17	0x02	0x00	0x00	0x00	UNC_CHA_CORE_PMA.C1_TRANSITION	Core PMA Events; C1 Transition	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x17	0x04	0x00	0x00	0x00	UNC_CHA_CORE_PMA.C6_STATE	Core PMA Events; C6 State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x17	0x08	0x00	0x00	0x00	UNC_CHA_CORE_PMA.C6_TRANSITION	Core PMA Events; C6 Transition	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x17	0x1	0x00	0x00	0x00	UNC_H_CORE_PMA.C1_STATE	This event is deprecated. Refer to new event UNC_CHA_CORE_PMA.C1_STATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x17	0x10	0x00	0x00	0x00	UNC_H_CORE_PMA.GV	This event is deprecated. Refer to new event UNC_CHA_CORE_PMA.GV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x17	0x10	0x00	0x00	0x00	UNC_CHA_CORE_PMA.GV	Core PMA Events; GV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x17	0x2	0x00	0x00	0x00	UNC_H_CORE_PMA.C1_TRANSITION	This event is deprecated. Refer to new event UNC_CHA_CORE_PMA.C1_TRANSITION	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x17	0x4	0x00	0x00	0x00	UNC_H_CORE_PMA.C6_STATE	This event is deprecated. Refer to new event UNC_CHA_CORE_PMA.C6_STATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x17	0x8	0x00	0x00	0x00	UNC_H_CORE_PMA.C6_TRANSITION	This event is deprecated. Refer to new event UNC_CHA_CORE_PMA.C6_TRANSITION	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x01	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.AD_REQ_VN0	Ingress (from CMS) Request Queue Rejects; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x02	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.AD_RSP_VN0	Ingress (from CMS) Request Queue Rejects; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x04	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.BL_RSP_VN0	Ingress (from CMS) Request Queue Rejects; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x08	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.BL_WB_VN0	Ingress (from CMS) Request Queue Rejects; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x1	0x00	0x00	0x00	UNC_H_RxC_IRQ0_REJECT.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ0_REJECT.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x10	0x00	0x00	0x00	UNC_H_RxC_IRQ0_REJECT.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ0_REJECT.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x10	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.BL_NCB_VN0	Ingress (from CMS) Request Queue Rejects; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x2	0x00	0x00	0x00	UNC_H_RxC_IRQ0_REJECT.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ0_REJECT.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x20	0x00	0x00	0x00	UNC_H_RxC_IRQ0_REJECT.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ0_REJECT.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x20	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.BL_NCS_VN0	Ingress (from CMS) Request Queue Rejects; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x4	0x00	0x00	0x00	UNC_H_RxC_IRQ0_REJECT.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ0_REJECT.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x40	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.AK_NON_UPI	Ingress (from CMS) Request Queue Rejects; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x18	0x8	0x00	0x00	0x00	UNC_H_RxC_IRQ0_REJECT.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ0_REJECT.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x18	0x80	0x00	0x00	0x00	UNC_CHA_RxC_IRQ0_REJECT.IV_NON_UPI	Ingress (from CMS) Request Queue Rejects; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x02	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.HA	Ingress (from CMS) Request Queue Rejects; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x04	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.LLC_VICTIM	Ingress (from CMS) Request Queue Rejects; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x08	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.SF_VICTIM	Ingress (from CMS) Request Queue Rejects; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x1	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.ANY_REJECT_IRQ0	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x19	0x1	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.ANY0	Ingress (from CMS) Request Queue Rejects; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x10	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x19	0x10	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.VICTIM	Ingress (from CMS) Request Queue Rejects; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x2	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x19	0x20	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x19	0x20	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.LLC_OR_SF_WAY	Ingress (from CMS) Request Queue Rejects; Merging these two together to make room for ANY_REJECT_*0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x4	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x19	0x40	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x19	0x40	0x00	0x00	0x00	UNC_CHA_RxC_IRQ1_REJECT.ALLOW_SNP	Ingress (from CMS) Request Queue Rejects; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x19	0x8	0x00	0x00	0x00	UNC_H_RxC_IRQ1_REJECT.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_IRQ1_REJECT.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x1F	0x0	0x00	0x00	0x00	UNC_H_COUNTER0_OCCUPANCY	This event is deprecated. Refer to new event UNC_CHA_COUNTER0_OCCUPANCY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x1F	0x00	0x00	0x00	0x00	UNC_CHA_COUNTER0_OCCUPANCY	Counter 0 Occupancy	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x01	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.AD_REQ_VN0	Ingress (from CMS) Request Queue Rejects; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x02	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.AD_RSP_VN0	Ingress (from CMS) Request Queue Rejects; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x04	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.BL_RSP_VN0	Ingress (from CMS) Request Queue Rejects; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x08	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.BL_WB_VN0	Ingress (from CMS) Request Queue Rejects; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x1	0x00	0x00	0x00	UNC_H_RxC_PRQ0_REJECT.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ0_REJECT.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x20	0x10	0x00	0x00	0x00	UNC_H_RxC_PRQ0_REJECT.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ0_REJECT.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x20	0x10	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.BL_NCB_VN0	Ingress (from CMS) Request Queue Rejects; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x2	0x00	0x00	0x00	UNC_H_RxC_PRQ0_REJECT.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ0_REJECT.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x20	0x20	0x00	0x00	0x00	UNC_H_RxC_PRQ0_REJECT.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ0_REJECT.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x20	0x20	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.BL_NCS_VN0	Ingress (from CMS) Request Queue Rejects; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x4	0x00	0x00	0x00	UNC_H_RxC_PRQ0_REJECT.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ0_REJECT.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x20	0x40	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.AK_NON_UPI	Ingress (from CMS) Request Queue Rejects; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x20	0x8	0x00	0x00	0x00	UNC_H_RxC_PRQ0_REJECT.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ0_REJECT.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x20	0x80	0x00	0x00	0x00	UNC_CHA_RxC_PRQ0_REJECT.IV_NON_UPI	Ingress (from CMS) Request Queue Rejects; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x02	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.HA	Ingress (from CMS) Request Queue Rejects; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x04	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.LLC_VICTIM	Ingress (from CMS) Request Queue Rejects; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x08	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.SF_VICTIM	Ingress (from CMS) Request Queue Rejects; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x1	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.ANY_PRQ0	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x1	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.ANY0	Ingress (from CMS) Request Queue Rejects; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x10	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x10	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.VICTIM	Ingress (from CMS) Request Queue Rejects; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x2	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x20	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x20	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.LLC_OR_SF_WAY	Ingress (from CMS) Request Queue Rejects; LLC OR SF Way	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x4	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x40	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x40	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.ALLOW_SNP	Ingress (from CMS) Request Queue Rejects; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x21	0x8	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x80	0x00	0x00	0x00	UNC_H_RxC_PRQ1_REJECT.PA_MATCH	This event is deprecated. Refer to new event UNC_CHA_RxC_PRQ1_REJECT.PA_MATCH	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x21	0x80	0x00	0x00	0x00	UNC_CHA_RxC_PRQ1_REJECT.PA_MATCH	Ingress (from CMS) Request Queue Rejects; PhyAddr Match	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x01	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.AD_REQ_VN0	Ingress Probe Queue Rejects; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x02	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.AD_RSP_VN0	Ingress Probe Queue Rejects; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x04	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.BL_RSP_VN0	Ingress Probe Queue Rejects; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x08	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.BL_WB_VN0	Ingress Probe Queue Rejects; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x1	0x00	0x00	0x00	UNC_H_RxC_IPQ0_REJECT.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ0_REJECT.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x22	0x10	0x00	0x00	0x00	UNC_H_RxC_IPQ0_REJECT.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ0_REJECT.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x22	0x10	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.BL_NCB_VN0	Ingress Probe Queue Rejects; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x2	0x00	0x00	0x00	UNC_H_RxC_IPQ0_REJECT.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ0_REJECT.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x22	0x20	0x00	0x00	0x00	UNC_H_RxC_IPQ0_REJECT.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ0_REJECT.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x22	0x20	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.BL_NCS_VN0	Ingress Probe Queue Rejects; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x4	0x00	0x00	0x00	UNC_H_RxC_IPQ0_REJECT.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ0_REJECT.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x22	0x40	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.AK_NON_UPI	Ingress Probe Queue Rejects; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x22	0x8	0x00	0x00	0x00	UNC_H_RxC_IPQ0_REJECT.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ0_REJECT.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x22	0x80	0x00	0x00	0x00	UNC_CHA_RxC_IPQ0_REJECT.IV_NON_UPI	Ingress Probe Queue Rejects; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x02	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.HA	Ingress Probe Queue Rejects; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x04	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.LLC_VICTIM	Ingress Probe Queue Rejects; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x08	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.SF_VICTIM	Ingress Probe Queue Rejects; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x1	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.ANY_IPQ0	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x1	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.ANY0	Ingress Probe Queue Rejects; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x10	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x10	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.VICTIM	Ingress Probe Queue Rejects; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x2	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x20	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x20	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.LLC_OR_SF_WAY	Ingress Probe Queue Rejects; Merging these two together to make room for ANY_REJECT_*0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x4	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x40	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x40	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.ALLOW_SNP	Ingress Probe Queue Rejects; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x23	0x8	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x80	0x00	0x00	0x00	UNC_H_RxC_IPQ1_REJECT.PA_MATCH	This event is deprecated. Refer to new event UNC_CHA_RxC_IPQ1_REJECT.PA_MATCH	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x23	0x80	0x00	0x00	0x00	UNC_CHA_RxC_IPQ1_REJECT.PA_MATCH	Ingress Probe Queue Rejects; PhyAddr Match	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x01	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.AD_REQ_VN0	ISMQ Rejects; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x02	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.AD_RSP_VN0	ISMQ Rejects; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x04	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.BL_RSP_VN0	ISMQ Rejects; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x08	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.BL_WB_VN0	ISMQ Rejects; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x1	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_REJECT.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_REJECT.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x24	0x10	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_REJECT.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_REJECT.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x24	0x10	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.BL_NCB_VN0	ISMQ Rejects; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x2	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_REJECT.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_REJECT.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x24	0x20	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_REJECT.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_REJECT.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x24	0x20	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.BL_NCS_VN0	ISMQ Rejects; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x4	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_REJECT.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_REJECT.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x24	0x40	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.AK_NON_UPI	ISMQ Rejects; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x24	0x8	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_REJECT.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_REJECT.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x24	0x80	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_REJECT.IV_NON_UPI	ISMQ Rejects; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x25	0x02	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ1_REJECT.HA	ISMQ Rejects; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x25	0x1	0x00	0x00	0x00	UNC_H_RxC_ISMQ1_REJECT.ANY_ISMQ0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ1_REJECT.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x25	0x1	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ1_REJECT.ANY0	ISMQ Rejects; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x25	0x2	0x00	0x00	0x00	UNC_H_RxC_ISMQ1_REJECT.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ1_REJECT.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x01	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.AD_REQ_VN0	RRQ Rejects; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x02	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.AD_RSP_VN0	RRQ Rejects; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x04	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.BL_RSP_VN0	RRQ Rejects; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x08	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.BL_WB_VN0	RRQ Rejects; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x1	0x00	0x00	0x00	UNC_H_RxC_RRQ0_REJECT.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ0_REJECT.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x10	0x00	0x00	0x00	UNC_H_RxC_RRQ0_REJECT.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ0_REJECT.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x10	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.BL_NCB_VN0	RRQ Rejects; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x2	0x00	0x00	0x00	UNC_H_RxC_RRQ0_REJECT.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ0_REJECT.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x20	0x00	0x00	0x00	UNC_H_RxC_RRQ0_REJECT.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ0_REJECT.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x20	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.BL_NCS_VN0	RRQ Rejects; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x4	0x00	0x00	0x00	UNC_H_RxC_RRQ0_REJECT.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ0_REJECT.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x40	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.AK_NON_UPI	RRQ Rejects; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x26	0x8	0x00	0x00	0x00	UNC_H_RxC_RRQ0_REJECT.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ0_REJECT.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x26	0x80	0x00	0x00	0x00	UNC_CHA_RxC_RRQ0_REJECT.IV_NON_UPI	RRQ Rejects; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x02	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.HA	RRQ Rejects; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x04	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.LLC_VICTIM	RRQ Rejects; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x08	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.SF_VICTIM	RRQ Rejects; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x1	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.ANY_RRQ0	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x1	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.ANY0	RRQ Rejects; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x10	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x10	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.VICTIM	RRQ Rejects; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x2	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x20	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x20	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.LLC_OR_SF_WAY	RRQ Rejects; Merging these two together to make room for ANY_REJECT_*0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x4	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x40	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x40	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.ALLOW_SNP	RRQ Rejects; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x27	0x8	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x80	0x00	0x00	0x00	UNC_H_RxC_RRQ1_REJECT.PA_MATCH	This event is deprecated. Refer to new event UNC_CHA_RxC_RRQ1_REJECT.PA_MATCH	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x27	0x80	0x00	0x00	0x00	UNC_CHA_RxC_RRQ1_REJECT.PA_MATCH	RRQ Rejects; PhyAddr Match	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x01	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.AD_REQ_VN0	WBQ Rejects; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x02	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.AD_RSP_VN0	WBQ Rejects; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x04	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.BL_RSP_VN0	WBQ Rejects; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x08	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.BL_WB_VN0	WBQ Rejects; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x1	0x00	0x00	0x00	UNC_H_RxC_WBQ0_REJECT.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ0_REJECT.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x28	0x10	0x00	0x00	0x00	UNC_H_RxC_WBQ0_REJECT.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ0_REJECT.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x28	0x10	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.BL_NCB_VN0	WBQ Rejects; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x2	0x00	0x00	0x00	UNC_H_RxC_WBQ0_REJECT.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ0_REJECT.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x28	0x20	0x00	0x00	0x00	UNC_H_RxC_WBQ0_REJECT.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ0_REJECT.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x28	0x20	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.BL_NCS_VN0	WBQ Rejects; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x4	0x00	0x00	0x00	UNC_H_RxC_WBQ0_REJECT.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ0_REJECT.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x28	0x40	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.AK_NON_UPI	WBQ Rejects; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x28	0x8	0x00	0x00	0x00	UNC_H_RxC_WBQ0_REJECT.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ0_REJECT.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x28	0x80	0x00	0x00	0x00	UNC_CHA_RxC_WBQ0_REJECT.IV_NON_UPI	WBQ Rejects; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x02	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.HA	WBQ Rejects; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x04	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.LLC_VICTIM	WBQ Rejects; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x08	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.SF_VICTIM	WBQ Rejects; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x1	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.ANY_WBQ0	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x1	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.ANY0	WBQ Rejects; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x10	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x10	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.VICTIM	WBQ Rejects; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x2	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x20	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x20	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.LLC_OR_SF_WAY	WBQ Rejects; Merging these two together to make room for ANY_REJECT_*0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x4	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x40	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x40	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.ALLOW_SNP	WBQ Rejects; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x29	0x8	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x80	0x00	0x00	0x00	UNC_H_RxC_WBQ1_REJECT.PA_MATCH	This event is deprecated. Refer to new event UNC_CHA_RxC_WBQ1_REJECT.PA_MATCH	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x29	0x80	0x00	0x00	0x00	UNC_CHA_RxC_WBQ1_REJECT.PA_MATCH	WBQ Rejects; PhyAddr Match	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x01	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.AD_REQ_VN0	Request Queue Retries; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x02	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.AD_RSP_VN0	Request Queue Retries; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x04	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.BL_RSP_VN0	Request Queue Retries; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x08	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.BL_WB_VN0	Request Queue Retries; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x1	0x00	0x00	0x00	UNC_H_RxC_REQ_Q0_RETRY.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q0_RETRY.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2A	0x10	0x00	0x00	0x00	UNC_H_RxC_REQ_Q0_RETRY.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q0_RETRY.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2A	0x10	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.BL_NCB_VN0	Request Queue Retries; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x2	0x00	0x00	0x00	UNC_H_RxC_REQ_Q0_RETRY.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q0_RETRY.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2A	0x20	0x00	0x00	0x00	UNC_H_RxC_REQ_Q0_RETRY.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q0_RETRY.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2A	0x20	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.BL_NCS_VN0	Request Queue Retries; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x4	0x00	0x00	0x00	UNC_H_RxC_REQ_Q0_RETRY.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q0_RETRY.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2A	0x40	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.AK_NON_UPI	Request Queue Retries; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2A	0x8	0x00	0x00	0x00	UNC_H_RxC_REQ_Q0_RETRY.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q0_RETRY.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2A	0x80	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q0_RETRY.IV_NON_UPI	Request Queue Retries; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x01	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.ANY0	Request Queue Retries; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x02	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x02	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.HA	Request Queue Retries; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x04	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x04	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.LLC_VICTIM	Request Queue Retries; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x08	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x08	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.SF_VICTIM	Request Queue Retries; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x1	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.ANY	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x10	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x10	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.VICTIM	Request Queue Retries; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x20	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x20	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.LLC_OR_SF_WAY	Request Queue Retries; Merging these two together to make room for ANY_REJECT_*0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x40	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x40	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.ALLOW_SNP	Request Queue Retries; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2B	0x80	0x00	0x00	0x00	UNC_H_RxC_REQ_Q1_RETRY.PA_MATCH	This event is deprecated. Refer to new event UNC_CHA_RxC_REQ_Q1_RETRY.PA_MATCH	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2B	0x80	0x00	0x00	0x00	UNC_CHA_RxC_REQ_Q1_RETRY.PA_MATCH	Request Queue Retries; PhyAddr Match	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x01	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.AD_REQ_VN0	ISMQ Retries; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x02	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.AD_RSP_VN0	ISMQ Retries; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x04	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.BL_RSP_VN0	ISMQ Retries; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x08	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.BL_WB_VN0	ISMQ Retries; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x1	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_RETRY.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_RETRY.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2C	0x10	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_RETRY.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_RETRY.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2C	0x10	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.BL_NCB_VN0	ISMQ Retries; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x2	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_RETRY.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_RETRY.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2C	0x20	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_RETRY.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_RETRY.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2C	0x20	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.BL_NCS_VN0	ISMQ Retries; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x4	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_RETRY.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_RETRY.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2C	0x40	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.AK_NON_UPI	ISMQ Retries; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2C	0x8	0x00	0x00	0x00	UNC_H_RxC_ISMQ0_RETRY.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ0_RETRY.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2C	0x80	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ0_RETRY.IV_NON_UPI	ISMQ Retries; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2D	0x02	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ1_RETRY.HA	ISMQ Retries; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2D	0x1	0x00	0x00	0x00	UNC_H_RxC_ISMQ1_RETRY.ANY	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ1_RETRY.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2D	0x1	0x00	0x00	0x00	UNC_CHA_RxC_ISMQ1_RETRY.ANY0	ISMQ Retries; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2D	0x2	0x00	0x00	0x00	UNC_H_RxC_ISMQ1_RETRY.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_ISMQ1_RETRY.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x01	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.AD_REQ_VN0	Other Retries; AD REQ on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x02	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.AD_RSP_VN0	Other Retries; AD RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x04	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.BL_RSP_VN0	Other Retries; BL RSP on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x08	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.BL_WB_VN0	Other Retries; BL WB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x1	0x00	0x00	0x00	UNC_H_RxC_OTHER0_RETRY.AD_REQ_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER0_RETRY.AD_REQ_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x10	0x00	0x00	0x00	UNC_H_RxC_OTHER0_RETRY.BL_NCB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER0_RETRY.BL_NCB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x10	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.BL_NCB_VN0	Other Retries; BL NCB on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x2	0x00	0x00	0x00	UNC_H_RxC_OTHER0_RETRY.AD_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER0_RETRY.AD_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x20	0x00	0x00	0x00	UNC_H_RxC_OTHER0_RETRY.BL_NCS_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER0_RETRY.BL_NCS_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x20	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.BL_NCS_VN0	Other Retries; BL NCS on VN0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x4	0x00	0x00	0x00	UNC_H_RxC_OTHER0_RETRY.BL_RSP_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER0_RETRY.BL_RSP_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x40	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.AK_NON_UPI	Other Retries; Non UPI AK Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2E	0x8	0x00	0x00	0x00	UNC_H_RxC_OTHER0_RETRY.BL_WB_VN0	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER0_RETRY.BL_WB_VN0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2E	0x80	0x00	0x00	0x00	UNC_CHA_RxC_OTHER0_RETRY.IV_NON_UPI	Other Retries; Non UPI IV Request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x02	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.HA	Other Retries; HA	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x04	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.LLC_VICTIM	Other Retries; LLC Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x08	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.SF_VICTIM	Other Retries; SF Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x1	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.ANY	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.ANY0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x1	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.ANY0	Other Retries; ANY0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x10	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x10	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.VICTIM	Other Retries; Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x2	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.HA	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.HA	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x20	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.LLC_OR_SF_WAY	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.LLC_OR_SF_WAY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x20	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.LLC_OR_SF_WAY	Other Retries; Merging these two together to make room for ANY_REJECT_*0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x4	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.LLC_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.LLC_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x40	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.ALLOW_SNP	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.ALLOW_SNP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x40	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.ALLOW_SNP	Other Retries; Allow Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x2F	0x8	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.SF_VICTIM	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.SF_VICTIM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x80	0x00	0x00	0x00	UNC_H_RxC_OTHER1_RETRY.PA_MATCH	This event is deprecated. Refer to new event UNC_CHA_RxC_OTHER1_RETRY.PA_MATCH	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x2F	0x80	0x00	0x00	0x00	UNC_CHA_RxC_OTHER1_RETRY.PA_MATCH	Other Retries; PhyAddr Match	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x21	0x00	0x00	0x00	UNC_H_XSNP_RESP.EXT_RSP_HITFSE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EXT_RSP_HITFSE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x21	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EXT_RSP_HITFSE	Core Cross Snoop Responses; External RspHitFSE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x22	0x00	0x00	0x00	UNC_H_XSNP_RESP.EXT_RSPS_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EXT_RSPS_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x22	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EXT_RSPS_FWDFE	Core Cross Snoop Responses; External RspSFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x24	0x00	0x00	0x00	UNC_H_XSNP_RESP.EXT_RSPI_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EXT_RSPI_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x24	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EXT_RSPI_FWDFE	Core Cross Snoop Responses; External RspIFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x28	0x00	0x00	0x00	UNC_H_XSNP_RESP.EXT_RSPS_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EXT_RSPS_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x28	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EXT_RSPS_FWDM	Core Cross Snoop Responses; External RspSFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x30	0x00	0x00	0x00	UNC_H_XSNP_RESP.EXT_RSPI_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EXT_RSPI_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x30	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EXT_RSPI_FWDM	Core Cross Snoop Responses; External RspIFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x41	0x00	0x00	0x00	UNC_H_XSNP_RESP.CORE_RSP_HITFSE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.CORE_RSP_HITFSE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x41	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.CORE_RSP_HITFSE	Core Cross Snoop Responses; Core RspHitFSE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x42	0x00	0x00	0x00	UNC_H_XSNP_RESP.CORE_RSPS_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.CORE_RSPS_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x42	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.CORE_RSPS_FWDFE	Core Cross Snoop Responses; Core RspSFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x44	0x00	0x00	0x00	UNC_H_XSNP_RESP.CORE_RSPI_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.CORE_RSPI_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x44	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.CORE_RSPI_FWDFE	Core Cross Snoop Responses; Core RspIFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x48	0x00	0x00	0x00	UNC_H_XSNP_RESP.CORE_RSPS_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.CORE_RSPS_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x48	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.CORE_RSPS_FWDM	Core Cross Snoop Responses; Core RspSFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x50	0x00	0x00	0x00	UNC_H_XSNP_RESP.CORE_RSPI_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.CORE_RSPI_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x50	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.CORE_RSPI_FWDM	Core Cross Snoop Responses; Core RspIFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x81	0x00	0x00	0x00	UNC_H_XSNP_RESP.EVICT_RSP_HITFSE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EVICT_RSP_HITFSE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x81	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EVICT_RSP_HITFSE	Core Cross Snoop Responses; Evict RspHitFSE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x82	0x00	0x00	0x00	UNC_H_XSNP_RESP.EVICT_RSPS_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EVICT_RSPS_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x82	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EVICT_RSPS_FWDFE	Core Cross Snoop Responses; Evict RspSFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x84	0x00	0x00	0x00	UNC_H_XSNP_RESP.EVICT_RSPI_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EVICT_RSPI_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x84	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EVICT_RSPI_FWDFE	Core Cross Snoop Responses; Evict RspIFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x88	0x00	0x00	0x00	UNC_H_XSNP_RESP.EVICT_RSPS_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EVICT_RSPS_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x88	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EVICT_RSPS_FWDM	Core Cross Snoop Responses; Evict RspSFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0x90	0x00	0x00	0x00	UNC_H_XSNP_RESP.EVICT_RSPI_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.EVICT_RSPI_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0x90	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.EVICT_RSPI_FWDM	Core Cross Snoop Responses; Evict RspIFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0xE1	0x00	0x00	0x00	UNC_H_XSNP_RESP.ANY_RSP_HITFSE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.ANY_RSP_HITFSE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0xE1	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.ANY_RSP_HITFSE	Core Cross Snoop Responses; Any RspHitFSE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0xE2	0x00	0x00	0x00	UNC_H_XSNP_RESP.ANY_RSPS_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.ANY_RSPS_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0xE2	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.ANY_RSPS_FWDFE	Core Cross Snoop Responses; Any RspSFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0xE4	0x00	0x00	0x00	UNC_H_XSNP_RESP.ANY_RSPI_FWDFE	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.ANY_RSPI_FWDFE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0xE4	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.ANY_RSPI_FWDFE	Core Cross Snoop Responses; Any RspIFwdFE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0xE8	0x00	0x00	0x00	UNC_H_XSNP_RESP.ANY_RSPS_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.ANY_RSPS_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0xE8	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.ANY_RSPS_FWDM	Core Cross Snoop Responses; Any RspSFwdM	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x32	0xF0	0x00	0x00	0x00	UNC_H_XSNP_RESP.ANY_RSPI_FWDM	This event is deprecated. Refer to new event UNC_CHA_XSNP_RESP.ANY_RSPI_FWDM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x32	0xF0	0x00	0x00	0x00	UNC_CHA_XSNP_RESP.ANY_RSPI_FWDM	Core Cross Snoop Responses	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x21	0x00	0x00	0x00	UNC_H_CORE_SNP.EXT_ONE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.EXT_ONE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x21	0x00	0x00	0x00	UNC_CHA_CORE_SNP.EXT_ONE	Core Cross Snoops Issued; Single External Snoops	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x22	0x00	0x00	0x00	UNC_H_CORE_SNP.EXT_GTONE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.EXT_GTONE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x22	0x00	0x00	0x00	UNC_CHA_CORE_SNP.EXT_GTONE	Core Cross Snoops Issued; Multiple External Snoops	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x24	0x00	0x00	0x00	UNC_H_CORE_SNP.EXT_REMOTE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.EXT_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x24	0x00	0x00	0x00	UNC_CHA_CORE_SNP.EXT_REMOTE	Core Cross Snoops Issued; External Snoop to Remote Node	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x41	0x00	0x00	0x00	UNC_H_CORE_SNP.CORE_ONE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.CORE_ONE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x41	0x00	0x00	0x00	UNC_CHA_CORE_SNP.CORE_ONE	Core Cross Snoops Issued; Single Core Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x44	0x00	0x00	0x00	UNC_H_CORE_SNP.CORE_REMOTE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.CORE_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x44	0x00	0x00	0x00	UNC_CHA_CORE_SNP.CORE_REMOTE	Core Cross Snoops Issued; Core Request to Remote Node	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x81	0x00	0x00	0x00	UNC_H_CORE_SNP.EVICT_ONE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.EVICT_ONE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x81	0x00	0x00	0x00	UNC_CHA_CORE_SNP.EVICT_ONE	Core Cross Snoops Issued; Single Eviction	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0x84	0x00	0x00	0x00	UNC_H_CORE_SNP.EVICT_REMOTE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.EVICT_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0x84	0x00	0x00	0x00	UNC_CHA_CORE_SNP.EVICT_REMOTE	Core Cross Snoops Issued; Eviction to Remote Node	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0xE1	0x00	0x00	0x00	UNC_H_CORE_SNP.ANY_ONE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.ANY_ONE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0xE1	0x00	0x00	0x00	UNC_CHA_CORE_SNP.ANY_ONE	Core Cross Snoops Issued; Any Single Snoop	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0xE2	0x00	0x00	0x00	UNC_H_CORE_SNP.ANY_GTONE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.ANY_GTONE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0xE2	0x00	0x00	0x00	UNC_CHA_CORE_SNP.ANY_GTONE	Core Cross Snoops Issued; Any Cycle with Multiple Snoops	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x33	0xE4	0x00	0x00	0x00	UNC_H_CORE_SNP.ANY_REMOTE	This event is deprecated. Refer to new event UNC_CHA_CORE_SNP.ANY_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x33	0xE4	0x00	0x00	0x00	UNC_CHA_CORE_SNP.ANY_REMOTE	Core Cross Snoops Issued; Any Snoop to Remote Node	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x34	0x03	0x00	0x00	0x00	UNC_CHA_LLC_LOOKUP.DATA_READ	Cache and Snoop Filter Lookups; Data Read Request	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x02
+CHA	0x34	0x05	0x00	0x00	0x00	UNC_CHA_LLC_LOOKUP.WRITE	Cache and Snoop Filter Lookups; Write Requests	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x02
+CHA	0x34	0x09	0x00	0x00	0x00	UNC_CHA_LLC_LOOKUP.REMOTE_SNOOP	Cache and Snoop Filter Lookups; External Snoop Request	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x02
+CHA	0x34	0x11	0x00	0x00	0x00	UNC_C_LLC_LOOKUP.ANY	This event is deprecated. Refer to new event UNC_CHA_LLC_LOOKUP.ANY	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x03
+CHA	0x34	0x11	0x00	0x00	0x00	UNC_CHA_LLC_LOOKUP.ANY	Cache and Snoop Filter Lookups; Any Request	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x02
+CHA	0x34	0x31	0x00	0x00	0x00	UNC_C_LLC_LOOKUP.LOCAL	This event is deprecated. Refer to new event UNC_CHA_LLC_LOOKUP.LOCAL	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x03
+CHA	0x34	0x31	0x00	0x00	0x00	UNC_CHA_LLC_LOOKUP.LOCAL	Cache and Snoop Filter Lookups; Local	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x02
+CHA	0x34	0x5	0x00	0x00	0x00	UNC_C_LLC_LOOKUP.WRITE	This event is deprecated. Refer to new event UNC_CHA_LLC_LOOKUP.WRITE	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x03
+CHA	0x34	0x91	0x00	0x00	0x00	UNC_C_LLC_LOOKUP.REMOTE	This event is deprecated. Refer to new event UNC_CHA_LLC_LOOKUP.REMOTE	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x03
+CHA	0x34	0x91	0x00	0x00	0x00	UNC_CHA_LLC_LOOKUP.REMOTE	Cache and Snoop Filter Lookups; Remote	0,1,2,3	0x53	CHAFilter0[26:17]	0	0	0x02
+CHA	0x35	0x01	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IRQ	TOR Inserts; IRQ	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x02	0x00	0x00	0x00	UNC_C_TOR_INSERTS.EVICT	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.EVICT	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x02	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.EVICT	TOR Inserts; SF/LLC Evictions	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x04	0x00	0x00	0x00	UNC_C_TOR_INSERTS.PRQ	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.PRQ	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x04	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.PRQ	TOR Inserts; PRQ	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x08	0x00	0x00	0x00	UNC_C_TOR_INSERTS.IPQ	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.IPQ	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x08	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IPQ	TOR Inserts; IPQ	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x10	0x00	0x00	0x00	UNC_C_TOR_INSERTS.HIT	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.HIT	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x10	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.HIT	TOR Inserts; Hit (Not a Miss)	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x15	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.ALL_HIT	TOR Inserts; Hits from Local	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x18	0x00	0x00	0x00	UNC_C_TOR_INSERTS.IPQ_HIT	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x18	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IPQ_HIT	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x20	0x00	0x00	0x00	UNC_C_TOR_INSERTS.MISS	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.MISS	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x20	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.MISS	TOR Inserts; Miss	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x24	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IO_MISS_RDCUR	TOR Inserts; RdCur misses from Local IO	0,1,2,3	0x53	Filter1	0	0x43C33	0x00
+CHA	0x35	0x24	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IO_MISS_RFO	TOR Inserts; RFO misses from Local IO	0,1,2,3	0x53	Filter1	0	0x40033	0x00
+CHA	0x35	0x24	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IO_MISS_ITOM	TOR Inserts; ItoM misses from Local IO	0,1,2,3	0x53	Filter1	0	0x49033	0x00
+CHA	0x35	0x25	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.ALL_MISS	TOR Inserts; Misses from Local	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x28	0x00	0x00	0x00	UNC_C_TOR_INSERTS.IPQ_MISS	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x28	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IPQ_MISS	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x31	0x00	0x00	0x00	UNC_C_TOR_INSERTS.LOC_IA	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.IA	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x34	0x00	0x00	0x00	UNC_C_TOR_INSERTS.LOC_IO	This event is deprecated. Refer to new event UNC_CHA_TOR_INSERTS.IO	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x34	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.IO	TOR Inserts; All from Local IO	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x35	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.ALL_IO_IA	TOR Inserts; All from Local iA and IO	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x35	0x37	0x00	0x00	0x00	UNC_C_TOR_INSERTS.LOC_ALL	This event is deprecated. 	0,1,2,3	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x35	0x37	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.LOC_ALL	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x50	0x00	0x00	0x00	UNC_C_TOR_INSERTS.RRQ_HIT	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x50	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.RRQ_HIT	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x60	0x00	0x00	0x00	UNC_C_TOR_INSERTS.RRQ_MISS	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x60	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.RRQ_MISS	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x90	0x00	0x00	0x00	UNC_C_TOR_INSERTS.WBQ_HIT	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0x90	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.WBQ_HIT	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0xA0	0x00	0x00	0x00	UNC_C_TOR_INSERTS.WBQ_MISS	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x35	0xA0	0x00	0x00	0x00	UNC_CHA_TOR_INSERTS.WBQ_MISS	This event is deprecated. 	0,1,2,3	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x01	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IRQ	TOR Occupancy; IRQ	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x02	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.EVICT	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.EVICT	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x02	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.EVICT	TOR Occupancy; SF/LLC Evictions	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x04	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.PRQ	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.PRQ	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x04	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.PRQ	TOR Occupancy; PRQ	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x08	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.IPQ	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.IPQ	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x08	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IPQ	TOR Occupancy; IPQ	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x10	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.HIT	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.HIT	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x10	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.HIT	TOR Occupancy; Hit (Not a Miss)	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x14	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.PRQ_HIT	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.IO_HIT	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x14	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IO_HIT	TOR Occupancy; Hits from Local IO	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x17	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.ALL_HIT	TOR Occupancy; Hits from Local	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x18	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.IPQ_HIT	This event is deprecated. 	0	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x18	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IPQ_HIT	This event is deprecated. 	0	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x20	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.MISS	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.MISS	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x20	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.MISS	TOR Occupancy; Miss	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x24	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.PRQ_MISS	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.IO_MISS	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x24	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IO_MISS	TOR Occupancy; Misses from Local IO	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x24	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IO_MISS_ITOM	TOR Occupancy;  ITOM Misses from Local IO	0	0x53	Filter1	0	0x49033	0x00
+CHA	0x36	0x24	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IO_MISS_RDCUR	TOR Occupancy;  RDCUR misses from Local IO	0	0x53	Filter1	0	0x43C33	0x00
+CHA	0x36	0x24	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IO_MISS_RFO	TOR Occupancy;  RFO misses from Local IO	0	0x53	Filter1	0	0x40033	0x00
+CHA	0x36	0x27	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.ALL_MISS	TOR Occupancy; Misses from Local	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x28	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.IPQ_MISS	This event is deprecated. 	0	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x28	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IPQ_MISS	This event is deprecated. 	0	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x31	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.LOC_IA	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.IA	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x34	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.LOC_IO	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.IO	0	0x53	CHAFilter1[31:0]	0	0	0x03
+CHA	0x36	0x34	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.IO	TOR Occupancy; All from Local IO	0	0x53	CHAFilter1[31:0]	0	0	0x02
+CHA	0x36	0x37	0x00	0x00	0x00	UNC_C_TOR_OCCUPANCY.LOC_ALL	This event is deprecated. 	0	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x37	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.LOC_ALL	This event is deprecated. Refer to new event UNC_CHA_TOR_OCCUPANCY.ALL_FROM_LOC	0	0x53	CHAfilter1	0	0	0x03
+CHA	0x36	0x37	0x00	0x00	0x00	UNC_CHA_TOR_OCCUPANCY.ALL_FROM_LOC	TOR Occupancy; All from Local	0	0x53	CHAFilter1[31:0]	0		0x02
+CHA	0x37	0x01	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.M_STATE	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.TOTAL_M	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x02	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.E_STATE	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.TOTAL_E	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x04	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.S_STATE	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.TOTAL_S	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x08	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.F_STATE	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.TOTAL_F	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x20	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.LOCAL	This event is deprecated. 	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x21	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.LOCAL_M	Lines Victimized; Local - Lines in M State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x22	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.LOCAL_E	Lines Victimized; Local - Lines in E State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x24	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.LOCAL_S	Lines Victimized; Local - Lines in S State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x28	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.LOCAL_F	Lines Victimized; Local - Lines in F State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x2f	0x00	0x00	0x00	UNC_C_LLC_VICTIMS.LOCAL	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.LOCAL_ALL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x2F	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.LOCAL_ALL	Lines Victimized; Local - All Lines	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x80	0x00	0x00	0x00	UNC_C_LLC_VICTIMS.REMOTE	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.REMOTE_ALL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x80	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.REMOTE	This event is deprecated. Refer to new event UNC_CHA_LLC_VICTIMS.REMOTE_ALL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x37	0x81	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.REMOTE_M	Lines Victimized; Remote - Lines in M State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x82	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.REMOTE_E	Lines Victimized; Remote - Lines in E State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x84	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.REMOTE_S	Lines Victimized; Remote - Lines in S State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x88	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.REMOTE_F	Lines Victimized; Remote - Lines in F State	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x37	0x8F	0x00	0x00	0x00	UNC_CHA_LLC_VICTIMS.REMOTE_ALL	Lines Victimized; Remote - All Lines	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x38	0x01	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.VNA	UPI Ingress Credit Allocations; VNA Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x02	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.VN0	UPI Ingress Credit Allocations; VN0 Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x04	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.AD_REQ	UPI Ingress Credit Allocations; AD REQ Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x08	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.AD_RSP	UPI Ingress Credit Allocations; AD RSP VN0 Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x10	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.BL_RSP	UPI Ingress Credit Allocations; BL RSP Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x20	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.BL_WB	UPI Ingress Credit Allocations; BL DRS Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x40	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.BL_NCB	UPI Ingress Credit Allocations; BL NCB Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x38	0x80	0x00	0x00	0x00	UNC_CHA_UPI_CREDITS_ACQUIRED.BL_NCS	UPI Ingress Credit Allocations; BL NCS Credits	0,1,2,3	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x39	0x01	0x00	0x00	0x00	UNC_CHA_MISC.RSPI_WAS_FSE	Cbo Misc; Silent Snoop Eviction	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x39	0x02	0x00	0x00	0x00	UNC_CHA_MISC.WC_ALIASING	Cbo Misc; Write Combining Aliasing	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x39	0x1	0x00	0x00	0x00	UNC_H_MISC.RSPI_WAS_FSE	This event is deprecated. Refer to new event UNC_CHA_MISC.RSPI_WAS_FSE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x39	0x10	0x00	0x00	0x00	UNC_H_MISC.CV0_PREF_VIC	This event is deprecated. Refer to new event UNC_CHA_MISC.CV0_PREF_VIC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x39	0x10	0x00	0x00	0x00	UNC_CHA_MISC.CV0_PREF_VIC	Cbo Misc; CV0 Prefetch Victim	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x39	0x2	0x00	0x00	0x00	UNC_H_MISC.WC_ALIASING	This event is deprecated. Refer to new event UNC_CHA_MISC.WC_ALIASING	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x39	0x20	0x00	0x00	0x00	UNC_H_MISC.CV0_PREF_MISS	This event is deprecated. Refer to new event UNC_CHA_MISC.CV0_PREF_MISS	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x39	0x20	0x00	0x00	0x00	UNC_CHA_MISC.CV0_PREF_MISS	Cbo Misc; CV0 Prefetch Miss	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x3B	0x01	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VNA_AD	UPI Ingress Credits In Use Cycles; AD VNA Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3B	0x02	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VNA_BL	UPI Ingress Credits In Use Cycles; BL VNA Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3B	0x04	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VN0_AD_REQ	UPI Ingress Credits In Use Cycles; AD REQ VN0 Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3B	0x08	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VN0_AD_RSP	UPI Ingress Credits In Use Cycles; AD RSP VN0 Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3B	0x10	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VN0_BL_RSP	UPI Ingress Credits In Use Cycles; BL RSP VN0 Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3B	0x20	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VN0_BL_WB	UPI Ingress Credits In Use Cycles; BL DRS VN0 Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3B	0x40	0x00	0x00	0x00	UNC_CHA_UPI_CREDIT_OCCUPANCY.VN0_BL_NCB	UPI Ingress Credits In Use Cycles; BL NCB VN0 Credits	0	0x53	CHAFilter0[12:0]	0	0	0x00
+CHA	0x3D	0x01	0x00	0x00	0x00	UNC_H_SF_EVICTION.M_STATE	This event is deprecated. Refer to new event UNC_CHA_SF_EVICTION.M_STATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x3D	0x02	0x00	0x00	0x00	UNC_H_SF_EVICTION.E_STATE	This event is deprecated. Refer to new event UNC_CHA_SF_EVICTION.E_STATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x3D	0x04	0x00	0x00	0x00	UNC_H_SF_EVICTION.S_STATE	This event is deprecated. Refer to new event UNC_CHA_SF_EVICTION.S_STATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x50	0x08	0x00	0x00	0x00	UNC_CHA_REQUESTS.WRITES_REMOTE	Read and Write Requests; Writes Remote	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x50	0x2	0x00	0x00	0x00	UNC_H_REQUESTS.READS_REMOTE	This event is deprecated. Refer to new event UNC_CHA_REQUESTS.READS_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x50	0x8	0x00	0x00	0x00	UNC_H_REQUESTS.WRITES_REMOTE	This event is deprecated. Refer to new event UNC_CHA_REQUESTS.WRITES_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x01	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.ALL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x01	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.ALL	Snoops Sent; All	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x51	0x04	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.LOCAL	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.LOCAL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x04	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.LOCAL	Snoops Sent; Broadcast or directed Snoops sent for Local Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x51	0x08	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.REMOTE	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x08	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.REMOTE	Snoops Sent; Broadcast or directed Snoops sent for Remote Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x51	0x10	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.BCST_LOC	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.BCST_LOCAL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x10	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.BCST_LOCAL	Snoops Sent; Broadcast snoop for Local Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x51	0x20	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.BCST_REM	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.BCST_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x20	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.BCST_REMOTE	Snoops Sent; Broadcast snoops for Remote Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x51	0x40	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.DIRECT_LOC	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.DIRECT_LOCAL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x40	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.DIRECT_LOCAL	Snoops Sent; Directed snoops for Local Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x51	0x80	0x00	0x00	0x00	UNC_H_SNOOPS_SENT.DIRECT_REM	This event is deprecated. Refer to new event UNC_CHA_SNOOPS_SENT.DIRECT_REMOTE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x51	0x80	0x00	0x00	0x00	UNC_CHA_SNOOPS_SENT.DIRECT_REMOTE	Snoops Sent; Directed snoops for Remote Requests	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x55	0x0	0x00	0x00	0x00	UNC_H_OSB	This event is deprecated. Refer to new event UNC_CHA_OSB	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x55	0x00	0x00	0x00	0x00	UNC_CHA_OSB	OSB Snoop Broadcast	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x56	0x01	0x00	0x00	0x00	UNC_CHA_WB_PUSH_MTOI.LLC	WbPushMtoI; Pushed to LLC	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x56	0x02	0x00	0x00	0x00	UNC_CHA_WB_PUSH_MTOI.MEM	WbPushMtoI; Pushed to Memory	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x56	0x1	0x00	0x00	0x00	UNC_H_WB_PUSH_MTOI.LLC	This event is deprecated. Refer to new event UNC_CHA_WB_PUSH_MTOI.LLC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x56	0x2	0x00	0x00	0x00	UNC_H_WB_PUSH_MTOI.MEM	This event is deprecated. Refer to new event UNC_CHA_WB_PUSH_MTOI.MEM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x57	0x01	0x00	0x00	0x00	UNC_CHA_BYPASS_CHA_IMC.TAKEN	CHA to iMC Bypass; Taken	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x57	0x02	0x00	0x00	0x00	UNC_CHA_BYPASS_CHA_IMC.INTERMEDIATE	CHA to iMC Bypass; Intermediate bypass Taken	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x57	0x04	0x00	0x00	0x00	UNC_CHA_BYPASS_CHA_IMC.NOT_TAKEN	CHA to iMC Bypass; Not Taken	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x57	0x1	0x00	0x00	0x00	UNC_H_BYPASS_CHA_IMC.TAKEN	This event is deprecated. Refer to new event UNC_CHA_BYPASS_CHA_IMC.TAKEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x57	0x2	0x00	0x00	0x00	UNC_H_BYPASS_CHA_IMC.INTERMEDIATE	This event is deprecated. Refer to new event UNC_CHA_BYPASS_CHA_IMC.INTERMEDIATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x57	0x4	0x00	0x00	0x00	UNC_H_BYPASS_CHA_IMC.NOT_TAKEN	This event is deprecated. Refer to new event UNC_CHA_BYPASS_CHA_IMC.NOT_TAKEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x58	0x01	0x00	0x00	0x00	UNC_CHA_READ_NO_CREDITS.MC0_SMI0	CHA iMC CHNx READ Credits Empty; MC0_SMI0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x58	0x02	0x00	0x00	0x00	UNC_CHA_READ_NO_CREDITS.MC1_SMI1	CHA iMC CHNx READ Credits Empty; MC1_SMI1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x58	0x04	0x00	0x00	0x00	UNC_CHA_READ_NO_CREDITS.EDC0_SMI2	CHA iMC CHNx READ Credits Empty; EDC0_SMI2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x58	0x08	0x00	0x00	0x00	UNC_CHA_READ_NO_CREDITS.EDC1_SMI3	CHA iMC CHNx READ Credits Empty; EDC1_SMI3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x58	0x1	0x00	0x00	0x00	UNC_H_READ_NO_CREDITS.MC0_SMI0	This event is deprecated. Refer to new event UNC_CHA_READ_NO_CREDITS.MC0_SMI0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x58	0x10	0x00	0x00	0x00	UNC_H_READ_NO_CREDITS.EDC2_SMI4	This event is deprecated. Refer to new event UNC_CHA_READ_NO_CREDITS.EDC2_SMI4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x58	0x10	0x00	0x00	0x00	UNC_CHA_READ_NO_CREDITS.EDC2_SMI4	CHA iMC CHNx READ Credits Empty; EDC2_SMI4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x58	0x2	0x00	0x00	0x00	UNC_H_READ_NO_CREDITS.MC1_SMI1	This event is deprecated. Refer to new event UNC_CHA_READ_NO_CREDITS.MC1_SMI1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x58	0x20	0x00	0x00	0x00	UNC_H_READ_NO_CREDITS.EDC3_SMI5	This event is deprecated. Refer to new event UNC_CHA_READ_NO_CREDITS.EDC3_SMI5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x58	0x20	0x00	0x00	0x00	UNC_CHA_READ_NO_CREDITS.EDC3_SMI5	CHA iMC CHNx READ Credits Empty; EDC3_SMI5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x58	0x4	0x00	0x00	0x00	UNC_H_READ_NO_CREDITS.EDC0_SMI2	This event is deprecated. Refer to new event UNC_CHA_READ_NO_CREDITS.EDC0_SMI2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x58	0x8	0x00	0x00	0x00	UNC_H_READ_NO_CREDITS.EDC1_SMI3	This event is deprecated. Refer to new event UNC_CHA_READ_NO_CREDITS.EDC1_SMI3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x59	0x02	0x00	0x00	0x00	UNC_CHA_IMC_READS_COUNT.PRIORITY	HA to iMC Reads Issued; ISOCH	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x59	0x1	0x00	0x00	0x00	UNC_H_IMC_READS_COUNT.NORMAL	This event is deprecated. Refer to new event UNC_CHA_IMC_READS_COUNT.NORMAL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x59	0x2	0x00	0x00	0x00	UNC_H_IMC_READS_COUNT.PRIORITY	This event is deprecated. Refer to new event UNC_CHA_IMC_READS_COUNT.PRIORITY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5A	0x01	0x00	0x00	0x00	UNC_CHA_WRITE_NO_CREDITS.MC0_SMI0	CHA iMC CHNx WRITE Credits Empty; MC0_SMI0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5A	0x02	0x00	0x00	0x00	UNC_CHA_WRITE_NO_CREDITS.MC1_SMI1	CHA iMC CHNx WRITE Credits Empty; MC1_SMI1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5A	0x04	0x00	0x00	0x00	UNC_CHA_WRITE_NO_CREDITS.EDC0_SMI2	CHA iMC CHNx WRITE Credits Empty; EDC0_SMI2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5A	0x08	0x00	0x00	0x00	UNC_CHA_WRITE_NO_CREDITS.EDC1_SMI3	CHA iMC CHNx WRITE Credits Empty; EDC1_SMI3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5A	0x1	0x00	0x00	0x00	UNC_H_WRITE_NO_CREDITS.MC0_SMI0	This event is deprecated. Refer to new event UNC_CHA_WRITE_NO_CREDITS.MC0_SMI0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5A	0x10	0x00	0x00	0x00	UNC_H_WRITE_NO_CREDITS.EDC2_SMI4	This event is deprecated. Refer to new event UNC_CHA_WRITE_NO_CREDITS.EDC2_SMI4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5A	0x10	0x00	0x00	0x00	UNC_CHA_WRITE_NO_CREDITS.EDC2_SMI4	CHA iMC CHNx WRITE Credits Empty; EDC2_SMI4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5A	0x2	0x00	0x00	0x00	UNC_H_WRITE_NO_CREDITS.MC1_SMI1	This event is deprecated. Refer to new event UNC_CHA_WRITE_NO_CREDITS.MC1_SMI1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5A	0x20	0x00	0x00	0x00	UNC_H_WRITE_NO_CREDITS.EDC3_SMI5	This event is deprecated. Refer to new event UNC_CHA_WRITE_NO_CREDITS.EDC3_SMI5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5A	0x20	0x00	0x00	0x00	UNC_CHA_WRITE_NO_CREDITS.EDC3_SMI5	CHA iMC CHNx WRITE Credits Empty; EDC3_SMI5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5A	0x4	0x00	0x00	0x00	UNC_H_WRITE_NO_CREDITS.EDC0_SMI2	This event is deprecated. Refer to new event UNC_CHA_WRITE_NO_CREDITS.EDC0_SMI2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5A	0x8	0x00	0x00	0x00	UNC_H_WRITE_NO_CREDITS.EDC1_SMI3	This event is deprecated. Refer to new event UNC_CHA_WRITE_NO_CREDITS.EDC1_SMI3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5B	0x02	0x00	0x00	0x00	UNC_CHA_IMC_WRITES_COUNT.PARTIAL	Writes Issued to the iMC by the HA; Partial Non-ISOCH	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5B	0x04	0x00	0x00	0x00	UNC_CHA_IMC_WRITES_COUNT.FULL_PRIORITY	Writes Issued to the iMC by the HA; ISOCH Full Line	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5B	0x08	0x00	0x00	0x00	UNC_CHA_IMC_WRITES_COUNT.PARTIAL_PRIORITY	Writes Issued to the iMC by the HA; ISOCH Partial	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5B	0x1	0x00	0x00	0x00	UNC_H_IMC_WRITES_COUNT.FULL	This event is deprecated. Refer to new event UNC_CHA_IMC_WRITES_COUNT.FULL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5B	0x10	0x00	0x00	0x00	UNC_H_IMC_WRITES_COUNT.FULL_MIG	This event is deprecated. Refer to new event UNC_CHA_IMC_WRITES_COUNT.FULL_MIG	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5B	0x10	0x00	0x00	0x00	UNC_CHA_IMC_WRITES_COUNT.FULL_MIG	Writes Issued to the iMC by the HA; Full Line MIG	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5B	0x2	0x00	0x00	0x00	UNC_H_IMC_WRITES_COUNT.PARTIAL	This event is deprecated. Refer to new event UNC_CHA_IMC_WRITES_COUNT.PARTIAL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5B	0x20	0x00	0x00	0x00	UNC_H_IMC_WRITES_COUNT.PARTIAL_MIG	This event is deprecated. Refer to new event UNC_CHA_IMC_WRITES_COUNT.PARTIAL_MIG	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5B	0x20	0x00	0x00	0x00	UNC_CHA_IMC_WRITES_COUNT.PARTIAL_MIG	Writes Issued to the iMC by the HA; Partial MIG	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5B	0x4	0x00	0x00	0x00	UNC_H_IMC_WRITES_COUNT.FULL_PRIORITY	This event is deprecated. Refer to new event UNC_CHA_IMC_WRITES_COUNT.FULL_PRIORITY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5B	0x8	0x00	0x00	0x00	UNC_H_IMC_WRITES_COUNT.PARTIAL_PRIORITY	This event is deprecated. Refer to new event UNC_CHA_IMC_WRITES_COUNT.PARTIAL_PRIORITY	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5C	0x02	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP.RSPS	tbd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5C	0x1	0x00	0x00	0x00	UNC_H_SNOOP_RESP.RSPI	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP.RSPI	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5C	0x10	0x00	0x00	0x00	UNC_H_SNOOP_RESP.RSP_WB	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP.RSP_WBWB	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5C	0x2	0x00	0x00	0x00	UNC_H_SNOOP_RESP.RSPS	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP.RSPS	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5C	0x80	0x00	0x00	0x00	UNC_H_SNOOP_RESP.RSPFWD	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP.RSPFWD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5C	0x80	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP.RSPFWD	Snoop Responses Received; RspFwd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x01	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSPI	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSPI	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x01	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSPI	Snoop Responses Received Local; RspI	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x02	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSPS	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSPS	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x02	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSPS	Snoop Responses Received Local; RspS	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x04	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSPIFWD	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSPIFWD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x04	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSPIFWD	Snoop Responses Received Local; RspIFwd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x08	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSPSFWD	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSPSFWD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x08	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSPSFWD	Snoop Responses Received Local; RspSFwd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x10	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSP_WB	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSP_WB	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x10	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSP_WB	Snoop Responses Received Local; Rsp*WB	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x20	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSP_FWD_WB	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSP_FWD_WB	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x20	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSP_FWD_WB	Snoop Responses Received Local; Rsp*FWD*WB	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x40	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSPCNFLCT	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSPCNFLCT	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x40	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSPCNFLCT	Snoop Responses Received Local; RspCnflct	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5D	0x80	0x00	0x00	0x00	UNC_H_SNP_RSP_RCV_LOCAL.RSPFWD	This event is deprecated. Refer to new event UNC_CHA_SNOOP_RESP_LOCAL.RSPFWD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5D	0x80	0x00	0x00	0x00	UNC_CHA_SNOOP_RESP_LOCAL.RSPFWD	Snoop Responses Received Local; RspFwd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5E	0x01	0x00	0x00	0x00	UNC_CHA_HITME_LOOKUP.READ	Counts Number of times HitMe Cache is accessed; op is RdCode, RdData, RdDataMigratory, RdCur, RdInvOwn, RdInv, Inv*	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5E	0x02	0x00	0x00	0x00	UNC_CHA_HITME_LOOKUP.WRITE	Counts Number of times HitMe Cache is accessed; op is WbMtoE, WbMtoI, WbPushMtoI, WbFlush, or WbMtoS	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5E	0x1	0x00	0x00	0x00	UNC_H_HITME_LOOKUP.READ	This event is deprecated. Refer to new event UNC_CHA_HITME_LOOKUP.READ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5E	0x2	0x00	0x00	0x00	UNC_H_HITME_LOOKUP.WRITE	This event is deprecated. Refer to new event UNC_CHA_HITME_LOOKUP.WRITE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5F	0x04	0x00	0x00	0x00	UNC_CHA_HITME_HIT.SHARED_OWNREQ	Counts Number of Hits in HitMe Cache; Shared hit and op is RdInvOwn, RdInv, Inv*	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5F	0x08	0x00	0x00	0x00	UNC_CHA_HITME_HIT.WBMTOE	Counts Number of Hits in HitMe Cache; op is WbMtoE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5F	0x10	0x00	0x00	0x00	UNC_H_HITME_HIT.WBMTOI_OR_S	This event is deprecated. Refer to new event UNC_CHA_HITME_HIT.WBMTOI_OR_S	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5F	0x10	0x00	0x00	0x00	UNC_CHA_HITME_HIT.WBMTOI_OR_S	Counts Number of Hits in HitMe Cache; op is WbMtoI, WbPushMtoI, WbFlush, or WbMtoS	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x5F	0x4	0x00	0x00	0x00	UNC_H_HITME_HIT.SHARED_OWNREQ	This event is deprecated. Refer to new event UNC_CHA_HITME_HIT.SHARED_OWNREQ	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x5F	0x8	0x00	0x00	0x00	UNC_H_HITME_HIT.WBMTOE	This event is deprecated. Refer to new event UNC_CHA_HITME_HIT.WBMTOE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x60	0x20	0x00	0x00	0x00	UNC_H_HITME_MISS.SHARED_RDINVOWN	This event is deprecated. Refer to new event UNC_CHA_HITME_MISS.SHARED_RDINVOWN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x60	0x20	0x00	0x00	0x00	UNC_CHA_HITME_MISS.SHARED_RDINVOWN	Counts Number of Misses in HitMe Cache; SF/LLC HitS/F and op is RdInvOwn	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x60	0x40	0x00	0x00	0x00	UNC_H_HITME_MISS.NOTSHARED_RDINVOWN	This event is deprecated. Refer to new event UNC_CHA_HITME_MISS.NOTSHARED_RDINVOWN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x60	0x40	0x00	0x00	0x00	UNC_CHA_HITME_MISS.NOTSHARED_RDINVOWN	Counts Number of Misses in HitMe Cache; No SF/LLC HitS/F and op is RdInvOwn	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x60	0x80	0x00	0x00	0x00	UNC_H_HITME_MISS.READ_OR_INV	This event is deprecated. Refer to new event UNC_CHA_HITME_MISS.READ_OR_INV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x60	0x80	0x00	0x00	0x00	UNC_CHA_HITME_MISS.READ_OR_INV	Counts Number of Misses in HitMe Cache; op is RdCode, RdData, RdDataMigratory, RdCur, RdInv, Inv*	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x61	0x01	0x00	0x00	0x00	UNC_CHA_HITME_UPDATE.DEALLOCATE_RSPFWDI_LOC	Counts the number of Allocate/Update to HitMe Cache; op is RspIFwd or RspIFwdWb for a local request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x61	0x02	0x00	0x00	0x00	UNC_CHA_HITME_UPDATE.RSPFWDI_REM	Counts the number of Allocate/Update to HitMe Cache; op is RspIFwd or RspIFwdWb for a remote request	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x61	0x04	0x00	0x00	0x00	UNC_CHA_HITME_UPDATE.SHARED	Counts the number of Allocate/Update to HitMe Cache; Update HitMe Cache to SHARed	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x61	0x08	0x00	0x00	0x00	UNC_CHA_HITME_UPDATE.RDINVOWN	Counts the number of Allocate/Update to HitMe Cache; Update HitMe Cache on RdInvOwn even if not RspFwdI*	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x61	0x1	0x00	0x00	0x00	UNC_H_HITME_UPDATE.DEALLOCATE_RSPFWDI_LOC	This event is deprecated. Refer to new event UNC_CHA_HITME_UPDATE.DEALLOCATE_RSPFWDI_LOC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x61	0x10	0x00	0x00	0x00	UNC_H_HITME_UPDATE.DEALLOCATE	This event is deprecated. Refer to new event UNC_CHA_HITME_UPDATE.DEALLOCATE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x61	0x10	0x00	0x00	0x00	UNC_CHA_HITME_UPDATE.DEALLOCATE	Counts the number of Allocate/Update to HitMe Cache; Deallocate HtiME$ on Reads without RspFwdI*	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x61	0x2	0x00	0x00	0x00	UNC_H_HITME_UPDATE.RSPFWDI_REM	This event is deprecated. Refer to new event UNC_CHA_HITME_UPDATE.RSPFWDI_REM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x61	0x4	0x00	0x00	0x00	UNC_H_HITME_UPDATE.SHARED	This event is deprecated. Refer to new event UNC_CHA_HITME_UPDATE.SHARED	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x61	0x8	0x00	0x00	0x00	UNC_H_HITME_UPDATE.RDINVOWN	This event is deprecated. Refer to new event UNC_CHA_HITME_UPDATE.RDINVOWN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x62	0x01	0x00	0x00	0x00	UNC_CHA_IODC_ALLOC.INVITOM	Counts Number of times IODC entry allocation is attempted; Number of IODC allocations	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x62	0x02	0x00	0x00	0x00	UNC_CHA_IODC_ALLOC.IODCFULL	Counts Number of times IODC entry allocation is attempted; Number of IODC allocations dropped due to IODC Full	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x62	0x04	0x00	0x00	0x00	UNC_CHA_IODC_ALLOC.OSBGATED	Counts Number of times IODC entry allocation is attempted; Number of IDOC allocation dropped due to OSB gate	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x62	0x1	0x00	0x00	0x00	UNC_H_IODC_ALLOC.INVITOM	This event is deprecated. Refer to new event UNC_CHA_IODC_ALLOC.INVITOM	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x62	0x2	0x00	0x00	0x00	UNC_H_IODC_ALLOC.IODCFULL	This event is deprecated. Refer to new event UNC_CHA_IODC_ALLOC.IODCFULL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x62	0x4	0x00	0x00	0x00	UNC_H_IODC_ALLOC.OSBGATED	This event is deprecated. Refer to new event UNC_CHA_IODC_ALLOC.OSBGATED	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x63	0x01	0x00	0x00	0x00	UNC_CHA_IODC_DEALLOC.WBMTOE	Counts number of IODC deallocations; IODC deallocated due to WbMtoE	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x63	0x02	0x00	0x00	0x00	UNC_CHA_IODC_DEALLOC.WBMTOI	Counts number of IODC deallocations; IODC deallocated due to WbMtoI	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x63	0x04	0x00	0x00	0x00	UNC_CHA_IODC_DEALLOC.WBPUSHMTOI	Counts number of IODC deallocations; IODC deallocated due to WbPushMtoI	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x63	0x08	0x00	0x00	0x00	UNC_CHA_IODC_DEALLOC.SNPOUT	Counts number of IODC deallocations; IODC deallocated due to conflicting transaction	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x63	0x1	0x00	0x00	0x00	UNC_H_IODC_DEALLOC.WBMTOE	This event is deprecated. Refer to new event UNC_CHA_IODC_DEALLOC.WBMTOE	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x63	0x10	0x00	0x00	0x00	UNC_H_IODC_DEALLOC.ALL	This event is deprecated. Refer to new event UNC_CHA_IODC_DEALLOC.ALL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x63	0x10	0x00	0x00	0x00	UNC_CHA_IODC_DEALLOC.ALL	Counts number of IODC deallocations; IODC deallocated due to any reason	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x63	0x2	0x00	0x00	0x00	UNC_H_IODC_DEALLOC.WBMTOI	This event is deprecated. Refer to new event UNC_CHA_IODC_DEALLOC.WBMTOI	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x63	0x4	0x00	0x00	0x00	UNC_H_IODC_DEALLOC.WBPUSHMTOI	This event is deprecated. Refer to new event UNC_CHA_IODC_DEALLOC.WBPUSHMTOI	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x63	0x8	0x00	0x00	0x00	UNC_H_IODC_DEALLOC.SNPOUT	This event is deprecated. Refer to new event UNC_CHA_IODC_DEALLOC.SNPOUT	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x80	0x01	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR0	CMS Agent0 AD Credits Acquired; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x80	0x02	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR1	CMS Agent0 AD Credits Acquired; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x80	0x04	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR2	CMS Agent0 AD Credits Acquired; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x80	0x08	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR3	CMS Agent0 AD Credits Acquired; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x80	0x1	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_ACQUIRED.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x80	0x10	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_ACQUIRED.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x80	0x10	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR4	CMS Agent0 AD Credits Acquired; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x80	0x2	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_ACQUIRED.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x80	0x20	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_ACQUIRED.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x80	0x20	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR5	CMS Agent0 AD Credits Acquired; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x80	0x4	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_ACQUIRED.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x80	0x8	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_ACQUIRED.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_ACQUIRED.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x82	0x01	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR0	CMS Agent0 AD Credits Occupancy; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x82	0x02	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR1	CMS Agent0 AD Credits Occupancy; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x82	0x04	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR2	CMS Agent0 AD Credits Occupancy; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x82	0x08	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR3	CMS Agent0 AD Credits Occupancy; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x82	0x1	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_OCCUPANCY.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x82	0x10	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_OCCUPANCY.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x82	0x10	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR4	CMS Agent0 AD Credits Occupancy; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x82	0x2	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_OCCUPANCY.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x82	0x20	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_OCCUPANCY.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x82	0x20	0x00	0x00	0x00	UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR5	CMS Agent0 AD Credits Occupancy; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x82	0x4	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_OCCUPANCY.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x82	0x8	0x00	0x00	0x00	UNC_H_AG0_AD_CRD_OCCUPANCY.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG0_AD_CRD_OCCUPANCY.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x84	0x01	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR0	CMS Agent1 AD Credits Acquired; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x84	0x02	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR1	CMS Agent1 AD Credits Acquired; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x84	0x04	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR2	CMS Agent1 AD Credits Acquired; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x84	0x08	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR3	CMS Agent1 AD Credits Acquired; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x84	0x1	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_ACQUIRED.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x84	0x10	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_ACQUIRED.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x84	0x10	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR4	CMS Agent1 AD Credits Acquired; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x84	0x2	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_ACQUIRED.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x84	0x20	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_ACQUIRED.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x84	0x20	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR5	CMS Agent1 AD Credits Acquired; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x84	0x4	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_ACQUIRED.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x84	0x8	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_ACQUIRED.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_ACQUIRED.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x86	0x01	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR0	CMS Agent1 AD Credits Occupancy; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x86	0x02	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR1	CMS Agent1 AD Credits Occupancy; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x86	0x04	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR2	CMS Agent1 AD Credits Occupancy; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x86	0x08	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR3	CMS Agent1 AD Credits Occupancy; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x86	0x1	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_OCCUPANCY.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x86	0x10	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_OCCUPANCY.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x86	0x10	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR4	CMS Agent1 AD Credits Occupancy; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x86	0x2	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_OCCUPANCY.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x86	0x20	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_OCCUPANCY.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x86	0x20	0x00	0x00	0x00	UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR5	CMS Agent1 AD Credits Occupancy; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x86	0x4	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_OCCUPANCY.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x86	0x8	0x00	0x00	0x00	UNC_H_AG1_AD_CRD_OCCUPANCY.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG1_AD_CRD_OCCUPANCY.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x88	0x01	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR0	CMS Agent0 BL Credits Acquired; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x88	0x02	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR1	CMS Agent0 BL Credits Acquired; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x88	0x04	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR2	CMS Agent0 BL Credits Acquired; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x88	0x08	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR3	CMS Agent0 BL Credits Acquired; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x88	0x1	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_ACQUIRED.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x88	0x10	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_ACQUIRED.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x88	0x10	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR4	CMS Agent0 BL Credits Acquired; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x88	0x2	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_ACQUIRED.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x88	0x20	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_ACQUIRED.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x88	0x20	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR5	CMS Agent0 BL Credits Acquired; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x88	0x4	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_ACQUIRED.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x88	0x8	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_ACQUIRED.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_ACQUIRED.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8A	0x01	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR0	CMS Agent0 BL Credits Occupancy; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8A	0x02	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR1	CMS Agent0 BL Credits Occupancy; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8A	0x04	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR2	CMS Agent0 BL Credits Occupancy; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8A	0x08	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR3	CMS Agent0 BL Credits Occupancy; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8A	0x1	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_OCCUPANCY.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8A	0x10	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_OCCUPANCY.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8A	0x10	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR4	CMS Agent0 BL Credits Occupancy; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8A	0x2	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_OCCUPANCY.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8A	0x20	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_OCCUPANCY.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8A	0x20	0x00	0x00	0x00	UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR5	CMS Agent0 BL Credits Occupancy; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8A	0x4	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_OCCUPANCY.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8A	0x8	0x00	0x00	0x00	UNC_H_AG0_BL_CRD_OCCUPANCY.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG0_BL_CRD_OCCUPANCY.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8C	0x01	0x00	0x00	0x00	UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR0	CMS Agent1 BL Credits Acquired; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8C	0x02	0x00	0x00	0x00	UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR1	CMS Agent1 BL Credits Acquired; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8C	0x04	0x00	0x00	0x00	UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR2	CMS Agent1 BL Credits Acquired; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8C	0x08	0x00	0x00	0x00	UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR3	CMS Agent1 BL Credits Acquired; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8C	0x1	0x00	0x00	0x00	UNC_H_AG1_BL_CREDITS_ACQUIRED.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8C	0x10	0x00	0x00	0x00	UNC_H_AG1_BL_CREDITS_ACQUIRED.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8C	0x10	0x00	0x00	0x00	UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR4	CMS Agent1 BL Credits Acquired; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8C	0x2	0x00	0x00	0x00	UNC_H_AG1_BL_CREDITS_ACQUIRED.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8C	0x20	0x00	0x00	0x00	UNC_H_AG1_BL_CREDITS_ACQUIRED.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8C	0x20	0x00	0x00	0x00	UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR5	CMS Agent1 BL Credits Acquired; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8C	0x4	0x00	0x00	0x00	UNC_H_AG1_BL_CREDITS_ACQUIRED.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8C	0x8	0x00	0x00	0x00	UNC_H_AG1_BL_CREDITS_ACQUIRED.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CREDITS_ACQUIRED.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x1	0x00	0x00	0x00	UNC_H_AG1_BL_CRD_OCCUPANCY.TGR0	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x1	0x00	0x00	0x00	UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR0	CMS Agent1 BL Credits Occupancy; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8E	0x10	0x00	0x00	0x00	UNC_H_AG1_BL_CRD_OCCUPANCY.TGR4	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x10	0x00	0x00	0x00	UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR4	CMS Agent1 BL Credits Occupancy; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8E	0x2	0x00	0x00	0x00	UNC_H_AG1_BL_CRD_OCCUPANCY.TGR1	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x2	0x00	0x00	0x00	UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR1	CMS Agent1 BL Credits Occupancy; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8E	0x20	0x00	0x00	0x00	UNC_H_AG1_BL_CRD_OCCUPANCY.TGR5	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x20	0x00	0x00	0x00	UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR5	CMS Agent1 BL Credits Occupancy; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8E	0x4	0x00	0x00	0x00	UNC_H_AG1_BL_CRD_OCCUPANCY.TGR2	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x4	0x00	0x00	0x00	UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR2	CMS Agent1 BL Credits Occupancy; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x8E	0x8	0x00	0x00	0x00	UNC_H_AG1_BL_CRD_OCCUPANCY.TGR3	This event is deprecated. Refer to new event UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x8E	0x8	0x00	0x00	0x00	UNC_CHA_AG1_BL_CRD_OCCUPANCY.TGR3	CMS Agent1 BL Credits Occupancy; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.AD_AG0	CMS Vert Egress Occupancy; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.AK_AG0	CMS Vert Egress Occupancy; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.BL_AG0	CMS Vert Egress Occupancy; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.IV	CMS Vert Egress Occupancy; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x1	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x90	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x90	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.AD_AG1	CMS Vert Egress Occupancy; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x2	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x90	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x90	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.AK_AG1	CMS Vert Egress Occupancy; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x4	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x90	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x90	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_OCCUPANCY.BL_AG1	CMS Vert Egress Occupancy; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x90	0x8	0x00	0x00	0x00	UNC_H_TxR_VERT_OCCUPANCY.IV_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_OCCUPANCY.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.AD_AG0	CMS Vert Egress Allocations; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.AK_AG0	CMS Vert Egress Allocations; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.BL_AG0	CMS Vert Egress Allocations; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.IV	CMS Vert Egress Allocations; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x1	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.AD_AG1	CMS Vert Egress Allocations; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x2	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.AK_AG1	CMS Vert Egress Allocations; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x4	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x91	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_INSERTS.BL_AG1	CMS Vert Egress Allocations; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x91	0x8	0x00	0x00	0x00	UNC_H_TxR_VERT_INSERTS.IV_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_INSERTS.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.AD_AG0	Cycles CMS Vertical Egress Queue Is Full; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.AK_AG0	Cycles CMS Vertical Egress Queue Is Full; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.BL_AG0	Cycles CMS Vertical Egress Queue Is Full; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.IV	Cycles CMS Vertical Egress Queue Is Full; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x1	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.AD_AG1	Cycles CMS Vertical Egress Queue Is Full; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x2	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.AK_AG1	Cycles CMS Vertical Egress Queue Is Full; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x4	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x92	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_FULL.BL_AG1	Cycles CMS Vertical Egress Queue Is Full; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x92	0x8	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_FULL.IV_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_FULL.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.AD_AG0	Cycles CMS Vertical Egress Queue Is Not Empty; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.AK_AG0	Cycles CMS Vertical Egress Queue Is Not Empty; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.BL_AG0	Cycles CMS Vertical Egress Queue Is Not Empty; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.IV	Cycles CMS Vertical Egress Queue Is Not Empty; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x1	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.AD_AG1	Cycles CMS Vertical Egress Queue Is Not Empty; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x2	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.AK_AG1	Cycles CMS Vertical Egress Queue Is Not Empty; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x4	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x93	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_CYCLES_NE.BL_AG1	Cycles CMS Vertical Egress Queue Is Not Empty; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x93	0x8	0x00	0x00	0x00	UNC_H_TxR_VERT_CYCLES_NE.IV_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_CYCLES_NE.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x94	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_OCCUPANCY.AD_BNC	CMS Horizontal Egress Occupancy; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x94	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_OCCUPANCY.AK_BNC	CMS Horizontal Egress Occupancy; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x94	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_OCCUPANCY.BL_BNC	CMS Horizontal Egress Occupancy; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x94	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_OCCUPANCY.IV_BNC	CMS Horizontal Egress Occupancy; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x94	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_OCCUPANCY.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_OCCUPANCY.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x94	0x10	0x00	0x00	0x00	UNC_H_TxR_HORZ_OCCUPANCY.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_OCCUPANCY.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x94	0x10	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_OCCUPANCY.AD_CRD	CMS Horizontal Egress Occupancy; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x94	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_OCCUPANCY.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_OCCUPANCY.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x94	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_OCCUPANCY.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_OCCUPANCY.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x94	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_OCCUPANCY.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_OCCUPANCY.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x94	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_OCCUPANCY.BL_CRD	CMS Horizontal Egress Occupancy; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x94	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_OCCUPANCY.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_OCCUPANCY.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x95	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_INSERTS.AD_BNC	CMS Horizontal Egress Inserts; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x95	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_INSERTS.AK_BNC	CMS Horizontal Egress Inserts; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x95	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_INSERTS.BL_BNC	CMS Horizontal Egress Inserts; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x95	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_INSERTS.IV_BNC	CMS Horizontal Egress Inserts; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x95	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_INSERTS.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_INSERTS.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x95	0x10	0x00	0x00	0x00	UNC_H_TxR_HORZ_INSERTS.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_INSERTS.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x95	0x10	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_INSERTS.AD_CRD	CMS Horizontal Egress Inserts; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x95	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_INSERTS.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_INSERTS.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x95	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_INSERTS.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_INSERTS.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x95	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_INSERTS.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_INSERTS.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x95	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_INSERTS.BL_CRD	CMS Horizontal Egress Inserts; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x95	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_INSERTS.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_INSERTS.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x96	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_FULL.AD_BNC	Cycles CMS Horizontal Egress Queue is Full; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x96	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_FULL.AK_BNC	Cycles CMS Horizontal Egress Queue is Full; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x96	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_FULL.BL_BNC	Cycles CMS Horizontal Egress Queue is Full; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x96	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_FULL.IV_BNC	Cycles CMS Horizontal Egress Queue is Full; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x96	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_FULL.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_FULL.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x96	0x10	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_FULL.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_FULL.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x96	0x10	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_FULL.AD_CRD	Cycles CMS Horizontal Egress Queue is Full; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x96	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_FULL.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_FULL.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x96	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_FULL.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_FULL.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x96	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_FULL.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_FULL.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x96	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_FULL.BL_CRD	Cycles CMS Horizontal Egress Queue is Full; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x96	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_FULL.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_FULL.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x97	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_NE.AD_BNC	Cycles CMS Horizontal Egress Queue is Not Empty; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x97	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_NE.AK_BNC	Cycles CMS Horizontal Egress Queue is Not Empty; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x97	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_NE.BL_BNC	Cycles CMS Horizontal Egress Queue is Not Empty; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x97	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_NE.IV_BNC	Cycles CMS Horizontal Egress Queue is Not Empty; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x97	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_NE.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_NE.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x97	0x10	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_NE.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_NE.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x97	0x10	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_NE.AD_CRD	Cycles CMS Horizontal Egress Queue is Not Empty; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x97	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_NE.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_NE.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x97	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_NE.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_NE.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x97	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_NE.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_NE.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x97	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_CYCLES_NE.BL_CRD	Cycles CMS Horizontal Egress Queue is Not Empty; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x97	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_CYCLES_NE.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_CYCLES_NE.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x01	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.AD_AG0	CMS Vertical Egress NACKs; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x98	0x02	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.AK_AG0	CMS Vertical Egress NACKs; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x98	0x04	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.BL_AG0	CMS Vertical Egress NACKs; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x98	0x08	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.IV	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.IV	CMS Vertical Egress NACKs; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x98	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.AD_AG1	CMS Vertical Egress NACKs; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x98	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.AK_AG1	CMS Vertical Egress NACKs; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x98	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_NACK.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_NACK.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x98	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_NACK.BL_AG1	CMS Vertical Egress NACKs; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_NACK.AD_BNC	CMS Horizontal Egress NACKs; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_NACK.AK_BNC	CMS Horizontal Egress NACKs; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_NACK.BL_BNC	CMS Horizontal Egress NACKs; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_NACK.IV_BNC	CMS Horizontal Egress NACKs; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_NACK.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_NACK.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x99	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_NACK.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_NACK.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x99	0x20	0x00	0x00	0x00	UNC_H_TxR_HORZ_NACK.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_NACK.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x99	0x20	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_NACK.AD_CRD	CMS Horizontal Egress NACKs; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_NACK.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_NACK.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x99	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_NACK.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_NACK.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x99	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_NACK.BL_CRD	CMS Horizontal Egress NACKs; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x99	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_NACK.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_NACK.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x01	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.AD_AG0	CMS Vertical Egress Injection Starvation; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9A	0x02	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.AK_AG0	CMS Vertical Egress Injection Starvation; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9A	0x04	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.BL_AG0	CMS Vertical Egress Injection Starvation; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9A	0x08	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.IV	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.IV	CMS Vertical Egress Injection Starvation; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9A	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.AD_AG1	CMS Vertical Egress Injection Starvation; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9A	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.AK_AG1	CMS Vertical Egress Injection Starvation; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9A	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_STARVED.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_STARVED.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9A	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_STARVED.BL_AG1	CMS Vertical Egress Injection Starvation; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9B	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_STARVED.AD_BNC	CMS Horizontal Egress Injection Starvation; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9B	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_STARVED.AK_BNC	CMS Horizontal Egress Injection Starvation; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9B	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_STARVED.BL_BNC	CMS Horizontal Egress Injection Starvation; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9B	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_STARVED.IV_BNC	CMS Horizontal Egress Injection Starvation; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9B	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_STARVED.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_STARVED.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9B	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_STARVED.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_STARVED.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9B	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_STARVED.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_STARVED.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9B	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_STARVED.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_STARVED.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_ADS_USED.AD_AG0	CMS Vertical ADS Used; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9C	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_ADS_USED.AK_AG0	CMS Vertical ADS Used; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9C	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_ADS_USED.BL_AG0	CMS Vertical ADS Used; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9C	0x1	0x00	0x00	0x00	UNC_H_TxR_VERT_ADS_USED.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_ADS_USED.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_ADS_USED.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_ADS_USED.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_ADS_USED.AD_AG1	CMS Vertical ADS Used; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9C	0x2	0x00	0x00	0x00	UNC_H_TxR_VERT_ADS_USED.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_ADS_USED.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_ADS_USED.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_ADS_USED.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_ADS_USED.AK_AG1	CMS Vertical ADS Used; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9C	0x4	0x00	0x00	0x00	UNC_H_TxR_VERT_ADS_USED.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_ADS_USED.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_ADS_USED.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_ADS_USED.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9C	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_ADS_USED.BL_AG1	CMS Vertical ADS Used; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9D	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_ADS_USED.AD_BNC	CMS Horizontal ADS Used; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9D	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_ADS_USED.AK_BNC	CMS Horizontal ADS Used; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9D	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_ADS_USED.BL_BNC	CMS Horizontal ADS Used; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9D	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_ADS_USED.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_ADS_USED.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9D	0x10	0x00	0x00	0x00	UNC_H_TxR_HORZ_ADS_USED.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_ADS_USED.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9D	0x10	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_ADS_USED.AD_CRD	CMS Horizontal ADS Used; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9D	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_ADS_USED.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_ADS_USED.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9D	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_ADS_USED.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_ADS_USED.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9D	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_ADS_USED.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_ADS_USED.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9D	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_ADS_USED.BL_CRD	CMS Horizontal ADS Used; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x01	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.AD_AG0	CMS Vertical ADS Used; AD - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x02	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.AK_AG0	CMS Vertical ADS Used; AK - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x04	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.BL_AG0	CMS Vertical ADS Used; BL - Agent 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x08	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.IV	CMS Vertical ADS Used; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x1	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.AD_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.AD_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9E	0x10	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.AD_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.AD_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9E	0x10	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.AD_AG1	CMS Vertical ADS Used; AD - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x2	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.AK_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.AK_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9E	0x20	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9E	0x20	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.AK_AG1	CMS Vertical ADS Used; AK - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x4	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.BL_AG0	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.BL_AG0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9E	0x40	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.BL_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.BL_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9E	0x40	0x00	0x00	0x00	UNC_CHA_TxR_VERT_BYPASS.BL_AG1	CMS Vertical ADS Used; BL - Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9E	0x8	0x00	0x00	0x00	UNC_H_TxR_VERT_BYPASS.IV_AG1	This event is deprecated. Refer to new event UNC_CHA_TxR_VERT_BYPASS.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9F	0x01	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_BYPASS.AD_BNC	CMS Horizontal Bypass Used; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9F	0x02	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_BYPASS.AK_BNC	CMS Horizontal Bypass Used; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9F	0x04	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_BYPASS.BL_BNC	CMS Horizontal Bypass Used; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9F	0x08	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_BYPASS.IV_BNC	CMS Horizontal Bypass Used; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9F	0x1	0x00	0x00	0x00	UNC_H_TxR_HORZ_BYPASS.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_BYPASS.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9F	0x10	0x00	0x00	0x00	UNC_H_TxR_HORZ_BYPASS.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_BYPASS.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9F	0x10	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_BYPASS.AD_CRD	CMS Horizontal Bypass Used; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9F	0x2	0x00	0x00	0x00	UNC_H_TxR_HORZ_BYPASS.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_BYPASS.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9F	0x4	0x00	0x00	0x00	UNC_H_TxR_HORZ_BYPASS.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_BYPASS.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9F	0x40	0x00	0x00	0x00	UNC_H_TxR_HORZ_BYPASS.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_BYPASS.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0x9F	0x40	0x00	0x00	0x00	UNC_CHA_TxR_HORZ_BYPASS.BL_CRD	CMS Horizontal Bypass Used; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0x9F	0x8	0x00	0x00	0x00	UNC_H_TxR_HORZ_BYPASS.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_TxR_HORZ_BYPASS.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA0	0x01	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_VERT.AD	Messages that bounced on the Vertical Ring.; AD	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA0	0x02	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_VERT.AK	Messages that bounced on the Vertical Ring.; Acknowledgements to core	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA0	0x04	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_VERT.BL	Messages that bounced on the Vertical Ring.; Data Responses to core	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA0	0x08	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_VERT.IV	Messages that bounced on the Vertical Ring.; Snoops of processor's cache.	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA0	0x1	0x00	0x00	0x00	UNC_H_RING_BOUNCES_VERT.AD	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_VERT.AD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA0	0x2	0x00	0x00	0x00	UNC_H_RING_BOUNCES_VERT.AK	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_VERT.AK	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA0	0x4	0x00	0x00	0x00	UNC_H_RING_BOUNCES_VERT.BL	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_VERT.BL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA0	0x8	0x00	0x00	0x00	UNC_H_RING_BOUNCES_VERT.IV	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_VERT.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA1	0x01	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_HORZ.AD	Messages that bounced on the Horizontal Ring.; AD	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA1	0x02	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_HORZ.AK	Messages that bounced on the Horizontal Ring.; AK	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA1	0x04	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_HORZ.BL	Messages that bounced on the Horizontal Ring.; BL	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA1	0x08	0x00	0x00	0x00	UNC_CHA_RING_BOUNCES_HORZ.IV	Messages that bounced on the Horizontal Ring.; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA1	0x1	0x00	0x00	0x00	UNC_H_RING_BOUNCES_HORZ.AD	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_HORZ.AD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA1	0x2	0x00	0x00	0x00	UNC_H_RING_BOUNCES_HORZ.AK	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_HORZ.AK	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA1	0x4	0x00	0x00	0x00	UNC_H_RING_BOUNCES_HORZ.BL	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_HORZ.BL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA1	0x8	0x00	0x00	0x00	UNC_H_RING_BOUNCES_HORZ.IV	This event is deprecated. Refer to new event UNC_CHA_RING_BOUNCES_HORZ.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA2	0x01	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_VERT.AD	Sink Starvation on Vertical Ring; AD	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA2	0x02	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_VERT.AK	Sink Starvation on Vertical Ring; Acknowledgements to core	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA2	0x04	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_VERT.BL	Sink Starvation on Vertical Ring; Data Responses to core	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA2	0x08	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_VERT.IV	Sink Starvation on Vertical Ring; Snoops of processor's cache.	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA2	0x1	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_VERT.AD	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_VERT.AD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA2	0x2	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_VERT.AK	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_VERT.AK	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA2	0x4	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_VERT.BL	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_VERT.BL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA2	0x8	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_VERT.IV	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_VERT.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA3	0x01	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_HORZ.AD	Sink Starvation on Horizontal Ring; AD	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA3	0x02	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_HORZ.AK	Sink Starvation on Horizontal Ring; AK	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA3	0x04	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_HORZ.BL	Sink Starvation on Horizontal Ring; BL	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA3	0x08	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_HORZ.IV	Sink Starvation on Horizontal Ring; IV	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA3	0x1	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_HORZ.AD	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_HORZ.AD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA3	0x2	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_HORZ.AK	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_HORZ.AK	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA3	0x20	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_HORZ.AK_AG1	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_HORZ.AK_AG1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA3	0x20	0x00	0x00	0x00	UNC_CHA_RING_SINK_STARVED_HORZ.AK_AG1	Sink Starvation on Horizontal Ring; Acknowledgements to Agent 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA3	0x4	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_HORZ.BL	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_HORZ.BL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA3	0x8	0x00	0x00	0x00	UNC_H_RING_SINK_STARVED_HORZ.IV	This event is deprecated. Refer to new event UNC_CHA_RING_SINK_STARVED_HORZ.IV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA4	0x0	0x00	0x00	0x00	UNC_C_RING_SRC_THRTL	This event is deprecated. Refer to new event UNC_CHA_RING_SRC_THRTL	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA4	0x00	0x00	0x00	0x00	UNC_CHA_RING_SRC_THRTL	Source Throttle	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA5	0x01	0x00	0x00	0x00	UNC_CHA_FAST_ASSERTED.VERT	This event is deprecated. Refer to new event UNC_CHA_FAST_ASSERTED.VERT	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA5	0x01	0x00	0x00	0x00	UNC_CHA_FAST_ASSERTED.VERT	FaST wire asserted; Vertical	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA6	0x01	0x00	0x00	0x00	UNC_CHA_VERT_RING_AD_IN_USE.UP_EVEN	Vertical AD Ring In Use; Up and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA6	0x02	0x00	0x00	0x00	UNC_CHA_VERT_RING_AD_IN_USE.UP_ODD	Vertical AD Ring In Use; Up and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA6	0x04	0x00	0x00	0x00	UNC_CHA_VERT_RING_AD_IN_USE.DN_EVEN	Vertical AD Ring In Use; Down and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA6	0x08	0x00	0x00	0x00	UNC_CHA_VERT_RING_AD_IN_USE.DN_ODD	Vertical AD Ring In Use; Down and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA6	0x1	0x00	0x00	0x00	UNC_H_VERT_RING_AD_IN_USE.UP_EVEN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AD_IN_USE.UP_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA6	0x2	0x00	0x00	0x00	UNC_H_VERT_RING_AD_IN_USE.UP_ODD	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AD_IN_USE.UP_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA6	0x4	0x00	0x00	0x00	UNC_H_VERT_RING_AD_IN_USE.DN_EVEN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AD_IN_USE.DN_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA6	0x8	0x00	0x00	0x00	UNC_H_VERT_RING_AD_IN_USE.DN_ODD	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AD_IN_USE.DN_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA7	0x01	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AD_IN_USE.LEFT_EVEN	Horizontal AD Ring In Use; Left and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA7	0x02	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AD_IN_USE.LEFT_ODD	Horizontal AD Ring In Use; Left and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA7	0x04	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AD_IN_USE.RIGHT_EVEN	Horizontal AD Ring In Use; Right and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA7	0x08	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AD_IN_USE.RIGHT_ODD	Horizontal AD Ring In Use; Right and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA7	0x1	0x00	0x00	0x00	UNC_H_HORZ_RING_AD_IN_USE.LEFT_EVEN	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AD_IN_USE.LEFT_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA7	0x2	0x00	0x00	0x00	UNC_H_HORZ_RING_AD_IN_USE.LEFT_ODD	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AD_IN_USE.LEFT_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA7	0x4	0x00	0x00	0x00	UNC_H_HORZ_RING_AD_IN_USE.RIGHT_EVEN	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AD_IN_USE.RIGHT_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA7	0x8	0x00	0x00	0x00	UNC_H_HORZ_RING_AD_IN_USE.RIGHT_ODD	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AD_IN_USE.RIGHT_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA8	0x01	0x00	0x00	0x00	UNC_CHA_VERT_RING_AK_IN_USE.UP_EVEN	Vertical AK Ring In Use; Up and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA8	0x02	0x00	0x00	0x00	UNC_CHA_VERT_RING_AK_IN_USE.UP_ODD	Vertical AK Ring In Use; Up and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA8	0x04	0x00	0x00	0x00	UNC_CHA_VERT_RING_AK_IN_USE.DN_EVEN	Vertical AK Ring In Use; Down and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA8	0x08	0x00	0x00	0x00	UNC_CHA_VERT_RING_AK_IN_USE.DN_ODD	Vertical AK Ring In Use; Down and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA8	0x1	0x00	0x00	0x00	UNC_H_VERT_RING_AK_IN_USE.UP_EVEN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AK_IN_USE.UP_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA8	0x2	0x00	0x00	0x00	UNC_H_VERT_RING_AK_IN_USE.UP_ODD	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AK_IN_USE.UP_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA8	0x4	0x00	0x00	0x00	UNC_H_VERT_RING_AK_IN_USE.DN_EVEN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AK_IN_USE.DN_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA8	0x8	0x00	0x00	0x00	UNC_H_VERT_RING_AK_IN_USE.DN_ODD	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_AK_IN_USE.DN_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA9	0x01	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AK_IN_USE.LEFT_EVEN	Horizontal AK Ring In Use; Left and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA9	0x02	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AK_IN_USE.LEFT_ODD	Horizontal AK Ring In Use; Left and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA9	0x04	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AK_IN_USE.RIGHT_EVEN	Horizontal AK Ring In Use; Right and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA9	0x08	0x00	0x00	0x00	UNC_CHA_HORZ_RING_AK_IN_USE.RIGHT_ODD	Horizontal AK Ring In Use; Right and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xA9	0x1	0x00	0x00	0x00	UNC_H_HORZ_RING_AK_IN_USE.LEFT_EVEN	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AK_IN_USE.LEFT_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA9	0x2	0x00	0x00	0x00	UNC_H_HORZ_RING_AK_IN_USE.LEFT_ODD	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AK_IN_USE.LEFT_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA9	0x4	0x00	0x00	0x00	UNC_H_HORZ_RING_AK_IN_USE.RIGHT_EVEN	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AK_IN_USE.RIGHT_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xA9	0x8	0x00	0x00	0x00	UNC_H_HORZ_RING_AK_IN_USE.RIGHT_ODD	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_AK_IN_USE.RIGHT_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAA	0x01	0x00	0x00	0x00	UNC_CHA_VERT_RING_BL_IN_USE.UP_EVEN	Vertical BL Ring in Use; Up and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAA	0x02	0x00	0x00	0x00	UNC_CHA_VERT_RING_BL_IN_USE.UP_ODD	Vertical BL Ring in Use; Up and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAA	0x04	0x00	0x00	0x00	UNC_CHA_VERT_RING_BL_IN_USE.DN_EVEN	Vertical BL Ring in Use; Down and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAA	0x08	0x00	0x00	0x00	UNC_CHA_VERT_RING_BL_IN_USE.DN_ODD	Vertical BL Ring in Use; Down and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAA	0x1	0x00	0x00	0x00	UNC_H_VERT_RING_BL_IN_USE.UP_EVEN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_BL_IN_USE.UP_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAA	0x2	0x00	0x00	0x00	UNC_H_VERT_RING_BL_IN_USE.UP_ODD	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_BL_IN_USE.UP_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAA	0x4	0x00	0x00	0x00	UNC_H_VERT_RING_BL_IN_USE.DN_EVEN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_BL_IN_USE.DN_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAA	0x8	0x00	0x00	0x00	UNC_H_VERT_RING_BL_IN_USE.DN_ODD	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_BL_IN_USE.DN_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAB	0x01	0x00	0x00	0x00	UNC_CHA_HORZ_RING_BL_IN_USE.LEFT_EVEN	Horizontal BL Ring in Use; Left and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAB	0x02	0x00	0x00	0x00	UNC_CHA_HORZ_RING_BL_IN_USE.LEFT_ODD	Horizontal BL Ring in Use; Left and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAB	0x04	0x00	0x00	0x00	UNC_CHA_HORZ_RING_BL_IN_USE.RIGHT_EVEN	Horizontal BL Ring in Use; Right and Even	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAB	0x08	0x00	0x00	0x00	UNC_CHA_HORZ_RING_BL_IN_USE.RIGHT_ODD	Horizontal BL Ring in Use; Right and Odd	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAB	0x1	0x00	0x00	0x00	UNC_H_HORZ_RING_BL_IN_USE.LEFT_EVEN	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_BL_IN_USE.LEFT_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAB	0x2	0x00	0x00	0x00	UNC_H_HORZ_RING_BL_IN_USE.LEFT_ODD	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_BL_IN_USE.LEFT_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAB	0x4	0x00	0x00	0x00	UNC_H_HORZ_RING_BL_IN_USE.RIGHT_EVEN	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_BL_IN_USE.RIGHT_EVEN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAB	0x8	0x00	0x00	0x00	UNC_H_HORZ_RING_BL_IN_USE.RIGHT_ODD	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_BL_IN_USE.RIGHT_ODD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAC	0x01	0x00	0x00	0x00	UNC_CHA_VERT_RING_IV_IN_USE.UP	Vertical IV Ring in Use; Up	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAC	0x04	0x00	0x00	0x00	UNC_CHA_VERT_RING_IV_IN_USE.DN	Vertical IV Ring in Use; Down	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAC	0x1	0x00	0x00	0x00	UNC_H_VERT_RING_IV_IN_USE.UP	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_IV_IN_USE.UP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAC	0x4	0x00	0x00	0x00	UNC_H_VERT_RING_IV_IN_USE.DN	This event is deprecated. Refer to new event UNC_CHA_VERT_RING_IV_IN_USE.DN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAD	0x01	0x00	0x00	0x00	UNC_CHA_HORZ_RING_IV_IN_USE.LEFT	Horizontal IV Ring in Use; Left	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAD	0x04	0x00	0x00	0x00	UNC_CHA_HORZ_RING_IV_IN_USE.RIGHT	Horizontal IV Ring in Use; Right	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAD	0x1	0x00	0x00	0x00	UNC_H_HORZ_RING_IV_IN_USE.LEFT	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_IV_IN_USE.LEFT	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAD	0x4	0x00	0x00	0x00	UNC_H_HORZ_RING_IV_IN_USE.RIGHT	This event is deprecated. Refer to new event UNC_CHA_HORZ_RING_IV_IN_USE.RIGHT	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAE	0x01	0x00	0x00	0x00	UNC_CHA_EGRESS_ORDERING.IV_SNOOPGO_UP	Egress Blocking due to Ordering requirements; Up	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAE	0x04	0x00	0x00	0x00	UNC_CHA_EGRESS_ORDERING.IV_SNOOPGO_DN	Egress Blocking due to Ordering requirements; Down	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xAE	0x1	0x00	0x00	0x00	UNC_H_EGRESS_ORDERING.IV_SNOOPGO_UP	This event is deprecated. Refer to new event UNC_CHA_EGRESS_ORDERING.IV_SNOOPGO_UP	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xAE	0x4	0x00	0x00	0x00	UNC_H_EGRESS_ORDERING.IV_SNOOPGO_DN	This event is deprecated. Refer to new event UNC_CHA_EGRESS_ORDERING.IV_SNOOPGO_DN	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x01	0x00	0x00	0x00	UNC_H_RxR_OCCUPANCY.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_OCCUPANCY.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x01	0x00	0x00	0x00	UNC_CHA_RxR_OCCUPANCY.AD_BNC	Transgress Ingress Occupancy; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB0	0x02	0x00	0x00	0x00	UNC_H_RxR_OCCUPANCY.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_OCCUPANCY.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x02	0x00	0x00	0x00	UNC_CHA_RxR_OCCUPANCY.AK_BNC	Transgress Ingress Occupancy; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB0	0x04	0x00	0x00	0x00	UNC_H_RxR_OCCUPANCY.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_OCCUPANCY.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x04	0x00	0x00	0x00	UNC_CHA_RxR_OCCUPANCY.BL_BNC	Transgress Ingress Occupancy; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB0	0x08	0x00	0x00	0x00	UNC_H_RxR_OCCUPANCY.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_OCCUPANCY.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x08	0x00	0x00	0x00	UNC_CHA_RxR_OCCUPANCY.IV_BNC	Transgress Ingress Occupancy; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB0	0x10	0x00	0x00	0x00	UNC_H_RxR_OCCUPANCY.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_OCCUPANCY.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x10	0x00	0x00	0x00	UNC_CHA_RxR_OCCUPANCY.AD_CRD	Transgress Ingress Occupancy; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB0	0x40	0x00	0x00	0x00	UNC_H_RxR_OCCUPANCY.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_OCCUPANCY.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB0	0x40	0x00	0x00	0x00	UNC_CHA_RxR_OCCUPANCY.BL_CRD	Transgress Ingress Occupancy; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB1	0x01	0x00	0x00	0x00	UNC_H_RxR_INSERTS.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_INSERTS.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB1	0x01	0x00	0x00	0x00	UNC_CHA_RxR_INSERTS.AD_BNC	Transgress Ingress Allocations; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB1	0x02	0x00	0x00	0x00	UNC_H_RxR_INSERTS.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_INSERTS.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB1	0x02	0x00	0x00	0x00	UNC_CHA_RxR_INSERTS.AK_BNC	Transgress Ingress Allocations; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB1	0x04	0x00	0x00	0x00	UNC_H_RxR_INSERTS.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_INSERTS.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB1	0x04	0x00	0x00	0x00	UNC_CHA_RxR_INSERTS.BL_BNC	Transgress Ingress Allocations; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB1	0x08	0x00	0x00	0x00	UNC_H_RxR_INSERTS.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_INSERTS.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB1	0x08	0x00	0x00	0x00	UNC_CHA_RxR_INSERTS.IV_BNC	Transgress Ingress Allocations; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB1	0x10	0x00	0x00	0x00	UNC_H_RxR_INSERTS.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_INSERTS.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB1	0x10	0x00	0x00	0x00	UNC_CHA_RxR_INSERTS.AD_CRD	Transgress Ingress Allocations; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB1	0x40	0x00	0x00	0x00	UNC_H_RxR_INSERTS.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_INSERTS.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB1	0x40	0x00	0x00	0x00	UNC_CHA_RxR_INSERTS.BL_CRD	Transgress Ingress Allocations; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB2	0x01	0x00	0x00	0x00	UNC_H_RxR_BYPASS.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_BYPASS.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB2	0x01	0x00	0x00	0x00	UNC_CHA_RxR_BYPASS.AD_BNC	Transgress Ingress Bypass; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB2	0x02	0x00	0x00	0x00	UNC_H_RxR_BYPASS.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_BYPASS.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB2	0x02	0x00	0x00	0x00	UNC_CHA_RxR_BYPASS.AK_BNC	Transgress Ingress Bypass; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB2	0x04	0x00	0x00	0x00	UNC_H_RxR_BYPASS.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_BYPASS.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB2	0x04	0x00	0x00	0x00	UNC_CHA_RxR_BYPASS.BL_BNC	Transgress Ingress Bypass; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB2	0x08	0x00	0x00	0x00	UNC_H_RxR_BYPASS.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_BYPASS.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB2	0x08	0x00	0x00	0x00	UNC_CHA_RxR_BYPASS.IV_BNC	Transgress Ingress Bypass; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB2	0x10	0x00	0x00	0x00	UNC_H_RxR_BYPASS.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_BYPASS.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB2	0x10	0x00	0x00	0x00	UNC_CHA_RxR_BYPASS.AD_CRD	Transgress Ingress Bypass; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB2	0x40	0x00	0x00	0x00	UNC_H_RxR_BYPASS.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_BYPASS.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB2	0x40	0x00	0x00	0x00	UNC_CHA_RxR_BYPASS.BL_CRD	Transgress Ingress Bypass; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x01	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x01	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.AD_BNC	Transgress Injection Starvation; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x02	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.AK_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.AK_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x02	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.AK_BNC	Transgress Injection Starvation; AK - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x04	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x04	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.BL_BNC	Transgress Injection Starvation; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x08	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.IV_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.IV_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x08	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.IV_BNC	Transgress Injection Starvation; IV - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x10	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x10	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.AD_CRD	Transgress Injection Starvation; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x40	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x40	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.BL_CRD	Transgress Injection Starvation; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB3	0x80	0x00	0x00	0x00	UNC_H_RxR_CRD_STARVED.IFV	This event is deprecated. Refer to new event UNC_CHA_RxR_CRD_STARVED.IFV	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB3	0x80	0x00	0x00	0x00	UNC_CHA_RxR_CRD_STARVED.IFV	Transgress Injection Starvation; IFV - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB4	0x01	0x00	0x00	0x00	UNC_H_RxR_BUSY_STARVED.AD_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_BUSY_STARVED.AD_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB4	0x01	0x00	0x00	0x00	UNC_CHA_RxR_BUSY_STARVED.AD_BNC	Transgress Injection Starvation; AD - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB4	0x04	0x00	0x00	0x00	UNC_H_RxR_BUSY_STARVED.BL_BNC	This event is deprecated. Refer to new event UNC_CHA_RxR_BUSY_STARVED.BL_BNC	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB4	0x04	0x00	0x00	0x00	UNC_CHA_RxR_BUSY_STARVED.BL_BNC	Transgress Injection Starvation; BL - Bounce	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB4	0x10	0x00	0x00	0x00	UNC_H_RxR_BUSY_STARVED.AD_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_BUSY_STARVED.AD_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB4	0x10	0x00	0x00	0x00	UNC_CHA_RxR_BUSY_STARVED.AD_CRD	Transgress Injection Starvation; AD - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xB4	0x40	0x00	0x00	0x00	UNC_H_RxR_BUSY_STARVED.BL_CRD	This event is deprecated. Refer to new event UNC_CHA_RxR_BUSY_STARVED.BL_CRD	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xB4	0x40	0x00	0x00	0x00	UNC_CHA_RxR_BUSY_STARVED.BL_CRD	Transgress Injection Starvation; BL - Credit	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xC0	0x0	0x00	0x00	0x00	UNC_H_CLOCK	This event is deprecated. Refer to new event UNC_CHA_CMS_CLOCKTICKS	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xC0	0x0	0x00	0x00	0x00	UNC_CHA_CMS_CLOCKTICKS	CMS Clockticks	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x01	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR0	Stall on No AD Agent0 Transgress Credits; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x02	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR1	Stall on No AD Agent0 Transgress Credits; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x04	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR2	Stall on No AD Agent0 Transgress Credits; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x08	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR3	Stall on No AD Agent0 Transgress Credits; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x1	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR0	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD0	0x10	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR4	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD0	0x10	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR4	Stall on No AD Agent0 Transgress Credits; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x2	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR1	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD0	0x20	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR5	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD0	0x20	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR5	Stall on No AD Agent0 Transgress Credits; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD0	0x4	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR2	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD0	0x8	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR3	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG0.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD2	0x01	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR0	Stall on No AD Agent1 Transgress Credits; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD2	0x02	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR1	Stall on No AD Agent1 Transgress Credits; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD2	0x04	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR2	Stall on No AD Agent1 Transgress Credits; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD2	0x08	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR3	Stall on No AD Agent1 Transgress Credits; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD2	0x1	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR0	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD2	0x10	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR4	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD2	0x10	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR4	Stall on No AD Agent1 Transgress Credits; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD2	0x2	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR1	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD2	0x20	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR5	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD2	0x20	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR5	Stall on No AD Agent1 Transgress Credits; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD2	0x4	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR2	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD2	0x8	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR3	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_AD_AG1.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD4	0x01	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR0	Stall on No BL Agent0 Transgress Credits; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD4	0x02	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR1	Stall on No BL Agent0 Transgress Credits; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD4	0x04	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR2	Stall on No BL Agent0 Transgress Credits; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD4	0x08	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR3	Stall on No BL Agent0 Transgress Credits; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD4	0x1	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR0	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD4	0x10	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR4	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD4	0x10	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR4	Stall on No BL Agent0 Transgress Credits; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD4	0x2	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR1	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD4	0x20	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR5	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD4	0x20	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR5	Stall on No BL Agent0 Transgress Credits; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD4	0x4	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR2	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD4	0x8	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR3	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG0.TGR3	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD6	0x01	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR0	Stall on No BL Agent1 Transgress Credits; For Transgress 0	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD6	0x02	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR1	Stall on No BL Agent1 Transgress Credits; For Transgress 1	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD6	0x04	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR2	Stall on No BL Agent1 Transgress Credits; For Transgress 2	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD6	0x08	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR3	Stall on No BL Agent1 Transgress Credits; For Transgress 3	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD6	0x1	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR0	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR0	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD6	0x10	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR4	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR4	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD6	0x10	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR4	Stall on No BL Agent1 Transgress Credits; For Transgress 4	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD6	0x2	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR1	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR1	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD6	0x20	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR5	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR5	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD6	0x20	0x00	0x00	0x00	UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR5	Stall on No BL Agent1 Transgress Credits; For Transgress 5	0,1,2,3	0x53	na	0	0	0x00
+CHA	0xD6	0x4	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR2	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR2	0,1,2,3	0x53	na	0	0	0x01
+CHA	0xD6	0x8	0x00	0x00	0x00	UNC_H_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR3	This event is deprecated. Refer to new event UNC_CHA_STALL_NO_TxR_HORZ_CRD_BL_AG1.TGR3	0,1,2,3	0x53	na	0	0	0x01

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="dvt6.dvt" lang="en">
+    <msg name='%IncorrectDiveTarget'>Source / assembly code for the selected object is not available.</msg>
+    <msg name='%IncorrectSourceTarget'>Source code for the selected object is not available.</msg>
+    <msg name='%IncorrectAssemblyTarget'>Assembly code for the selected object is not available.</msg>
+    <msg name='%BinariesDoNotMatchText'>Binary files do not match. Assembly window is not available.</msg>
+    <msg name='%CannotFindModuleFile'>Cannot find module file: <arg name='%1'/></msg>
+    <msg name='%CannotFindSymbolFile'>Cannot find symbol file: <arg name='%1'/></msg>
+    <msg name='%CannotFindSourceFile'>Cannot find source file: <arg name='%1'/></msg>
+    <msg name='%BinaryFileIsEncrypted'>The binary file does not contain a valid code section. This may result from compressing the binary with an executable package utility. Assembly view cannot attribute metrics to disassembly correctly for such binaries. Consider switching off the binary package.</msg>
+    <msg name='%SourceFileCodePageUnsupported'>Source file code page is not supported. UTF-8, UTF-16 and files in native locale are supported.</msg>
+    <msg name='%InternalError'>An internal error has occurred. Our apologies for this inconvenience. Please gather a description of the steps leading up to the problem and contact the Intel customer support team.</msg>
+    <msg name='%ValidationMessageAddition'> for result '<arg name='%1'/>'</msg>
+    <msg name='%FunctionRange'>Function range <arg name='%1'/>-<arg name='%2'/></msg>
+    <msg name='%PseudoFunctionRange'>Pseudo function range <arg name='%1'/>-<arg name='%2'/></msg>
+    <msg name='%CacheSourceFile'>Source file is saved in the result cache.</msg>
+    <msg name='%OpenFromCache'>Source file is opened from the result cache.</msg>
+    <msg name='%InvalideCacheSourcesKnobValue'>Invalid value for the cache-sources knob. Possible values are "true" or "false" (default).</msg>
+    <msg name='%NotEnoughInformationToValidateFile'>Cannot check the file. Information in the result is not enough. The source code analysis may be inaccurate.</msg>
+  </catalog>
+</xmc>

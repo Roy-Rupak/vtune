@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.perfcollector" lang="en">
+    <msg name='UserOnlyAndOsOnly'>user-mode-only and os-mode-only options cannot be specified together.</msg>
+    <msg name='UserOnlyPerm'>Only user space will be profiled due to credentials lack. Consider changing /proc/sys/kernel/perf_event_paranoid file for enabling kernel space profiling.</msg>
+    <msg name='OsOnlyNoPerm'>Kernel space profiling is not permitted. Consider changing /proc/sys/kernel/perf_event_paranoid file for enabling kernel space profiling.</msg>
+    <msg name='SystemWideNoPerm'>System-wide collection is not possible due to a lack of credentials. Consider setting the /proc/sys/kernel/perf_event_paranoid value to 0 or less.</msg>
+    <msg name='SystemWideCountNoPerm'>System-wide collection is not possible due to a lack of credentials. Consider setting the /proc/sys/kernel/perf_event_paranoid value to 0 or less.</msg>
+    <msg name='SystemWideRecommended'>Consider reducing possible collection overhead by setting the /proc/sys/kernel/perf_event_paranoid value to 0 (or less).</msg>
+    <msg name='NoRunAs'>/system/bin/run-as is not found. Data collection is interrupted.</msg>
+    <msg name='NoShell'>/bin/sh is not found. Data collection is interrupted.</msg>
+    <msg name='NoKill'>kill command execution failed. Data collection is interrupted.</msg>
+    <msg name='NoChmod'>chmod command execution failed. Data collection is interrupted.</msg>
+    <msg name='NoPerfExe'>amplxe-perf executable is not found in the product installation directory. Data collection is interrupted.</msg>
+    <msg name='NoPerfSyncExe'>amplxe-perf-sync executable is not found in the product installation directory. Data collection is interrupted.</msg>
+    <msg name='NoPerfSyncSh'>amplxe-perf-sync.sh file is not found in the product installation directory. Data collection is interrupted.</msg>
+    <msg name='NoSepExe'>sep executable is not found in the product installation directory. Data collection is interrupted.</msg>
+    <msg name='SepProcFail'>Failed to execute sep process. Data collection is interrupted.</msg>
+    <msg name='SepEventWriteFail'>Failed to write sep.events file. Data collection is interrupted.</msg>
+    <msg name='SepEventOpenFail'>Failed to open sep.events file. Data collection is interrupted.</msg>
+    <msg name='SepEventLoadFail'>Failed to generate a hardware events configuration. Data collection is interrupted</msg>
+    <msg name='SepEventLoadFailTail'>. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver using the root credentials, or updating the OS kernel.</msg>
+    <msg name='EventMapFail'>Failed to generate map.events file. Data collection is interrupted.</msg>
+    <msg name='EventMapWriteFail'>Failed to write map.events file. Data collection is interrupted.</msg>
+    <msg name='EventListFail'>Failed to generate Linux Perf events list. Data collection is interrupted.</msg>
+    <msg name='PackageNameFail'>Failed to determine application package name. The data collection is interrupted.</msg>
+    <msg name='MonitorFail'>Failed to allocate threads, files or memory for data collection. The data collection is interrupted.</msg>
+    <msg name='ProfStopFail'>Failed to stop data collection. The collected data may be incomplete or corrupted.</msg>
+    <msg name='TraceChmodFail'>Failed to adjust permissions of the collected trace file.</msg>
+    <msg name='PauseWarning'>Pause command is not supported in the sampling driverless mode. Runtime overhead is still possible. Data size limit may be exceeded.</msg>
+    <msg name='CpuMaskInvalid'>Specified CPU mask is invalid. Data collection is interrupted.</msg>
+    <msg name='CpuMaskIgnored'>Failed to validate the CPU mask. The mask is ignored.</msg>
+    <msg name='CpuMaskNotSupported'>The CPU mask option is not supported for the specified target type.</msg>
+    <msg name='SkippedEvents'>The following events cannot be collected: </msg>
+    <msg name='SkippedEventsTail'>. Consider removing the events from the collection, loading the PRODUCT_LEGAL_SHORT_NAME sampling driver using the root credentials, or updating the OS kernel.</msg>
+    <msg name='SkippedEventsVM'>The following events cannot be collected inside a virtual machine: </msg>
+    <msg name='NoPreciseEvents'>Precise events are not available on this platform in the driverless mode and will be collected as non-precise. Some metrics may be less accurately attributed to the program code. Please consider loading PRODUCT_LEGAL_SHORT_NAME driver. Updating Linux kernel to newer version may also help.</msg>
+    <msg name='NoDLAmode'>The Data Linear Address facility is not supported on this platform in driver-less mode. Attribution on metrics to memory objects or cachelines will not be available. Please consider loading VTune driver. Updating Linux kernel to newer version may also help.</msg>
+    <msg name='ChangedSAV'>This collection uses the smallest of Sampling After Values (SAV) applicable to selected events.</msg>
+    <msg name='BuildWithFP'>Collected call stacks may be wrong or incomplete because the OS kernel version is too old. Make sure your application is compiled with frame pointers to get correct call stack information.</msg>
+    <msg name='NoStackCollected'>Call stacks cannot be collected due to the product limitations.</msg>
+    <msg name='KvmGuestWithoutSymbols'>KVM guest OS profiling is not possible without guest OS symbols. Data collection is interrupted.</msg>
+    <msg name='KvmGuestWithoutKallsyms'>Symbol resolution of Linux kernel for KVM guest OS is not possible. Make sure to copy the guest /proc/kallsyms file to the local machine.</msg>
+    <msg name='KvmGuestWithoutModules'>Symbol resolution of Linux kernel modules for KVM guest OS is not possible. Make sure to copy the guest /proc/modules file to the local machine.</msg>
+    <msg name='NoKallsyms'>No /proc/kallsyms file found on the system. The OS kernel symbols will not be resolved.</msg>
+    <msg name='NoModules'>No /proc/modules file found no the system. The OS kernel modules symbols will not be resolved.</msg>
+    <msg name='CustomKernelModules'>To profile kernel modules during the session, make sure they are available in the /lib/modules/kernel_version/ location.</msg>
+    <msg name='stackwalk'>Specify stack unwinding method. Possible values: online - unwind stacks during collection; offline - unwind stacks after collection is finished.</msg>
+    <msg name='NoMmapPagesForPerf'>There are not enough mmap pages for perf collection. Consider either setting the /proc/sys/kernel/perf_event_paranoid value to 0 (or less) or increasing the number of available mmap pages in the /proc/sys/kernel/perf_event_mlock_kb file. Minimum parameter is&#32;</msg>
+    <msg name='StacksWillBeMissed'>Collected data may be incomplete or missing in the current configuration. To correct this, please increase the number of available mmap pages in /proc/sys/kernel/perf_event_mlock_kb file or disable stack collection. Recommended parameter is&#32;</msg>
+    <msg name='FdOpenFail'>Insufficient limit for open file descriptors in the system for driverless collection. To increase file descriptor limit,&lt;br&gt;1. Set a value above (150 * logic CPU count).&lt;br&gt;2. For the attach mode, check if /proc/sys/kernel/perf_event_paranoid is set to 0 or -1. If yes, multiply new limit by number of threads in the process.&lt;br&gt;3. Set hard and soft limits to new limit with 'nofile' value in /etc/security/limits.conf.&lt;br&gt;4. Refresh login to apply changes.&lt;br&gt;For more information, see &lt;a web-link="https://software.intel.com/en-us/vtune-cookbook-profiling-hardware-without-sampling-drivers#4" cli="Profiling Hardware Without Intel Sampling Drivers"&gt;Profiling Hardware Without Intel Sampling Drivers&lt;/a&gt;recipe in  PRODUCT_LEGAL_SHORT_NAME Performance Analysis Cookbook.&lt;br&gt;Alternatively, install PRODUCT_LEGAL_SHORT_NAME sampling driver and rerun analysis.</msg>
+    <msg name='DryRunFail'>Preliminary validation of the requested events failed.</msg>
+    <msg name='PerfRestr'>This driverless collection is restricted in the OS. Consider setting the /proc/sys/kernel/perf_event_paranoid value to 0 or less.</msg>
+    <msg name='raw-perf-config'>Specify a verified configuration for the Perf collector in the format: &lt;describer&gt;,&lt;content&gt;. For example: map-events-file,&lt;path_to_map_events_file&gt;.</msg>
+    <msg name='uncore-sampling-interval'>Specify the uncore sampling interval as &lt;integer&gt;. This value set the uncore sampling interval for all the uncore events specified in -event-config option.</msg>
+    <msg name='PerfNoCSwitchOnThisKernel'>Context switch data cannot be collected. Consider loading the PRODUCT_LEGAL_SHORT_NAME sampling driver using the root credentials or updating the OS kernel.</msg>
+    <msg name='sys-config'>Specify types of system data to be collected. Supported value: cswitch - collect context switch information.</msg>
+    <msg name='perf-event-config'>Specify events for Perf collector in Perf format. For example: perf-event-config=cpu-clock.</msg>
+    <msg name='UnsupportedMultipleRunsMode'>Driverless collection cannot be performed in multiple runs. Please either disable multiple runs or install PRODUCT_LEGAL_SHORT_NAME sampling drivers and run collection without stacks. See "Sampling and Power Drivers" help topic for further details.</msg>
+    <msg name='perf-aio'>Number of control blocks in asynchronous trace writing mode.</msg>
+    <msg name='perf-compression'>Specify compression of Perf collector output data. Possible levels: 0 - without compression, 1..3 - best speed, 4..22 - best compression that incurs big overhead.</msg>
+    <msg name='perf-mmap-flush'>Minimum data size read from the kernel mapped region.</msg>
+    <msg name='perf-affinity'>Adjust an affinity mask of the Perf thread to a node with an allocated memory trace buffer.</msg>
+    <msg name='perf-threads'>Setup threading mode for trace writing.</msg>
+  </catalog>
+</xmc>

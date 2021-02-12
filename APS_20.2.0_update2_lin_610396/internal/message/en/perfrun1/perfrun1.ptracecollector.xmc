@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.ptracecollector" lang="en">
+    <msg name='ptrace'>Ptrace collector.</msg>
+    <msg name='StackSamplingKernelVersionWarning'>Stack sampling is available on kernel >= 3.0.18. Collection will be started without stack sampling.</msg>
+    <msg name='IncorrectProfilingSignal'>Unsupported profiling signal is specified. Please use another signal.</msg>
+    <msg name='ZeroSamplingInterval'>Sampling interval can't be zero or negative. Please specify positive value.</msg>
+    <msg name='RunasUnknownError'>Cannot attach to the target application due to an error returned by the 'run-as' utility. Suggestion: Make sure your Android image is installed correctly.</msg>
+    <msg name='RunasPackageIsOk'>Package is debuggable.</msg>
+    <msg name='RunasPackageIsUnknown'>Collection was not started due to an error returned by the 'run-as' utility. Suggestion: Make sure the USB debugging option is enabled on the device.</msg>
+    <msg name='RunasPackageIsNotApplication'>The specified package is not an application. Collection cannot be started.</msg>
+    <msg name='RunasPackageHasCorruptInstallation'>Target package is not installed properly. Collection cannot be started. Suggestion: Reinstall the specified application.</msg>
+    <msg name='RunasPackageIsNotDebuggable'>Target application cannot be profiled. Suggestion: Make sure the application manifest has the 'android:debuggable' attribute.</msg>
+    <msg name='NoAttachPermissions'>Failed to attach to the specified target process. Please make sure the process exists and PRODUCT_LEGAL_SHORT_NAME process has enough permissions to attach to the target process. See the Troubleshooting help topic for more details.</msg>
+    <msg name='stackwalk'>Specify stack unwinding method. Possible values: online - unwind stacks during collection; offline - unwind stacks after collection is finished.</msg>
+    <msg name='AppBitnessMismatch'>Failed to attach to the specified target process. Make sure you are not profiling a 32-bit application on a 64-bit target system. This functionality is not supported by the Basic Hotspots analysis at the moment.</msg>
+    </catalog>
+</xmc>

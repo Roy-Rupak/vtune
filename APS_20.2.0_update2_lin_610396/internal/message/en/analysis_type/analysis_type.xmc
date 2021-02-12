@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="analysis_type" lang="en">
+      <msg name='%BasicHotspotsAtypeName'>Basic Hotspots</msg>
+      <msg name='%BasicHotspotsAtypeShortName'>Basic Hotspots</msg>
+      <msg name='%BasicHotspotsAtypeDescription'>Identify your most time-consuming source code. This analysis type cannot be used to profile the system but must either launch an application/process or attach to one. This analysis type uses user-mode sampling and tracing collection.</msg>
+      <msg name='%PythonBasicHotspotsAtypeName'>Python Hotspots</msg>
+      <msg name='%PythonBasicHotspotsAtypeShortName'>Python Hotspots</msg>
+      <msg name='%PythonBasicHotspotsAtypeDescription'>Identify your most time-consuming Python source code. This analysis is applicable to the Launch Application and Attach to Process target types. Profile System target type is not supported. This analysis type uses user-mode sampling and tracing collection.</msg>
+      <msg name='%LightweightHotspotsAtypeName'>Lightweight Hotspots</msg>
+      <msg name='%LightweightHotspotsAtypeShortName'>Lightweight Hotspots</msg>
+      <msg name='%LightweightHotspotsAtypeDescription'>Identify your most time-consuming source code. Unlike Hotspots, Lightweight Hotspots has lower overhead when stack collection is disabled. Reduced overhead makes it possible to set a lower sampling interval than Hotspots (as low as 1ms without stacks), which is useful for locating small functions that are called frequently. This analysis type can also be used to sample all processes on a system.</msg>
+      <msg name='%AdvancedHotspotsAtypeName'>Advanced Hotspots</msg>
+      <msg name='%AdvancedHotspotsAtypeShortName'>Advanced Hotspots</msg>
+      <msg name='%AdvancedHotspotsAtypeDescription'>Identify time-consuming code in your application. Advanced Hotspots analysis uses the OS kernel support or PRODUCT_LEGAL_SHORT_NAME kernel driver to extend the Hotspots analysis by collecting call stacks, context switch and statistical call count data as well as analyzing the CPI (Cycles Per Instruction) metric. By default, this analysis uses higher frequency sampling at  lower overhead compared to the Basic Hotspots analysis.</msg>
+      <msg name='%HotspotsAtypeName'>Hotspots</msg>
+      <msg name='%HotspotsAtypeShortName'>Hotspots</msg>
+      <msg name='%HotspotsAtypeDescription'>Identify the most time consuming functions and drill down to see time spent on each line of source code. Focus optimization efforts on hot code for the greatest performance impact.</msg>
+      <msg name='%HotspotsAtypeShortDescription'>Identify the most time consuming functions and lines of source code.</msg>
+      <msg name='%PerfSnapAtypeName'>Performance Snapshot (preview)</msg>
+      <msg name='%PerfSnapAtypeShortName'>Performance Snapshot (preview)</msg>
+      <msg name='%PerfSnapAtypeDescription'>
+        Preview feature - should we keep it, change it, or drop it? &lt;a web-link='mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: Disk IO - preview feedback' cli="Send us your comments: mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: Disk IO - preview feedback"&gt;Send us your comments&lt;/a&gt;.&lt;br&gt;
+        &lt;br&gt;
+        Get a quick snapshot of your application performance and identify next steps for deeper analysis.
+      </msg>
+      <msg name='%PerfSnapAtypeShortDescription'>Get a quick snapshot of your application performance and identify next steps for deeper analysis.</msg>
+      <msg name='%HPCPerfCharAtypeName'>HPC Performance Characterization</msg>
+      <msg name='%HPCPerfCharAtypeShortName'>HPC Performance Characterization</msg>
+      <msg name='%HPCPerfCharAtypeDescription'>
+        <![CDATA[Analyze important aspects of your application performance, including CPU utilization with additional details on OpenMP efficiency analysis, memory usage, and FPU utilization with vectorization information.<br>For vectorization optimization data, such as trip counts, data dependencies, and memory access patterns, try <a web-link="https://software.intel.com/en-us/intel-advisor-xe" cli="Intel Advisor">Intel Advisor</a>. It identifies the loops that will benefit the most from refined vectorization and gives tips for improvements.<br>The HPC Performance Characterization analysis type is best used for analyzing intensive compute applications.]]>
+      </msg>
+      <msg name='%HPCPerfCharAtypeShortDescription'>Analyze important aspects of your application performance, including CPU utilization with details on OpenMP efficiency analysis, memory access, and vectorization information.</msg>
+      <msg name='%ConcurrencyAtypeName'>Concurrency</msg>
+      <msg name='%ConcurrencyAtypeShortName'>Concurrency</msg>
+      <msg name='%ConcurrencyAtypeDescription'>Analyze how your application is using available logical CPUs, discover where parallelism is incurring synchronization overhead, and identify potential candidates for parallelization. This analysis type uses user-mode sampling and tracing collection.</msg>
+      <msg name='%LocksAndWaitsAtypeName'>Locks and Waits</msg>
+      <msg name='%LocksAndWaitsAtypeShortName'>Locks and Waits</msg>
+      <msg name='%LocksAndWaitsAtypeDescription'>Identify where your application is waiting on synchronization objects or I/O operations and discover how these waits affect your application performance. This analysis type uses user-mode sampling and tracing collection.</msg>
+      <msg name='%ThreadingAtypeName'>Threading</msg>
+      <msg name='%ThreadingAtypeShortName'>Threading</msg>
+      <msg name='%ThreadingAtypeDescription'>Discover how well your application is using parallelism to take advantage of all available CPUs. Identify and locate synchronization issues causing overhead or idle wait time resulting in lost performance.</msg>
+      <msg name='%ThreadingAtypeShortDescription'>Discover how well your application is using parallelism to take advantage of all available CPU cores.</msg>
+      <msg name='%PlatformProfilingAtypeName'>Platform Analyzer</msg>
+      <msg name='%PlatformProfilingAtypeShortName'>Platform Analyzer</msg>
+      <msg name='%PlatformProfilingAtypeDescription'>Identify platform-level issues in your program by running this thin analysis that collects most valuable metrics across the system and optionally correlates them with task API markeup in your code.</msg>
+      <msg name='%PlatformProfilingAtypeShortDescription'>Identify platform-level issues in your program by running this thin analysis that collects most valuable metrics across the system and optionally correlates them with task API markeup in your code.</msg>
+      <msg name='%ProcessorTraceAtypeName'>Anomaly Detection (preview)</msg>
+      <msg name='%ProcessorTraceAtypeShortName'>Anomaly Detection (preview)</msg>
+      <msg name='%ProcessorTraceAtypeDescription'>Preview feature - should we keep it, change it, or drop it? &lt;a web-link='mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: Anomaly Detection - preview feedback' cli="Send us your comments: mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: Anomaly Detection - preview feedback"&gt;Send us your comments&lt;/a&gt;.&lt;br&gt;
+        &lt;br&gt;
+        Identify performance-critical code at the microsecond analysis level. This analysis type uses Intel Processor Trace technology for fine-grain code profiling.</msg>
+      <msg name='%CPUGPUConcurrencyAtypeName'>CPU/GPU Concurrency (deprecated)</msg>
+      <msg name='%CPUGPUConcurrencyAtypeShortName'>CPU/GPU Concurrency (deprecated)</msg>
+      <msg name='%CPUGPUConcurrencyAtypeDescription'>
+        <![CDATA[This analysis is deprecated and is to be merged with System Overview in the future releases.<br><br>Explore code execution on the various CPU and GPU cores on your platform, correlate CPU and GPU activity and identify whether your application is GPU or CPU bound.]]>
+      </msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForAndroidAndWindowsAndLinux'>This analysis type is only defined for Android, Windows and Linux operating systems.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForAndroidAndLinux'>This analysis type is only defined for Android and Linux operating systems.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForWindowsAndLinux'>This analysis type is only defined for Windows and Linux operating systems.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForWindows'>This analysis type is only defined for Windows operating system.</msg>
+      <msg name='%PTUCore2BandwidthAtypeName'>Bandwidth - Intel Core 2 Processor Family</msg>
+      <msg name='%PTUCore2BandwidthAtypeShortName'>Bandwidth</msg>
+      <msg name='%PTUCore2BandwidthAtypeDescription'>Identify where memory bandwidth issues affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCore2BandwidthBreakdownAtypeName'>Bandwidth Breakdown - Intel Core 2 Processor Family</msg>
+      <msg name='%PTUCore2BandwidthBreakdownAtypeShortName'>Bandwidth Breakdown</msg>
+      <msg name='%PTUCore2BandwidthBreakdownAtypeDescription'>Identify the contribution of different components of bus transactions (simple reads, reads for ownership, and writes-back) to the code performance. Memory transactions are broken down into reads and write backs. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCore2CycleUsageAtypeName'>General Exploration - Intel Core 2 Processor Family</msg>
+      <msg name='%PTUCore2CycleUsageAtypeShortName'>General Exploration</msg>
+      <msg name='%PTUCore2CycleUsageAtypeDescription'>Use this analysis type as a starting point for advanced analysis. Identify and locate the most significant hardware issues that affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCore2UOpFlowAtypeName'>Cycles and uOps - Intel Core 2 Processor Family</msg>
+      <msg name='%PTUCore2UOpFlowAtypeShortName'>Cycles and uOps</msg>
+      <msg name='%PTUCore2UOpFlowAtypeDescription'>Identify where micro-operation flow issues affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCore2LatencyAnalysisAtypeName'>Memory Access - Intel Core 2 Processor Family</msg>
+      <msg name='%PTUCore2LatencyAnalysisAtypeShortName'>Memory Access</msg>
+      <msg name='%PTUCore2LatencyAnalysisAtypeDescription'>Identify where memory access issues and their performance impact from accessing too many memory pages, having L1 data cache and L2 cache load driven misses. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCorei7ClientAnalysisAtypeName'>General Exploration - Nehalem / Westmere</msg>
+      <msg name='%PTUCorei7ClientAnalysisAtypeShortName'>General Exploration</msg>
+      <msg name='%PTUCorei7ClientAnalysisAtypeDescription'>Use this analysis type as a starting point for advanced analysis. Identify and locate the most significant hardware issues that affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCorei7CyclesUOpsAtypeName'>Cycles and uOps - Nehalem / Westmere</msg>
+      <msg name='%PTUCorei7CyclesUOpsAtypeShortName'>Cycles and uOps</msg>
+      <msg name='%PTUCorei7CyclesUOpsAtypeDescription'>Identify where micro-operation flow issues affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCorei7FrontEndInvestigationAtypeName'>Front End Investigation - Nehalem / Westmere</msg>
+      <msg name='%PTUCorei7FrontEndInvestigationAtypeShortName'>Front End Investigation</msg>
+      <msg name='%PTUCorei7FrontEndInvestigationAtypeDescription'>Identify instruction-delivery-related performance issues. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUCorei7MemoryAccessAtypeName'>Memory Access - Nehalem / Westmere</msg>
+      <msg name='%PTUCorei7MemoryAccessAtypeShortName'>Memory Access</msg>
+      <msg name='%PTUCorei7MemoryAccessAtypeDescription'>Understand a memory access pattern and get a direction to its optimization. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%SNBGeneralExplorationAtypeName'>General Exploration - Sandy Bridge / Ivy Bridge</msg>
+      <msg name='%SNBGeneralExplorationAtypeShortName'>General Exploration</msg>
+      <msg name='%SNBGeneralExplorationAtypeDescription'>Analyze general issues affecting the performance of your application. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%WSMEXReadBandwidthAtypeName'>Read Bandwidth - Nehalem / Westmere</msg>
+      <msg name='%WSMEXReadBandwidthAtypeShortName'>Read Bandwidth</msg>
+      <msg name='%WSMEXReadBandwidthAtypeDescription'>Measure the data read from DRAM via the processor's integrated memory controller and determine whether the code is saturating available bandwidth. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%WSMEXWriteBandwidthAtypeName'>Write Bandwidth - Nehalem / Westmere</msg>
+      <msg name='%WSMEXWriteBandwidthAtypeShortName'>Write Bandwidth</msg>
+      <msg name='%WSMEXWriteBandwidthAtypeDescription'>Measure the data written to DRAM via the processor's integrated memory controller and determine whether the code is saturating available bandwidth. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%SNBBandwidthAtypeName'>Bandwidth - Sandy Bridge / Ivy Bridge</msg>
+      <msg name='%SNBBandwidthAtypeShortName'>Bandwidth</msg>
+      <msg name='%SNBBandwidthAtypeDescription'>Measure the data read and written to DRAM via the processor's integrated memory controller and determine whether the code is saturating available bandwidth.  This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBAccessContentionAtypeName'>Access Contention - Sandy Bridge</msg>
+      <msg name='%PTUSNBAccessContentionAtypeShortName'>Access Contention</msg>
+      <msg name='%PTUSNBAccessContentionAtypeDescription'>Analyze where shared memory cacheline contention, lock contention, true and false sharing issues affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBBranchAnalysisAtypeName'>Branch Analysis - Sandy Bridge</msg>
+      <msg name='%PTUSNBBranchAnalysisAtypeShortName'>Branch Analysis</msg>
+      <msg name='%PTUSNBBranchAnalysisAtypeDescription'>Analyze branching issues that may lead to wasted work, increasing application runtime and power consumption. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBClientAnalysisAtypeName'>Client Analysis - Sandy Bridge</msg>
+      <msg name='%PTUSNBClientAnalysisAtypeShortName'>Client Analysis</msg>
+      <msg name='%PTUSNBClientAnalysisAtypeDescription'>Analyze client applications for performance issues. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBCorePortSaturationAtypeName'>Core Port Saturation - Sandy Bridge</msg>
+      <msg name='%PTUSNBCorePortSaturationAtypeShortName'>Core Port Saturation</msg>
+      <msg name='%PTUSNBCorePortSaturationAtypeDescription'>Analyze how port saturation affects the performance of your application at a per-core granularity. Look for port/cycle counts above 0.7. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBCyclesAndUopsAtypeName'>Cycles and uOps - Sandy Bridge</msg>
+      <msg name='%PTUSNBCyclesAndUopsAtypeShortName'>Cycles and uOps</msg>
+      <msg name='%PTUSNBCyclesAndUopsAtypeDescription'>Identify where micro-operation flow issues affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBMemoryAccessAtypeName'>Memory Access - Sandy Bridge</msg>
+      <msg name='%PTUSNBMemoryAccessAtypeShortName'>Memory Access</msg>
+      <msg name='%PTUSNBMemoryAccessAtypeDescription'>Identify, using precise events, where memory access issues affect the performance of your application. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%PTUSNBPortSaturationAtypeName'>Port Saturation - Sandy Bridge</msg>
+      <msg name='%PTUSNBPortSaturationAtypeShortName'>Port Saturation</msg>
+      <msg name='%PTUSNBPortSaturationAtypeDescription'>Analyze how port saturation affects the performance of your application at a per-thread granularity. Look for port/cycle counts above 0.7. This analysis type uses hardware event-based sampling collection.</msg>
+      <msg name='%AtomGeneralExplorationAtypeName'>Intel Atom Processor - General Exploration</msg>
+      <msg name='%AtomGeneralExplorationAtypeShortName'>General Exploration</msg>
+      <msg name='%AtomGeneralExplorationAtypeDescription'>Analyze general issues affecting the performance of your application. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForAtom'>This analysis type is only defined for Intel Atom processors.</msg>
+      <msg name='%CommonGeneralExplorationAtypeName'>General Exploration</msg>
+      <msg name='%CommonGeneralExplorationAtypeShortName'>General Exploration</msg>
+      <msg name='%CommonGeneralExplorationAtypeDescription'>Analyze general issues affecting the performance of your application. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%MicroarchitectureExplorationAtypeName'>Microarchitecture Exploration</msg>
+      <msg name='%MicroarchitectureExplorationAtypeShortName'>Microarchitecture Exploration</msg>
+      <msg name='%MicroarchitectureExplorationAtypeDescription'>Analyze CPU microarchitecture bottlenecks affecting the performance of your application. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%MicroarchitectureExplorationAtypeShortDescription'>Analyze CPU microarchitecture bottlenecks affecting the performance of your application.</msg>
+      <msg name='%CommonBandwidthAtypeName'>Bandwidth</msg>
+      <msg name='%CommonBandwidthAtypeShortName'>Bandwidth</msg>
+      <msg name='%CommonBandwidthAtypeDescription'>Measure the data read and written to DRAM via the processor's integrated memory controller and determine whether the code is saturating available bandwidth.  This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%VectorizationAtypeName'>Vectorization</msg>
+      <msg name='%VectorizationAtypeShortName'>Vectorization</msg>
+      <msg name='%VectorizationAtypeDescription'>Measure how effectively your code utilizes the floating point unit and identify  whether the level of vectorization usage (instruction-level parallelism) is sufficient for your program.</msg>
+      <msg name='%GpuHotspotsAtypeName'>GPU Compute/Media Hotspots</msg>
+      <msg name='%GpuHotspotsAtypeShortName'>GPU Compute/Media Hotspots</msg>
+      <msg name='%GpuHotspotsAtypeDescription'>Identify your most time-consuming GPU computing tasks. GPU Compute/Media Hotspots collects GPU utilization for each GPU engine and GPU hardware metrics. This analysis type uses user-mode tracing and the OS kernel support or PRODUCT_LEGAL_SHORT_NAME kernel driver for CPU code sampling.</msg>
+      <msg name='%EnergyProfilingMode'>Energy profiling mode</msg>
+      <msg name='%IdleAnalysis'>Idle</msg>
+      <msg name='%ActiveAnalysis'>Active</msg>
+      <msg name='%EnergyProfilingModeNone'>None</msg>
+      <msg name='%ThrottlingAtypeName'>Throttling (preview)</msg>
+      <msg name='%ThrottlingAtypeShortName'>Throttling (preview)</msg>
+      <msg name='%ThrottlingAtypeDescription'>Identify causes for system throttling when performance is uncharacteristically low with a drop in frequency. Check to see if the system is exceeding safe thermal or power limits.</msg>
+      <msg name='%SocwatchDriverIsNotLoaded'><![CDATA[Unable to start analysis. Socwatch driver cannot be found. Check if the driver is loaded and the driver group is in the current user group list. For more information, see the <a web-link="https://software.intel.com/en-us/download/intel-socwatch-android-linux-user-guide" cli="SoC Watch User Guide">SoC Watch User Guide</a> for Android and Linux OS.]]></msg>
+      <msg name='%PlatformProfilerAtypeName'>Platform Profiler</msg>
+      <msg name='%PlatformProfilerAtypeShortName'>Platform Profiler</msg>
+      <msg name='%PlatformProfilerAtypeDescription'>Platform Profiler collects coarse-grained, system-level metrics for extended profiling of minutes to hours. Software architects can identify workloads or phases of workloads that use hardware inefficiently and need tuning. Infrastructure architects can see if the current hardware configuration is a good match for most workloads.</msg>
+      <msg name='%GroupByFrames'>Group by frames</msg>
+      <msg name='%GroupByFramesDescription'>Select to view performance data per frame.</msg>
+      <msg name='%CPUTimeColoring'>Color CPU time by</msg>
+      <msg name='%CPUTimeColoringDescription'>Use to color CPU time values either by CPU Utilization (the number of logical CPUs actively executing) or by Thread Concurrency (the number of software threads in a running or runnable state).</msg>
+      <msg name='%None'>None</msg>
+      <msg name='%ThreadConcurrency'>Thread Concurrency</msg>
+      <msg name='%CPUUsage'>CPU Utilization</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForCore2'>This analysis type is only defined for Intel Core 2 processor family.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForCorei7'>This analysis type is only defined for processors based on the Intel microarchitecture code name Nehalem / Westmere.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForSNB'>This analysis type is only defined for processors based on the Intel microarchitecture code name Sandy Bridge.</msg>
+      <msg name='%ThisAnalysisTypeIsOnlyForWSMEX'>This analysis type is only defined for Intel processors code name Beckton or Eagleton.</msg>
+      <msg name='%TSXUnavailable'>Intel Transactional Synchronizaton Extensions are not available on this platform.</msg>
+      <msg name='%ThisAnalysisTypeIsNotApplicable'>This analysis type is not applicable to the current machine microarchitecture.</msg>
+      <msg name='%ThisAnalysisTypeIsNotApplicableToOs'>This analysis type is not applicable to the current OS.</msg>
+      <msg name='%InitialReport'>Inital Analysis Type Report</msg>
+      <msg name='%InitialViewpoint'>Inital Analysis Type Viewpoint</msg>
+      <msg name='%Corei7SEPWarning'>On some systems based on the Intel microarchitecture code name Nehalem / Westmere with C-states enabled, this analysis type may cause system hanging due to a known hardware issue (see errata AAJ134 in http://download.intel.com/design/processor/specupdt/320836.pdf). To avoid this situation, disable all "Cn(ACPI Cn) report to OS" BIOS options before sampling with PRODUCT_LEGAL_SHORT_NAME on such systems.</msg>
+      <msg name='%EnableStackCollection'>Collect stacks</msg>
+      <msg name='%EnableStackCollectionDescription'>Enable collection of call stacks.</msg>
+      <msg name='%EnableStackCollectionMac'>Collect stacks (preview)</msg>
+      <msg name='%EnableCallCountCollection'>Estimate call counts</msg>
+      <msg name='%EnableCallCountCollectionDescription'>Obtain statistical estimation of call counts based on hardware events.</msg>
+      <msg name='%CollectKernelTimerSchedulingStacks'>Collect kernel timer scheduling stacks</msg>
+      <msg name='%CollectKernelTimerSchedulingStacksDescription'>Analyze kernel timer stacks causing the processor wake-ups.</msg>
+      <msg name='%SamplingInterval'>CPU sampling interval, ms</msg>
+      <msg name='%SamplingIntervalDescription'>Specify an interval (in milliseconds) between CPU samples.</msg>
+      <msg name='%SamplingIntervalDescriptionOnHotspots'>Specify an interval (in milliseconds) between CPU samples for the Hardware sampling mode. Sampling interval for the Software sampling mode is fixed (10ms).</msg>
+      <msg name='%SoftwareSampling'>User-Mode Sampling</msg>
+      <msg name='%HardwareSampling'>Hardware Event-Based Sampling</msg>
+      <msg name='%SamplingModeDescription'>
+        User-Mode Sampling(sw) mode use for: profiles longer than a few seconds, profiling a single process or a process-tree, profiling Python and Intel runtimes.
+        Hardware Event-Based Sampling(hw) mode use for: profiles shorter than a few seconds, profiling all processes on a system, including kernel.
+      </msg>
+      <msg name='%SoftwareSamplingAndTracing'>User-Mode Sampling and Tracing</msg>
+      <msg name='%HardwareSamplingAndContextSwitches'>Hardware Event-Based Sampling and Context Switches</msg>
+      <msg name='%GpuProfilingModeGPUMetrics'>Characterization</msg>
+      <msg name='%GpuProfilingModeGPUMetrics2'>Source Analysis</msg>
+      <msg name='%GpuProfilingModeMemoryAccess'>Memory Access Analysis</msg>
+      <msg name='%GpuMetricsOverview'>Overview</msg>
+      <msg name='%GpuMetricsMemoryHierarchy'>Memory Hierarchy</msg>
+      <msg name='%GpuMetricsDynInstCount'>Dynamic Instruction Count</msg>
+      <msg name='%GpuMetricsHWSampling'>Hardware Stall Sampling</msg>
+      <msg name='%GpuMetricsBBLatency'>Basic Blocks Latency</msg>
+      <msg name='%GpuMetricsMemLatency'>Memory Latency</msg>
+      <msg name='%UserTasksEventsCountersCollection'>Analyze user tasks, events, and counters</msg>
+      <msg name='%UserTasksEventsCountersCollectionDescription'>Analyze the tasks, events, and counters specified in your code via the ITT API. This option causes a higher overhead and increases the result size.</msg>
+      <msg name='%UserSyncCollection'>Analyze Intel runtimes and user synchronization</msg>
+      <msg name='%UserSyncCollectionDescription'>Analyze thread synchronization by profiling User synchronization API used by Intel runtimes like OpenMP and Intel TBB or by user. This option causes higher overhead and increases result size.</msg>
+      <msg name='%CollectMemoryBW' meta='unofficial'>Analyze memory bandwidth</msg>
+      <msg name='%CollectMemoryBWDescription'>Collect the data required to compute memory bandwidth.</msg>
+      <msg name='%GroupForSelectMetricsDescription'>Extend granularity for the top-level metrics:</msg>
+      <msg name='%CollectFrontendBound'>Front-End Bound</msg>
+      <msg name='%CollectFrontendBoundDescription'>Collect the minimum set of data required to compute top-level metrics and all Front-End Bound sub-metrics.</msg>
+      <msg name='%CollectBadSpeculation'>Bad Speculation</msg>
+      <msg name='%CollectBadSpeculationDescription'>Collect the minimum set of data required to compute top-level metrics and all Bad Speculation sub-metrics.</msg>
+      <msg name='%CollectBackendBound'>Back-End Bound</msg>
+      <msg name='%CollectBackendBoundDescription'>Collect the minimum set of data required to compute top-level metrics and all Back-End Bound sub-metrics.</msg>
+      <msg name='%CollectBackendBoundWIC'>Core Bound and Memory Bound</msg>
+      <msg name='%CollectBackendBoundWICDescription'>Collect the minimum set of data required to compute top-level metrics and the Back-End Bound sub-metrics: Memory Bound and Core Bound.</msg>
+      <msg name='%CollectMemoryBound'>Memory Bound</msg>
+      <msg name='%CollectMemoryBoundDescription'>Collect the minimum set of data required to compute top-level metrics and all Memory Bound sub-metrics.</msg>
+      <msg name='%CollectCoreBound'>Core Bound</msg>
+      <msg name='%CollectCoreBoundDescription'>Collect the minimum set of data required to compute top-level metrics and all Core Bound sub-metrics.</msg>
+      <msg name='%CollectRetiring'>Retiring</msg>
+      <msg name='%CollectRetiringDescription'>Collect the minimum set of data required to compute top-level metrics and all Retiring sub-metrics.</msg>
+      <msg name='%CountingMode'>Collect summary statistics only</msg>
+      <msg name='%CountingModeDescription'>Enable a system-wide data collection that provides an overview of your application performance. This lighweight mode provides a minimum collection and post-processing overhead but does not attribute performance data to the source code.</msg>
+      <msg name='%EnableCacheUsageMetrics'>Analyze general cache usage</msg>
+      <msg name='%EnableCacheUsageMetricsDescription'>Analyze the data locality. Good data accessibility makes your code efficient and helps benefit from vectorization.  This analysis includes only L1 metrics since L2 and FILL events on the Intel Xeon Phi coprocessor are counting both demand loads and stores as well as multiple types of prefetches. Since other events do not count all of the prefetches accurately, the formulas cannot be adjusted to calculate real demand L2 hits or misses.</msg>
+      <msg name='%EnableL2CacheEvents'>Analyze additional L2 cache events</msg>
+      <msg name='%EnableL2CacheEventsDescription'>Extend cache analysis with adding the L2_DATA_READ/WRITE_MISS_CACHE_FILL and L2_DATA_READ/WRITE_MISS_MEM_FILL events for some insight into L2 data locality. The general ratio of these events may indicate remote cache accesses that have as high a latency as memory accesses and should be avoided if possible.</msg>
+      <msg name='%EnableTLBUsageMetrics'>Analyze TLB misses</msg>
+      <msg name='%EnableTLBUsageDescription'>Translation Lookaside Buffer (TLB) is a cache used for mapping virtual address to physical ones. Analyze the rate of TLB misses to identify performance problems.</msg>
+      <msg name='%EnableVPUUsageMetrics'>Analyze vectorization usage</msg>
+      <msg name='%EnableVPUUsageDescription'>Identify whether the level of vectorization usage (instruction-level parallelism) in your program is sufficient.</msg>
+      <msg name='%GpuCountersCollection'>Analyze Processor Graphics hardware events</msg>
+      <msg name='%GpuCountersCollectionDescription'>Select a predefined GPU metrics group for Intel Graphics to either analyze sampler, general memory and cache accesses or track accesses to different types of GPU memory. Both metrics groups monitor execution units activity.</msg>
+      <msg name='%GpuCountersInKernelDescription'>Select a predefined GPU metrics group for Intel Graphics to either analyze sampler, general memory and cache accesses, or track accesses to different types of GPU memory, or analyze GPU instruction frequency per certain instruction types.</msg>
+      <msg name='%GpuMemoryAccessDescription'>Use this mode to identify memory access related issues.</msg>
+      <msg name='%GpuSamplingInterval'>GPU sampling interval, ms</msg>
+      <msg name='%GpuSamplingIntervalDescription'>Specify an interval (in milliseconds) between GPU samples.</msg>
+      <msg name='%GpuOverview'>Overview</msg>
+      <msg name='%GpuComputeBasic'>Compute Basic (with global/local memory accesses)</msg>
+      <msg name='%GpuComputeExtended'>Compute Extended</msg>
+      <msg name='%GpuPreset3'>Preset 3</msg>
+      <msg name='%GpuRenderBasic'>Render Basic (preview)</msg>
+      <msg name='%GpuPreset5'>Preset 5</msg>
+      <msg name='%GpuFullCompute'>Full Compute</msg>
+      <msg name='%GpuDXCollection'>Analyze GPU utilization</msg>
+      <msg name='%GpuDXCollectionDescription'>Analyze frame rate and usage of Processor Graphics engines based on DirectX pipeline events.</msg>
+      <msg name='%GpuOpenCLCollection'>Trace OpenCL and Intel Media SDK programs (Intel Graphics Driver only)</msg>
+      <msg name='%GpuOpenCLCollectionDescription'>Analyze DPC++, OpenCL, and Intel Media SDK programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%GPUAndroidRuntimeCollection'>Trace OpenCL programs (Intel Graphics Driver only)</msg>
+      <msg name='%GPUAndroidRuntimeCollectionDescription'>Analyze OpenCL programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%GpuMetalCollection'>Trace Metal programs (Intel Graphics Driver only) (preview)</msg>
+      <msg name='%GpuMetalCollectionDescription'>Analyze Metal programs running on Intel Processor Graphics. This option may affect the performance of your application on the CPU side.</msg>
+      <msg name='%CollectionDetailLevel'>Select a level of details provided with event-based sampling collection. Detailed collection levels cause higher overhead.</msg>
+      <msg name='%CollectionDetailLevelDescription'>Advanced analysis options:</msg>
+      <msg name='%LightweightSampling'>Hotspots</msg>
+      <msg name='%StackSampling'>Hotspots and stacks</msg>
+      <msg name='%StackSamplingMac'>Hotspots and stacks (preview)</msg>
+      <msg name='%StackSamplingWithCallCount'>Hotspots, call counts and stacks</msg>
+      <msg name='%StackSamplingWithCallAndTripCount'>Hotspots, call counts, loop trip counts and stacks</msg>
+      <msg name='%TSXExplorationAtypeName'>TSX Exploration</msg>
+      <msg name='%TSXExplorationAtypeShortName'>TSX Exploration</msg>
+      <msg name='%TSXExplorationAtypeDescription'>Analyze Intel Transactional Synchronization Extensions (Intel TSX) usage. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%TSXExplorationAtypeShortDescription'>Analyze Intel Transactional Synchronization Extensions (Intel TSX) usage.</msg>
+      <msg name='%IGFXFtraceEventsCollection'>Analyze GPU utilization (Intel Graphics only)</msg>
+      <msg name='%IGFXFtraceEventsCollectionDescription'>Analyze frame rate and usage of Intel Graphics engines based on ftrace events.</msg>
+      <msg name='%TsxAnalysisStep'>Select a step for analyzing Intel TSX behavior. Start with measuring transactional success and then, if the aborts rate is high, analyze for aborts.</msg>
+      <msg name='%TsxAnalysisStepDescription'>Select a step for analyzing Intel TSX behavior. Start with measuring transactional success and then, if the aborts rate is high, analyze for aborts.</msg>
+      <msg name='%TSXMeasureTransactionalSuccess'>1. Transactional success</msg>
+      <msg name='%TSXAbortsClassification'>2. Aborts</msg>
+      <msg name='%SoCBandwidthAtypeName'>SoC Bandwidth</msg>
+      <msg name='%SoCBandwidthAtypeShortName'>SoC-Bandwidth</msg>
+      <msg name='%SoCBandwidthAtypeDescription'>Measure the data read and written by various SoC units. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%SocBandwidthType'>Bandwidth Type</msg>
+      <msg name='%SocBandwidthTypeDescription'>Select a type of bandwidth data to collect:</msg>
+      <msg name='%SocDDRBandwidth'>DDR Bandwidth</msg>
+      <msg name='%SocDDRBandwidthDescription'>Measure the data read and written to DDR and identify the number of cycles when memory channels 0 and 1 are in self-refresh.</msg>
+      <msg name='%SocDisplayBandwidth'>Display Bandwidth</msg>
+      <msg name='%SocDisplayBandwidthDescription'>Measure display controller bandwidth.</msg>
+      <msg name='%SocGraphicsBandwidth'>Graphics Bandwidth</msg>
+      <msg name='%SocGraphicsBandwidthDescription'>Measure graphics controller bandwidth.</msg>
+      <msg name='%SocImagingBandwidth'>Imaging Bandwidth</msg>
+      <msg name='%SocImagingBandwidthDescription'>Measure the bandwidth between the imaging controller and memory.</msg>
+      <msg name='%SoCLowSpeedPFBandwidth'>Low-Speed Peripheral Bandwidth</msg>
+      <msg name='%SoCLowSpeedPFBandwidthDescription'> Measure bandwidth for the low-speed peripheral fabric. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%SocModuleBandwidth'>Module Bandwidth</msg>
+      <msg name='%SocModuleBandwidthDescription'>Measure bandwidth for processor module 0 and module 1. This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%MemoryAccessAtypeName'>Memory Access</msg>
+      <msg name='%MemoryAccesAtypeShortName'>Memory Access</msg>
+      <msg name='%MemoryAccesAtypeDescription'>Measure a set of metrics to identify memory access related issues (for example, specific for NUMA architectures). This analysis type is based on the hardware event-based sampling collection.</msg>
+      <msg name='%MemoryAccessAtypeShortDescription'>Measure a set of metrics to identify memory access related issues.</msg>
+      <msg name='%TSXHotspotsAtypeName'>TSX Hotspots</msg>
+      <msg name='%TSXHotspotsAtypeShortName'>TSX Hotspots</msg>
+      <msg name='%TSXHotspotsAtypeDescription'>Analyze hotspots inside transactions for systems with the Intel Transactional Synchronization Extensions (Intel TSX) feature enabled.</msg>
+      <msg name='%TSXHotspotsAtypeShortDescription'>Analyze hotspots inside transactions for systems with the Intel Transactional Synchronization Extensions (Intel TSX) feature enabled.</msg>
+      <msg name='%useIntelPT'>Trace transaction cycles and instructions</msg>
+      <msg name='%UseIntelPTDescription'>Trace the entire application execution flow to collect reliable performance statistics inside transactions by using the Intel Processor Trace feature available for the 5th Generation Intel Core processor family. This data helps analyze instructions count and processor cycles inside transactions to compare commit and abort operations execution.</msg>
+      <msg name='%AnalyzeMemoryObjects'>Analyze dynamic memory objects</msg>
+      <msg name='%AnalyzeMemoryObjectsDescription'>Enable the instrumentation of dynamic memory allocation/de-allocation and map hardware events to such memory objects. This option may cause additional runtime overhead due to the instrumentation of all system memory allocation/de-allocation API.</msg>
+      <msg name='%MemoryObjectMinSize'>Minimal dynamic memory object size to track, in bytes</msg>
+      <msg name='%MemoryObjectMinSizeDescription'>Specify a minimal size of dynamic memory allocations to analyze. This option helps reduce runtime overhead of the instrumentation.</msg>
+      <msg name='%EnableMemoryObjectGrouper'>Enable grouping by collected memory objects</msg>
+      <msg name='%EventMuxFactor'>Event multiplexing factor, ms</msg>
+      <msg name='%EventMuxFactorDescription'>Specify the number of samples for a trigger event to switch multiplexing groups. This option affects only driver-based collections.</msg>
+      <msg name='%MPSAtypeName'>MPS</msg>
+      <msg name='%MPSAtypeShortName'>MPS</msg>
+      <msg name='%MPSAtypeDescription'>MPI Performance Snapshot analysis.</msg>
+      <msg name='%FPUMetricsIsNotSupportedForThisPlatform'>Vectorization analysis is limited for this platform. Only metrics based on binary static analysis such as vector instruction set will be available.</msg>
+      <msg name='%IOAtypeName'>Input and Output</msg>
+      <msg name='%IOAtypeShortName'>Input and Output</msg>
+      <msg name='%IOAtypeNamePreview'>Input and Output (preview)</msg>
+      <msg name='%IOAtypeShortNamePreview'>Input and Output (preview)</msg>
+      <msg name='%IOAtypeDescription'>Analyze utilization of IO subsystems, CPU, and processor buses.</msg>
+      <msg name='%IOAtypeDescriptionPreview'>
+        Preview feature - should we keep it, change it, or drop it? &lt;a web-link='mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: Performance Snapshot - preview feedback' cli="Send us your comments: mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: Performance Snapshot - preview feedback"&gt;Send us your comments&lt;/a&gt;.&lt;br&gt;
+        &lt;br&gt;
+        Analyze utilization of IO subsystems, CPU, and processor buses.
+      </msg>
+      <msg name='%UnsupportedDiskIOETW'>Disk Input and Output analysis is disabled. To enable this feature, run PRODUCT_LEGAL_SHORT_NAME with administrative privileges.</msg>
+      <msg name='%diskIoStak'>Select IO API type to profile:</msg>
+      <msg name='%KernelStack'>System Disk IO API</msg>
+      <msg name='%KernelStackDescription'>Profile System Disk IO API</msg>
+      <msg name='%SpdkStack'>SPDK IO API</msg>
+      <msg name='%SpdkStackDescription'>Profile SPDK IO API</msg>
+      <msg name='%DpdkStack'>DPDK IO API</msg>
+      <msg name='%DpdkStackDescription'>Profile DPDK IO API</msg>
+      <msg name='%UnsupportedKernelAndSpdkProfiling'>System Disk IO API and SPDK API cannot be profiled simultaneously.</msg>
+      <msg name='%FunctionTracingNotAvailableIowaitApproximate'>Kernel function tracing via ftrace is not available. I/O wait thread state is determenied heuristically. Please recompile the kernel with CONFIG_FUNCTION_TRACER enabled for better results.</msg>
+      <msg name='%UnsupportedKernelIowaitApproximate'>IO wait thread state is determined heuristically. Precise IO wait state detection is not supported for this kernel.</msg>
+      <msg name='%NoSignalAltstack'>Disable alternative stacks for signals</msg>
+      <msg name='%NoSignalAltstackDescription'>Disable using alternative stacks for signal handlers. Consider this option for profiling standard Python 3 code on Linux.</msg>
+      <msg name='%SystemOverviewAtypeName'>System Overview</msg>
+      <msg name='%SystemOverviewAtypeDescription'>Analyze general behavior of target system to explore resource utilization and identify platform level factors that limit performance.</msg>
+      <msg name='%SystemOverviewAtypeShortDescription'>Analyze general behavior of Linux or Android target system and correlate power and performance metrics with IRQ handling.</msg>
+      <msg name='%SniperHotspotsAtypeName'>Hotspots</msg>
+      <msg name='%SniperHotspotsAtypeShortName'>Hotspots</msg>
+      <msg name='%SniperHotspotsAtypeDescription'>Use Intel Parallel high-speed multi-core simulator to identify the most time-consuming source code for your parallel workloads.</msg>
+      <msg name='%SniperMAAtypeName'>Memory Access</msg>
+      <msg name='%SniperMAAtypeShortName'>Memory Access</msg>
+      <msg name='%SniperMAAtypeDescription'>Use Intel parallel high-speed multi-core simulator to identify the performance impact of memory access issues such as accessing multiple memory pages.</msg>
+      <msg name='%ATForSniperConnectionTypeOnly'>This analysis type is targeted for Sniper simulation only.</msg>
+      <msg name='%SamplingAfterValue'>Sampling Interval</msg>
+      <msg name='%SamplingAfterValueDescription'>Specify an interval between CPU samples.</msg>
+      <msg name='%APSAtypeName'>APS</msg>
+      <msg name='%APSAtypeShortName'>APS</msg>
+      <msg name='%APSAtypeDescription'>Intel Amplifier Performance Snapshot analysis.</msg>
+      <msg name='%SGXUnavailable'>Intel Software Guard Extensions are not available on this platform.</msg>
+      <msg name='%SGXHotspotsAtypeName'>SGX Hotspots</msg>
+      <msg name='%SGXHotspotsAtypeShortName'>SGX Hotspots</msg>
+      <msg name='%SGXHotspotsAtypeDescription'>Analyze hotspots inside security enclaves for systems with the Intel Software Guard Extensions (Intel SGX) feature enabled.</msg>
+      <msg name='%SGXHotspotsAtypeShortDescription'>Analyze hotspots inside security enclaves for systems with the Intel Software Guard Extensions (Intel SGX) feature enabled.</msg>
+      <msg name='%MemoryConsumptionATypeName'>Memory Consumption</msg>
+      <msg name='%MemoryConsumptionAtypeShortName'>Memory Consumption</msg>
+      <msg name='%MemoryConsumptionATypeDescription'>Analyze memory consumption by your application, its distinct memory objects and their allocation stacks.</msg>
+      <msg name='%MemoryConsumptionAtypeShortDescription'>Analyze memory consumption by your application, its distinct memory objects and their allocation stacks.</msg>
+      <msg name='%PGOAtypeName'>Profile-Guided Optimization</msg>
+      <msg name='%PGOAtypeShortName'>PGO</msg>
+      <msg name='%PGOAtypeDescription'>Use this analysis to collect a performance profile and generate a command line report that can be used by compilers for profile-guided optimization.</msg>
+      <msg name='%GraphicsRenderingAtypeName'>GPU Rendering (preview)</msg>
+      <msg name='%GraphicsRenderingAtypeShortName'>GPU Rendering (preview)</msg>
+      <msg name='%GraphicsRenderingAtypeDescription'>
+        Preview feature - should we keep it, change it, or drop it? &lt;a web-link='mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: GPU Rendering - preview feedback' cli="Send us your comments: mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: GPU Rendering - preview feedback"&gt;Send us your comments&lt;/a&gt;.&lt;br&gt;
+        &lt;br&gt;
+        Analyze the CPU/GPU utilization of your code running on the Xen virtualization platform. Explore GPU utilization per GPU engine and GPU hardware metrics that help understand where performance improvements are possible. If applicable, this analysis also detects OpenGL-ES API calls and displays them on the timeline.
+      </msg>
+      <msg name='%GraphicsRenderingAtypeShortDescription'>Preview feature. Analyze the CPU/GPU utilization of your code running on the Xen virtualization platform. Explore GPU utilization per GPU engine and GPU hardware metrics that help understand where performance improvements are possible.</msg>
+      <msg name='%PerfSystemWideNoPermAT'>This analysis type requires either an access to system-wide monitoring in the Linux perf subsystem or installation of the PRODUCT_LEGAL_SHORT_NAME drivers (see the "Sampling Drivers" help topic for further details). Please set the /proc/sys/kernel/perf_event_paranoid value to 0 or less to continue without installing the drivers.</msg>
+      <msg name='%PerfNoPermAT'>This analysis type requires either an access to kernel-mode monitoring in the Linux perf subsystem or installation of the PRODUCT_LEGAL_SHORT_NAME drivers (see the "Sampling Drivers" help topic for further details). Please set the /proc/sys/kernel/perf_event_paranoid value to 1 or less to continue without installing the drivers.</msg>
+      <msg name='%FPGAAtypeName'>CPU/FPGA(integrated) Interaction</msg>
+      <msg name='%FPGAAtypeShortName'>CPU/FPGA(integrated) Interaction</msg>
+      <msg name='%FPGAAtypeDescription'>Monitor FPGA platform performance using the FPGA Management Engine (FME) that controls all FPGA platform-level features such as thermal management, power management, and global performance.</msg>
+      <msg name='%FPGAInteractionAtypeName'>CPU/FPGA Interaction (preview)</msg>
+      <msg name='%FPGAInteractionAtypeShortName'>CPU/FPGA Interaction (preview)</msg>
+      <msg name='%FPGAInteractionAtypeDescription'>
+        Preview feature - should we keep it, change it, or drop it? &lt;a web-link='mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: CPU/FPGA Interaction - preview feedback' cli="Send us your comments: mailto:parallel.studio.support@intel.com?subject=PRODUCT_LEGAL_SHORT_NAME: CPU/FPGA Interaction - preview feedback"&gt;Send us your comments&lt;/a&gt;.&lt;br&gt;
+        &lt;br&gt;
+        Analyze the CPU/FPGA interaction issues via exploring OpenCL kernels running on the FPGA and identify the most time-consuming kernels.
+      </msg>
+      <msg name='%FPGAInteractionAtypeShortDescription'>Preview feature. Analyze the CPU/FPGA interaction issues via exploring OpenCL kernels running on the FPGA and identify the most time-consuming kernels.</msg>
+      <msg name='%HTisONAT'>Due to hardware limitations some of the metrics will not be available on this platform when Intel Hyper-Threading Technology is on. Consider disabling the Hyper-Threading option in the BIOS before running the analysis.</msg>
+      <msg name='%IceAnalysisAtypeName'>NNP-I Overview</msg>
+      <msg name='%IceAnalysisAtypeShortName'>NNP-I Overview</msg>
+      <msg name='%IceAnalysisAtypeDescription'>Monitor performance of the Intel Neural Network Processor (NNP-I) for deep learning inference by analyzing card-side low-level hardware events. Use this analysis to understand whether the card is effectively utilized.</msg>
+      <msg name='%IceAnalysisAtypeShortDescription'>Monitor performance of the Intel Neural Network Processor (NNP-I) for deep learning inference by analyzing card-side low-level hardware events. Use this analysis to understand whether the card is effectively utilized.</msg>
+      <msg name='%IceNnpiHwTraceToolUnavailable'>Failed to find nnpi_hwtrace tool required to start collection. Make sure it is located in the PATH or default path: /opt/intel_nnpi/bin according to properly installed software stack.</msg>
+      <msg name='%IceNnpiTraceToolUnavailable'>Failed to find nnpi_trace tool required to start collection. Make sure it is located in the PATH or default path: /opt/intel_nnpi/bin according to properly installed software stack.</msg>
+      <msg name='%collectICESWTrace'>Collect software traces</msg>
+      <msg name='%collectICESWTraceDescription'>Analyze software context of inference progress.</msg>
+      <msg name='%collectICEFrequency'>Analyze ICE frequency</msg>
+      <msg name='%collectICEFrequencyDescription'>Collect any card-side low-level hardware event required to compute ICE frequency.</msg>
+      <msg name='%iceSampleAfterValue'>Sampling interval, cycles</msg>
+      <msg name='%iceSampleAfterValueDescription'>Specify an interval (in hardware cycles) between samples.</msg>
+      <msg name='%collectICEMemoryBandwidth'>Analyze Memory Bandwidth</msg>
+      <msg name='%collectICEMemoryBandwidthDescription'>Collect card-side low-level hardware events required to compute memory bandwidth.</msg>
+      <msg name='%GpuProfilingHotspotsAtypeName'>GPU In-kernel Profiling</msg>
+      <msg name='%GpuProfilingHotspotsAtypeShortName'>GPU In-kernel Profiling</msg>
+      <msg name='%GpuProfilingHotspotsAtypePreviewName'>GPU In-kernel Profiling (preview)</msg>
+      <msg name='%GpuProfilingHotspotsAtypePreviewShortName'>GPU In-kernel Profiling (preview)</msg>
+      <msg name='%GpuProfilingHotspotsAtypeDescription'>Analyze GPU kernel execution per code line, identify performance issues caused by memory latency or inefficient kernel algorithms, and analyze GPU instruction frequency per certain instruction types.</msg>
+      <msg name='%GpuProfilingMode'>GPU profiling mode</msg>
+      <msg name='%GpuProfilingModeDescription'>Select a profiling mode to either characterize GPU performance issues based on GPU hardware metric presets or enable a source analysis to identify basic blocks latency due to algorithm inefficiencies, or memory latency due to memory access issues.</msg>
+      <msg name='%GpuProfilingModeInKernelDescription'>Select a profiling mode to identify stall reasons, or basic blocks latency due to algorithm inefficiencies, or memory latency due to memory access issues.</msg>
+      <msg name='%GpuHotspotsCharacterizationCli'>
+            Select a predefined GPU metric group to characterize code performance on Intel Graphics:
+                Overview metrics to analyze sampler, general memory and cache accesses;
+                Compute Basic metrics to track accesses to different types of GPU memory;
+                Compute Extended to analyze additional metrics targeted only for Intel processor code name Broadwell and higher;
+                Full Compute to combine Overview and Compute Basic event sets;
+                Dynamic Instruction Count to analyze GPU instruction frequency per certain instruction types.
+      </msg>
+      <msg name='%GpuHotspotsSourceAnalysisCli'>
+            Select a profiling mode:
+                Basic Blocks Latency to identify stall reasons or basic blocks latency due to algorithm inefficiencies;
+                Memory Latency to explore memory access issues.
+      </msg>
+      <msg name='%GpuProfilingModeNone'>None</msg>
+      <msg name='%GpuProfilingModeHWSampling'>HW sampling</msg>
+      <msg name='%GpuProfilingModeBBLatency'>Basic blocks latency</msg>
+      <msg name='%GpuProfilingModeMemLatency'>Memory latency</msg>
+      <msg name='%GpuProfilingModeInstCount'>Instruction count</msg>
+      <msg name='%GpuProfilingKernels'>Computing tasks to profile</msg>
+      <msg name='%GpuProfilingKernelsDescription'>Specify comma-separated list of GPU computing task names and invocations in the following format: computing_task_name[#start_idx#step#stop_idx], computing_task_name is the name of GPU computing task; start_idx is the number of the first invocation; and stop_idx is the number of the last invocation to be profiled.</msg>
+      <msg name='%GpuProfilingCannotBeConfigured'>GPU in-kernel profiling cannot be enabled. Please make sure that OpenCL program tracing is enabled.</msg>
+      <msg name='%GpuProfilingNotSupported'>GPU in-kernel profiling is not supported.</msg>
+      <msg name='%GpuProfilingUnsupportedHardware'>Current hardware does not support GPU in-kernel profiling.</msg>
+      <msg name='%UnknownPMUForAT'>This analysis type is not applicable to the system because PRODUCT_LEGAL_SHORT_NAME cannot recognize the processor. If this is a new Intel processor, please check for an updated version of PRODUCT_LEGAL_SHORT_NAME. If this is an unreleased Intel processor, please contact Online Service Center for an NDA product package.</msg>
+      <msg name='%DataPlaneUtilizationAtypeName'>Data Plane Utilization</msg>
+      <msg name='%DataPlaneUtilizationAtypeShortName'>Data Plane Utilization</msg>
+      <msg name='%DataPlaneUtilizationAtypeDescription'>Analyze network data plane utilization and correlate it with application CPU activity to identify areas of performance improvements.</msg>
+      <msg name='%NetworkSamplingInterval'>Network Sampling Interval, ms</msg>
+      <msg name='%AdvancedGroup'>Advanced</msg>
+      <msg name='%SoftwareSamplingEnabled'>Enable user-mode sampling and tracing</msg>
+      <msg name='%SoftwareSamplingEnabledDescription'>Enable statistical sampling based on the user-mode sampling and tracing collector instead of the default hardware event-based sampling.</msg>
+      <msg name='%AdvancedHotspots'>Advanced</msg>
+      <msg name='%AdvancedHotspotsDescription'>Enable statistical sampling based on the user-mode sampling and tracing collector instead of the default hardware event-based sampling.</msg>
+      <msg name='%HardwareSamplingEnabled'>Enable hardware event-based sampling</msg>
+      <msg name='%HardwareSamplingEnabledDescription'>Enable hardware event-based sampling collector instead of the default statistical sampling based on the user-mode sampling and tracing collector.</msg>
+      <msg name='%PCIeDRAMBandwidthUnavailableStack'>DRAM and PCIe bandwidth analysis cannot include stack collection with this machine configuration. Please disable stack collection.</msg>
+      <msg name='%DRAMBandwidthUnavailableStack'>DRAM bandwidth analysis cannot include stack collection with this machine configuration. Please disable stack collection.</msg>
+      <msg name='%PCIeBandwidthUnavailableStack'>PCIe bandwidth analysis cannot include stack collection with this machine configuration. Please disable stack collection.</msg>
+      <msg name='%PCIeDRAMBandwidthUnavailable'>DRAM and PCIe bandwidth data cannot be collected in driverless mode. Make sure the sampling driver is installed and enabled on your system.</msg>
+      <msg name='%DRAMBandwidthUnavailable'>DRAM bandwidth data cannot be collected in driverless mode. Make sure the sampling driver is installed and enabled on your system.</msg>
+      <msg name='%PCIeBandwidthUnavailable'>PCIe bandwidth data cannot be collected in driverless mode. Make sure the sampling driver is installed and enabled on your system.</msg>
+      <msg name='%EnableCharacterizationInsights'>Show additional performance insights</msg>
+      <msg name='%EnableCharacterizationInsightsDescription'>Get additional performance insights such as the efficency of hardware usage and vectorization, and learn next steps. Note: this option collects CPU events in the counting mode.</msg>
+      <msg name='%EnableCharacterizationInsightsDescriptionAH'>Get additional performance insights, such as vectorization, and learn next steps. This option collects additional CPU events, which may enable the multiplexing mode.</msg>
+      <msg name='%EnableKernelLevelAnalysis'>Analyze OS kernel</msg>
+      <msg name='%EnableKernelLevelAnalysisDescription'>Analyze code running on the OS level (ring 0) in addition to user code. Use this option if your workload spends much time inside the kernel or if the driver-based profiling is needed. Note: this option collects CPU events in the sampling mode.</msg>
+      <msg name='%EnableWaitTimeCS'>Analyze Wait time based on context switches</msg>
+      <msg name='%EnableWaitTimeCSDescription'>Analyze waits caused by syncronization and/or preemption context switches. Note: this option collects CPU events in the sampling mode.</msg>
+      <msg name='%EnableCallAndTripCounts'>Estimate call and loop trip count</msg>
+      <msg name='%EnableCallAndTripCountsDescription'>Enable statistical analysis of call counts and loop trip counts. Note: this option collects CPU events in the sampling mode.</msg>
+      <msg name='%EnableStackCollectionDescriptionUhs'>Enable collection of call stacks.</msg>
+      <msg name='%CallAndTripCountsNotSupported'>The call and loop trip count data cannot be collected on this CPU.</msg>
+      <msg name='%SmallSamplingIntervalForTPSS'>A sampling interval value less than 10ms is not supported for software sampling collection. Either increase the sampling interval or enable the hardware sampling mode with advanced options in this configuration.</msg>
+      <msg name='%PmuSamplingCountSwitch'>Collection mode</msg>
+      <msg name='%PmuSamplingCountSwitchDescription'>Choose the Detailed sampling-based collection mode to view data breakdown per function and other hotspots. Use the Summary counting-based mode for an overview of the whole profiling run. This mode has a lower collection overhead and fast post-processing time.</msg>
+      <msg name='%DetailedSampling'>Detailed</msg>
+      <msg name='%LightweightCounting'>Summary</msg>
+      <msg name='%VPPpreviewAtypeName'>Platform Profiler</msg>
+      <msg name='%VPPpreviewAtypeShortName'>Platform Profiler</msg>
+      <msg name='%VPPpreviewAtypeShortDescription'>Identify system configuration issues like inefficient memory module placement, a need for faster storage, or issues with memory speed or size using longer collection times (minutes or hours). Platform Profiler helps determine if a workload is memory-bound, compute-bound, or I/O-bound and evaluates if memory and storage resources are used efficiently.</msg>
+      <msg name='%VPPpreviewAtypeDescription'>
+        Identify system configuration issues like inefficient memory module placement, a need for faster storage, or issues with memory speed or size using longer collection times (minutes or hours). Platform Profiler helps determine if a workload is memory-bound, compute-bound, or I/O-bound and evaluates if memory and storage resources are used efficiently.
+      </msg>
+      <msg name='%VPPpreviewErrMsg'>Click the button below to set up and launch Platform Profiler.</msg>
+      <msg name='%HWInsightsNotAvailableWarningTpss'>Hardware collection of CPU events is not possible on this system. Microarchitecture performance insights will not be available.</msg>
+      <msg name='%HWInsightsNotAvailablePermissionWarningTpss'>To collect microarchitecture performance insights, run the product as administrator.</msg>
+      <msg name='%CollectAffinity'>Collect affinity data</msg>
+      <msg name='%CollectAffinityDescription'>Analyze thread pinning to sockets/physical cores/logical cores. Use 'PRODUCT_CL_TOOL_NAME -report affinity -r &lt;path-to-result&gt;' to view collected statistics from command line.</msg>
+      <msg name='%AffinityNotSupportedKernelVersion'>Affinity analysis is available for Linux kernel 3.0 and higher. The kernel version of your target is not supported.</msg>
+      <msg name='%CollectParallelFs'>Collect Parallel File System counters</msg>
+      <msg name='%CollectParallelFsDescription'>Collect Parallel File System counters.</msg>
+      <msg name='%ForceIMCWarning'>Memory bandwidth collection is limited for this system configuration, only total memory bandwidth is available without read/write distinction. For full functionality, consider enabling the Intel Trace Hub in the BIOS settings if your BIOS supports it.</msg>
+      <msg name='%loadTopIptRegionsOnly'>Analyze duration types and load full trace per selection</msg>
+      <msg name='%loadTopIptRegionsOnlyDescription'>Use this mode to start with analyzing code region duration. In the collected result, you can select code regions of interest (for example, with slow duration) and load a full trace for detailed analysis.</msg>
+      <msg name='%UIiptRegionsToLoad'>Max number of code regions for detailed analysis</msg>
+      <msg name='%UIiptRegionsToLoadDescription'>Specify the max number (10-1000) of code regions of interest to load for detailed analysis.</msg>
+      <msg name='%UIMaxRegionDuration'>Max duration (in ms) of code regions for detailed analysis</msg>
+      <msg name='%UIMaxRegionDurationDescription'>Specify max duration (0.001-100ms) for code regions of interest to use for detailed analysis.</msg>
+      <msg name='%AdministratorPrivilegesForEnergy'>Administrator privileges are required to launch the Intel SoC Watch collection.</msg>
+      <msg name='%RootPrivilegesForEnergy'>The root permissions are required to launch the Intel SoC Watch collection.</msg>
+      <msg name='%EnergyUnsupportedForX86'>Intel SoC Watch is not supported on Windows x86.</msg>
+      <msg name='%AdministratorPrivilegesForPlatformProfiler'>Administrator privileges are required to launch the Intel VTune Platform Profiler collection.</msg>
+      <msg name='%RootPrivilegesForPlatformProfiler'>The root permissions are required to launch the Intel VTune Platform Profiler collection.</msg>
+      <msg name='%GTPinWithoutTracingError'>This type of analysis is not available without "Trace GPU Programming APIs" enabled.</msg>
+      <msg name='%GTPinWithBandwidthError'>Memory bandwidth collection cannot be combined with this profiling mode. Make sure "Overview", "Compute Basic", "Compute Extended" or "Full Compute" option is enabled for the analysis.</msg>
+      <msg name='%GTPinWithSamplingIntervalWarning'>GPU sampling interval will not be used with this profiling mode. Make sure "Overview", "Compute Basic", "Compute Extended" or "Full Compute" option is enabled for the analysis.</msg>
+      <msg name='%MemoryAccessNotSupportedOnVM'>Memory Access analysis is not supported inside a virtual machine since uncore events cannot be collected. For full functionality, consider using a bare-metal environment.</msg>
+      <msg name='%MemoryBandwidthNotSupportedOnVM'>Memory bandwidth collection is not supported inside a virtual machine since uncore events cannot be collected. For full functionality, consider using a bare-metal environment.</msg>
+      <msg name='%PCIeBandwidthNotSupportedOnVM'>PCIe bandwidth collection is not supported inside a virtual machine since uncore events cannot be collected. For full functionality, consider using a bare-metal environment.</msg>
+      <msg name='%UnsupportedOnVMWare'>Hardware Event-Based Sampling mode used in this analysis is not supported on Windows OS inside a VMWare virtual machine. For full functionality, consider using a bare-metal environment.</msg>
+      <msg name = '%InboundPCIeRequestMissesCanBeCollectedOnlyWithSep'>L3 misses of inbound PCIe requests cannot be collected. For full functionality, consider loading sampling driver.</msg>
+      <msg name='%SoHardwareTracing'>Hardware Tracing</msg>
+      <msg name='%SoHardwareSampling'>Hardware Event-Based Sampling</msg>
+      <msg name='%FpgaProfilingDataSource'>FPGA profiling data source</msg>
+      <msg name='%FpgaProfilingDataSourceDescription'><![CDATA[<p>Choose between two sources for FPGA profiling data:<ul><li>AOCL Profiler is a new method providing advanced information from an FPGA device. It requires the device code to be compiled with '-Xsprofile' option.</li><li>OpenCL Profiling API is a legacy method that gets information about running kernels from OpenCL runtime.</li></ul></p>]]></msg>
+      <msg name='%AOCLProfiler'>AOCL Profiler</msg>
+      <msg name='%OpenCLProfiling'>OpenCL Profiling API</msg>
+      <msg name='%FPGAAoclNotAvailable'>The $INTELFPGAOCLSDKROOT/bin/aocl tool is not found. Make sure INTELFPGAOCLSDKROOT environment variable is properly defined.</msg>
+      <msg name='%FPGADeviceNotFound'>FPGA device is not found. Make sure it is properly installed, driver is loaded and accessible to the current user.</msg>
+      <msg name='%NoGPUUsageWarning'>Analysis result will not show the detailed GPU Utilization. &lt;a help-link="configs.gpuutilization_gpuusagedescription" cli="See GPU Utilization help topic for more details."&gt;Learn more&lt;/a&gt;&lt;br&gt;<arg name='arg0'/></msg>
+      <msg name='%ComputeExtendedNoGpuUsageError'>The Compute Extended metric set cannot be selected without GPU Utilization data collection. <arg name='arg0'/></msg>
+      <msg name='%AnalyzeCAT'>Analyze cache allocation</msg>
+      <msg name='%AnalyzeCATDescription'>Enable cache segments usage analysis.</msg>
+      <msg name='%AnalyzePersistentMemory'>Collect persistent memory counters</msg>
+      <msg name='%AnalyzePersistentMemoryDescription'>Collect persistent memory performance counters</msg>
+    </catalog>
+</xmc>

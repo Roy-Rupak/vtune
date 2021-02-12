@@ -1,0 +1,230 @@
+# Performance Monitoring Events for the Fifth Generation Intel Core Processors Based on the Broadwell-DE Microarchitecture - V7
+# 9/17/2017 4:48:42 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+HA	0x0	0x0	UNC_H_CLOCKTICKS	uclks	0,1,2,3	0x0	null	0
+HA	0x1	0x1	UNC_H_REQUESTS.READS_LOCAL	Read and Write Requests; Local Reads	0,1,2,3	0x0	null	0
+HA	0x1	0x10	UNC_H_REQUESTS.INVITOE_LOCAL	Read and Write Requests; Local InvItoEs	0,1,2,3	0x0	null	0
+HA	0x1	0x2	UNC_H_REQUESTS.READS_REMOTE	Read and Write Requests; Remote Reads	0,1,2,3	0x0	null	0
+HA	0x1	0x20	UNC_H_REQUESTS.INVITOE_REMOTE	Read and Write Requests; Remote InvItoEs	0,1,2,3	0x0	null	0
+HA	0x1	0x3	UNC_H_REQUESTS.READS	Read and Write Requests; Reads	0,1,2,3	0x0	null	0
+HA	0x1	0x4	UNC_H_REQUESTS.WRITES_LOCAL	Read and Write Requests; Local Writes	0,1,2,3	0x0	null	0
+HA	0x1	0x8	UNC_H_REQUESTS.WRITES_REMOTE	Read and Write Requests; Remote Writes	0,1,2,3	0x0	null	0
+HA	0x1	0xC	UNC_H_REQUESTS.WRITES	Read and Write Requests; Writes	0,1,2,3	0x0	null	0
+HA	0x10	0x1	UNC_H_TxR_BL.DRS_CACHE	Outbound DRS Ring Transactions to Cache; Data to Cache	0,1,2,3	0x0	null	0
+HA	0x10	0x2	UNC_H_TxR_BL.DRS_CORE	Outbound DRS Ring Transactions to Cache; Data to Core	0,1,2,3	0x0	null	0
+HA	0x10	0x4	UNC_H_TxR_BL.DRS_QPI	Outbound DRS Ring Transactions to Cache; Data to QPI	0,1,2,3	0x0	null	0
+HA	0x11	0x0	UNC_H_DIRECT2CORE_COUNT	Direct2Core Messages Sent	0,1,2,3	0x0	null	0
+HA	0x12	0x0	UNC_H_DIRECT2CORE_CYCLES_DISABLED	Cycles when Direct2Core was Disabled	0,1,2,3	0x0	null	0
+HA	0x13	0x0	UNC_H_DIRECT2CORE_TXN_OVERRIDE	Number of Reads that had Direct2Core Overridden	0,1,2,3	0x0	null	0
+HA	0x14	0x1	UNC_H_BYPASS_IMC.TAKEN	HA to iMC Bypass; Taken	0,1,2,3	0x0	null	0
+HA	0x14	0x2	UNC_H_BYPASS_IMC.NOT_TAKEN	HA to iMC Bypass; Not Taken	0,1,2,3	0x0	null	0
+HA	0x15	0x1	UNC_H_RPQ_CYCLES_NO_REG_CREDITS.CHN0	iMC RPQ Credits Empty - Regular; Channel 0	0,1,2,3	0x0	null	0
+HA	0x15	0x2	UNC_H_RPQ_CYCLES_NO_REG_CREDITS.CHN1	iMC RPQ Credits Empty - Regular; Channel 1	0,1,2,3	0x0	null	0
+HA	0x15	0x4	UNC_H_RPQ_CYCLES_NO_REG_CREDITS.CHN2	iMC RPQ Credits Empty - Regular; Channel 2	0,1,2,3	0x0	null	0
+HA	0x15	0x8	UNC_H_RPQ_CYCLES_NO_REG_CREDITS.CHN3	iMC RPQ Credits Empty - Regular; Channel 3	0,1,2,3	0x0	null	0
+HA	0x16	0x1	UNC_H_RPQ_CYCLES_NO_SPEC_CREDITS.CHN0	iMC RPQ Credits Empty - Special; Channel 0	0,1,2,3	0x0	null	0
+HA	0x16	0x2	UNC_H_RPQ_CYCLES_NO_SPEC_CREDITS.CHN1	iMC RPQ Credits Empty - Special; Channel 1	0,1,2,3	0x0	null	0
+HA	0x16	0x4	UNC_H_RPQ_CYCLES_NO_SPEC_CREDITS.CHN2	iMC RPQ Credits Empty - Special; Channel 2	0,1,2,3	0x0	null	0
+HA	0x16	0x8	UNC_H_RPQ_CYCLES_NO_SPEC_CREDITS.CHN3	iMC RPQ Credits Empty - Special; Channel 3	0,1,2,3	0x0	null	0
+HA	0x17	0x1	UNC_H_IMC_READS.NORMAL	HA to iMC Normal Priority Reads Issued; Normal Priority	0,1,2,3	0x0	null	0
+HA	0x18	0x1	UNC_H_WPQ_CYCLES_NO_REG_CREDITS.CHN0	HA iMC CHN0 WPQ Credits Empty - Regular; Channel 0	0,1,2,3	0x0	null	0
+HA	0x18	0x2	UNC_H_WPQ_CYCLES_NO_REG_CREDITS.CHN1	HA iMC CHN0 WPQ Credits Empty - Regular; Channel 1	0,1,2,3	0x0	null	0
+HA	0x18	0x4	UNC_H_WPQ_CYCLES_NO_REG_CREDITS.CHN2	HA iMC CHN0 WPQ Credits Empty - Regular; Channel 2	0,1,2,3	0x0	null	0
+HA	0x18	0x8	UNC_H_WPQ_CYCLES_NO_REG_CREDITS.CHN3	HA iMC CHN0 WPQ Credits Empty - Regular; Channel 3	0,1,2,3	0x0	null	0
+HA	0x19	0x1	UNC_H_WPQ_CYCLES_NO_SPEC_CREDITS.CHN0	HA iMC CHN0 WPQ Credits Empty - Special; Channel 0	0,1,2,3	0x0	null	0
+HA	0x19	0x2	UNC_H_WPQ_CYCLES_NO_SPEC_CREDITS.CHN1	HA iMC CHN0 WPQ Credits Empty - Special; Channel 1	0,1,2,3	0x0	null	0
+HA	0x19	0x4	UNC_H_WPQ_CYCLES_NO_SPEC_CREDITS.CHN2	HA iMC CHN0 WPQ Credits Empty - Special; Channel 2	0,1,2,3	0x0	null	0
+HA	0x19	0x8	UNC_H_WPQ_CYCLES_NO_SPEC_CREDITS.CHN3	HA iMC CHN0 WPQ Credits Empty - Special; Channel 3	0,1,2,3	0x0	null	0
+HA	0x1A	0x1	UNC_H_IMC_WRITES.FULL	HA to iMC Full Line Writes Issued; Full Line Non-ISOCH	0,1,2,3	0x0	null	0
+HA	0x1A	0x2	UNC_H_IMC_WRITES.PARTIAL	HA to iMC Full Line Writes Issued; Partial Non-ISOCH	0,1,2,3	0x0	null	0
+HA	0x1A	0x4	UNC_H_IMC_WRITES.FULL_ISOCH	HA to iMC Full Line Writes Issued; ISOCH Full Line	0,1,2,3	0x0	null	0
+HA	0x1A	0x8	UNC_H_IMC_WRITES.PARTIAL_ISOCH	HA to iMC Full Line Writes Issued; ISOCH Partial	0,1,2,3	0x0	null	0
+HA	0x1A	0xF	UNC_H_IMC_WRITES.ALL	HA to iMC Full Line Writes Issued; All Writes	0,1,2,3	0x0	null	0
+HA	0x1B	0x1	UNC_H_TAD_REQUESTS_G0.REGION0	HA Requests to a TAD Region - Group 0; TAD Region 0	0,1,2,3	0x0	null	0
+HA	0x1B	0x10	UNC_H_TAD_REQUESTS_G0.REGION4	HA Requests to a TAD Region - Group 0; TAD Region 4	0,1,2,3	0x0	null	0
+HA	0x1B	0x2	UNC_H_TAD_REQUESTS_G0.REGION1	HA Requests to a TAD Region - Group 0; TAD Region 1	0,1,2,3	0x0	null	0
+HA	0x1B	0x20	UNC_H_TAD_REQUESTS_G0.REGION5	HA Requests to a TAD Region - Group 0; TAD Region 5	0,1,2,3	0x0	null	0
+HA	0x1B	0x4	UNC_H_TAD_REQUESTS_G0.REGION2	HA Requests to a TAD Region - Group 0; TAD Region 2	0,1,2,3	0x0	null	0
+HA	0x1B	0x40	UNC_H_TAD_REQUESTS_G0.REGION6	HA Requests to a TAD Region - Group 0; TAD Region 6	0,1,2,3	0x0	null	0
+HA	0x1B	0x8	UNC_H_TAD_REQUESTS_G0.REGION3	HA Requests to a TAD Region - Group 0; TAD Region 3	0,1,2,3	0x0	null	0
+HA	0x1B	0x80	UNC_H_TAD_REQUESTS_G0.REGION7	HA Requests to a TAD Region - Group 0; TAD Region 7	0,1,2,3	0x0	null	0
+HA	0x1C	0x1	UNC_H_TAD_REQUESTS_G1.REGION8	HA Requests to a TAD Region - Group 1; TAD Region 8	0,1,2,3	0x0	null	0
+HA	0x1C	0x2	UNC_H_TAD_REQUESTS_G1.REGION9	HA Requests to a TAD Region - Group 1; TAD Region 9	0,1,2,3	0x0	null	0
+HA	0x1C	0x4	UNC_H_TAD_REQUESTS_G1.REGION10	HA Requests to a TAD Region - Group 1; TAD Region 10	0,1,2,3	0x0	null	0
+HA	0x1C	0x8	UNC_H_TAD_REQUESTS_G1.REGION11	HA Requests to a TAD Region - Group 1; TAD Region 11	0,1,2,3	0x0	null	0
+HA	0x1E	0x0	UNC_H_IMC_RETRY	Retry Events	0,1,2,3	0x0	null	0
+HA	0x2	0x1	UNC_H_TRACKER_CYCLES_FULL.GP	Tracker Cycles Full; Cycles GP Completely Used	0,1,2,3	0x0	null	0
+HA	0x2	0x2	UNC_H_TRACKER_CYCLES_FULL.ALL	Tracker Cycles Full; Cycles Completely Used	0,1,2,3	0x0	null	0
+HA	0x20	0x1	UNC_H_ADDR_OPC_MATCH.ADDR	QPI Address/Opcode Match; Address	0,1,2,3	0x0	HA_AddrMatch0[31:6], HA_AddrMatch1[13:0]	0
+HA	0x20	0x10	UNC_H_ADDR_OPC_MATCH.AK	QPI Address/Opcode Match; AK Opcodes	0,1,2,3	0x0	HA_OpcodeMatch[5:0]	0
+HA	0x20	0x2	UNC_H_ADDR_OPC_MATCH.OPC	QPI Address/Opcode Match; Opcode	0,1,2,3	0x0	HA_OpcodeMatch[5:0]	0
+HA	0x20	0x3	UNC_H_ADDR_OPC_MATCH.FILT	QPI Address/Opcode Match; Address & Opcode Match	0,1,2,3	0x0	HA_AddrMatch0[31:6], HA_AddrMatch1[13:0], HA_OpcodeMatch[5:0]	0
+HA	0x20	0x4	UNC_H_ADDR_OPC_MATCH.AD	QPI Address/Opcode Match; AD Opcodes	0,1,2,3	0x0	HA_OpcodeMatch[5:0]	0
+HA	0x20	0x8	UNC_H_ADDR_OPC_MATCH.BL	QPI Address/Opcode Match; BL Opcodes	0,1,2,3	0x0	HA_OpcodeMatch[5:0]	0
+HA	0x21	0x1	UNC_H_SNOOP_RESP.RSPI	Snoop Responses Received; RspI	0,1,2,3	0x0	null	0
+HA	0x21	0x10	UNC_H_SNOOP_RESP.RSP_WB	Snoop Responses Received; Rsp*WB	0,1,2,3	0x0	null	0
+HA	0x21	0x2	UNC_H_SNOOP_RESP.RSPS	Snoop Responses Received; RspS	0,1,2,3	0x0	null	0
+HA	0x21	0x20	UNC_H_SNOOP_RESP.RSP_FWD_WB	Snoop Responses Received; Rsp*Fwd*WB	0,1,2,3	0x0	null	0
+HA	0x21	0x4	UNC_H_SNOOP_RESP.RSPIFWD	Snoop Responses Received; RspIFwd	0,1,2,3	0x0	null	0
+HA	0x21	0x40	UNC_H_SNOOP_RESP.RSPCNFLCT	Snoop Responses Received; RSPCNFLCT*	0,1,2,3	0x0	null	0
+HA	0x21	0x8	UNC_H_SNOOP_RESP.RSPSFWD	Snoop Responses Received; RspSFwd	0,1,2,3	0x0	null	0
+HA	0x22	0x1	UNC_H_IGR_NO_CREDIT_CYCLES.AD_QPI0	Cycles without QPI Ingress Credits; AD to QPI Link 0	0,1,2,3	0x0	null	0
+HA	0x22	0x10	UNC_H_IGR_NO_CREDIT_CYCLES.AD_QPI2	Cycles without QPI Ingress Credits; BL to QPI Link 0	0,1,2,3	0x0	null	0
+HA	0x22	0x2	UNC_H_IGR_NO_CREDIT_CYCLES.AD_QPI1	Cycles without QPI Ingress Credits; AD to QPI Link 1	0,1,2,3	0x0	null	0
+HA	0x22	0x20	UNC_H_IGR_NO_CREDIT_CYCLES.BL_QPI2	Cycles without QPI Ingress Credits; BL to QPI Link 1	0,1,2,3	0x0	null	0
+HA	0x22	0x4	UNC_H_IGR_NO_CREDIT_CYCLES.BL_QPI0	Cycles without QPI Ingress Credits; BL to QPI Link 0	0,1,2,3	0x0	null	0
+HA	0x22	0x8	UNC_H_IGR_NO_CREDIT_CYCLES.BL_QPI1	Cycles without QPI Ingress Credits; BL to QPI Link 1	0,1,2,3	0x0	null	0
+HA	0x27	0x1	UNC_H_TxR_AD_INSERTS.SCHED0	AD Egress Allocations; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x27	0x2	UNC_H_TxR_AD_INSERTS.SCHED1	AD Egress Allocations; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x27	0x3	UNC_H_TxR_AD_INSERTS.ALL	AD Egress Allocations; All	0,1,2,3	0x0	null	0
+HA	0x29	0x1	UNC_H_TxR_AD_CYCLES_NE.SCHED0	AD Egress Not Empty; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x29	0x2	UNC_H_TxR_AD_CYCLES_NE.SCHED1	AD Egress Not Empty; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x29	0x3	UNC_H_TxR_AD_CYCLES_NE.ALL	AD Egress Not Empty; All	0,1,2,3	0x0	null	0
+HA	0x2A	0x1	UNC_H_TxR_AD_CYCLES_FULL.SCHED0	AD Egress Full; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x2A	0x2	UNC_H_TxR_AD_CYCLES_FULL.SCHED1	AD Egress Full; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x2A	0x3	UNC_H_TxR_AD_CYCLES_FULL.ALL	AD Egress Full; All	0,1,2,3	0x0	null	0
+HA	0x2F	0x1	UNC_H_TxR_AK_INSERTS.SCHED0	AK Egress Allocations; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x2F	0x2	UNC_H_TxR_AK_INSERTS.SCHED1	AK Egress Allocations; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x2F	0x3	UNC_H_TxR_AK_INSERTS.ALL	AK Egress Allocations; All	0,1,2,3	0x0	null	0
+HA	0x3	0x1	UNC_H_TRACKER_CYCLES_NE.LOCAL	Tracker Cycles Not Empty; Local Requests	0,1,2,3	0x0	null	0
+HA	0x3	0x2	UNC_H_TRACKER_CYCLES_NE.REMOTE	Tracker Cycles Not Empty; Remote Requests	0,1,2,3	0x0	null	0
+HA	0x3	0x3	UNC_H_TRACKER_CYCLES_NE.ALL	Tracker Cycles Not Empty; All Requests	0,1,2,3	0x0	null	0
+HA	0x31	0x1	UNC_H_TxR_AK_CYCLES_NE.SCHED0	AK Egress Not Empty; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x31	0x2	UNC_H_TxR_AK_CYCLES_NE.SCHED1	AK Egress Not Empty; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x31	0x3	UNC_H_TxR_AK_CYCLES_NE.ALL	AK Egress Not Empty; All	0,1,2,3	0x0	null	0
+HA	0x32	0x1	UNC_H_TxR_AK_CYCLES_FULL.SCHED0	AK Egress Full; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x32	0x2	UNC_H_TxR_AK_CYCLES_FULL.SCHED1	AK Egress Full; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x32	0x3	UNC_H_TxR_AK_CYCLES_FULL.ALL	AK Egress Full; All	0,1,2,3	0x0	null	0
+HA	0x33	0x1	UNC_H_TxR_BL_INSERTS.SCHED0	BL Egress Allocations; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x33	0x2	UNC_H_TxR_BL_INSERTS.SCHED1	BL Egress Allocations; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x33	0x3	UNC_H_TxR_BL_INSERTS.ALL	BL Egress Allocations; All	0,1,2,3	0x0	null	0
+HA	0x35	0x1	UNC_H_TxR_BL_CYCLES_NE.SCHED0	BL Egress Not Empty; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x35	0x2	UNC_H_TxR_BL_CYCLES_NE.SCHED1	BL Egress Not Empty; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x35	0x3	UNC_H_TxR_BL_CYCLES_NE.ALL	BL Egress Not Empty; All	0,1,2,3	0x0	null	0
+HA	0x36	0x1	UNC_H_TxR_BL_CYCLES_FULL.SCHED0	BL Egress Full; Scheduler 0	0,1,2,3	0x0	null	0
+HA	0x36	0x2	UNC_H_TxR_BL_CYCLES_FULL.SCHED1	BL Egress Full; Scheduler 1	0,1,2,3	0x0	null	0
+HA	0x36	0x3	UNC_H_TxR_BL_CYCLES_FULL.ALL	BL Egress Full; All	0,1,2,3	0x0	null	0
+HA	0x3E	0x1	UNC_H_RING_AD_USED.CW_EVEN	HA AD Ring in Use; Clockwise and Even	0,1,2,3	0x0	null	0
+HA	0x3E	0x2	UNC_H_RING_AD_USED.CW_ODD	HA AD Ring in Use; Clockwise and Odd	0,1,2,3	0x0	null	0
+HA	0x3E	0x3	UNC_H_RING_AD_USED.CW	HA AD Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+HA	0x3E	0x4	UNC_H_RING_AD_USED.CCW_EVEN	HA AD Ring in Use; Counterclockwise and Even	0,1,2,3	0x0	null	0
+HA	0x3E	0x8	UNC_H_RING_AD_USED.CCW_ODD	HA AD Ring in Use; Counterclockwise and Odd	0,1,2,3	0x0	null	0
+HA	0x3E	0xC	UNC_H_RING_AD_USED.CCW	HA AD Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+HA	0x3F	0x1	UNC_H_RING_AK_USED.CW_EVEN	HA AK Ring in Use; Clockwise and Even	0,1,2,3	0x0	null	0
+HA	0x3F	0x2	UNC_H_RING_AK_USED.CW_ODD	HA AK Ring in Use; Clockwise and Odd	0,1,2,3	0x0	null	0
+HA	0x3F	0x3	UNC_H_RING_AK_USED.CW	HA AK Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+HA	0x3F	0x4	UNC_H_RING_AK_USED.CCW_EVEN	HA AK Ring in Use; Counterclockwise and Even	0,1,2,3	0x0	null	0
+HA	0x3F	0x8	UNC_H_RING_AK_USED.CCW_ODD	HA AK Ring in Use; Counterclockwise and Odd	0,1,2,3	0x0	null	0
+HA	0x3F	0xC	UNC_H_RING_AK_USED.CCW	HA AK Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+HA	0x3F	0xF	UNC_H_RING_AK_USED.ALL	HA AK Ring in Use; All	0,1,2,3	0x0	null	0
+HA	0x4	0x10	UNC_H_TRACKER_OCCUPANCY.WRITES_LOCAL	Tracker Occupancy Accumultor; Local Write Requests	0,1,2,3	0x0	null	0
+HA	0x4	0x20	UNC_H_TRACKER_OCCUPANCY.WRITES_REMOTE	Tracker Occupancy Accumultor; Remote Write Requests	0,1,2,3	0x0	null	0
+HA	0x4	0x4	UNC_H_TRACKER_OCCUPANCY.READS_LOCAL	Tracker Occupancy Accumultor; Local Read Requests	0,1,2,3	0x0	null	0
+HA	0x4	0x40	UNC_H_TRACKER_OCCUPANCY.INVITOE_LOCAL	Tracker Occupancy Accumultor; Local InvItoE Requests	0,1,2,3	0x0	null	0
+HA	0x4	0x8	UNC_H_TRACKER_OCCUPANCY.READS_REMOTE	Tracker Occupancy Accumultor; Remote Read Requests	0,1,2,3	0x0	null	0
+HA	0x4	0x80	UNC_H_TRACKER_OCCUPANCY.INVITOE_REMOTE	Tracker Occupancy Accumultor; Remote InvItoE Requests	0,1,2,3	0x0	null	0
+HA	0x40	0x1	UNC_H_RING_BL_USED.CW_EVEN	HA BL Ring in Use; Clockwise and Even	0,1,2,3	0x0	null	0
+HA	0x40	0x2	UNC_H_RING_BL_USED.CW_ODD	HA BL Ring in Use; Clockwise and Odd	0,1,2,3	0x0	null	0
+HA	0x40	0x3	UNC_H_RING_BL_USED.CW	HA BL Ring in Use; Clockwise	0,1,2,3	0x0	null	0
+HA	0x40	0x4	UNC_H_RING_BL_USED.CCW_EVEN	HA BL Ring in Use; Counterclockwise and Even	0,1,2,3	0x0	null	0
+HA	0x40	0x8	UNC_H_RING_BL_USED.CCW_ODD	HA BL Ring in Use; Counterclockwise and Odd	0,1,2,3	0x0	null	0
+HA	0x40	0xC	UNC_H_RING_BL_USED.CCW	HA BL Ring in Use; Counterclockwise	0,1,2,3	0x0	null	0
+HA	0x40	0xF	UNC_H_RING_BL_USED.ALL	HA BL Ring in Use; All	0,1,2,3	0x0	null	0
+HA	0x41	0x0	UNC_H_DIRECTORY_LAT_OPT	Directory Lat Opt Return	0,1,2,3	0x0	null	0
+HA	0x42	0x0	UNC_H_BT_CYCLES_NE	BT Cycles Not Empty	0,1,2,3	0x0	null	0
+HA	0x5	0x1	UNC_H_TRACKER_PENDING_OCCUPANCY.LOCAL	Data Pending Occupancy Accumultor; Local Requests	0,1,2,3	0x0	null	0
+HA	0x5	0x2	UNC_H_TRACKER_PENDING_OCCUPANCY.REMOTE	Data Pending Occupancy Accumultor; Remote Requests	0,1,2,3	0x0	null	0
+HA	0x51	0x10	UNC_H_BT_TO_HT_NOT_ISSUED.WBMDATA_HAZARD	BT to HT Not Issued; Incoming Data Hazard	0,1,2,3	0x0	null	0
+HA	0x51	0x2	UNC_H_BT_TO_HT_NOT_ISSUED.INCOMING_SNP_HAZARD	BT to HT Not Issued; Incoming Snoop Hazard	0,1,2,3	0x0	null	0
+HA	0x51	0x4	UNC_H_BT_TO_HT_NOT_ISSUED.INCOMING_BL_HAZARD	BT to HT Not Issued; Incoming Data Hazard	0,1,2,3	0x0	null	0
+HA	0x51	0x8	UNC_H_BT_TO_HT_NOT_ISSUED.RSPACKCFLT_HAZARD	BT to HT Not Issued; Incoming Data Hazard	0,1,2,3	0x0	null	0
+HA	0x53	0x10	UNC_H_OSB.CANCELLED	OSB Snoop Broadcast; Cancelled	0,1,2,3	0x0	null	0
+HA	0x53	0x2	UNC_H_OSB.READS_LOCAL	OSB Snoop Broadcast; Local Reads	0,1,2,3	0x0	null	0
+HA	0x53	0x20	UNC_H_OSB.READS_LOCAL_USEFUL	OSB Snoop Broadcast; Reads Local -  Useful	0,1,2,3	0x0	null	0
+HA	0x53	0x4	UNC_H_OSB.INVITOE_LOCAL	OSB Snoop Broadcast; Local InvItoE	0,1,2,3	0x0	null	0
+HA	0x53	0x40	UNC_H_OSB.REMOTE_USEFUL	OSB Snoop Broadcast; Remote - Useful	0,1,2,3	0x0	null	0
+HA	0x53	0x8	UNC_H_OSB.REMOTE	OSB Snoop Broadcast; Remote	0,1,2,3	0x0	null	0
+HA	0x54	0x1	UNC_H_OSB_EDR.ALL	OSB Early Data Return; All	0,1,2,3	0x0	null	0
+HA	0x54	0x10	UNC_H_OSB_EDR.READS_REMOTE_S	OSB Early Data Return; Reads to Remote S	0,1,2,3	0x0	null	0
+HA	0x54	0x2	UNC_H_OSB_EDR.READS_LOCAL_I	OSB Early Data Return; Reads to Local  I	0,1,2,3	0x0	null	0
+HA	0x54	0x4	UNC_H_OSB_EDR.READS_REMOTE_I	OSB Early Data Return; Reads to Remote I	0,1,2,3	0x0	null	0
+HA	0x54	0x8	UNC_H_OSB_EDR.READS_LOCAL_S	OSB Early Data Return; Reads to Local S	0,1,2,3	0x0	null	0
+HA	0x60	0x1	UNC_H_SNP_RESP_RECV_LOCAL.RSPI	Snoop Responses Received Local; RspI	0,1,2,3	0x0	null	0
+HA	0x60	0x10	UNC_H_SNP_RESP_RECV_LOCAL.RSPxWB	Snoop Responses Received Local; Rsp*WB	0,1,2,3	0x0	null	0
+HA	0x60	0x2	UNC_H_SNP_RESP_RECV_LOCAL.RSPS	Snoop Responses Received Local; RspS	0,1,2,3	0x0	null	0
+HA	0x60	0x20	UNC_H_SNP_RESP_RECV_LOCAL.RSPxFWDxWB	Snoop Responses Received Local; Rsp*FWD*WB	0,1,2,3	0x0	null	0
+HA	0x60	0x4	UNC_H_SNP_RESP_RECV_LOCAL.RSPIFWD	Snoop Responses Received Local; RspIFwd	0,1,2,3	0x0	null	0
+HA	0x60	0x40	UNC_H_SNP_RESP_RECV_LOCAL.RSPCNFLCT	Snoop Responses Received Local; RspCnflct	0,1,2,3	0x0	null	0
+HA	0x60	0x8	UNC_H_SNP_RESP_RECV_LOCAL.RSPSFWD	Snoop Responses Received Local; RspSFwd	0,1,2,3	0x0	null	0
+HA	0x60	0x80	UNC_H_SNP_RESP_RECV_LOCAL.OTHER	Snoop Responses Received Local; Other	0,1,2,3	0x0	null	0
+HA	0x61	0x1	UNC_H_IOT_BACKPRESSURE.SAT	IOT Backpressure	0,1,2	0x0	null	0
+HA	0x61	0x2	UNC_H_IOT_BACKPRESSURE.HUB	IOT Backpressure	0,1,2	0x0	null	0
+HA	0x62	0x1	UNC_H_IOT_CTS_WEST_LO.CTS0	IOT Common Trigger Sequencer - Lo	0,1,2	0x0	null	0
+HA	0x62	0x2	UNC_H_IOT_CTS_WEST_LO.CTS1	IOT Common Trigger Sequencer - Lo	0,1,2	0x0	null	0
+HA	0x64	0x1	UNC_H_IOT_CTS_EAST_LO.CTS0	IOT Common Trigger Sequencer - Lo	0,1,2	0x0	null	0
+HA	0x64	0x2	UNC_H_IOT_CTS_EAST_LO.CTS1	IOT Common Trigger Sequencer - Lo	0,1,2	0x0	null	0
+HA	0x65	0x1	UNC_H_IOT_CTS_HI.CTS2	IOT Common Trigger Sequencer - Hi	0,1,2	0x0	null	0
+HA	0x65	0x2	UNC_H_IOT_CTS_HI.CTS3	IOT Common Trigger Sequencer - Hi	0,1,2	0x0	null	0
+HA	0x68	0x1	UNC_H_SBO0_CREDITS_ACQUIRED.AD	SBo0 Credits Acquired; For AD Ring	0,1,2,3	0x0	null	0
+HA	0x68	0x2	UNC_H_SBO0_CREDITS_ACQUIRED.BL	SBo0 Credits Acquired; For BL Ring	0,1,2,3	0x0	null	0
+HA	0x69	0x1	UNC_H_SBO1_CREDITS_ACQUIRED.AD	SBo1 Credits Acquired; For AD Ring	0,1,2,3	0x0	null	0
+HA	0x69	0x2	UNC_H_SBO1_CREDITS_ACQUIRED.BL	SBo1 Credits Acquired; For BL Ring	0,1,2,3	0x0	null	0
+HA	0x6A	0x1	UNC_H_SBO0_CREDIT_OCCUPANCY.AD	SBo0 Credits Occupancy; For AD Ring	0,1,2,3	0x0	null	0
+HA	0x6A	0x2	UNC_H_SBO0_CREDIT_OCCUPANCY.BL	SBo0 Credits Occupancy; For BL Ring	0,1,2,3	0x0	null	0
+HA	0x6B	0x1	UNC_H_SBO1_CREDIT_OCCUPANCY.AD	SBo1 Credits Occupancy; For AD Ring	0,1,2,3	0x0	null	0
+HA	0x6B	0x2	UNC_H_SBO1_CREDIT_OCCUPANCY.BL	SBo1 Credits Occupancy; For BL Ring	0,1,2,3	0x0	null	0
+HA	0x6C	0x1	UNC_H_STALL_NO_SBO_CREDIT.SBO0_AD	Stall on No Sbo Credits; For SBo0, AD Ring	0,1,2,3	0x0	null	0
+HA	0x6C	0x2	UNC_H_STALL_NO_SBO_CREDIT.SBO1_AD	Stall on No Sbo Credits; For SBo1, AD Ring	0,1,2,3	0x0	null	0
+HA	0x6C	0x4	UNC_H_STALL_NO_SBO_CREDIT.SBO0_BL	Stall on No Sbo Credits; For SBo0, BL Ring	0,1,2,3	0x0	null	0
+HA	0x6C	0x8	UNC_H_STALL_NO_SBO_CREDIT.SBO1_BL	Stall on No Sbo Credits; For SBo1, BL Ring	0,1,2,3	0x0	null	0
+HA	0x6D	0x1	UNC_H_TxR_STARVED.AK	Injection Starvation; For AK Ring	0,1,2,3	0x0	null	0
+HA	0x6D	0x2	UNC_H_TxR_STARVED.BL	Injection Starvation; For BL Ring	0,1,2,3	0x0	null	0
+HA	0x70	0x1	UNC_H_HITME_LOOKUP.READ_OR_INVITOE	Counts Number of times HitMe Cache is accessed; op is RdCode, RdData, RdDataMigratory, RdInvOwn, RdCur or InvItoE	0,1,2,3	0x0	null	0
+HA	0x70	0x10	UNC_H_HITME_LOOKUP.RSPFWDI_REMOTE	Counts Number of times HitMe Cache is accessed; op is RspIFwd or RspIFwdWb for a remote request	0,1,2,3	0x0	null	0
+HA	0x70	0x2	UNC_H_HITME_LOOKUP.WBMTOI	Counts Number of times HitMe Cache is accessed; op is WbMtoI	0,1,2,3	0x0	null	0
+HA	0x70	0x20	UNC_H_HITME_LOOKUP.RSPFWDI_LOCAL	Counts Number of times HitMe Cache is accessed; op is RspIFwd or RspIFwdWb for a local request	0,1,2,3	0x0	null	0
+HA	0x70	0x26	UNC_H_HITME_LOOKUP.INVALS	Counts Number of times HitMe Cache is accessed; Invalidations	0,1,2,3	0x0	null	0
+HA	0x70	0x4	UNC_H_HITME_LOOKUP.ACKCNFLTWBI	Counts Number of times HitMe Cache is accessed; op is AckCnfltWbI	0,1,2,3	0x0	null	0
+HA	0x70	0x40	UNC_H_HITME_LOOKUP.RSPFWDS	Counts Number of times HitMe Cache is accessed; op is RsSFwd or RspSFwdWb	0,1,2,3	0x0	null	0
+HA	0x70	0x70	UNC_H_HITME_LOOKUP.ALLOCS	Counts Number of times HitMe Cache is accessed; Allocations	0,1,2,3	0x0	null	0
+HA	0x70	0x8	UNC_H_HITME_LOOKUP.WBMTOE_OR_S	Counts Number of times HitMe Cache is accessed; op is WbMtoE or WbMtoS	0,1,2,3	0x0	null	0
+HA	0x70	0x80	UNC_H_HITME_LOOKUP.RSP	Counts Number of times HitMe Cache is accessed; op is RspI, RspIWb, RspS, RspSWb, RspCnflt or RspCnfltWbI	0,1,2,3	0x0	null	0
+HA	0x70	0xF	UNC_H_HITME_LOOKUP.HOM	Counts Number of times HitMe Cache is accessed; HOM Requests	0,1,2,3	0x0	null	0
+HA	0x70	0xFF	UNC_H_HITME_LOOKUP.ALL	Counts Number of times HitMe Cache is accessed; All Requests	0,1,2,3	0x0	null	0
+HA	0x71	0x1	UNC_H_HITME_HIT.READ_OR_INVITOE	Counts Number of Hits in HitMe Cache; op is RdCode, RdData, RdDataMigratory, RdInvOwn, RdCur or InvItoE	0,1,2,3	0x0	null	0
+HA	0x71	0x10	UNC_H_HITME_HIT.RSPFWDI_REMOTE	Counts Number of Hits in HitMe Cache; op is RspIFwd or RspIFwdWb for a remote request	0,1,2,3	0x0	null	0
+HA	0x71	0x2	UNC_H_HITME_HIT.WBMTOI	Counts Number of Hits in HitMe Cache; op is WbMtoI	0,1,2,3	0x0	null	0
+HA	0x71	0x20	UNC_H_HITME_HIT.RSPFWDI_LOCAL	Counts Number of Hits in HitMe Cache; op is RspIFwd or RspIFwdWb for a local request	0,1,2,3	0x0	null	0
+HA	0x71	0x26	UNC_H_HITME_HIT.INVALS	Counts Number of Hits in HitMe Cache; Invalidations	0,1,2,3	0x0	null	0
+HA	0x71	0x4	UNC_H_HITME_HIT.ACKCNFLTWBI	Counts Number of Hits in HitMe Cache; op is AckCnfltWbI	0,1,2,3	0x0	null	0
+HA	0x71	0x40	UNC_H_HITME_HIT.RSPFWDS	Counts Number of Hits in HitMe Cache; op is RsSFwd or RspSFwdWb	0,1,2,3	0x0	null	0
+HA	0x71	0x42	UNC_H_HITME_HIT.EVICTS	Counts Number of Hits in HitMe Cache; Allocations	0,1,2,3	0x0	null	0
+HA	0x71	0x70	UNC_H_HITME_HIT.ALLOCS	Counts Number of Hits in HitMe Cache; Allocations	0,1,2,3	0x0	null	0
+HA	0x71	0x8	UNC_H_HITME_HIT.WBMTOE_OR_S	Counts Number of Hits in HitMe Cache; op is WbMtoE or WbMtoS	0,1,2,3	0x0	null	0
+HA	0x71	0x80	UNC_H_HITME_HIT.RSP	Counts Number of Hits in HitMe Cache; op is RspI, RspIWb, RspS, RspSWb, RspCnflt or RspCnfltWbI	0,1,2,3	0x0	null	0
+HA	0x71	0xF	UNC_H_HITME_HIT.HOM	Counts Number of Hits in HitMe Cache; HOM Requests	0,1,2,3	0x0	null	0
+HA	0x71	0xFF	UNC_H_HITME_HIT.ALL	Counts Number of Hits in HitMe Cache; All Requests	0,1,2,3	0x0	null	0
+HA	0x72	0x1	UNC_H_HITME_HIT_PV_BITS_SET.READ_OR_INVITOE	Accumulates Number of PV bits set on HitMe Cache Hits; op is RdCode, RdData, RdDataMigratory, RdInvOwn, RdCur or InvItoE	0,1,2,3	0x0	null	0
+HA	0x72	0x10	UNC_H_HITME_HIT_PV_BITS_SET.RSPFWDI_REMOTE	Accumulates Number of PV bits set on HitMe Cache Hits; op is RspIFwd or RspIFwdWb for a remote request	0,1,2,3	0x0	null	0
+HA	0x72	0x2	UNC_H_HITME_HIT_PV_BITS_SET.WBMTOI	Accumulates Number of PV bits set on HitMe Cache Hits; op is WbMtoI	0,1,2,3	0x0	null	0
+HA	0x72	0x20	UNC_H_HITME_HIT_PV_BITS_SET.RSPFWDI_LOCAL	Accumulates Number of PV bits set on HitMe Cache Hits; op is RspIFwd or RspIFwdWb for a local request	0,1,2,3	0x0	null	0
+HA	0x72	0x4	UNC_H_HITME_HIT_PV_BITS_SET.ACKCNFLTWBI	Accumulates Number of PV bits set on HitMe Cache Hits; op is AckCnfltWbI	0,1,2,3	0x0	null	0
+HA	0x72	0x40	UNC_H_HITME_HIT_PV_BITS_SET.RSPFWDS	Accumulates Number of PV bits set on HitMe Cache Hits; op is RsSFwd or RspSFwdWb	0,1,2,3	0x0	null	0
+HA	0x72	0x8	UNC_H_HITME_HIT_PV_BITS_SET.WBMTOE_OR_S	Accumulates Number of PV bits set on HitMe Cache Hits; op is WbMtoE or WbMtoS	0,1,2,3	0x0	null	0
+HA	0x72	0x80	UNC_H_HITME_HIT_PV_BITS_SET.RSP	Accumulates Number of PV bits set on HitMe Cache Hits; op is RspI, RspIWb, RspS, RspSWb, RspCnflt or RspCnfltWbI	0,1,2,3	0x0	null	0
+HA	0x72	0xF	UNC_H_HITME_HIT_PV_BITS_SET.HOM	Accumulates Number of PV bits set on HitMe Cache Hits; HOM Requests	0,1,2,3	0x0	null	0
+HA	0x72	0xFF	UNC_H_HITME_HIT_PV_BITS_SET.ALL	Accumulates Number of PV bits set on HitMe Cache Hits; All Requests	0,1,2,3	0x0	null	0
+HA	0x8	0x1	UNC_H_SNOOP_CYCLES_NE.LOCAL	Cycles with Snoops Outstanding; Local Requests	0,1,2,3	0x0	null	0
+HA	0x8	0x2	UNC_H_SNOOP_CYCLES_NE.REMOTE	Cycles with Snoops Outstanding; Remote Requests	0,1,2,3	0x0	null	0
+HA	0x8	0x3	UNC_H_SNOOP_CYCLES_NE.ALL	Cycles with Snoops Outstanding; All Requests	0,1,2,3	0x0	null	0
+HA	0x9	0x1	UNC_H_SNOOP_OCCUPANCY.LOCAL	Tracker Snoops Outstanding Accumulator; Local Requests	0,1,2,3	0x0	null	0
+HA	0x9	0x2	UNC_H_SNOOP_OCCUPANCY.REMOTE	Tracker Snoops Outstanding Accumulator; Remote Requests	0,1,2,3	0x0	null	0
+HA	0xA	0x1	UNC_H_SNOOPS_RSP_AFTER_DATA.LOCAL	Data beat the Snoop Responses; Local Requests	0,1,2,3	0x0	null	0
+HA	0xA	0x2	UNC_H_SNOOPS_RSP_AFTER_DATA.REMOTE	Data beat the Snoop Responses; Remote Requests	0,1,2,3	0x0	null	0
+HA	0xC	0x1	UNC_H_DIRECTORY_LOOKUP.SNP	Directory Lookups; Snoop Needed	0,1,2,3	0x0	null	0
+HA	0xC	0x2	UNC_H_DIRECTORY_LOOKUP.NO_SNP	Directory Lookups; Snoop Not Needed	0,1,2,3	0x0	null	0
+HA	0xD	0x1	UNC_H_DIRECTORY_UPDATE.SET	Directory Updates; Directory Set	0,1,2,3	0x0	null	0
+HA	0xD	0x2	UNC_H_DIRECTORY_UPDATE.CLEAR	Directory Updates; Directory Clear	0,1,2,3	0x0	null	0
+HA	0xD	0x3	UNC_H_DIRECTORY_UPDATE.ANY	Directory Updates; Any Directory Update	0,1,2,3	0x0	null	0
+HA	0xF	0x4	UNC_H_TxR_AD.HOM	Outbound NDR Ring Transactions; Non-data Responses	0,1,2,3	0x0	null	0

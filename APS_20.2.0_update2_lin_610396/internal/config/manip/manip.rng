@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns:boolean="http://www.w3.org/2001/XMLSchema#boolean" xmlns:int="http://www.w3.org/2001/XMLSchema#int" xmlns="http://relaxng.org/ns/structure/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <define name="DbTable">
+    <data type="string">
+      <param name="pattern">dd_.*</param>
+    </data>
+  </define>
+  <define name="DbRelPath">
+    <data type="string"/>
+  </define>
+  <define name="ColorRef">
+    <data type="string"/>
+  </define>
+  <define name="HatchStyleEnum">
+    <choice>
+      <value>solid</value>
+      <value>backDiagonal</value>
+      <value>forwardDiagonal</value>
+      <value>crossDiagonal</value>
+      <value>cross</value>
+      <value>horizontal</value>
+      <value>vertical</value>
+    </choice>
+  </define>
+  <define name="DisplayNameRef">
+    <data type="string"/>
+  </define>
+  <define name="DescriptionRef">
+    <data type="string"/>
+  </define>
+  <define name="StyleContent">
+    <interleave>
+      <attribute name="color">
+        <ref name="ColorRef"/>
+      </attribute>
+      <optional>
+        <attribute name="pattern">
+          <ref name="HatchStyleEnum"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="displayName">
+          <ref name="DisplayNameRef"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="description">
+          <ref name="DescriptionRef"/>
+        </attribute>
+      </optional>
+    </interleave>
+  </define>
+  <start>
+    <element name="bag">
+      <zeroOrMore>
+        <choice>
+          <element name="manipMapping">
+            <choice>
+              <interleave>
+                <attribute name="mode">
+                  <value>valueLookup</value>
+                </attribute>
+                <attribute name="dbTable">
+                  <ref name="DbTable"/>
+                </attribute>
+                <element name="valueDbPath">
+                  <ref name="DbRelPath"/>
+                </element>
+                <oneOrMore>
+                  <choice>
+                    <element name="mapValue">
+                      <data type="string"/>
+                      <ref name="StyleContent"/>
+                    </element>
+                    <element name="int:mapValue">
+                      <data type="int"/>
+                      <ref name="StyleContent"/>
+                    </element>
+                    <element name="boolean:mapValue">
+                      <data type="boolean"/>
+                      <ref name="StyleContent"/>
+                    </element>
+                  </choice>
+                </oneOrMore>
+              </interleave>
+              <group>
+                <attribute name="mode">
+                  <value>hashRingLookup</value>
+                </attribute>
+                <attribute name="dbTable">
+                  <ref name="DbTable"/>
+                </attribute>
+                <attribute name="colorRingId">
+                  <data type="string"/>
+                </attribute>
+                <optional>
+                  <element name="nameDbPath">
+                    <data type="string"/>
+                  </element>
+                </optional>
+                <oneOrMore>
+                  <element name="hashDbPath">
+                    <data type="string"/>
+                  </element>
+                </oneOrMore>
+              </group>
+            </choice>
+          </element>
+          <element name="colorRing">
+            <attribute name="id">
+              <data type="string"/>
+            </attribute>
+            <oneOrMore>
+              <element name="ringItem">
+                <ref name="StyleContent"/>
+              </element>
+            </oneOrMore>
+          </element>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </start>
+</grammar>
+<!-- vim: set ts=2 sts=2 sw=2 : -->

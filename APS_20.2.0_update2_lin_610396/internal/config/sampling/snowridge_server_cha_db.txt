@@ -1,0 +1,14 @@
+# Performance Monitoring Events for Intel Next Generation Atom-based Processors - V1.07
+# 3/10/2020 11:58:05 AM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS	COUNTER_TYPE
+CHA	0x00	0x00	0x00	0x00	0x00	UNC_CHA_CLOCKTICKS	Clockticks of the uncore caching and home agent (CHA)	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC001FE	UNC_CHA_TOR_INSERTS.IA_MISS	TOR Inserts : All requests from iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC80FFE	UNC_CHA_TOR_INSERTS.IA_MISS_CRD	TOR Inserts : CRds issued by iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC807FE	UNC_CHA_TOR_INSERTS.IA_MISS_RFO	TOR Inserts : RFOs issued by iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC88FFE	UNC_CHA_TOR_INSERTS.IA_MISS_CRD_PREF	TOR Inserts : CRd_Prefs issued by iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC827FE	UNC_CHA_TOR_INSERTS.IA_MISS_DRD_OPT	TOR Inserts : DRd_Opt issued by iA Cores that missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC8A7FE	UNC_CHA_TOR_INSERTS.IA_MISS_DRD_OPT_PREF	TOR Inserts : DRd_Opt_Prefs issued by iA Cores that missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC887FE	UNC_CHA_TOR_INSERTS.IA_MISS_RFO_PREF	TOR Inserts : RFO_Prefs issued by iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC86FFE	UNC_CHA_TOR_INSERTS.IA_MISS_WCIL	TOR Inserts : WCiLs issued by iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE
+CHA	0x35	0x01	0x00	0x00	0xC867FE	UNC_CHA_TOR_INSERTS.IA_MISS_WCILF	TOR Inserts : WCiLF issued by iA Cores that Missed the LLC	0,1,2,3	0x53	na	0	0	0x00	PGMABLE

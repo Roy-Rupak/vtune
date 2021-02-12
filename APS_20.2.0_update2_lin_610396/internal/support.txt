@@ -1,0 +1,3 @@
+Package ID: N/A
+Package Contents: Intel(R) Application Performance Snapshot 20 Update 2
+Build Number: 610396

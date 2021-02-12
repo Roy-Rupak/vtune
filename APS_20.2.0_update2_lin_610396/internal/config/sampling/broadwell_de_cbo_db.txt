@@ -1,0 +1,166 @@
+# Performance Monitoring Events for the Fifth Generation Intel Core Processors Based on the Broadwell-DE Microarchitecture - V7
+# 9/17/2017 4:48:42 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+CBO	0x0	0x0	UNC_C_CLOCKTICKS	Uncore Clocks	0,1,2,3	0x0	null	0
+CBO	0x11	0x1	UNC_C_RxR_OCCUPANCY.IRQ	Ingress Occupancy; IRQ	0	0x0	null	0
+CBO	0x11	0x2	UNC_C_RxR_OCCUPANCY.IRQ_REJ	Ingress Occupancy; IRQ Rejected	0	0x0	null	0
+CBO	0x11	0x20	UNC_C_RxR_OCCUPANCY.PRQ_REJ	Ingress Occupancy; PRQ Rejects	0	0x0	null	0
+CBO	0x11	0x4	UNC_C_RxR_OCCUPANCY.IPQ	Ingress Occupancy; IPQ	0	0x0	null	0
+CBO	0x12	0x1	UNC_C_RxR_EXT_STARVED.IRQ	Ingress Arbiter Blocking Cycles; IPQ	0,1,2,3	0x0	null	0
+CBO	0x12	0x2	UNC_C_RxR_EXT_STARVED.IPQ	Ingress Arbiter Blocking Cycles; IRQ	0,1,2,3	0x0	null	0
+CBO	0x12	0x4	UNC_C_RxR_EXT_STARVED.PRQ	Ingress Arbiter Blocking Cycles; PRQ	0,1,2,3	0x0	null	0
+CBO	0x12	0x8	UNC_C_RxR_EXT_STARVED.ISMQ_BIDS	Ingress Arbiter Blocking Cycles; ISMQ_BID	0,1,2,3	0x0	null	0
+CBO	0x13	0x1	UNC_C_RxR_INSERTS.IRQ	Ingress Allocations; IRQ	0,1,2,3	0x0	null	0
+CBO	0x13	0x10	UNC_C_RxR_INSERTS.PRQ	Ingress Allocations; PRQ	0,1,2,3	0x0	null	0
+CBO	0x13	0x2	UNC_C_RxR_INSERTS.IRQ_REJ	Ingress Allocations; IRQ Rejected	0,1,2,3	0x0	null	0
+CBO	0x13	0x20	UNC_C_RxR_INSERTS.PRQ_REJ	Ingress Allocations; PRQ	0,1,2,3	0x0	null	0
+CBO	0x13	0x4	UNC_C_RxR_INSERTS.IPQ	Ingress Allocations; IPQ	0,1,2,3	0x0	null	0
+CBO	0x14	0x1	UNC_C_RxR_INT_STARVED.IRQ	Ingress Internal Starvation Cycles; IRQ	0,1,2,3	0x0	null	0
+CBO	0x14	0x10	UNC_C_RxR_INT_STARVED.PRQ	Ingress Internal Starvation Cycles; PRQ	0,1,2,3	0x0	null	0
+CBO	0x14	0x4	UNC_C_RxR_INT_STARVED.IPQ	Ingress Internal Starvation Cycles; IPQ	0,1,2,3	0x0	null	0
+CBO	0x14	0x8	UNC_C_RxR_INT_STARVED.ISMQ	Ingress Internal Starvation Cycles; ISMQ	0,1,2,3	0x0	null	0
+CBO	0x1B	0x1	UNC_C_RING_AD_USED.UP_EVEN	AD Ring In Use; Up and Even	0,1,2,3	0x0	null	0
+CBO	0x1B	0x2	UNC_C_RING_AD_USED.UP_ODD	AD Ring In Use; Up and Odd	0,1,2,3	0x0	null	0
+CBO	0x1B	0x3	UNC_C_RING_AD_USED.CW	AD Ring In Use; Up	0,1,2,3	0x0	null	0
+CBO	0x1B	0x4	UNC_C_RING_AD_USED.DOWN_EVEN	AD Ring In Use; Down and Even	0,1,2,3	0x0	null	0
+CBO	0x1B	0x8	UNC_C_RING_AD_USED.DOWN_ODD	AD Ring In Use; Down and Odd	0,1,2,3	0x0	null	0
+CBO	0x1B	0xC	UNC_C_RING_AD_USED.CCW	AD Ring In Use; Down	0,1,2,3	0x0	null	0
+CBO	0x1B	0xF	UNC_C_RING_AD_USED.ALL	AD Ring In Use; All	0,1,2,3	0x0	null	0
+CBO	0x1C	0x1	UNC_C_RING_AK_USED.UP_EVEN	AK Ring In Use; Up and Even	0,1,2,3	0x0	null	0
+CBO	0x1C	0x2	UNC_C_RING_AK_USED.UP_ODD	AK Ring In Use; Up and Odd	0,1,2,3	0x0	null	0
+CBO	0x1C	0x3	UNC_C_RING_AK_USED.CW	AK Ring In Use; Up	0,1,2,3	0x0	null	0
+CBO	0x1C	0x4	UNC_C_RING_AK_USED.DOWN_EVEN	AK Ring In Use; Down and Even	0,1,2,3	0x0	null	0
+CBO	0x1C	0x8	UNC_C_RING_AK_USED.DOWN_ODD	AK Ring In Use; Down and Odd	0,1,2,3	0x0	null	0
+CBO	0x1C	0xC	UNC_C_RING_AK_USED.CCW	AK Ring In Use; Down	0,1,2,3	0x0	null	0
+CBO	0x1C	0xF	UNC_C_RING_AK_USED.ALL	AK Ring In Use; All	0,1,2,3	0x0	null	0
+CBO	0x1D	0x1	UNC_C_RING_BL_USED.UP_EVEN	BL Ring in Use; Up and Even	0,1,2,3	0x0	null	0
+CBO	0x1D	0x2	UNC_C_RING_BL_USED.UP_ODD	BL Ring in Use; Up and Odd	0,1,2,3	0x0	null	0
+CBO	0x1D	0x3	UNC_C_RING_BL_USED.CW	BL Ring in Use; Up	0,1,2,3	0x0	null	0
+CBO	0x1D	0x4	UNC_C_RING_BL_USED.DOWN_EVEN	BL Ring in Use; Down and Even	0,1,2,3	0x0	null	0
+CBO	0x1D	0x8	UNC_C_RING_BL_USED.DOWN_ODD	BL Ring in Use; Down and Odd	0,1,2,3	0x0	null	0
+CBO	0x1D	0xC	UNC_C_RING_BL_USED.CCW	BL Ring in Use; Down	0,1,2,3	0x0	null	0
+CBO	0x1D	0xF	UNC_C_RING_BL_USED.ALL	BL Ring in Use; Down	0,1,2,3	0x0	null	0
+CBO	0x1E	0x3	UNC_C_RING_IV_USED.UP	BL Ring in Use; Any	0,1,2,3	0x0	null	0
+CBO	0x1E	0xC	UNC_C_RING_IV_USED.DN	BL Ring in Use; Any	0,1,2,3	0x0	null	0
+CBO	0x1E	0xCC	UNC_C_RING_IV_USED.DOWN	BL Ring in Use; Down	0,1,2,3	0x0	null	0
+CBO	0x1E	0xF	UNC_C_RING_IV_USED.ANY	BL Ring in Use; Any	0,1,2,3	0x0	null	0
+CBO	0x1F	0x0	UNC_C_COUNTER0_OCCUPANCY	Counter 0 Occupancy	0,1,2,3	0x0	null	0
+CBO	0x2	0x1	UNC_C_TxR_INSERTS.AD_CACHE	Egress Allocations; AD - Cachebo	0,1,2,3	0x0	null	0
+CBO	0x2	0x10	UNC_C_TxR_INSERTS.AD_CORE	Egress Allocations; AD - Corebo	0,1,2,3	0x0	null	0
+CBO	0x2	0x2	UNC_C_TxR_INSERTS.AK_CACHE	Egress Allocations; AK - Cachebo	0,1,2,3	0x0	null	0
+CBO	0x2	0x20	UNC_C_TxR_INSERTS.AK_CORE	Egress Allocations; AK - Corebo	0,1,2,3	0x0	null	0
+CBO	0x2	0x4	UNC_C_TxR_INSERTS.BL_CACHE	Egress Allocations; BL - Cacheno	0,1,2,3	0x0	null	0
+CBO	0x2	0x40	UNC_C_TxR_INSERTS.BL_CORE	Egress Allocations; BL - Corebo	0,1,2,3	0x0	null	0
+CBO	0x2	0x8	UNC_C_TxR_INSERTS.IV_CACHE	Egress Allocations; IV - Cachebo	0,1,2,3	0x0	null	0
+CBO	0x28	0x1	UNC_C_RxR_IPQ_RETRY2.AD_SBO	Probe Queue Retries; No AD Sbo Credits	0,1,2,3	0x0	null	0
+CBO	0x28	0x40	UNC_C_RxR_IPQ_RETRY2.TARGET	Probe Queue Retries; Target Node Filter	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x29	0x1	UNC_C_RxR_IRQ_RETRY2.AD_SBO	Ingress Request Queue Rejects; No AD Sbo Credits	0,1,2,3	0x0	null	0
+CBO	0x29	0x2	UNC_C_RxR_IRQ_RETRY2.BL_SBO	Ingress Request Queue Rejects; No BL Sbo Credits	0,1,2,3	0x0	null	0
+CBO	0x29	0x40	UNC_C_RxR_IRQ_RETRY2.TARGET	Ingress Request Queue Rejects; Target Node Filter	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x2A	0x1	UNC_C_RxR_ISMQ_RETRY2.AD_SBO	ISMQ Request Queue Rejects; No AD Sbo Credits	0,1,2,3	0x0	null	0
+CBO	0x2A	0x2	UNC_C_RxR_ISMQ_RETRY2.BL_SBO	ISMQ Request Queue Rejects; No BL Sbo Credits	0,1,2,3	0x0	null	0
+CBO	0x2A	0x40	UNC_C_RxR_ISMQ_RETRY2.TARGET	ISMQ Request Queue Rejects; Target Node Filter	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x3	0x10	UNC_C_TxR_STARVED.AD_CORE	Injection Starvation; Onto AD Ring (to core)	0,1,2,3	0x0	null	0
+CBO	0x3	0x2	UNC_C_TxR_STARVED.AK_BOTH	Injection Starvation; Onto AK Ring	0,1,2,3	0x0	null	0
+CBO	0x3	0x4	UNC_C_TxR_STARVED.BL_BOTH	Injection Starvation; Onto BL Ring	0,1,2,3	0x0	null	0
+CBO	0x3	0x8	UNC_C_TxR_STARVED.IV	Injection Starvation; Onto IV Ring	0,1,2,3	0x0	null	0
+CBO	0x31	0x1	UNC_C_RxR_IPQ_RETRY.ANY	Probe Queue Retries; Any Reject	0,1,2,3	0x0	null	0
+CBO	0x31	0x10	UNC_C_RxR_IPQ_RETRY.QPI_CREDITS	Probe Queue Retries; No QPI Credits	0,1,2,3	0x0	null	0
+CBO	0x31	0x2	UNC_C_RxR_IPQ_RETRY.FULL	Probe Queue Retries; No Egress Credits	0,1,2,3	0x0	null	0
+CBO	0x31	0x4	UNC_C_RxR_IPQ_RETRY.ADDR_CONFLICT	Probe Queue Retries; Address Conflict	0,1,2,3	0x0	null	0
+CBO	0x32	0x1	UNC_C_RxR_IRQ_RETRY.ANY	Ingress Request Queue Rejects; Any Reject	0,1,2,3	0x0	null	0
+CBO	0x32	0x10	UNC_C_RxR_IRQ_RETRY.QPI_CREDITS	Ingress Request Queue Rejects; No QPI Credits	0,1,2,3	0x0	null	0
+CBO	0x32	0x2	UNC_C_RxR_IRQ_RETRY.FULL	Ingress Request Queue Rejects; No Egress Credits	0,1,2,3	0x0	null	0
+CBO	0x32	0x20	UNC_C_RxR_IRQ_RETRY.IIO_CREDITS	Ingress Request Queue Rejects; No IIO Credits	0,1,2,3	0x0	null	0
+CBO	0x32	0x4	UNC_C_RxR_IRQ_RETRY.ADDR_CONFLICT	Ingress Request Queue Rejects; Address Conflict	0,1,2,3	0x0	null	0
+CBO	0x32	0x40	UNC_C_RxR_IRQ_RETRY.NID	Ingress Request Queue Rejects	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x32	0x8	UNC_C_RxR_IRQ_RETRY.RTID	Ingress Request Queue Rejects; No RTIDs	0,1,2,3	0x0	null	0
+CBO	0x33	0x1	UNC_C_RxR_ISMQ_RETRY.ANY	ISMQ Retries; Any Reject	0,1,2,3	0x0	null	0
+CBO	0x33	0x10	UNC_C_RxR_ISMQ_RETRY.QPI_CREDITS	ISMQ Retries; No QPI Credits	0,1,2,3	0x0	null	0
+CBO	0x33	0x2	UNC_C_RxR_ISMQ_RETRY.FULL	ISMQ Retries; No Egress Credits	0,1,2,3	0x0	null	0
+CBO	0x33	0x20	UNC_C_RxR_ISMQ_RETRY.IIO_CREDITS	ISMQ Retries; No IIO Credits	0,1,2,3	0x0	null	0
+CBO	0x33	0x40	UNC_C_RxR_ISMQ_RETRY.NID	ISMQ Retries	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x33	0x8	UNC_C_RxR_ISMQ_RETRY.RTID	ISMQ Retries; No RTIDs	0,1,2,3	0x0	null	0
+CBO	0x33	0x80	UNC_C_RxR_ISMQ_RETRY.WB_CREDITS	ISMQ Retries	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x34	0x11	UNC_C_LLC_LOOKUP.ANY	Cache Lookups; Any Request	0,1,2,3	0x0	CBoFilter0[23:17]	0
+CBO	0x34	0x21	UNC_C_LLC_LOOKUP.READ	Cache Lookups; Any Read Request	0,1,2,3	0x0	CBoFilter0[22:18]	0
+CBO	0x34	0x3	UNC_C_LLC_LOOKUP.DATA_READ	Cache Lookups; Data Read Request	0,1,2,3	0x0	CBoFilter0[23:17]	0
+CBO	0x34	0x41	UNC_C_LLC_LOOKUP.NID	Cache Lookups; Lookups that Match NID	0,1,2,3	0x0	CBoFilter0[23:17]	0
+CBO	0x34	0x5	UNC_C_LLC_LOOKUP.WRITE	Cache Lookups; Write Requests	0,1,2,3	0x0	CBoFilter0[23:17]	0
+CBO	0x34	0x9	UNC_C_LLC_LOOKUP.REMOTE_SNOOP	Cache Lookups; External Snoop Request	0,1,2,3	0x0	CBoFilter0[23:17]	0
+CBO	0x35	0x1	UNC_C_TOR_INSERTS.OPCODE	TOR Inserts; Opcode Match	0,1,2,3	0x0	CBoFilter1[28:20]	0
+CBO	0x35	0x10	UNC_C_TOR_INSERTS.WB	TOR Inserts; Writebacks	0,1,2,3	0x0	null	0
+CBO	0x35	0x21	UNC_C_TOR_INSERTS.LOCAL_OPCODE	TOR Inserts; Local Memory - Opcode Matched	0,1,2,3	0x0	CBoFilter1[28:20]	0
+CBO	0x35	0x23	UNC_C_TOR_INSERTS.MISS_LOCAL_OPCODE	TOR Inserts; Misses to Local Memory - Opcode Matched	0,1,2,3	0x0	CBoFilter1[28:20]	0
+CBO	0x35	0x28	UNC_C_TOR_INSERTS.LOCAL	TOR Inserts; Local Memory	0,1,2,3	0x0	null	0
+CBO	0x35	0x2A	UNC_C_TOR_INSERTS.MISS_LOCAL	TOR Inserts; Misses to Local Memory	0,1,2,3	0x0	null	0
+CBO	0x35	0x3	UNC_C_TOR_INSERTS.MISS_OPCODE	TOR Inserts; Miss Opcode Match	0,1,2,3	0x0	CBoFilter1[28:20]	0
+CBO	0x35	0x4	UNC_C_TOR_INSERTS.EVICTION	TOR Inserts; Evictions	0,1,2,3	0x0	null	0
+CBO	0x35	0x41	UNC_C_TOR_INSERTS.NID_OPCODE	TOR Inserts; NID and Opcode Matched	0,1,2,3	0x0	CBoFilter1[28:20], CBoFilter1[15:0]	0
+CBO	0x35	0x43	UNC_C_TOR_INSERTS.NID_MISS_OPCODE	TOR Inserts; NID and Opcode Matched Miss	0,1,2,3	0x0	CBoFilter1[28:20], CBoFilter1[15:0]	0
+CBO	0x35	0x44	UNC_C_TOR_INSERTS.NID_EVICTION	TOR Inserts; NID Matched Evictions	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x35	0x48	UNC_C_TOR_INSERTS.NID_ALL	TOR Inserts; NID Matched	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x35	0x4A	UNC_C_TOR_INSERTS.NID_MISS_ALL	TOR Inserts; NID Matched Miss All	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x35	0x50	UNC_C_TOR_INSERTS.NID_WB	TOR Inserts; NID Matched Writebacks	0,1,2,3	0x0	CBoFilter1[15:0]	0
+CBO	0x35	0x8	UNC_C_TOR_INSERTS.ALL	TOR Inserts; All	0,1,2,3	0x0	null	0
+CBO	0x35	0x81	UNC_C_TOR_INSERTS.REMOTE_OPCODE	TOR Inserts; Remote Memory - Opcode Matched	0,1,2,3	0x0	CBoFilter1[28:20]	0
+CBO	0x35	0x83	UNC_C_TOR_INSERTS.MISS_REMOTE_OPCODE	TOR Inserts; Misses to Remote Memory - Opcode Matched	0,1,2,3	0x0	CBoFilter1[28:20]	0
+CBO	0x35	0x88	UNC_C_TOR_INSERTS.REMOTE	TOR Inserts; Remote Memory	0,1,2,3	0x0	null	0
+CBO	0x35	0x8A	UNC_C_TOR_INSERTS.MISS_REMOTE	TOR Inserts; Misses to Remote Memory	0,1,2,3	0x0	null	0
+CBO	0x36	0x1	UNC_C_TOR_OCCUPANCY.OPCODE	TOR Occupancy; Opcode Match	0	0x0	CBoFilter1[28:20]	0
+CBO	0x36	0x10	UNC_C_TOR_OCCUPANCY.WB	TOR Occupancy; Writebacks	0	0x0	null	0
+CBO	0x36	0x21	UNC_C_TOR_OCCUPANCY.LOCAL_OPCODE	TOR Occupancy; Local Memory - Opcode Matched	0	0x0	CBoFilter1[28:20]	0
+CBO	0x36	0x23	UNC_C_TOR_OCCUPANCY.MISS_LOCAL_OPCODE	TOR Occupancy; Misses to Local Memory - Opcode Matched	0	0x0	CBoFilter1[28:20]	0
+CBO	0x36	0x28	UNC_C_TOR_OCCUPANCY.LOCAL	TOR Occupancy	0	0x0	null	0
+CBO	0x36	0x2A	UNC_C_TOR_OCCUPANCY.MISS_LOCAL	TOR Occupancy	0	0x0	null	0
+CBO	0x36	0x3	UNC_C_TOR_OCCUPANCY.MISS_OPCODE	TOR Occupancy; Miss Opcode Match	0	0x0	CBoFilter1[28:20]	0
+CBO	0x36	0x4	UNC_C_TOR_OCCUPANCY.EVICTION	TOR Occupancy; Evictions	0	0x0	null	0
+CBO	0x36	0x41	UNC_C_TOR_OCCUPANCY.NID_OPCODE	TOR Occupancy; NID and Opcode Matched	0	0x0	CBoFilter1[28:20], CBoFilter1[15:0]	0
+CBO	0x36	0x43	UNC_C_TOR_OCCUPANCY.NID_MISS_OPCODE	TOR Occupancy; NID and Opcode Matched Miss	0	0x0	CBoFilter1[28:20], CBoFilter1[15:0]	0
+CBO	0x36	0x44	UNC_C_TOR_OCCUPANCY.NID_EVICTION	TOR Occupancy; NID Matched Evictions	0	0x0	CBoFilter1[15:0]	0
+CBO	0x36	0x48	UNC_C_TOR_OCCUPANCY.NID_ALL	TOR Occupancy; NID Matched	0	0x0	CBoFilter1[15:0]	0
+CBO	0x36	0x4A	UNC_C_TOR_OCCUPANCY.NID_MISS_ALL	TOR Occupancy; NID Matched	0	0x0	CBoFilter1[15:0]	0
+CBO	0x36	0x50	UNC_C_TOR_OCCUPANCY.NID_WB	TOR Occupancy; NID Matched Writebacks	0	0x0	CBoFilter1[15:0]	0
+CBO	0x36	0x8	UNC_C_TOR_OCCUPANCY.ALL	TOR Occupancy; Any	0	0x0	null	0
+CBO	0x36	0x81	UNC_C_TOR_OCCUPANCY.REMOTE_OPCODE	TOR Occupancy; Remote Memory - Opcode Matched	0	0x0	CBoFilter1[28:20]	0
+CBO	0x36	0x83	UNC_C_TOR_OCCUPANCY.MISS_REMOTE_OPCODE	TOR Occupancy; Misses to Remote Memory - Opcode Matched	0	0x0	CBoFilter1[28:20]	0
+CBO	0x36	0x88	UNC_C_TOR_OCCUPANCY.REMOTE	TOR Occupancy	0	0x0	null	0
+CBO	0x36	0x8A	UNC_C_TOR_OCCUPANCY.MISS_REMOTE	TOR Occupancy	0	0x0	null	0
+CBO	0x36	0xA	UNC_C_TOR_OCCUPANCY.MISS_ALL	TOR Occupancy; Miss All	0	0x0	null	0
+CBO	0x37	0x1	UNC_C_LLC_VICTIMS.M_STATE	Lines Victimized; Lines in M state	0,1,2,3	0x0	null	0
+CBO	0x37	0x10	UNC_C_LLC_VICTIMS.MISS	Lines Victimized	0,1,2,3	0x0	null	0
+CBO	0x37	0x2	UNC_C_LLC_VICTIMS.E_STATE	Lines Victimized; Lines in E state	0,1,2,3	0x0	null	0
+CBO	0x37	0x4	UNC_C_LLC_VICTIMS.I_STATE	Lines Victimized; Lines in S State	0,1,2,3	0x0	null	0
+CBO	0x37	0x40	UNC_C_LLC_VICTIMS.NID	Lines Victimized; Victimized Lines that Match NID	0,1,2,3	0x0	CBoFilter1[17:10]	0
+CBO	0x37	0x8	UNC_C_LLC_VICTIMS.F_STATE	Lines Victimized	0,1,2,3	0x0	null	0
+CBO	0x39	0x1	UNC_C_MISC.RSPI_WAS_FSE	Cbo Misc; Silent Snoop Eviction	0,1,2,3	0x0	null	0
+CBO	0x39	0x10	UNC_C_MISC.CVZERO_PREFETCH_VICTIM	Cbo Misc; Clean Victim with raw CV=0	0,1,2,3	0x0	null	0
+CBO	0x39	0x2	UNC_C_MISC.WC_ALIASING	Cbo Misc; Write Combining Aliasing	0,1,2,3	0x0	null	0
+CBO	0x39	0x20	UNC_C_MISC.CVZERO_PREFETCH_MISS	Cbo Misc; DRd hitting non-M with raw CV=0	0,1,2,3	0x0	null	0
+CBO	0x39	0x4	UNC_C_MISC.STARTED	Cbo Misc	0,1,2,3	0x0	null	0
+CBO	0x39	0x8	UNC_C_MISC.RFO_HIT_S	Cbo Misc; RFO HitS	0,1,2,3	0x0	null	0
+CBO	0x3C	0x1	UNC_C_QLRU.AGE0	LRU Queue; LRU Age 0	0,1,2,3	0x0	null	0
+CBO	0x3C	0x10	UNC_C_QLRU.LRU_DECREMENT	LRU Queue; LRU Bits Decremented	0,1,2,3	0x0	null	0
+CBO	0x3C	0x2	UNC_C_QLRU.AGE1	LRU Queue; LRU Age 1	0,1,2,3	0x0	null	0
+CBO	0x3C	0x20	UNC_C_QLRU.VICTIM_NON_ZERO	LRU Queue; Non-0 Aged Victim	0,1,2,3	0x0	null	0
+CBO	0x3C	0x4	UNC_C_QLRU.AGE2	LRU Queue; LRU Age 2	0,1,2,3	0x0	null	0
+CBO	0x3C	0x8	UNC_C_QLRU.AGE3	LRU Queue; LRU Age 3	0,1,2,3	0x0	null	0
+CBO	0x3D	0x1	UNC_C_SBO_CREDITS_ACQUIRED.AD	SBo Credits Acquired; For AD Ring	0,1,2,3	0x0	null	0
+CBO	0x3D	0x2	UNC_C_SBO_CREDITS_ACQUIRED.BL	SBo Credits Acquired; For BL Ring	0,1,2,3	0x0	null	0
+CBO	0x3E	0x1	UNC_C_SBO_CREDIT_OCCUPANCY.AD	SBo Credits Occupancy; For AD Ring	0	0x0	null	0
+CBO	0x3E	0x2	UNC_C_SBO_CREDIT_OCCUPANCY.BL	SBo Credits Occupancy; For BL Ring	0	0x0	null	0
+CBO	0x4	0x1	UNC_C_TxR_ADS_USED.AD	Onto AD Ring	0,1,2,3	0x0	null	0
+CBO	0x4	0x2	UNC_C_TxR_ADS_USED.AK	Onto AK Ring	0,1,2,3	0x0	null	0
+CBO	0x4	0x4	UNC_C_TxR_ADS_USED.BL	Onto BL Ring	0,1,2,3	0x0	null	0
+CBO	0x5	0x1	UNC_C_RING_BOUNCES.AD	Number of LLC responses that bounced on the Ring.; AD	0,1,2,3	0x0	null	0
+CBO	0x5	0x10	UNC_C_RING_BOUNCES.IV	Number of LLC responses that bounced on the Ring.; Snoops of processor's cache.	0,1,2,3	0x0	null	0
+CBO	0x5	0x2	UNC_C_RING_BOUNCES.AK	Number of LLC responses that bounced on the Ring.; AK	0,1,2,3	0x0	null	0
+CBO	0x5	0x4	UNC_C_RING_BOUNCES.BL	Number of LLC responses that bounced on the Ring.; BL	0,1,2,3	0x0	null	0
+CBO	0x6	0x1	UNC_C_RING_SINK_STARVED.AD	AD	0,1,2,3	0x0	null	0
+CBO	0x6	0x2	UNC_C_RING_SINK_STARVED.AK	AK	0,1,2,3	0x0	null	0
+CBO	0x6	0x4	UNC_C_RING_SINK_STARVED.BL	BL	0,1,2,3	0x0	null	0
+CBO	0x6	0x8	UNC_C_RING_SINK_STARVED.IV	IV	0,1,2,3	0x0	null	0
+CBO	0x7	0x0	UNC_C_RING_SRC_THRTL	Number of cycles the Cbo is actively throttling traffic onto the Ring in order to limit bounce traffic.	0,1,2,3	0x0	null	0
+CBO	0x9	0x0	UNC_C_FAST_ASSERTED	FaST wire asserted	0,1	0x0	null	0
+CBO	0xA	0x0	UNC_C_BOUNCE_CONTROL	Bounce Control	0,1,2,3	0x0	null	0

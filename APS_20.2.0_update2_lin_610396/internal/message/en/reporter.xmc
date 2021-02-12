@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="reporter" lang="en">
+    <msg name='%CommandFormat'>Specify output format for report.</msg>
+    <msg name='%CommandCSVDelimiter'>Specify delimiter character for CSV output.  Possible values are any character or the words: comma, semicolon, colon, or tab.</msg>
+    <msg name='%CommandOutput'>Write report output to a file.</msg>
+    <msg name='%CommandCumulativeThreshold'>Show top percent of data output.</msg>
+    <msg name='%CommandFilter'>Specify items to include or exclude as follows: &lt;column name&gt; [= | !=] &lt;value&gt;. <br/>Use -R &lt;report name&gt; -r &lt;result-dir&gt; -filter=? for the list of available filters.</msg>
+    <msg name='%CommandLimit'>Show top number of items in output.</msg>
+    <msg name='%CommandReportWidth'>Set output width limit.</msg>
+    <msg name='%CommandGroupBy'>Specify a grouping level for displaying results.  Default value is function. <br/>Use -R &lt;report name&gt; -r &lt;result-dir&gt; -group-by=? for the list of available groupings.</msg>
+    <msg name='%CommandColumnFilter'>Specify substrings for the column names to display only corresponding columns in the report. Columns used for data grouping are always displayed. <br/>Use -R &lt;report-name&gt; -r &lt;result-dir&gt; -column=? for the list of available columns.</msg>
+    <msg name='%CommandReportKnob'>Specify additional options to reports.</msg>
+    <msg name='%CommandDiveFilter'>Specify a program unit for source or assembly analysis as &lt;program_unit&gt; = &lt;name&gt;. Example: -source-object function=foo. Add the '-group-by' option for assembly view, for example: -source-object function=foo -group-by address.</msg>
+    <msg name='%CommandShowAs'>Specify a data format for the report values:<br/>
+        values - numeric values in original measurement units (sec, GHz, etc.);<br/>
+        samples - number of samples collected for each event;<br/>
+        percent - percentage of the cell value to the sum of values in the column.
+    </msg>
+    <msg name='%CommandSortAscending'>Sort data in ascending order by the given column name.</msg>
+    <msg name='%CommandSortDescending'>Sort data in descending order by the given column name.</msg>
+    <msg name='%CommandTimeFilter'>Specify filtered time range using format &lt;begin_time&gt;:&lt;end_time&gt;. For example, "-time-filter 2.3:5.4" reports data collected from 2.3 seconds to 5.4 seconds of elapsed time.</msg>
+    <msg name='%ReportKnobFormatIncorrect'>Set knob value for selected report as -report-knob knobName=knobValue.</msg>
+    <msg name='%UnsupportedOptionError'>Option '<arg name='%option_name'/>' is not supported by '<arg name='%report_name'/>' report.</msg>
+    <msg name='%UnsupportedMultipleOptionsError'>'<arg name='%option_name'/>' option can be specified only once for '<arg name='%report_name'/>' report.</msg>
+    <msg name='%InternalError'>Internal Error</msg>
+    <msg name='%Unknown'>[Unknown]</msg>
+    <msg name='%OutputFormatNotSupported'>'<arg name='%report_format'/>' format is not supported by '<arg name='%report_name'/>' report.</msg>
+    <msg name='%UnknownOutputFormat'>'<arg name='%report_format'/>' format is unknown.</msg>
+  </catalog>
+</xmc>

@@ -1,0 +1,153 @@
+# Performance Monitoring Events for Intel(R) Xeon(R) processor E5 v3 family based on the Haswell-E microarchitecture - V21
+# 10/3/2018 10:31:41 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	EVENT_STATUS
+QPI LL	0x0	0x1	UNC_Q_TxL_FLITS_G1.SNP	Flits Transferred - Group 1; SNP Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x0	0x10	UNC_Q_TxL_FLITS_G1.DRS_NONDATA	Flits Transferred - Group 1; DRS Header Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x0	0x18	UNC_Q_TxL_FLITS_G1.DRS	Flits Transferred - Group 1; DRS Flits (both Header and Data)	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x0	0x2	UNC_Q_TxL_FLITS_G0.DATA	Flits Transferred - Group 0; Data Tx Flits	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x0	0x2	UNC_Q_TxL_FLITS_G1.HOM_REQ	Flits Transferred - Group 1; HOM Request Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x0	0x4	UNC_Q_TxL_FLITS_G0.NON_DATA	Flits Transferred - Group 0; Non-Data protocol Tx Flits	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x0	0x4	UNC_Q_TxL_FLITS_G1.HOM_NONREQ	Flits Transferred - Group 1; HOM Non-Request Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x0	0x6	UNC_Q_TxL_FLITS_G1.HOM	Flits Transferred - Group 1; HOM Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x0	0x8	UNC_Q_TxL_FLITS_G1.DRS_DATA	Flits Transferred - Group 1; DRS Data Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1	0x1	UNC_Q_RxL_FLITS_G0.IDLE	Flits Received - Group 0; Idle and Null Flits	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x1	0x1	UNC_Q_TxL_FLITS_G2.NDR_AD	Flits Transferred - Group 2; Non-Data Response Tx Flits - AD	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1	0x10	UNC_Q_TxL_FLITS_G2.NCS	Flits Transferred - Group 2; Non-Coherent standard Tx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1	0x2	UNC_Q_TxL_FLITS_G2.NDR_AK	Flits Transferred - Group 2; Non-Data Response Tx Flits - AK	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1	0x4	UNC_Q_TxL_FLITS_G2.NCB_DATA	Flits Transferred - Group 2; Non-Coherent data Tx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1	0x8	UNC_Q_TxL_FLITS_G2.NCB_NONDATA	Flits Transferred - Group 2; Non-Coherent non-data Tx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1	0xC	UNC_Q_TxL_FLITS_G2.NCB	Flits Transferred - Group 2; Non-Coherent Bypass Tx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x10	0x0	UNC_Q_RxL0P_POWER_CYCLES	Cycles in L0p	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x10	0x1	UNC_Q_RxL_CYCLES_NE_NCB.VN0	RxQ Cycles Not Empty - NCB; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x10	0x2	UNC_Q_RxL_CYCLES_NE_NCB.VN1	RxQ Cycles Not Empty - NCB; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x11	0x1	UNC_Q_RxL_CYCLES_NE_NCS.VN0	RxQ Cycles Not Empty - NCS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x11	0x2	UNC_Q_RxL_CYCLES_NE_NCS.VN1	RxQ Cycles Not Empty - NCS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x12	0x0	UNC_Q_L1_POWER_CYCLES	Cycles in L1	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x12	0x1	UNC_Q_RxL_CYCLES_NE_HOM.VN0	RxQ Cycles Not Empty - HOM; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x12	0x2	UNC_Q_RxL_CYCLES_NE_HOM.VN1	RxQ Cycles Not Empty - HOM; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x13	0x1	UNC_Q_DIRECT2CORE.SUCCESS_RBT_HIT	Direct 2 Core Spawning; Spawn Success	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x1	UNC_Q_RxL_CYCLES_NE_SNP.VN0	RxQ Cycles Not Empty - SNP; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x13	0x10	UNC_Q_DIRECT2CORE.FAILURE_MISS	Direct 2 Core Spawning; Spawn Failure - RBT Miss	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x2	UNC_Q_DIRECT2CORE.FAILURE_CREDITS	Direct 2 Core Spawning; Spawn Failure - Egress Credits	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x2	UNC_Q_RxL_CYCLES_NE_SNP.VN1	RxQ Cycles Not Empty - SNP; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x13	0x20	UNC_Q_DIRECT2CORE.FAILURE_CREDITS_MISS	Direct 2 Core Spawning; Spawn Failure - Egress and RBT Miss	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x4	UNC_Q_DIRECT2CORE.FAILURE_RBT_HIT	Direct 2 Core Spawning; Spawn Failure - RBT Invalid	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x40	UNC_Q_DIRECT2CORE.FAILURE_RBT_MISS	Direct 2 Core Spawning; Spawn Failure - RBT Miss and Invalid	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x8	UNC_Q_DIRECT2CORE.FAILURE_CREDITS_RBT	Direct 2 Core Spawning; Spawn Failure - Egress and RBT Invalid	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x13	0x80	UNC_Q_DIRECT2CORE.FAILURE_CREDITS_RBT_MISS	Direct 2 Core Spawning; Spawn Failure - Egress and RBT Miss, Invalid	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x14	0x0	UNC_Q_CLOCKTICKS	Number of qfclks	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x14	0x1	UNC_Q_RxL_CYCLES_NE_NDR.VN0	RxQ Cycles Not Empty - NDR; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x14	0x2	UNC_Q_RxL_CYCLES_NE_NDR.VN1	RxQ Cycles Not Empty - NDR; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x15	0x1	UNC_Q_RxL_OCCUPANCY_DRS.VN0	RxQ Occupancy - DRS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x15	0x2	UNC_Q_RxL_OCCUPANCY_DRS.VN1	RxQ Occupancy - DRS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x16	0x1	UNC_Q_RxL_OCCUPANCY_NCB.VN0	RxQ Occupancy - NCB; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x16	0x2	UNC_Q_RxL_OCCUPANCY_NCB.VN1	RxQ Occupancy - NCB; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x17	0x1	UNC_Q_RxL_OCCUPANCY_NCS.VN0	RxQ Occupancy - NCS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x17	0x2	UNC_Q_RxL_OCCUPANCY_NCS.VN1	RxQ Occupancy - NCS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x18	0x1	UNC_Q_RxL_OCCUPANCY_HOM.VN0	RxQ Occupancy - HOM; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x18	0x2	UNC_Q_RxL_OCCUPANCY_HOM.VN1	RxQ Occupancy - HOM; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x19	0x1	UNC_Q_RxL_OCCUPANCY_SNP.VN0	RxQ Occupancy - SNP; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x19	0x2	UNC_Q_RxL_OCCUPANCY_SNP.VN1	RxQ Occupancy - SNP; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1A	0x1	UNC_Q_RxL_OCCUPANCY_NDR.VN0	RxQ Occupancy - NDR; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1A	0x2	UNC_Q_RxL_OCCUPANCY_NDR.VN1	RxQ Occupancy - NDR; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1B	0x0	UNC_Q_VNA_CREDIT_RETURN_OCCUPANCY	VNA Credits Pending Return - Occupancy	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1C	0x0	UNC_Q_VNA_CREDIT_RETURNS	VNA Credits Returned	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1D	0x0	UNC_Q_RxL_CREDITS_CONSUMED_VNA	VNA Credit Consumed	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1E	0x1	UNC_Q_RxL_CREDITS_CONSUMED_VN0.DRS	VN0 Credit Consumed; DRS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1E	0x10	UNC_Q_RxL_CREDITS_CONSUMED_VN0.SNP	VN0 Credit Consumed; SNP	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1E	0x2	UNC_Q_RxL_CREDITS_CONSUMED_VN0.NCB	VN0 Credit Consumed; NCB	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1E	0x20	UNC_Q_RxL_CREDITS_CONSUMED_VN0.NDR	VN0 Credit Consumed; NDR	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1E	0x4	UNC_Q_RxL_CREDITS_CONSUMED_VN0.NCS	VN0 Credit Consumed; NCS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1E	0x8	UNC_Q_RxL_CREDITS_CONSUMED_VN0.HOM	VN0 Credit Consumed; HOM	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1F	0x1	UNC_Q_TxR_BL_DRS_CREDIT_OCCUPANCY.VN0	R3QPI Egress Credit Occupancy - BL DRS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1F	0x2	UNC_Q_TxR_BL_DRS_CREDIT_OCCUPANCY.VN1	R3QPI Egress Credit Occupancy - BL DRS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x1F	0x4	UNC_Q_TxR_BL_DRS_CREDIT_OCCUPANCY.VN_SHR	R3QPI Egress Credit Occupancy - BL DRS; for Shared VN	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x1	UNC_Q_RxL_FLITS_G1.SNP	Flits Received - Group 1; SNP Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x1	UNC_Q_TxL_CRC_NO_CREDITS.FULL	Cycles Stalled with no LLR Credits; LLR is full	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x2	0x10	UNC_Q_RxL_FLITS_G1.DRS_NONDATA	Flits Received - Group 1; DRS Header Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x18	UNC_Q_RxL_FLITS_G1.DRS	Flits Received - Group 1; DRS Flits (both Header and Data)	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x2	UNC_Q_RxL_FLITS_G1.HOM_REQ	Flits Received - Group 1; HOM Request Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x2	UNC_Q_TxL_CRC_NO_CREDITS.ALMOST_FULL	Cycles Stalled with no LLR Credits; LLR is almost full	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x2	0x4	UNC_Q_RxL_FLITS_G1.HOM_NONREQ	Flits Received - Group 1; HOM Non-Request Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x6	UNC_Q_RxL_FLITS_G1.HOM	Flits Received - Group 1; HOM Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2	0x8	UNC_Q_RxL_FLITS_G1.DRS_DATA	Flits Received - Group 1; DRS Data Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x20	0x1	UNC_Q_TxR_BL_NCB_CREDIT_OCCUPANCY.VN0	R3QPI Egress Credit Occupancy - BL NCB; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x20	0x2	UNC_Q_TxR_BL_NCB_CREDIT_OCCUPANCY.VN1	R3QPI Egress Credit Occupancy - BL NCB; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x21	0x1	UNC_Q_TxR_BL_NCS_CREDIT_OCCUPANCY.VN0	R3QPI Egress Credit Occupancy - BL NCS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x21	0x2	UNC_Q_TxR_BL_NCS_CREDIT_OCCUPANCY.VN1	R3QPI Egress Credit Occupancy - BL NCS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x22	0x1	UNC_Q_TxR_AD_HOM_CREDIT_OCCUPANCY.VN0	R3QPI Egress Credit Occupancy - AD HOM; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x22	0x2	UNC_Q_TxR_AD_HOM_CREDIT_OCCUPANCY.VN1	R3QPI Egress Credit Occupancy - AD HOM; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x23	0x1	UNC_Q_TxR_AD_SNP_CREDIT_OCCUPANCY.VN0	R3QPI Egress Credit Occupancy - AD SNP; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x23	0x2	UNC_Q_TxR_AD_SNP_CREDIT_OCCUPANCY.VN1	R3QPI Egress Credit Occupancy - AD SNP; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x24	0x1	UNC_Q_TxR_AD_NDR_CREDIT_OCCUPANCY.VN0	R3QPI Egress Credit Occupancy - AD NDR; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x24	0x2	UNC_Q_TxR_AD_NDR_CREDIT_OCCUPANCY.VN1	R3QPI Egress Credit Occupancy - AD NDR; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x25	0x0	UNC_Q_TxR_AK_NDR_CREDIT_OCCUPANCY	R3QPI Egress Credit Occupancy - AK NDR	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x26	0x1	UNC_Q_TxR_AD_HOM_CREDIT_ACQUIRED.VN0	R3QPI Egress Credit Occupancy - HOM; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x26	0x2	UNC_Q_TxR_AD_HOM_CREDIT_ACQUIRED.VN1	R3QPI Egress Credit Occupancy - HOM; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x27	0x1	UNC_Q_TxR_AD_SNP_CREDIT_ACQUIRED.VN0	R3QPI Egress Credit Occupancy - SNP; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x27	0x2	UNC_Q_TxR_AD_SNP_CREDIT_ACQUIRED.VN1	R3QPI Egress Credit Occupancy - SNP; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x28	0x1	UNC_Q_TxR_AD_NDR_CREDIT_ACQUIRED.VN0	R3QPI Egress Credit Occupancy - AD NDR; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x28	0x2	UNC_Q_TxR_AD_NDR_CREDIT_ACQUIRED.VN1	R3QPI Egress Credit Occupancy - AD NDR; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x29	0x0	UNC_Q_TxR_AK_NDR_CREDIT_ACQUIRED	R3QPI Egress Credit Occupancy - AK NDR	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2A	0x1	UNC_Q_TxR_BL_DRS_CREDIT_ACQUIRED.VN0	R3QPI Egress Credit Occupancy - DRS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2A	0x2	UNC_Q_TxR_BL_DRS_CREDIT_ACQUIRED.VN1	R3QPI Egress Credit Occupancy - DRS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2A	0x4	UNC_Q_TxR_BL_DRS_CREDIT_ACQUIRED.VN_SHR	R3QPI Egress Credit Occupancy - DRS; for Shared VN	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2B	0x1	UNC_Q_TxR_BL_NCB_CREDIT_ACQUIRED.VN0	R3QPI Egress Credit Occupancy - NCB; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2B	0x2	UNC_Q_TxR_BL_NCB_CREDIT_ACQUIRED.VN1	R3QPI Egress Credit Occupancy - NCB; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2C	0x1	UNC_Q_TxR_BL_NCS_CREDIT_ACQUIRED.VN0	R3QPI Egress Credit Occupancy - NCS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x2C	0x2	UNC_Q_TxR_BL_NCS_CREDIT_ACQUIRED.VN1	R3QPI Egress Credit Occupancy - NCS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3	0x1	UNC_Q_RxL_CRC_ERRORS.LINK_INIT	CRC Errors Detected; LinkInit	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x3	0x1	UNC_Q_RxL_FLITS_G2.NDR_AD	Flits Received - Group 2; Non-Data Response Rx Flits - AD	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3	0x10	UNC_Q_RxL_FLITS_G2.NCS	Flits Received - Group 2; Non-Coherent standard Rx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3	0x2	UNC_Q_RxL_CRC_ERRORS.NORMAL_OP	CRC Errors Detected; Normal Operations	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x3	0x2	UNC_Q_RxL_FLITS_G2.NDR_AK	Flits Received - Group 2; Non-Data Response Rx Flits - AK	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3	0x4	UNC_Q_RxL_FLITS_G2.NCB_DATA	Flits Received - Group 2; Non-Coherent data Rx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3	0x8	UNC_Q_RxL_FLITS_G2.NCB_NONDATA	Flits Received - Group 2; Non-Coherent non-data Rx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3	0xC	UNC_Q_RxL_FLITS_G2.NCB	Flits Received - Group 2; Non-Coherent Rx Flits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x1	UNC_Q_RxL_STALLS_VN0.BGF_DRS	Stalls Sending to R3QPI on VN0; BGF Stall - HOM	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x10	UNC_Q_RxL_STALLS_VN0.BGF_SNP	Stalls Sending to R3QPI on VN0; BGF Stall - NCB	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x2	UNC_Q_RxL_STALLS_VN0.BGF_NCB	Stalls Sending to R3QPI on VN0; BGF Stall - SNP	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x20	UNC_Q_RxL_STALLS_VN0.BGF_NDR	Stalls Sending to R3QPI on VN0; BGF Stall - NCS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x4	UNC_Q_RxL_STALLS_VN0.BGF_NCS	Stalls Sending to R3QPI on VN0; BGF Stall - NDR	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x40	UNC_Q_RxL_STALLS_VN0.EGRESS_CREDITS	Stalls Sending to R3QPI on VN0; Egress Credits	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x8	UNC_Q_RxL_STALLS_VN0.BGF_HOM	Stalls Sending to R3QPI on VN0; BGF Stall - DRS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x35	0x80	UNC_Q_RxL_STALLS_VN0.GV	Stalls Sending to R3QPI on VN0; GV	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x38	0x0	UNC_Q_CTO_COUNT	Count of CTO Events	0,1,2,3	0x53	QPIMask0[17:0],QPIMatch0[17:0],QPIMask1[19:16],QPIMatch1[19:16]	1	0x00
+QPI LL	0x39	0x1	UNC_Q_RxL_CREDITS_CONSUMED_VN1.DRS	VN1 Credit Consumed; DRS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x39	0x10	UNC_Q_RxL_CREDITS_CONSUMED_VN1.SNP	VN1 Credit Consumed; SNP	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x39	0x2	UNC_Q_RxL_CREDITS_CONSUMED_VN1.NCB	VN1 Credit Consumed; NCB	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x39	0x20	UNC_Q_RxL_CREDITS_CONSUMED_VN1.NDR	VN1 Credit Consumed; NDR	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x39	0x4	UNC_Q_RxL_CREDITS_CONSUMED_VN1.NCS	VN1 Credit Consumed; NCS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x39	0x8	UNC_Q_RxL_CREDITS_CONSUMED_VN1.HOM	VN1 Credit Consumed; HOM	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3A	0x1	UNC_Q_RxL_STALLS_VN1.BGF_DRS	Stalls Sending to R3QPI on VN1; BGF Stall - HOM	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3A	0x10	UNC_Q_RxL_STALLS_VN1.BGF_SNP	Stalls Sending to R3QPI on VN1; BGF Stall - NCB	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3A	0x2	UNC_Q_RxL_STALLS_VN1.BGF_NCB	Stalls Sending to R3QPI on VN1; BGF Stall - SNP	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3A	0x20	UNC_Q_RxL_STALLS_VN1.BGF_NDR	Stalls Sending to R3QPI on VN1; BGF Stall - NCS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3A	0x4	UNC_Q_RxL_STALLS_VN1.BGF_NCS	Stalls Sending to R3QPI on VN1; BGF Stall - NDR	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x3A	0x8	UNC_Q_RxL_STALLS_VN1.BGF_HOM	Stalls Sending to R3QPI on VN1; BGF Stall - DRS	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x4	0x0	UNC_Q_TxL_INSERTS	Tx Flit Buffer Allocations	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x5	0x0	UNC_Q_TxL_BYPASSED	Tx Flit Buffer Bypassed	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x6	0x0	UNC_Q_TxL_CYCLES_NE	Tx Flit Buffer Cycles not Empty	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x7	0x0	UNC_Q_TxL_OCCUPANCY	Tx Flit Buffer Occupancy	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x8	0x0	UNC_Q_RxL_INSERTS	Rx Flit Buffer Allocations	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x9	0x0	UNC_Q_RxL_BYPASSED	Rx Flit Buffer Bypassed	0,1,2,3	0x53	na	0	0x00
+QPI LL	0x9	0x1	UNC_Q_RxL_INSERTS_DRS.VN0	Rx Flit Buffer Allocations - DRS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0x9	0x2	UNC_Q_RxL_INSERTS_DRS.VN1	Rx Flit Buffer Allocations - DRS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xA	0x0	UNC_Q_RxL_CYCLES_NE	RxQ Cycles Not Empty	0,1,2,3	0x53	na	0	0x00
+QPI LL	0xA	0x1	UNC_Q_RxL_INSERTS_NCB.VN0	Rx Flit Buffer Allocations - NCB; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xA	0x2	UNC_Q_RxL_INSERTS_NCB.VN1	Rx Flit Buffer Allocations - NCB; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xB	0x0	UNC_Q_RxL_OCCUPANCY	RxQ Occupancy - All Packets	0,1,2,3	0x53	na	0	0x00
+QPI LL	0xB	0x1	UNC_Q_RxL_INSERTS_NCS.VN0	Rx Flit Buffer Allocations - NCS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xB	0x2	UNC_Q_RxL_INSERTS_NCS.VN1	Rx Flit Buffer Allocations - NCS; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xC	0x0	UNC_Q_TxL0_POWER_CYCLES	Cycles in L0	0,1,2,3	0x53	na	0	0x00
+QPI LL	0xC	0x1	UNC_Q_RxL_INSERTS_HOM.VN0	Rx Flit Buffer Allocations - HOM; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xC	0x2	UNC_Q_RxL_INSERTS_HOM.VN1	Rx Flit Buffer Allocations - HOM; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xD	0x0	UNC_Q_TxL0P_POWER_CYCLES	Cycles in L0p	0,1,2,3	0x53	na	0	0x00
+QPI LL	0xD	0x1	UNC_Q_RxL_INSERTS_SNP.VN0	Rx Flit Buffer Allocations - SNP; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xD	0x2	UNC_Q_RxL_INSERTS_SNP.VN1	Rx Flit Buffer Allocations - SNP; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xE	0x1	UNC_Q_RxL_INSERTS_NDR.VN0	Rx Flit Buffer Allocations - NDR; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xE	0x2	UNC_Q_RxL_INSERTS_NDR.VN1	Rx Flit Buffer Allocations - NDR; for VN1	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xF	0x0	UNC_Q_RxL0_POWER_CYCLES	Cycles in L0	0,1,2,3	0x53	na	0	0x00
+QPI LL	0xF	0x1	UNC_Q_RxL_CYCLES_NE_DRS.VN0	RxQ Cycles Not Empty - DRS; for VN0	0,1,2,3	0x53	na	1	0x00
+QPI LL	0xF	0x2	UNC_Q_RxL_CYCLES_NE_DRS.VN1	RxQ Cycles Not Empty - DRS; for VN1	0,1,2,3	0x53	na	1	0x00

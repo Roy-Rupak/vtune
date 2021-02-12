@@ -1,0 +1,5 @@
+# RXE 32 bit counter event start from 0x400
+# RXE 64 bit counter event start from 0x500
+OFFSET	HELP_ID	NAME	DESCRIPTION	HELP_FILE	COUNTER_TYPE	EVENT_SCOPE
+0x500	0x10001	UNC_HFI_RCV_DATA_PACKETS	Count of received packats	pmn.chm	FREERUN	SYSTEM
+0x508	0x10001	UNC_HFI_RCV_DATA_DW	Count of received data in double words (multiply by 4 for bytes)	pmn.chm	FREERUN	SYSTEM	

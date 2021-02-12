@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.launcher.cmdline_parser" lang="en">
+        <msg name='help'>Display help message.</msg>
+        <msg name='version'>Display version information.</msg>
+        <msg name='quiet'>Be quiet and print as little as possible.</msg>
+        <msg name='verbose'>Display additional information about any work that is being done.</msg>
+        <msg name='result-dir'>Specify the directory pattern &lt;string&gt; used for creating the data collection results.</msg>
+        <msg name='command-list'>List supported control commands.</msg>
+        <msg name='command'>Process control command for a given result directory. Possible commands: pause - pause profiling all processes for a given result directory; resume - resume profiling all processes for a given result directory; status - current status of collection; stop - stop data collection; mark - put a discrete mark into the data being collected; detach - detach from a given result directory.</msg>
+        <msg name='option-file'>Specify the path to the option file as &lt;string&gt;. Options from the specified file are read and applied.  If options given on the command line conflict with options given in the file, the command line options overwrite the conflicting options read from the file. To specify an option name and its value, use equal sign, like "name=value", or put the option name and the option value on separate lines.</msg>
+        <msg name='tmp-dir'>Specify the directory path &lt;string&gt; where temporary data generated during the collection run is saved.</msg>
+        <msg name='resume-after'>Specify the delay in milliseconds as &lt;integer&gt; to delay the data collection while the application is executing.</msg>
+        <msg name='duration'>Specify duration &lt;string&gt; for the collection in seconds. If duration is set to "unlimited", the collection runs until it is stopped explicitly with the "--command=stop" option.</msg>
+        <msg name='start-paused'>Start data collection in "paused" mode. To re-start the data collection, issue the resume command.</msg>
+        <msg name='target-pid'>Specify ID as &lt;integer&gt; for the process to which data collection should be attached.</msg>
+        <msg name='target-process'>Specify the name as &lt;string&gt; for the process to which data collection should be attached.</msg>
+        <msg name='return-app-exitcode'>Return the application exit code.</msg>
+        <msg name='user-data-dir'>Specify the base directory where new result directories will be created. By default, current working directory is used as the data directory. This option is mostly useful to change result directory location without specifying the result directory pattern name.</msg>
+        <msg name='compression'>Specify compression of output data. Possible levels: 0 - without compression, 1 - best speed, 2..8, 9 - best compression that incurs big overhead.</msg>
+        <msg name='data-limit'>Limit amount of data collected with the given value (in MB).</msg>
+        <msg name='disk-space-limit'>Specify the minimum amount of free disk space required to run collection (in MB).</msg>
+        <msg name='context-value-list'>Display possible context values.</msg>
+        <msg name='debug'>Output debug information to a directory.</msg>
+        <msg name='help-internal'>Display help message for internal options.</msg>
+        <msg name='InitializationError'>The launcher cannot initialize the command line parser.</msg>
+        <msg name='OpenOptionFileError'>The launcher cannot open the option file: `<arg name='%1'/>'.</msg>
+        <msg name='ReadOptionFileError'>The launcher cannot read the option file: `<arg name='%1'/>'.</msg>
+        <msg name='BadOptionValue'>`<arg name='%1'/>' option has an invalid value: `<arg name='%2'/>'.</msg>
+        <msg name='ring-buffer'>Specify ring-buffer size in seconds.</msg>
+        <msg name='md5sum'>Get MD5 hash for a file.</msg>
+        <msg name='find-bin-file'>Get full path for a file.</msg>
+        <msg name='kernel-version'>Define kernel version for searching system modules.</msg>
+        <msg name='stack-size'>Specify the size of a raw stack to process in system pages. Zero value means unlimited size.</msg>
+        <msg name='allow-multiple-runs'>Enable multiple runs to achieve more precise results for hardware event-based collections. When disabled, the collector multiplexes events running a single collection, which lowers result precision.</msg>
+        <msg name='SystemWideIncompat'>The no-system-wide option cannot be applied to the system-wide profiling configuration.</msg>
+    </catalog>
+    <catalog name="perfrun1.launcher.process_manager" lang="en">
+        <msg name='TargetNameNotFound'>Process with the `<arg name='%1'/>' name is not found. Specify another name and try attaching again.</msg>
+        <msg name='TargetNameAmbiguous'>More than one process with the `<arg name='%1'/>' name exist. Use --target-pid option to resolve ambiguity.</msg>
+        <msg name='SystemError'>Cannot manage one or more processes due to internal or system error: `<arg name='%1'/>'.</msg>
+        <msg name='ProcessIdNotExist'>Process with the `<arg name='%1'/>' identifier is not found. Specify another process and try attaching again.</msg>
+    </catalog>
+    <catalog name="perfrun1.launcher.rpc" lang="en">
+        <msg name='RpcFailedOp'>Cannot handle the given command due to an internal error.</msg>
+        <msg name='RpcInvalidOp'>The given command is not valid now. Please check the current state of the launcher using `status' command.</msg>
+        <msg name='RpcNotReady'>The launcher is not ready yet to handle a command.</msg>
+        <msg name='RpcFailedLoopback'><![CDATA[ Cannot start collection because loopback network interface is not available. Please see the <a web-link="https://software.intel.com/en-us/vtune-amplifier-help-problem-unknown-critical-error-due-to-disabled-loopback-interface" cli="Troubleshooting">Troubleshooting</a> section of the product documentation for details. ]]></msg>
+    </catalog>
+    <catalog name="perfrun1.launcher.plugin_manager" lang="en">
+        <msg name='interval'>Specify an interval of data collection (for example, sampling) in milliseconds.</msg>
+        <msg name='follow-child'>Profile process with or without children.</msg>
+        <msg name='time-source'>Specify time source for measurement. Possible values: sys - wall clock time; tsc - time stamp counter; ext - time from an external source; auto - auto select accurate time source.</msg>
+        <msg name='stack'>Enable or disable collection of stacks.</msg>
+        <msg name='stack-stitching'>Enable or disable the stack stitching algorithm for Intel TBB-based applications.</msg>
+        <msg name='type'>Specify type of data to be collected. For example, --type cpu:counters,waiting:nostack,io.</msg>
+        <msg name='mrte-mode'>Specify Java/.NET/other managed runtime collection mode. Possible values: native - collect information only for native code; managed - collect information only for managed code; mixed - collect information for both managed and native code; auto - choose the mode based on binary type.</msg>
+        <msg name='mrte-mode-list'>List supported Java/.NET/other managed runtime collection modes.</msg>
+        <msg name='mrte-type'>Specify which managed runtimes to collect. Possible values: java - collect information for Java; dotnet - collect information for .NET; python - collect information for CPython. You can specify several values separated by comma.</msg>
+        <msg name='mrte-type-list'>List supported Java/.NET/other managed runtime types.</msg>
+        <msg name='mrte-type-required'>Please specify managed runtime(s) when profiling with non-native managed runtime collection mode. For the list of supported types, see -mrte-type-list.</msg>
+        <msg name='trace-strategy'>Specify how to profile a process tree. &lt;string&gt; can be "&lt;process&gt;:trace:notrace" - profile the process but do not profile its children. Shorthand parameters: t - trace, nt - notrace. For example, "vtunedemo.exe:t:t".</msg>
+        <msg name='system-wide'>Enable system-wide profiling. This mode may require additional permissions.</msg>
+        <msg name='kvm-guest'>Enable KVM guest OS profiling.</msg>
+        <msg name='kvm-guest-kallsyms'>Specify a local path to the /proc/kallsyms file copied from the guest OS for proper symbol resolution.</msg>
+        <msg name='kvm-guest-modules'>Specify a local path to the /proc/modules file copied from the guest OS for proper symbol resolution.</msg>
+    </catalog>
+    <catalog name="perfrun1.launcher.file_finder" lang="en">
+        <msg name='StartedLoadingSymbols'>Started loading a symbol file from symbol server for `<arg name='%1'/>' module.</msg>
+        <msg name='FinishedLoadingSymbols'>Finished loading a symbol file from symbol server for `<arg name='%1'/>' module.</msg>
+        <msg name='SymbolFileNotFound'>A symbol file is not found. The call stack passing through `<arg name='%1'/>' module may be incorrect.</msg>
+    </catalog>
+    <catalog name="perfrun1.launcher.directory_monitor" lang="en">
+      <msg name='DirectoryScanFailed'>Cannot obtain the size of the `<arg name='%1'/>' directory due to the following error: `<arg name='%2'/>'.</msg>
+    </catalog>
+    <catalog name="perfrun1.launcher" lang="en">
+        <msg name='CollectionPaused'>Collection has paused.</msg>
+        <msg name='CollectionResumed'>Collection has resumed.</msg>
+        <msg name='CollectionMarked'>Collection has marked.</msg>
+        <msg name='CollectionStopped'>Collection has stopped.</msg>
+        <msg name='CollectionDetached'>Collection has detached.</msg>
+        <msg name='CollectionCanceled'>Collection has cancelled.</msg>
+        <msg name='DataLimitError'>Cannot check data limit. Please run the collection without data size limit if the problem persists.</msg>
+        <msg name='DataLimitReached'>The specified data limit of <arg name='%1'/> MB is reached. Data collection is stopped.</msg>
+        <msg name='DiskSpaceLimitReached'>The free disk space is less than <arg name='%2'/> MB for the `<arg name='%1'/>' directory. Data collection has stopped.</msg>
+        <msg name='DiskSpaceLimitForDirectory'>There is not enough free disk space available in the `<arg name='%1'/>' directory. The free disk space is less than <arg name='%2'/> MB.</msg>
+        <msg name='TargetCantWriteResultDirectory'>The result directory is not writable by the target process. The Java, .NET and User API collectors are disabled. Suggestion: specify the result directory writable by the target process.</msg>
+        <msg name='UnknownError'>Unknown critical error</msg>
+        <msg name='RpcRequestFailed'>Cannot process the command. Make sure the result directory specified for the running data collection is correct.</msg>
+        <msg name='BinaryNotFound'>Binary `<arg name='%1'/>' cannot be executed. Suggestion: Make sure the file exists, specified location is correct, and you have privileges to run the file.</msg>
+        <msg name='TargetExitedChildrenRunPrefix'>Profiling of the target process finished but the following child processes are still being profiled:</msg>
+        <msg name='TargetExitedChildrenRunSuffix'>To stop the collection, you may press CTRL-C. The processes listed above will be terminated.</msg>
+        <msg name='CannotGetContextValueList'>Machine configuration cannot be detected.</msg>
+        <msg name='CannotGetTcpIpContextValueList'><![CDATA[ The Communication Agent connection type is used to establish a connection between PRODUCT_LEGAL_SHORT_NAME running on the host system and an Analysis Communication Agent running on an arbitrary target operating system using a TCP/IP connection. Note that this connection is insecure. It is recommended to use this connection in a secure lab environment. Please see the <a web-link="https://github.com/intel/aca" cli="https://github.com/intel/aca">Analysis Communication Agent</a> documentation for details. ]]></msg>
+        <msg name='PPID'>PPID</msg>
+        <msg name='PID'>PID</msg>
+        <msg name='STATE'>STATE</msg>
+        <msg name='NAME'>NAME</msg>
+        <msg name='PAUSE'>PAUSE</msg>
+        <msg name='RESUME'>RESUME</msg>
+        <msg name='DETACH'>DETACH</msg>
+        <msg name='RemoteReadyForConnection'>Ready for connection</msg>
+        <msg name='RemoteAcceptedConnection'>Accepted connection from the remote client <arg name='%1'/></msg>
+        <msg name='RemoteTargetSays'>Target: <arg name='%1'/></msg>
+        <msg name='WrapperScriptWriteFail'>Failed to write wrapper script file: <arg name='%1'/>. Make sure the directory <arg name='%2'/> is not write protected and has enough free space.</msg>
+    </catalog>
+</xmc>

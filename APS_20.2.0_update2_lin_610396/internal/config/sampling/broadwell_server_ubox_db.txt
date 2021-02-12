@@ -1,0 +1,20 @@
+# Performance Monitoring Events for Intel(R) Xeon(R) Processor E5 v4 Family Based on the the Broadwell Microarchitecture - V16
+# 11/28/2018 2:09:09 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+UBOX	0x00	0x1	UNC_U_CLOCKTICKS	Clockticks in the UBOX using a dedicated 48-bit Fixed Counter	FIXED	0x53	na	0
+UBOX	0x41	0x1	UNC_U_FILTER_MATCH.ENABLE	Filter Match	0,1	0x53	UBoxFilter[3:0]	0
+UBOX	0x41	0x2	UNC_U_FILTER_MATCH.DISABLE	Filter Match	0,1	0x53	na	0
+UBOX	0x41	0x4	UNC_U_FILTER_MATCH.U2C_ENABLE	Filter Match	0,1	0x53	UBoxFilter[3:0]	0
+UBOX	0x41	0x8	UNC_U_FILTER_MATCH.U2C_DISABLE	Filter Match	0,1	0x53	na	0
+UBOX	0x42	0x8	UNC_U_EVENT_MSG.DOORBELL_RCVD	VLW Received	0,1	0x53	na	0
+UBOX	0x43	0x1	UNC_U_U2C_EVENTS.MONITOR_T0	Monitor Sent to T0; Monitor T0	0,1	0x53	na	0
+UBOX	0x43	0x10	UNC_U_U2C_EVENTS.CMC	Monitor Sent to T0; Correctable Machine Check	0,1	0x53	na	0
+UBOX	0x43	0x2	UNC_U_U2C_EVENTS.MONITOR_T1	Monitor Sent to T0; Monitor T1	0,1	0x53	na	0
+UBOX	0x43	0x20	UNC_U_U2C_EVENTS.UMC	Monitor Sent to T0; Uncorrectable Machine Check	0,1	0x53	na	0
+UBOX	0x43	0x4	UNC_U_U2C_EVENTS.LIVELOCK	Monitor Sent to T0; Livelock	0,1	0x53	na	0
+UBOX	0x43	0x40	UNC_U_U2C_EVENTS.TRAP	Monitor Sent to T0; Trap	0,1	0x53	na	0
+UBOX	0x43	0x8	UNC_U_U2C_EVENTS.LTERROR	Monitor Sent to T0; LTError	0,1	0x53	na	0
+UBOX	0x43	0x80	UNC_U_U2C_EVENTS.OTHER	Monitor Sent to T0; Other	0,1	0x53	na	0
+UBOX	0x45	0x1	UNC_U_PHOLD_CYCLES.ASSERT_TO_ACK	Cycles PHOLD Assert to Ack; Assert to ACK	0,1	0x53	na	0
+UBOX	0x46	0x0	UNC_U_RACU_REQUESTS	RACU Request	0,1	0x53	na	0

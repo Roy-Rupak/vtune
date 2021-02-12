@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.system" lang="en">
+    <msg name='MaxBandwidthEnabled'>Per-node peak bandwidth measurement is enabled for this collection. Collection time may increase.</msg>
+    <msg name='MaxBandwidthStart'>Peak bandwidth measurement started.</msg>
+    <msg name='MaxBandwidthEnd'>Peak bandwidth measurement finished.</msg>
+    <msg name='BandwidthStrategy'>Bandwidth limits determination specific properties (example: --bandwidth-strategy array-size=0,duration=500).</msg>
+    <msg name='BadOptionValue'>`<arg name='%1'/>' option has an invalid value: `<arg name='%2'/>'.</msg>
+    <msg name='NotExecuteContainerCl'>Cannot profile an application in the container because the current user does not have permissions to execute the container command line: <arg name='%1'/></msg>
+    <msg name='UnsupportedHardware'>Peak bandwidth measurement skipped as RDTSCP instruction is not available on the current machine. Roofline data will be unavailable.</msg>
+    <msg name='NoPermissionsProcMap'>Not enough permissions to read the process module map and identify Java process.</msg>
+    </catalog>
+</xmc>

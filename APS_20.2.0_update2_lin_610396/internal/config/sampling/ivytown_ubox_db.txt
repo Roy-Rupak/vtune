@@ -1,0 +1,25 @@
+# Performance Monitoring Events for Intel(R) Xeon(R) processor E5 family and Intel(R) Xeon(R) processor E7 family Based on the Ivy Bridge-EP Microarchitecture - V21
+# 10/3/2018 10:48:35 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+UBOX	0x0	0x0	UNC_U_CLOCKTICKS	tbd	0,1	0x53	na	0
+UBOX	0x41	0x1	UNC_U_FILTER_MATCH.ENABLE	Filter match per thread (w/ or w/o Filter Enable).  Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	UBoxFilter[3:0]	0
+UBOX	0x41	0x2	UNC_U_FILTER_MATCH.DISABLE	Filter match per thread (w/ or w/o Filter Enable).  Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x41	0x4	UNC_U_FILTER_MATCH.U2C_ENABLE	Filter match per thread (w/ or w/o Filter Enable).  Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	UBoxFilter[3:0]	0
+UBOX	0x41	0x8	UNC_U_FILTER_MATCH.U2C_DISABLE	Filter match per thread (w/ or w/o Filter Enable).  Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x42	0x1	UNC_U_EVENT_MSG.VLW_RCVD	Virtual Logical Wire (legacy) message were received from Uncore.   Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x42	0x10	UNC_U_EVENT_MSG.INT_PRIO	Virtual Logical Wire (legacy) message were received from Uncore.   Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x42	0x2	UNC_U_EVENT_MSG.MSI_RCVD	Virtual Logical Wire (legacy) message were received from Uncore.   Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x42	0x4	UNC_U_EVENT_MSG.IPI_RCVD	Virtual Logical Wire (legacy) message were received from Uncore.   Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x42	0x8	UNC_U_EVENT_MSG.DOORBELL_RCVD	Virtual Logical Wire (legacy) message were received from Uncore.   Specify the thread to filter on using NCUPMONCTRLGLCTR.ThreadID.	0,1	0x53	na	0
+UBOX	0x43	0x1	UNC_U_U2C_EVENTS.MONITOR_T0	Events coming from Uncore can be sent to one or all cores; Filter by core	0,1	0x53	na	0
+UBOX	0x43	0x10	UNC_U_U2C_EVENTS.CMC	Events coming from Uncore can be sent to one or all cores	0,1	0x53	na	0
+UBOX	0x43	0x2	UNC_U_U2C_EVENTS.MONITOR_T1	Events coming from Uncore can be sent to one or all cores; Filter by core	0,1	0x53	na	0
+UBOX	0x43	0x20	UNC_U_U2C_EVENTS.UMC	Events coming from Uncore can be sent to one or all cores	0,1	0x53	na	0
+UBOX	0x43	0x4	UNC_U_U2C_EVENTS.LIVELOCK	Events coming from Uncore can be sent to one or all cores; Filter by core	0,1	0x53	na	0
+UBOX	0x43	0x40	UNC_U_U2C_EVENTS.TRAP	Events coming from Uncore can be sent to one or all cores	0,1	0x53	na	0
+UBOX	0x43	0x8	UNC_U_U2C_EVENTS.LTERROR	Events coming from Uncore can be sent to one or all cores; Filter by core	0,1	0x53	na	0
+UBOX	0x43	0x80	UNC_U_U2C_EVENTS.OTHER	Events coming from Uncore can be sent to one or all cores; PREQ, PSMI, P2U, Thermal, PCUSMI, PMI	0,1	0x53	na	0
+UBOX	0x44	0x0	UNC_U_LOCK_CYCLES	Number of times an IDI Lock/SplitLock sequence was started	0,1	0x53	na	0
+UBOX	0x45	0x1	UNC_U_PHOLD_CYCLES.ASSERT_TO_ACK	PHOLD cycles.  Filter from source CoreID.	0,1	0x53	na	0
+UBOX	0x46	0x0	UNC_U_RACU_REQUESTS	tbd	0,1	0x53	na	0

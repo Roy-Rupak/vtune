@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.1">
+  <catalog name='loadermodel1' lang='en'>
+    <msg name='%CannotLocateBinaryFile'>Cannot locate file `<arg name='%1'/>'.</msg>
+    <msg name='%CollectorSep'>PRODUCT_LEGAL_SHORT_NAME driver sampling</msg>
+    <msg name='%CollectorSepCounting'>PRODUCT_LEGAL_SHORT_NAME driver counting</msg>
+    <msg name='%CollectorPerf'>Perf sampling</msg>
+    <msg name='%CollectorPerfCounting'>Perf counting</msg>
+    <msg name='%CollectorPerfSystemWide'>Perf sampling system wide</msg>
+    <msg name='%CollectorPerfSystemWideCounting'>Perf counting system wide</msg>
+  </catalog>
+</xmc>

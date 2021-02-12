@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+  Copyright  (C) 2009-2010 Intel Corporation. All rights reserved.
+
+  The information contained herein is the exclusive property of
+  Intel Corporation and may not be disclosed, examined, or reproduced in
+  whole or in part without explicit written authorization from the Company.
+-->
+
+<xmc version="1.0">
+    <catalog name="tpss.collector" lang=".">
+        <msg name='0'><arg name='function' type='string'/>: Cannot put the record into a trace file.</msg>
+        <msg name='1'>Anti-virus software was detected. This may affect the work of the tool. Please see product Release Notes for more information.</msg>
+        <msg name='2'>Assertion failed: <arg name='expr' type='string'/>. Please contact the technical support. </msg>
+        <msg name='3'>Done.</msg>
+        <msg name='4'>Failed to find workspace while suspending thread.</msg>
+        <msg name='5'>Incorrect log level</msg>
+        <msg name='6'>Invalid search path</msg>
+        <msg name='7'>Loading symbol file for <arg name='module_name_utf8' type='string'/>...</msg>
+        <msg name='8'>Not implemented yet.</msg>
+        <msg name='9'>PIN provides empty module name, range.start = <arg name='img_start_addr' type='string'/>, range.end = <arg name='img_end_addr' type='string'/>.</msg>
+        <msg name='10'>PDB file is not found. The call stack passing through the module &lt;<arg name='module_name_utf8' type='string'/>&gt; may be incorrect.</msg>
+        <msg name='11'>Cannot handle suspension correctly.</msg>
+        <msg name='12'>Cannot handle the thread termination correctly.</msg>
+        <msg name='13'>[<arg name='time_mark' type='string'/>] <arg name='img_name' type='string'/> loading started...</msg>
+        <msg name='14'>[<arg name='time_mark' type='string'/>] <arg name='img_name' type='string'/> module processing scheduled...</msg>
+        <msg name='15'>[<arg name='time_mark' type='string'/>] <arg name='module_name' type='string'/> symbol loading completed...</msg>
+        <msg name='16'>[<arg name='time_mark' type='string'/>] Collection started...</msg>
+        <msg name='17'>[<arg name='time_mark' type='string'/>] Instrumentation started...</msg>
+        <msg name='18'>Application sets its own handler for signal <arg name='signum' type='int'/> that is used for internal needs of the tool. Collection cannot continue. Refer to the Troubleshooting section of the online help for possible workarounds.</msg>
+        <msg name='19'>Cannot convert wchar_t* to UTF-8.</msg>
+        <msg name='20'>Cannot allocate configuration packager.</msg>
+        <msg name='21'>Cannot change profiling state.</msg>
+        <msg name='22'>Cannot change state.</msg>
+        <msg name='23'>Cannot connect to server communication node: <arg name='error' type='string'/>.</msg>
+        <msg name='24'>Cannot create command.</msg>
+        <msg name='25'>Cannot find signal frame.</msg>
+        <msg name='26'>Cannot get CPU frequency.</msg>
+        <msg name='27'>Cannot get all functions from <arg name='lib_name_utf8' type='string'/> library. Please contact the technical support.</msg>
+        <msg name='28'>Cannot get module name.</msg>
+        <msg name='29'>Cannot get server name.</msg>
+        <msg name='30'>Cannot get system time and put marker record.</msg>
+        <msg name='31'>Cannot initialize client communication node.</msg>
+        <msg name='32'>Cannot initialize unwind cursor.</msg>
+        <msg name='33'>Cannot initialize symbol handler for a process.</msg>
+        <msg name='34'>Cannot load dbghelp.dll library: <arg name='dbghelp_path_utf8' type='string'/>.</msg>
+        <msg name='35'>Cannot load symbols for module: <arg name='module_name_utf8' type='string'/>.</msg>
+        <msg name='36'>Cannot notify server about process spawning.</msg>
+        <msg name='37'>Cannot parse configuration.</msg>
+        <msg name='38'>Cannot send message to server communication node.</msg>
+        <msg name='39'>Cannot set handler for signal <arg name='signo' type='int'/>: <arg name='error' type='string'/>.</msg>
+        <msg name='40'>Cannot set timer: <arg name='error' type='string'/>.</msg>
+        <msg name='41'>Cannot stop timer: <arg name='error' type='string'/></msg>
+        <msg name='42'>Error in tpss_init_cpu_profiling() method: <arg name='error' type='string'/>.</msg>
+        <msg name='43'>Incorrect record size</msg>
+        <msg name='44'>Memory region has PAGE_EXECUTE protection. This can affect stack quality.</msg>
+        <msg name='45'>string_to_utf8A: Cannot determine size of dst_str.</msg>
+        <msg name='46'>string_to_utf8A: Cannot allocate memory for extra_area-&gt;buffer.</msg>
+        <msg name='47'>string_to_utf8A: String was truncated.</msg>
+        <msg name='48'>Too many calls to __itt_sync_prepare without matching __itt_sync_cancel or __itt_sync_acquired. Ignoring all further __itt_sync_prepare calls.</msg>
+        <msg name='49'><arg name='function' type='string'/>: Cannot put the record into a tracefile.</msg>
+        <msg name='50'>Module name is too long.</msg>
+        <msg name='51'>Cannot reset windows hook after WndProc call: <arg name='error' type='string'/>.</msg>
+        <msg name='52'>Cannot reset windows hook before WndProc call: <arg name='error' type='string'/>.</msg>
+        <msg name='53'>Cannot set windows hook after WndProc call: <arg name='error' type='string'/>.</msg>
+        <msg name='54'>Cannot set windows hook before WndProc call: <arg name='error' type='string'/>.</msg>
+        <msg name='55'>Wrong formatting</msg>
+        <msg name='56'>Loading symbols from Microsoft* Symbol Server is requested. A slowdown may occur due to delays in responses from server.</msg>
+        <msg name='57'>Failed to get the application thread context: <arg name='error' type='string'/>.</msg>
+        <msg name='58'>Failed to set the priority of the sampling thread to THREAD_PRIORITY_HIGHEST: <arg name='error' type='string'/>.</msg>
+        <msg name='59'>Failed to set sampling timer. Stack sampling data will not be collected: <arg name='error' type='string'/>.</msg>
+        <msg name='60'>Failed to suspend the application thread: <arg name='error' type='string'/>.</msg>
+        <msg name='61'>Cannot create timer: <arg name='error' type='string'/>.</msg>
+        <msg name='62'>Cannot set posix timer: <arg name='error' type='string'/>.</msg>
+        <msg name='63'>Cannot stop posix timer: <arg name='error' type='string'/>.</msg>
+        <msg name='64'>Cannot check availability of per-thread posix timer.</msg>
+        <msg name='65'>Cannot get object name.</msg>
+        <msg name='66'>Cannot create notification thread: <arg name='error' type='string'/>.</msg>
+        <msg name='67'>[<arg name='time_mark' type='string'/>] <arg name='mod_name' type='string'/> <arg name='func_name' type='string'/>() instrumentation failed. Profiling data may be missing.</msg>
+        <msg name='68'>Failed to get threads snapshot for attach.</msg>
+        <msg name='69'>Failed to wait for signals in sampling thread: <arg name='error' type='string'/>.</msg>
+        <msg name='70'>Cannot reallocate wsp-&gt;fd_vector.</msg>
+        <msg name='71'>Cannot allocate memory for counter.</msg>
+        <msg name='72'>Incorrect counter id specified.</msg>
+        <msg name='73'>Cannot convert module name to native file system module name presentation.</msg>
+        <msg name='74'>Cannot convert string.</msg>
+        <msg name='75'>The target process is already being profiled. Stop the current profiling session and try attaching again.</msg>
+        <msg name='76'>Failed to attach to the specified target process. Please make sure the process exists and PRODUCT_LEGAL_SHORT_NAME process has enough permissions to attach to the target process. See the Troubleshooting help topic for more details.</msg>
+        <msg name='77'>Binary file of the analysis target does not contain symbols required for profiling. See the 'Analyzing Statically Linked Binaries' help topic for more details.</msg>
+        <msg name='78'>Valid <arg name='symbol' type='string'/> symbol is not found in the binary of the analysis target.</msg>
+        <msg name='79'>Path to internal diagnostic file is invalid.</msg>
+        <msg name='80'>Internal collection error has occurred. Please contact the technical support.</msg>
+        <msg name='81'>The analysis target is already attached. Please restart the process and try attaching again.</msg>
+        <msg name='82'>Binary file of the analysis target cannot be found. Please check the path or specify another path and try again.</msg>
+        <msg name='83'>Path to the binary file of the analysis target is too long. Please specify another path and try again.</msg>
+        <msg name='84'>There is no enough memory for performing the collection. Free some memory and try again.</msg>
+        <msg name='85'>Cannot read ELF header in the binary file of the analysis target. Please specify another path and try again.</msg>
+        <msg name='86'>Cannot re-raise signal.</msg>
+        <msg name='87'>Failed to start profiling because attaching to the target process using ptrace system call was rejected. Please make sure /proc/sys/kernel/yama/ptrace_scope contains 0. See the Troubleshooting help topic for instructions on enabling it permanently.</msg>
+        <msg name='88'>Failed to start profiling because the scope of ptrace system call application is limited. To enable profiling, please set /proc/sys/kernel/yama/ptrace_scope to 0. See the Troubleshooting help topic for instructions on enabling it permanently.</msg>
+        <msg name='89'>Cannot reset handler for signal <arg name='signo' type='int'/>: <arg name='error' type='string'/>.</msg>
+        <msg name='90'>Cannot get CPU brand name.</msg>
+        <msg name='91'>Stack size provided to pthread_create via its attributes is too small. Please increase the stack size to 32K minimum.</msg>
+        <msg name='92'>Stack size provided to sigaltstack is too small. Please increase the stack size to 64K minimum.</msg>
+        <msg name='93'>Cannot disable alternate signal stack. Malfunction is possible.</msg>
+        <msg name='94'>Failed to create sampling thread: <arg name='error' type='string'/></msg>
+        <msg name='95'>Old version of OpenCL runtime detected. Please download the latest version.</msg>
+        <msg name='96'>OpenCL runtime failed to provide information. Results might be incomplete.</msg>
+        <msg name='97'>C for Media (CM) runtime failed to provide information. Results might be incomplete.</msg>
+        <msg name='98'>Attach to process with existing command queues is not supported. Results might be incomplete.</msg>
+        <msg name='99'>PulseEvent API used in the target application may prevent data collection. See the Troubleshooting help topic for more details.</msg>
+        <msg name='100'>Data collection is interrupted because credentials of the target process and PRODUCT_LEGAL_SHORT_NAME do not match. Please start both target process and PRODUCT_LEGAL_SHORT_NAME with the credentials of the same user and try collecting data again.</msg>
+        <msg name='101'>Data collection is interrupted because evaluation of credentials for the target process and PRODUCT_LEGAL_SHORT_NAME has failed. Please start both target process and PRODUCT_LEGAL_SHORT_NAME with the credentials of the same user and try collecting data again.</msg>
+        <msg name='102'>Failed to get a thread handle when attaching to the process due to OS error (<arg name='error' type='string'/>). Data for the thread will not be collected.</msg>
+        <msg name='103'>Ignoring the application handler for signal <arg name='signum' type='int'/> used for internal needs of the tool.</msg>
+        <msg name='104'>Stack size provided to runtime.sigaltstack is too small. Please increase the stack size to 64K minimum.</msg>
+        <msg name='105'>Disabled application signal <arg name='signum' type='int'/> handler.</msg>
+        <msg name='106'>Go main function returned. This should never happen.</msg>
+        <msg name='107'>Stack unwinding during collection for Python profiling is not supported on Linux systems.</msg>
+        <msg name='108'>Python threading was not initialized in the application before attaching. First events may be missing from the results.</msg>
+        <msg name='109'>Function '<arg name='func_name' type='string'/>' can be analyzed incorrectly because it uses indirect branch instructions.</msg>
+        <msg name='110'>Detected Python version is obsolete. Supported versions are 2.6 or higher for branch 2.x and 3.3 or higher for branch 3.x.</msg>
+        <msg name='111'>Cannot create a thread due to insufficient resources or a system-imposed limit. Refer to the pthread_create (Linux) or CreateThread (Windows) function documentation for more information.</msg>
+        <msg name='112'>Failed to notify the runtool server <arg name='failed_action' type='string'/>: '<arg name='detach_notification_result' type='int'/>'.</msg>
+        <msg name='113'>Current OpenCL runtime for Intel Graphics does not support GPU profiling engine version 2.</msg>
+        <msg name='114'>Not all OpenCL API profiling callbacks are received. Results might be incomplete. See the Troubleshooting help topic for more details.</msg>
+        <msg name='115'>Failed to get kernel address from OpenCL runtime. Please update GPU driver.</msg>
+        <msg name='116'>Failed to get kernel address from OpenCL runtime. Metrics cannot be mapped to computing tasks.</msg>
+        <msg name='117'>Failed to instrument <arg name='kernel_name' type='string'/>: <arg name='message' type='string'/>. Profiling data may be missing.</msg>
+
+    </catalog>
+</xmc>

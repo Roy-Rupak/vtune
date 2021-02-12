@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="mrtehelpers3.attach" lang="en">
+    <msg name='CLRNotAttachable'>
+        Cannot profile the managed part of the target process. There is no Microsoft* Common Language Runtime (CLR) 4.0 or higher loaded in the process. Only native part of the target process will be profiled.<br/>Suggestion: Make sure your application is running under CLR 4.0 or higher.
+    </msg>
+    <msg name='JDKNotAttachable'>
+        Cannot profile the managed part of the target process. There is no Java* Attach API available. Only native part of the target process will be profiled.<br/>Suggestion: Make sure your application is running under JDK 1.6 or higher.
+    </msg>
+    <msg name='JDKNotSupported'>
+        Cannot profile the managed part of the target process. Only Oracle JVM is supported. The native part of the target process will be profiled.<br/>
+    </msg>
+    <msg name='JavaLauncherNotFound'>
+        Cannot profile the managed part of the target process. There is no available Java* launcher for the target process. The native part of the target process will be profiled.<br/>
+    </msg>
+    <msg name='JDKNoPermission'>
+        Cannot profile the managed part of the target process. Not enough permission to attach. The native part of the target process will be profiled.<br/>Suggestion: Make sure you are using the same user id as a target process or the superuser account.
+    </msg>
+    <msg name='CLRPProfilerAlreadyActive'>
+        Cannot profile the managed part of the target process. Another .NET profiler is active or attaching to the target process. Only native part of the target process will be profiled.<br/>Suggestion: Make sure the COR_ENABLE_PROFILING and COR_PROFILER variables do not exist in the process environment of your application.
+    </msg>
+    <msg name='AttachInternalError'>
+        Cannot profile the managed part of the target process. Internal error. Only native part of the target process will be profiled.<br/>Suggestion: Please contact the Technical Support.
+    </msg>
+    </catalog>
+</xmc>

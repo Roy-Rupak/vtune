@@ -1,0 +1,83 @@
+# Performance Monitoring Events for Intel(R) Xeon(R) processor E5 v3 family based on the Haswell-E microarchitecture - V21
+# 10/3/2018 10:31:41 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	EVENT_STATUS
+SBO	0x0	0x0	UNC_S_CLOCKTICKS	Uncore Clocks	0,1,2,3	0x53	na	0	0x00
+SBO	0x1	0x1	UNC_S_TxR_OCCUPANCY.AD_CRD	Egress Occupancy; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x1	0x10	UNC_S_TxR_OCCUPANCY.AK	Egress Occupancy; AK	0,1,2,3	0x53	na	0	0x00
+SBO	0x1	0x2	UNC_S_TxR_OCCUPANCY.AD_BNC	Egress Occupancy; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x1	0x20	UNC_S_TxR_OCCUPANCY.IV	Egress Occupancy; IV	0,1,2,3	0x53	na	0	0x00
+SBO	0x1	0x4	UNC_S_TxR_OCCUPANCY.BL_CRD	Egress Occupancy; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x1	0x8	UNC_S_TxR_OCCUPANCY.BL_BNC	Egress Occupancy; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x11	0x1	UNC_S_RxR_OCCUPANCY.AD_CRD	Ingress Occupancy; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x11	0x10	UNC_S_RxR_OCCUPANCY.AK	Ingress Occupancy; AK	0,1,2,3	0x53	na	0	0x00
+SBO	0x11	0x2	UNC_S_RxR_OCCUPANCY.AD_BNC	Ingress Occupancy; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x11	0x20	UNC_S_RxR_OCCUPANCY.IV	Ingress Occupancy; IV	0,1,2,3	0x53	na	0	0x00
+SBO	0x11	0x4	UNC_S_RxR_OCCUPANCY.BL_CRD	Ingress Occupancy; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x11	0x8	UNC_S_RxR_OCCUPANCY.BL_BNC	Ingress Occupancy; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x12	0x1	UNC_S_RxR_BYPASS.AD_CRD	Bypass; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x12	0x10	UNC_S_RxR_BYPASS.AK	Bypass; AK	0,1,2,3	0x53	na	0	0x00
+SBO	0x12	0x2	UNC_S_RxR_BYPASS.AD_BNC	Bypass; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x12	0x20	UNC_S_RxR_BYPASS.IV	Bypass; IV	0,1,2,3	0x53	na	0	0x00
+SBO	0x12	0x4	UNC_S_RxR_BYPASS.BL_CRD	Bypass; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x12	0x8	UNC_S_RxR_BYPASS.BL_BNC	Bypass; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x13	0x1	UNC_S_RxR_INSERTS.AD_CRD	Ingress Allocations; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x13	0x10	UNC_S_RxR_INSERTS.AK	Ingress Allocations; AK	0,1,2,3	0x53	na	0	0x00
+SBO	0x13	0x2	UNC_S_RxR_INSERTS.AD_BNC	Ingress Allocations; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x13	0x20	UNC_S_RxR_INSERTS.IV	Ingress Allocations; IV	0,1,2,3	0x53	na	0	0x00
+SBO	0x13	0x4	UNC_S_RxR_INSERTS.BL_CRD	Ingress Allocations; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x13	0x8	UNC_S_RxR_INSERTS.BL_BNC	Ingress Allocations; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x1	UNC_S_RxR_CRD_STARVED.AD_CRD	Injection Starvation; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x10	UNC_S_RxR_CRD_STARVED.AK	Injection Starvation; AK	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x2	UNC_S_RxR_CRD_STARVED.AD_BNC	Injection Starvation; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x20	UNC_S_RxR_CRD_STARVED.IV	Injection Starvation; IV	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x4	UNC_S_RxR_CRD_STARVED.BL_CRD	Injection Starvation; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x40	UNC_S_RxR_CRD_STARVED.IFV	Injection Starvation; IVF Credit	0,1,2,3	0x53	na	0	0x00
+SBO	0x14	0x8	UNC_S_RxR_CRD_STARVED.BL_BNC	Injection Starvation; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x15	0x1	UNC_S_RxR_BUSY_STARVED.AD_CRD	Injection Starvation; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x15	0x2	UNC_S_RxR_BUSY_STARVED.AD_BNC	Injection Starvation; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x15	0x4	UNC_S_RxR_BUSY_STARVED.BL_CRD	Injection Starvation; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x15	0x8	UNC_S_RxR_BUSY_STARVED.BL_BNC	Injection Starvation; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x1B	0x1	UNC_S_RING_AD_USED.UP_EVEN	AD Ring In Use; Up and Even	0,1,2,3	0x53	na	0	0x00
+SBO	0x1B	0x2	UNC_S_RING_AD_USED.UP_ODD	AD Ring In Use; Up and Odd	0,1,2,3	0x53	na	0	0x00
+SBO	0x1B	0x3	UNC_S_RING_AD_USED.UP	AD Ring In Use; Up	0,1,2,3	0x53	na	0	0x00
+SBO	0x1B	0x4	UNC_S_RING_AD_USED.DOWN_EVEN	AD Ring In Use; Down and Event	0,1,2,3	0x53	na	0	0x00
+SBO	0x1B	0x8	UNC_S_RING_AD_USED.DOWN_ODD	AD Ring In Use; Down and Odd	0,1,2,3	0x53	na	0	0x00
+SBO	0x1B	0xC	UNC_S_RING_AD_USED.DOWN	AD Ring In Use; Down	0,1,2,3	0x53	na	0	0x00
+SBO	0x1C	0x1	UNC_S_RING_AK_USED.UP_EVEN	AK Ring In Use; Up and Even	0,1,2,3	0x53	na	0	0x00
+SBO	0x1C	0x2	UNC_S_RING_AK_USED.UP_ODD	AK Ring In Use; Up and Odd	0,1,2,3	0x53	na	0	0x00
+SBO	0x1C	0x3	UNC_S_RING_AK_USED.UP	AK Ring In Use; Up	0,1,2,3	0x53	na	0	0x00
+SBO	0x1C	0x4	UNC_S_RING_AK_USED.DOWN_EVEN	AK Ring In Use; Down and Event	0,1,2,3	0x53	na	0	0x00
+SBO	0x1C	0x8	UNC_S_RING_AK_USED.DOWN_ODD	AK Ring In Use; Down and Odd	0,1,2,3	0x53	na	0	0x00
+SBO	0x1C	0xC	UNC_S_RING_AK_USED.DOWN	AK Ring In Use; Down	0,1,2,3	0x53	na	0	0x00
+SBO	0x1D	0x1	UNC_S_RING_BL_USED.UP_EVEN	BL Ring in Use; Up and Even	0,1,2,3	0x53	na	0	0x00
+SBO	0x1D	0x2	UNC_S_RING_BL_USED.UP_ODD	BL Ring in Use; Up and Odd	0,1,2,3	0x53	na	0	0x00
+SBO	0x1D	0x3	UNC_S_RING_BL_USED.UP	BL Ring in Use; Up	0,1,2,3	0x53	na	0	0x00
+SBO	0x1D	0x4	UNC_S_RING_BL_USED.DOWN_EVEN	BL Ring in Use; Down and Event	0,1,2,3	0x53	na	0	0x00
+SBO	0x1D	0x8	UNC_S_RING_BL_USED.DOWN_ODD	BL Ring in Use; Down and Odd	0,1,2,3	0x53	na	0	0x00
+SBO	0x1D	0xC	UNC_S_RING_BL_USED.DOWN	BL Ring in Use; Down	0,1,2,3	0x53	na	0	0x00
+SBO	0x1E	0x3	UNC_S_RING_IV_USED.UP	BL Ring in Use; Any	0,1,2,3	0x53	na	0	0x00
+SBO	0x1E	0xC	UNC_S_RING_IV_USED.DN	BL Ring in Use; Any	0,1,2,3	0x53	na	0	0x00
+SBO	0x2	0x1	UNC_S_TxR_INSERTS.AD_CRD	Egress Allocations; AD - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x2	0x10	UNC_S_TxR_INSERTS.AK	Egress Allocations; AK	0,1,2,3	0x53	na	0	0x00
+SBO	0x2	0x2	UNC_S_TxR_INSERTS.AD_BNC	Egress Allocations; AD - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x2	0x20	UNC_S_TxR_INSERTS.IV	Egress Allocations; IV	0,1,2,3	0x53	na	0	0x00
+SBO	0x2	0x4	UNC_S_TxR_INSERTS.BL_CRD	Egress Allocations; BL - Credits	0,1,2,3	0x53	na	0	0x00
+SBO	0x2	0x8	UNC_S_TxR_INSERTS.BL_BNC	Egress Allocations; BL - Bounces	0,1,2,3	0x53	na	0	0x00
+SBO	0x3	0x1	UNC_S_TxR_STARVED.AD	Injection Starvation; Onto AD Ring	0,1,2,3	0x53	na	0	0x00
+SBO	0x3	0x2	UNC_S_TxR_STARVED.AK	Injection Starvation; Onto AK Ring	0,1,2,3	0x53	na	0	0x00
+SBO	0x3	0x4	UNC_S_TxR_STARVED.BL	Injection Starvation; Onto BL Ring	0,1,2,3	0x53	na	0	0x00
+SBO	0x3	0x8	UNC_S_TxR_STARVED.IV	Injection Starvation; Onto IV Ring	0,1,2,3	0x53	na	0	0x00
+SBO	0x4	0x1	UNC_S_TxR_ADS_USED.AD	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x4	0x2	UNC_S_TxR_ADS_USED.AK	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x4	0x4	UNC_S_TxR_ADS_USED.BL	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x5	0x1	UNC_S_RING_BOUNCES.AD_CACHE	Number of LLC responses that bounced on the Ring.	0,1,2,3	0x53	na	0	0x00
+SBO	0x5	0x2	UNC_S_RING_BOUNCES.AK_CORE	Number of LLC responses that bounced on the Ring.; Acknowledgements to core	0,1,2,3	0x53	na	0	0x00
+SBO	0x5	0x4	UNC_S_RING_BOUNCES.BL_CORE	Number of LLC responses that bounced on the Ring.; Data Responses to core	0,1,2,3	0x53	na	0	0x00
+SBO	0x5	0x8	UNC_S_RING_BOUNCES.IV_CORE	Number of LLC responses that bounced on the Ring.; Snoops of processor's cache.	0,1,2,3	0x53	na	0	0x00
+SBO	0x6	0x1	UNC_S_RING_SINK_STARVED.AD_CACHE	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x6	0x2	UNC_S_RING_SINK_STARVED.AK_CORE	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x6	0x4	UNC_S_RING_SINK_STARVED.BL_CORE	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x6	0x8	UNC_S_RING_SINK_STARVED.IV_CORE	tbd	0,1,2,3	0x53	na	0	0x00
+SBO	0x9	0x0	UNC_S_FAST_ASSERTED	FaST wire asserted	0,1,2,3	0x53	na	0	0x00
+SBO	0xA	0x0	UNC_S_BOUNCE_CONTROL	Bounce Control	0,1,2,3	0x53	na	0	0x00

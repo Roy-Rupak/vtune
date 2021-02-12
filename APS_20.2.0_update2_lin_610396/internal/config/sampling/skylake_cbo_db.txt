@@ -1,0 +1,18 @@
+# Performance Monitoring Events for the Sixth Generation Intel Core Processors Based on the Skylake Microarchitecture - V48
+# 3/16/2020 9:57:53 AM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	eLLC_PRESENT
+CBO	0x22	0x41	UNC_CBO_XSNP_RESPONSE.MISS_XCORE	A cross-core snoop initiated by this Cbox due to processor core memory request which misses in some processor core.	0,1	0x40	0
+CBO	0x22	0x44	UNC_CBO_XSNP_RESPONSE.HIT_XCORE	A cross-core snoop initiated by this Cbox due to processor core memory request which hits a non-modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x48	UNC_CBO_XSNP_RESPONSE.HITM_XCORE	A cross-core snoop initiated by this Cbox due to processor core memory request which hits a modified line in some processor core.	0,1	0x40	0
+CBO	0x22	0x81	UNC_CBO_XSNP_RESPONSE.MISS_EVICTION	A cross-core snoop resulted from L3 Eviction which misses in some processor core.	0,1	0x40	0
+CBO	0x34	0x16	UNC_CBO_CACHE_LOOKUP.READ_ES	L3 Lookup read request that access cache and found line in E or S-state	0,1	0x40	0
+CBO	0x34	0x18	UNC_CBO_CACHE_LOOKUP.READ_I	L3 Lookup read request that access cache and found line in I-state	0,1	0x40	0
+CBO	0x34	0x1f	UNC_CBO_CACHE_LOOKUP.READ_MESI	L3 Lookup read request that access cache and found line in any MESI-state	0,1	0x40	0
+CBO	0x34	0x21	UNC_CBO_CACHE_LOOKUP.WRITE_M	L3 Lookup write request that access cache and found line in M-state	0,1	0x40	0
+CBO	0x34	0x26	UNC_CBO_CACHE_LOOKUP.WRITE_ES	L3 Lookup write request that access cache and found line in E or S-state	0,1	0x40	0
+CBO	0x34	0x2f	UNC_CBO_CACHE_LOOKUP.WRITE_MESI	L3 Lookup write request that access cache and found line in MESI-state	0,1	0x40	0
+CBO	0x34	0x81	UNC_CBO_CACHE_LOOKUP.ANY_M	L3 Lookup any request that access cache and found line in M-state	0,1	0x40	0
+CBO	0x34	0x86	UNC_CBO_CACHE_LOOKUP.ANY_ES	L3 Lookup any request that access cache and found line in E or S-state	0,1	0x40	0
+CBO	0x34	0x88	UNC_CBO_CACHE_LOOKUP.ANY_I	L3 Lookup any request that access cache and found line in I-state	0,1	0x40	0
+CBO	0x34	0x8f	UNC_CBO_CACHE_LOOKUP.ANY_MESI	L3 Lookup any request that access cache and found line in MESI-state	0,1	0x40	0

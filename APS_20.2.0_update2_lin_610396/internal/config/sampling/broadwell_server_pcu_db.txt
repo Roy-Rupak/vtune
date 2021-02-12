@@ -1,0 +1,61 @@
+# Performance Monitoring Events for Intel(R) Xeon(R) Processor E5 v4 Family Based on the the Broadwell Microarchitecture - V16
+# 11/28/2018 2:09:09 PM
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL
+PCU	0x0	0x0	UNC_P_CLOCKTICKS	pclk Cycles	0,1,2,3	0x53	na	0
+PCU	0x2A	0x0	UNC_P_PKG_RESIDENCY_C0_CYCLES	Package C State Residency - C0	0,1,2,3	0x53	na	0
+PCU	0x2B	0x0	UNC_P_PKG_RESIDENCY_C2E_CYCLES	Package C State Residency - C2E	0,1,2,3	0x53	na	0
+PCU	0x2C	0x0	UNC_P_PKG_RESIDENCY_C3_CYCLES	Package C State Residency - C3	0,1,2,3	0x53	na	0
+PCU	0x2D	0x0	UNC_P_PKG_RESIDENCY_C6_CYCLES	Package C State Residency - C6	0,1,2,3	0x53	na	0
+PCU	0x2E	0x0	UNC_P_PKG_RESIDENCY_C7_CYCLES	Package C7 State Residency	0,1,2,3	0x53	na	0
+PCU	0x2F	0x0	UNC_P_MEMORY_PHASE_SHEDDING_CYCLES	Memory Phase Shedding Cycles	0,1,2,3	0x53	na	0
+PCU	0x30	0x0	UNC_P_DEMOTIONS_CORE0	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x31	0x0	UNC_P_DEMOTIONS_CORE1	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x32	0x0	UNC_P_DEMOTIONS_CORE2	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x33	0x0	UNC_P_DEMOTIONS_CORE3	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x34	0x0	UNC_P_DEMOTIONS_CORE4	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x35	0x0	UNC_P_DEMOTIONS_CORE5	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x36	0x0	UNC_P_DEMOTIONS_CORE6	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x37	0x0	UNC_P_DEMOTIONS_CORE7	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x38	0x0	UNC_P_DEMOTIONS_CORE8	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x39	0x0	UNC_P_DEMOTIONS_CORE9	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x3A	0x0	UNC_P_DEMOTIONS_CORE10	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x3B	0x0	UNC_P_DEMOTIONS_CORE11	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x3C	0x0	UNC_P_DEMOTIONS_CORE12	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x3D	0x0	UNC_P_DEMOTIONS_CORE13	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x3E	0x0	UNC_P_DEMOTIONS_CORE14	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x3F	0x0	UNC_P_DEMOTIONS_CORE15	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x4	0x0	UNC_P_FREQ_MAX_LIMIT_THERMAL_CYCLES	Thermal Strongest Upper Limit Cycles	0,1,2,3	0x53	na	0
+PCU	0x40	0x0	UNC_P_DEMOTIONS_CORE16	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x41	0x0	UNC_P_DEMOTIONS_CORE17	Core C State Demotions	0,1,2,3	0x53	na	0
+PCU	0x42	0x0	UNC_P_VR_HOT_CYCLES	VR Hot	0,1,2,3	0x53	na	0
+PCU	0x4E	0x0	UNC_P_PKG_RESIDENCY_C1E_CYCLES	Package C State Residency - C1E	0,1,2,3	0x53	na	0
+PCU	0x5	0x0	UNC_P_FREQ_MAX_POWER_CYCLES	Power Strongest Upper Limit Cycles	0,1,2,3	0x53	na	0
+PCU	0x6	0x0	UNC_P_FREQ_MAX_OS_CYCLES	OS Strongest Upper Limit Cycles	0,1,2,3	0x53	na	0
+PCU	0x60	0x0	UNC_P_CORE0_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x61	0x0	UNC_P_CORE1_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x62	0x0	UNC_P_CORE2_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x63	0x0	UNC_P_CORE3_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x64	0x0	UNC_P_CORE4_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x65	0x0	UNC_P_CORE5_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x66	0x0	UNC_P_CORE6_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x67	0x0	UNC_P_CORE7_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x68	0x0	UNC_P_CORE8_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x69	0x0	UNC_P_CORE9_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x6A	0x0	UNC_P_CORE10_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x6B	0x0	UNC_P_CORE11_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x6C	0x0	UNC_P_CORE12_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x6D	0x0	UNC_P_CORE13_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x6E	0x0	UNC_P_CORE14_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x6F	0x0	UNC_P_CORE15_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x70	0x0	UNC_P_CORE16_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x71	0x0	UNC_P_CORE17_TRANSITION_CYCLES	Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x72	0x0	UNC_P_TOTAL_TRANSITION_CYCLES	Total Core C State Transition Cycles	0,1,2,3	0x53	na	0
+PCU	0x73	0x0	UNC_P_FREQ_MIN_IO_P_CYCLES	IO P Limit Strongest Lower Limit Cycles	0,1,2,3	0x53	na	0
+PCU	0x74	0x0	UNC_P_FREQ_TRANS_CYCLES	Cycles spent changing Frequency	0,1,2,3	0x53	na	0
+PCU	0x79	0x0	UNC_P_UFS_TRANSITIONS_RING_GV	tbd	0,1,2,3	0x53	na	0
+PCU	0x80	0x40	UNC_P_POWER_STATE_OCCUPANCY.CORES_C0	Number of cores in C-State; C0 and C1	0,1,2,3	0x53	na	0
+PCU	0x80	0x80	UNC_P_POWER_STATE_OCCUPANCY.CORES_C3	Number of cores in C-State; C3	0,1,2,3	0x53	na	0
+PCU	0x80	0xC0	UNC_P_POWER_STATE_OCCUPANCY.CORES_C6	Number of cores in C-State; C6 and C7	0,1,2,3	0x53	na	0
+PCU	0x9	0x0	UNC_P_PROCHOT_INTERNAL_CYCLES	Internal Prochot	0,1,2,3	0x53	na	0
+PCU	0xA	0x0	UNC_P_PROCHOT_EXTERNAL_CYCLES	External Prochot	0,1,2,3	0x53	na	0

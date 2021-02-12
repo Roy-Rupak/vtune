@@ -1,0 +1,77 @@
+# Performance Monitoring Events for Intel Xeon Processors Based on the Skylake Microarchitecture - V1.22
+# 3/27/2020 4:07:25 PM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS
+IIO	0x1	0x0	0x00	0x00	0x00	UNC_IIO_CLOCKTICKS	Clockticks of the IIO Traffic Controller	0,1,2,3	0x53	na	0	0	0x00
+IIO	0x83	0x01	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART0	Write request of 4 bytes made by IIO Part0 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x01	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART1	Write request of 4 bytes made by IIO Part1 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x01	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART2	Write request of 4 bytes made by IIO Part2 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x01	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART3	Write request of 4 bytes made by IIO Part3 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x02	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART0	Peer to peer write request of 4 bytes made by IIO Part0 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x02	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART1	Peer to peer write request of 4 bytes made by IIO Part0 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x02	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART2	Peer to peer write request of 4 bytes made by IIO Part0 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x02	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_WRITE.PART3	Peer to peer write request of 4 bytes made by IIO Part0 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x04	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART0	Read request for 4 bytes made by IIO Part0 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x04	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART1	Read request for 4 bytes made by IIO Part1 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x04	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART2	Read request for 4 bytes made by IIO Part2 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x04	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART3	Read request for 4 bytes made by IIO Part3 to Memory	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x08	0x01	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART0	Peer to peer read request for 4 bytes made by IIO Part0 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x08	0x02	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART1	Peer to peer read request for 4 bytes made by IIO Part1 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x08	0x04	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART2	Peer to peer read request for 4 bytes made by IIO Part2 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x08	0x08	0x07	0x00	UNC_IIO_DATA_REQ_OF_CPU.PEER_READ.PART3	Peer to peer read request for 4 bytes made by IIO Part3 to an IIO target	0,1	0x53	fc, chnl	0	0	0x00
+IIO	0x83	0x1	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_WRITE.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x1	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_WRITE.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x1	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_WRITE.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x1	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_WRITE.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_WRITE.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x4	0x1	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_READ.PART0	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART0	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x4	0x2	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_READ.PART1	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART1	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x4	0x4	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_READ.PART2	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART2	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x83	0x4	0x8	0x7	0x00	UNC_IIO_PAYLOAD_BYTES_IN.MEM_READ.PART3	This event is deprecated. Refer to new event UNC_IIO_DATA_REQ_OF_CPU.MEM_READ.PART3	0,1	0x53	fc, chnl	0	0	0x01
+IIO	0x84	0x01	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART0	Write request of up to a 64 byte transaction is made by IIO Part0 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x01	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART1	Write request of up to a 64 byte transaction is made by IIO Part1 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x01	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART2	Write request of up to a 64 byte transaction is made by IIO Part2 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x01	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_WRITE.PART3	Write request of up to a 64 byte transaction is made by IIO Part3 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x02	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_WRITE.PART0	Peer to peer write request of up to a 64 byte transaction is made by IIO Part0 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x02	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_WRITE.PART1	Peer to peer write request of up to a 64 byte transaction is made by IIO Part1 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x02	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_WRITE.PART2	Peer to peer write request of up to a 64 byte transaction is made by IIO Part2 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x02	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_WRITE.PART3	Peer to peer write request of up to a 64 byte transaction is made by IIO Part3 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x04	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_READ.PART0	Read request for up to a 64 byte transaction is made by IIO Part0 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x04	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_READ.PART1	Read request for up to a 64 byte transaction is  made by IIO Part1 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x04	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_READ.PART2	Read request for up to a 64 byte transaction is made by IIO Part2 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x04	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.MEM_READ.PART3	Read request for up to a 64 byte transaction is made by IIO Part3 to Memory	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x08	0x01	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_READ.PART0	Peer to peer read request of up to a 64 byte transaction is made by IIO Part0 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x08	0x02	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_READ.PART1	Peer to peer read request of up to a 64 byte transaction is made by IIO Part1 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x08	0x04	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_READ.PART2	Peer to peer read request of up to a 64 byte transaction is made by IIO Part2 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0x84	0x08	0x08	0x07	0x00	UNC_IIO_TXN_REQ_OF_CPU.PEER_READ.PART3	Peer to peer read request of up to a 64 byte transaction is made by IIO Part3 to an IIO target	0,1,2,3	0x53	chnl	0	0	0x00
+IIO	0xC0	0x01	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART0	Write request of 4 bytes made to IIO Part0 by the CPU	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x01	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART1	Write request of 4 bytes made to IIO Part1 by the CPU	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x01	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART2	Write request of 4 bytes made to IIO Part2 by the CPU	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x01	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_WRITE.PART3	Write request of 4 bytes made to IIO Part3 by the CPU	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x02	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART0	Peer to peer write request of 4 bytes made to IIO Part0 by a different IIO unit	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x02	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART1	Peer to peer write request of 4 bytes made to IIO Part1 by a different IIO unit	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x02	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART2	Peer to peer write request of 4 bytes made to IIO Part2 by a different IIO unit	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x02	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_WRITE.PART3	Peer to peer write request of 4 bytes made to IIO Part3 by a different IIO unit	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x04	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART0	Read request for 4 bytes made by the CPU to IIO Part0	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x04	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART1	Read request for 4 bytes made by the CPU to IIO Part1	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x04	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART2	Read request for 4 bytes made by the CPU to IIO Part2	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x04	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.MEM_READ.PART3	Read request for 4 bytes made by the CPU to IIO Part3	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x08	0x01	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART0	Peer to peer read request for 4 bytes made by a different IIO unit to IIO Part0	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x08	0x02	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART1	Peer to peer read request for 4 bytes made by a different IIO unit to IIO Part1	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x08	0x04	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART2	Peer to peer read request for 4 bytes made by a different IIO unit to IIO Part2	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC0	0x08	0x08	0x07	0x00	UNC_IIO_DATA_REQ_BY_CPU.PEER_READ.PART3	Peer to peer read request for 4 bytes made by a different IIO unit to IIO Part3	2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x01	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART0	Write request of up to a 64 byte transaction is made to IIO Part0 by the CPU	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x01	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART1	Write request of up to a 64 byte transaction is made to IIO Part1 by the CPU	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x01	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART2	Write request of up to a 64 byte transaction is made to IIO Part2 by the CPU	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x01	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_WRITE.PART3	Write request of up to a 64 byte transaction is made to IIO Part3 by the CPU	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x02	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART0	Peer to peer write request of up to a 64 byte transaction is made to IIO Part0 by a different IIO unit	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x02	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART1	Peer to peer write request of up to a 64 byte transaction is made to IIO Part1 by a different IIO unit	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x02	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART2	Peer to peer write request of up to a 64 byte transaction is made to IIO Part2 by a different IIO unit	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x02	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_WRITE.PART3	Peer to peer write request of up to a 64 byte transaction is made to IIO Part3 by a different IIO unit	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x04	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART0	Read request for up to a 64 byte transaction is made by the CPU to IIO Part0	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x04	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART1	Read request for up to a 64 byte transaction is made by the CPU to IIO Part1	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x04	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART2	Read request for up to a 64 byte transaction is made by the CPU to IIO Part2	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x04	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.MEM_READ.PART3	Read request for up to a 64 byte transaction is made by the CPU to IIO Part3	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x08	0x01	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART0	Peer to peer read request for up to a 64 byte transaction is made by a different IIO unit to IIO Part0	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x08	0x02	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART1	Peer to peer read request for up to a 64 byte transaction is made by a different IIO unit to IIO Part1	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x08	0x04	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART2	Peer to peer read request for up to a 64 byte transaction is made by a different IIO unit to IIO Part2	0,1,2,3	0x53	fc, chnl	0	0	0x00
+IIO	0xC1	0x08	0x08	0x07	0x00	UNC_IIO_TXN_REQ_BY_CPU.PEER_READ.PART3	Peer to peer read request for up to a 64 byte transaction is made by a different IIO unit to IIO Part3	0,1,2,3	0x53	fc, chnl	0	0	0x00

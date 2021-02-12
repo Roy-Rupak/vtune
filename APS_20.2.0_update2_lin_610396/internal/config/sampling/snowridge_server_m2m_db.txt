@@ -1,0 +1,5 @@
+# Performance Monitoring Events for Intel Next Generation Atom-based Processors - V1.07
+# 3/10/2020 11:58:06 AM EVENT_STATUS Legend: None = 0x00, Deprecated = 0x01, Template = 0x02
+# Copyright (c) 2007 - 2017 Intel Corporation. All rights reserved.
+UNIT	CODE	UMASK	PORT_MASK	FC_MASK	UMASK_EXT	NAME	DESCRIPTION	COUNTER	OTHER	FILTER	INTERNAL	FILTER_VALUE	EVENT_STATUS	COUNTER_TYPE
+M2M	0x00	0x00	0x00	0x00	0x00	UNC_M2M_CLOCKTICKS	Clockticks of the mesh to memory (M2M)	0,1,2,3	0x53	na	0	0	0x00	PGMABLE

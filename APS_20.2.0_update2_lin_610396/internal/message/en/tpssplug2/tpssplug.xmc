@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="tpssplug2" lang="en">
+        <msg name='%LoadingFiles'>Loading data into data base</msg>
+        <msg name='%LoadingFileMessage'>Loading '<arg name='%1'/>' file</msg>
+        <msg name='%DecodingFileMessage'>Decoding '<arg name='%1'/>' file</msg>
+        <msg name='%DecodingProcessorTraceMessage'>Decoding Processor Trace data for CPU <arg name='%1'/></msg>
+        <msg name='%DecodingProcessorTraceTruncatedMessage'>Packet misses are detected in Processor Trace data for CPU <arg name='%1'/></msg>
+        <msg name='%DecodingProcessorTraceError'>Failed to load Processor Trace data for CPU <arg name='%1'/></msg>
+        <msg name='%DataFileCorruptionMessage'>Data file is corrupted</msg>
+        <msg name='%DataFileLoaded'>File is already loaded</msg>
+        <msg name='%JitFileCorruptionMessage'>Cannot resolve managed part of the application. Please archive your project data and provide it to the Technical Support for further investigation.</msg>
+        <msg name='%FoundCPULostEvents'>Data file contains lost processor events. Please increase FTrace ring buffer size.</msg>
+        <msg name='%etwFoundLostEvents'>Events were lost in the ETW trace. Data may be unreliable.</msg>
+        <msg name='%AdjustingSamplesMessage'>Aligning CPU samples</msg>
+        <msg name='%EventsToWaitsMessage'>Converting API Events to Waits</msg>
+        <msg name='%GPUAdapterName'>GPU<arg name='%1'/></msg>
+        <msg name='%PresentFrameDomain'>Present</msg>
+        <msg name='%FlipFrameDomain'>Flip</msg>
+        <msg name='%CPUFrameDomain'>CPU Frame</msg>
+        <msg name='%GPUFrameDomain'>GPU Frame</msg>
+        <msg name='%FrameDomainIfMany'><arg name='%1'/> (<arg name='%2'/>)</msg>
+        <msg name='%VSync'>VSync</msg>
+        <msg name='%OtherThread'>[External Thread]</msg>
+        <msg name='%OtherProcess'>[External Process]</msg>
+        <msg name='%GPUUnknownNode'>Engine <arg name='%1'/></msg>
+        <msg name='%GPUGen3DNode'>Render and GPGPU</msg>
+        <msg name='%GPUGenVideoNode'>Video Codec</msg>
+        <msg name='%GPUGenVideoNode2'>Video Codec 2</msg>
+        <msg name='%GPUGenVideoNode3'>Video Codec 3</msg>
+        <msg name='%GPUGenVideoNode4'>Video Codec 4</msg>
+        <msg name='%GPUGenBLTNode'>Blitter</msg>
+        <msg name='%GPUGenVENode'>Video Enhancement</msg>
+        <msg name='%GPUGenVENode2'>Video Enhancement 2</msg>
+        <msg name='%GPUGenOverlayNode'>Display and Overlay</msg>
+        <msg name='%GPUGenGTDI2Node'>GDI Render</msg>
+        <msg name='%GPUNvidiaComputeNode'>Engine 1</msg>
+        <msg name='%UnknownTask'>[Unknown Task <arg name='%1'/>]</msg>
+        <msg name='%UnknownDevice'>[Unknown Device]</msg>
+        <msg name='%CPU'>CPU</msg>
+        <msg name='%GPU'>GPU</msg>
+        <msg name='%ACCELERATOR'>ACCELERATOR</msg>
+        <msg name='%RenderMetalKernel'>[Render]</msg>
+        <msg name='%ParallelRenderMetalKernel'>[ParallelRender]</msg>
+        <msg name='%BlitMetalKernel'>[Blit]</msg>
+        <msg name='%ComputeMetalKernel'>[Compute]</msg>
+        <msg name='%PTTUnknown'>Unknown</msg>
+        <msg name='%PTTKMD'>KMD</msg>
+        <msg name='%PTTGHAL3D'>GHAL3D</msg>
+        <msg name='%PTTVideoDecoding'>Video Decoding</msg>
+        <msg name='%PTTDXVA2'>DXVA2</msg>
+        <msg name='%PTTFactCompositing'>Fast Compositing</msg>
+        <msg name='%PTTVideoEncoding'>Video Encoding</msg>
+        <msg name='%PTTDXVAHD'>DXVAHD</msg>
+        <msg name='%PTTDXVA1'>DXVA1</msg>
+        <msg name='%PTTVPHAL'>VPHAL (video processing)</msg>
+        <msg name='%PTTCM'>CM</msg>
+        <msg name='%PTTOpenCL'>OpenCL</msg>
+        <msg name='%PTTRenderScript'>RenderScript</msg>
+        <msg name='%DecodingIstpFile'>Decoding ISTP file</msg>
+        <msg name='%ParseDecodedFile'>Parsing decoded file</msg>
+        <msg name='%ParseDecodedFile1'>Parsing decoded file: first pass</msg>
+        <msg name='%ParseDecodedFile2'>Parsing decoded file: second pass</msg>
+        <msg name='%LoadingCSVFile'>Loading data into data base</msg>
+        <msg name='%LibVersionUnsupported'>Unsupported version of istp parser library is currently used by the product. The library version: <arg name='%1'/>. The supported version: <arg name='%2'/>.</msg>
+        <msg name='%ErrorParseCounter'>Error parsing Systrace Counter event from ftrace file</msg>
+        <msg name='%ErrorParseTaskBegin'>Error parsing Systrace Begin task event from ftrace file</msg>
+        <msg name='%ErrorParseTaskEnd'>Error parsing Systrace End task event from ftrace file</msg>
+        <msg name='%ParseLineErrorMsg'>Cannot parse the line.</msg>
+        <msg name='%IncorrectLineSize'>The number of values in the line does not match the number of column headers.</msg>
+        <msg name='%NameNotSpecified'>Object name is not specified.</msg>
+        <msg name='%TSNotSpecified'>Timestamp is not specified.</msg>
+        <msg name='%OnlyGlobalDataCanBeRepresented'>Only global data can be displayed. Other types of CSV file data will be ignored.</msg>
+        <msg name='%TSOutOfRange'>Timestamp is out of range.</msg>
+        <msg name='%UnknownTidPid'>TID or PID do not match collected data.</msg>
+        <msg name='%UnspecifiedHostname'>Hostname is either not specified or not provided by the collector.</msg>
+        <msg name='%NegativeValueSpecified'>Negative value is ignored.</msg>
+        <msg name='%LineDescription'>line <arg name='%1'/> : <arg name='%2'/> : <arg name='%3'/></msg>
+        <msg name='%LinesMore'>&#32;(<arg name='%1'/> more)</msg>
+        <msg name='%TotalFailed'>Failed <arg name='%1'/> lines out of <arg name='%2'/>:</msg>
+        <msg name='%Warning'>warning</msg>
+        <msg name='%Error'>error</msg>
+        <msg name='%AllLinesSkipped'>All lines were skipped.</msg>
+        <msg name='%UnknownHeaderField'>Unknown header field: <arg name='%1'/></msg>
+        <msg name='%IncorrectFormatType'>CSV file header should specify interval or discrete values.</msg>
+        <msg name='%FileNotFound'>File is not found</msg>
+        <msg name='%FileIsEmpty'>File is empty</msg>
+        <msg name='%InvalidHeaderFormat'>Invalid header</msg>
+        <msg name='%UnspecifiedHostnameWithoutUTC'><![CDATA[Hostname either is not specified in the csv file name (format must be [user-defined]-hostname-&lt;hostname-of-system&gt;.csv) or missing in the collected data. Only UTC timestamps can be imported.]]></msg>
+        <msg name='%NoSynchronizationPoint'>No timestamp synchronization points collected. Only UTC timestamps will be imported.</msg>
+        <msg name='%DecreasingTimestamps'>Timestamps should be provided in non-decreasing order.</msg>
+        <msg name='%MetadataFileError'>Error processing metadata file <arg name='%1'/>.</msg>
+        <msg name='%MetadataFileErrorEx'>Error processing metadata file <arg name='%1'/>. Reason: <arg name='%1'/></msg>
+        <msg name='%MetadataFileNotExist'>Metadata file does not exist.</msg>
+        <msg name='%MetadataFileEmpty'>Metadata file is empty.</msg>
+        <msg name='%MetadataFileNotOpen'>Can not open metadata file.</msg>
+        <msg name='%MetadataDeviceNameMissing'>Missing name for device id <arg name='%1'/>.</msg>
+        <msg name='%MetadataDeviceNameMissing'>Missing name for device id <arg name='%1'/>.</msg>
+        <msg name='%UnknownDeviceId'>Device id <arg name='%1'/> was not found in metadata file.</msg>
+        <msg name='%FailedGetDeviceList'>Failed to get devices for device id <arg name='%1'/>.</msg>
+        <msg name='%WarnLostTooMuch'>Data file contains paused regions caused by missing processor events. Consider increasing the sampling interval or Sample After values for hardware events and restart the collection to improve the analysis quality.</msg>
+        <msg name='%PwrFileSkipped'>Trace file '<arg name='%1'/>' has been skipped. Only one PWR file can be loaded per result. </msg>
+        <msg name='%IstpImportError'>Import of only one ISTP trace is supported. </msg>
+        <msg name='%PTDataLostMessage'>Some PT data has been lost.</msg>
+    </catalog>
+</xmc>

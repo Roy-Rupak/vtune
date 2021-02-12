@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+  <catalog name="perfrun1.emon" lang="en">
+    <msg name='aggregated-counting'>Enable aggregated counting mode.</msg>
+    <msg name='FailedToParseEmonOutput'>Unable to parse collector output. The trace file
+      will not be saved.</msg>
+    <msg name='EmonMessagePrefix'>EMON Collector Message: </msg>
+    <msg name='emon-preset'>Specify a preset for EMON collector. For available presets, run: emon -preset-list.</msg>
+    <msg name='emon-csv-trace-format'>Use CSV format for EMON trace file.</msg>
+    <msg name='emon-machine-readable-ver'>Write machine readable EMON version file.</msg>
+  </catalog>
+</xmc>

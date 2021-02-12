@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.exprof" lang="en">
+      <msg name='exprof'>ExactProfiling collector.</msg>
+      <msg name='STTFailure'>ExactProfiling collector failed to start: '<arg name='%1'/>'.</msg>
+      <msg name='exprof-com-list'>List available COM ports.</msg>
+      <msg name='COM'>COM port(s).</msg>
+      <msg name='exprof-dvc-list'>List available DvC IDs.</msg>
+      <msg name='DvC'>DvC ID(s).</msg>
+      <msg name='exprof-interface'>Specify ExactProfiling tracing interface.</msg>
+      <msg name='NoInterface'>No ExactProfiling tracing interface specified.</msg>
+      <msg name='UnknownInterface'>Unknown ExactProfiling tracing interface specified.</msg>
+      <msg name='exprof-comm'>Specify ExactProfiling communication channel configuration.</msg>
+      <msg name='NoCommunication'>No ExactProfiling communication channel configuration specified.</msg>
+      <msg name='exprof-trace'>Specify ExactProfiling trace channel configuration</msg>
+      <msg name='NoTrace'>No ExactProfiling trace channel configuration specified.</msg>
+      <msg name='WrongIP'>Wrong IP address of System Trace Box specified.</msg>
+      <msg name='WrongPort'>Wrong port of System Trace Box specified.</msg>
+      <msg name='WrongMIPI'>Wrong Mobile Industry Processor Interface specified.</msg>
+      <msg name='WrongCommCOM'>Wrong COM port for communication channel specified.</msg>
+      <msg name='WrongCommBaudRate'>Wrong Baud Rate for communication channel specified.</msg>
+      <msg name='WrongTraceCOM'>Wrong COM port for trace channel specified.</msg>
+      <msg name='WrongTraceBaudRate'>Wrong Baud Rate for trace channel specified.</msg>
+      <msg name='WrongDvC'>Wrong DvC ID for trace channel specified.</msg>
+      <msg name='WrongBulkSize'>Wrong Bulk Read Size for trace channel specified.</msg>
+      <msg name='WrongBulkQueue'>Wrong USB Bulk in Queue Size for trace channel specified.</msg>
+      <msg name='exprof-event-config'>Specify ExactProfiling Event Classes.</msg>
+      <msg name='NoClassesRequested'>No ExactProfiling Event classes specified.</msg>
+      <msg name='exprof-event-config'>Specify ExactProfiling PMU Events.</msg>
+      <msg name='NoEventsRequested'>No ExactProfiling PMU events specified.</msg>
+      <msg name='exprof-cpu-mask'>Specify CPU cores.</msg>
+      <msg name='PauseNotSupported'>Pause is not supported by ExactProfiling collector.</msg>
+    </catalog>
+</xmc>

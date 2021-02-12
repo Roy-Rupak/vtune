@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog name="perfrun1.hwloc" lang="en">
+      <msg name='collect-topology'>Collect topology info with hwloc.</msg>
+      <msg name='%FailedToCollectTopology'>Topology information was not collected due to an unexpected error. You may contact the PRODUCT_LEGAL_SHORT_NAME support team for assistance.</msg>
+    </catalog>
+</xmc>

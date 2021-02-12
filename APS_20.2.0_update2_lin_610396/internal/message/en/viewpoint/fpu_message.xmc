@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+
+ Copyright © 2009-2020 Intel Corporation. All rights reserved.
+
+ The information contained herein is the exclusive property of
+ Intel Corporation and may not be disclosed, examined, or reproduced in
+ whole or in part without explicit written authorization from the Company.
+
+-->
+<xmc version="1.0">
+    <catalog lang="en" name="viewpoint">
+        <msg name="%128PackedDPFPRatio">128-bit</msg>
+        <msg name="%128PackedDPFPRatioDescriptionAll">The metric represents % of 128-bit packed floating point operations with a double precision.</msg>
+        <msg name="%128PackedSPFPRatio">128-bit</msg>
+        <msg name="%128PackedSPFPRatioDescriptionAll">The metric represents % of 128-bit packed floating point operations with a single precision.</msg>
+        <msg name="%256PackedDPFPRatio">256-bit</msg>
+        <msg name="%256PackedDPFPRatioDescriptionAll">The metric represents % of 256-bit packed floating point operations with a double precision.</msg>
+        <msg name="%256PackedSPFPRatio">256-bit</msg>
+        <msg name="%256PackedSPFPRatioDescriptionAll">The metric represents % of 256-bit packed floating point operations with a single precision.</msg>
+        <msg name="%512PackedDPFPRatio">512-bit</msg>
+        <msg name="%512PackedDPFPRatioDescriptionAll">The metric represents % of 512-bit packed floating point operations with a double precision.</msg>
+        <msg name="%512PackedSPFPRatio">512-bit</msg>
+        <msg name="%512PackedSPFPRatioDescriptionAll">The metric represents % of 512-bit packed floating point operations with a single precision.</msg>
+        <msg name="%DPFLOPSOfTotal">DP FLOPs</msg>
+        <msg name="%DPFLOPSOfTotalDescriptionAll">The metric represents the percentage of double precision floating point operations from all operations executed by the applications. Use the metric for rough estimation of a DP FLOP fraction. If FMA vector instructions are used the metric may overcount.</msg>
+        <msg name="%FLOPSPerInstructionMultiIssue">Vector Capacity Usage (FPU)</msg>
+        <msg name="%FLOPSPerInstructionMultiIssueDescriptionAll">This metric represents how the application code vectorization relates to the floating point computations. A value of 100% means that all floating point instructions are vectorized with the full vector capacity.</msg>
+        <msg name="%FPInstrPerMemRead">FP Arith/Mem Rd Instr. Ratio</msg>
+        <msg name="%FPInstrPerMemReadDescriptionAll">This metric represents the ratio between arithmetic floating point instructions and memory read instructions. A value less than 0.5 indicates unaligned data access for vector operations, which can negatively impact the performance of vector instruction execution.</msg>
+        <msg name="%FPInstrPerMemWrite">FP Arith/Mem Wr Instr. Ratio</msg>
+        <msg name="%FPInstrPerMemWriteDescriptionAll">This metric represents the ratio between arithmetic floating point instructions and memory write instructions. A value less than 0.5 indicates unaligned data access for vector operations, which can negatively impact the performance of vector instruction execution.</msg>
+        <msg name="%FPRatio">% of FP Ops</msg>
+        <msg name="%FPRatioDescriptionAll">The metric represents the percentage of floating point operations from all operations executed by the applications. Use the metric for rough estimation of a FLOP fraction. If FMA vector instructions are used the metric may overcount.</msg>
+        <msg name="%FPUUtilization">SIMD Instructions per Cycle</msg>
+        <msg name="%FPUUtilizationDescriptionAll">This metric represents number of SIMD instructions per clocktick. Low metric values can be a result of vector code generation or code execution issues.</msg>
+        <msg name="%GDPFLOPS">DP GFLOPS</msg>
+        <msg name="%GDPFLOPSDescriptionAll">Number of double precision floating point operations (in billions) calculated per second by the application.</msg>
+        <msg name="%GFLOPS">SP GFLOPS</msg>
+        <msg name="%GFLOPSDescriptionAll">Number of single precision floating point operations (in billions) calculated per second. All double operations are converted to two single operations.</msg>
+        <msg name="%GFLOPSPerProcessTime">SP GFLOPS</msg>
+        <msg name="%GFLOPSPerProcessTimeDescriptionAll">Number of single precision floating point operations (in billions) calculated per second. All double operations are converted to two single operations.</msg>
+        <msg name="%GSPFLOPS">SP GFLOPS</msg>
+        <msg name="%GSPFLOPSDescriptionAll">Number of single precision floating point operations (in billions) calculated per second by the application.</msg>
+        <msg name="%GX87FLOPS">x87 GFLOPS</msg>
+        <msg name="%GX87FLOPSDescriptionAll">Number of x87 floating point operations (in billions) calculated per second by the application.</msg>
+        <msg name="%InstrSet">Vector Instruction Set</msg>
+        <msg name="%InstrSetDescriptionAll">Displays the Vector Instruction Set used for arithmetic floating point computations and memory access operations.</msg>
+        <msg name="%InstructionMix">Instruction Mix</msg>
+        <msg name="%InstructionMixDescriptionAll">Instruction Mix is a breakdown of instructions executed by the application shown in the following categories: packed SIMD instructions and scalar SIMD instructions. Use this metric to observe vector code generation status and potential.</msg>
+        <msg name="%LoopType">Loop Type</msg>
+        <msg name="%LoopTypeDescriptionAll">Displays a loop type (body, peel, reminder) based on the Intel Compiler optreport information.</msg>
+        <msg name="%NonFLOP">Non-FP</msg>
+        <msg name="%NonFLOPDescriptionAll">This metric represents the percentage of non-floating point operations executed by the application. Use the metric for rough estimation of a non-FP fraction. If FMA vector instructions are used the metric may overcount.</msg>
+        <msg name="%PackedDPFPRatio">Packed</msg>
+        <msg name="%PackedDPFPRatioDescriptionAll">This metric represents the percentage of all packed floating point operations with a double precision.</msg>
+        <msg name="%PackedFPRatio">FP Ops: Packed</msg>
+        <msg name="%PackedFPRatioSIMD">% of Packed SIMD Instr.</msg>
+        <msg name="%PackedFPRatioDescriptionAll">This metric represents the percentage of all packed floating point operations.</msg>
+        <msg name="%PackedSPFPRatio">Packed</msg>
+        <msg name="%PackedSPFPRatioDescriptionAll">This metric represents the percentage of packed floating point operations with a single precision.</msg>
+        <msg name="%SPFLOPSOfTotal">SP FLOPs</msg>
+        <msg name="%SPFLOPSOfTotalDescriptionAll">The metric represents the percentage of single precision floating point operations from all operations executed by the applications. Use the metric for rough estimation of a SP FLOP fraction. If FMA vector instructions are used the metric may overcount.</msg>
+        <msg name="%ScalarDPFPRatio">Scalar</msg>
+        <msg name="%ScalarDPFPRatioDescriptionAll">This metric represents the percentage of scalar floating point operations with a double precision.</msg>
+        <msg name="%ScalarFPRatio">FP Ops: Scalar</msg>
+        <msg name="%ScalarFPRatioSIMD">% of Scalar SIMD Instr.</msg>
+        <msg name="%ScalarFPRatioDescriptionAll">This metric represents the percentage of scalar floating point operations.</msg>
+        <msg name="%ScalarSPFPRatio">Scalar</msg>
+        <msg name="%ScalarSPFPRatioDescriptionAll">This metric represents the percentage of scalar floating point operations with a single precision.</msg>
+        <msg name="%SummaryFPUUtilization">SIMD Instructions per Cycle</msg>
+        <msg name="%SummaryFPUUtilizationDescriptionAll">This metric represents number of SIMD instructions per clocktick. Low metric values can be a result of vector code generation or code execution issues.</msg>
+        <msg name="%Vectorization">Vectorization</msg>
+        <msg name="%VectorizationDescriptionAll">This metric represents the percentage of packed (vectorized) floating point operations. 0% means that the code is fully scalar. The metric does not take into account the actual vector length that was used by the code for vector instructions. So if the code is fully vectorized and uses a legacy instruction set that loaded only half a vector length, the Vectorization metric shows 100%.</msg>
+        <msg name="%X87FLOPSOfTotal">x87 FLOPs</msg>
+        <msg name="%X87FLOPSOfTotalDescriptionAll">The metric represents the percentage of x87 floating point operations from all operations executed by the applications. Use the metric for rough estimation of an x87 fraction. If FMA vector instructions are used the metric may overcount.</msg>
+        <msg name="%BigScalarCodeIssueText">A significant fraction of floating point arithmetic instructions are scalar. Use Intel Advisor to see possible reasons why the code was not vectorized.</msg>
+        <msg name="%BigScalarIssueText">A significant fraction of SIMD instructions are scalar. Use Intel Advisor to see possible reasons why the code was not vectorized.</msg>
+        <msg name="%FullScalarCodeIssueText">This code has floating point operations and is not vectorized. Consider using Intel Advisor to vectorize the loops.</msg>
+        <msg name="%GFLOPSName">SP GFLOPS</msg>
+        <msg name="%GeneralUnalignedValueText">SIMD Per Memory Access Instruction ratio is low.</msg>
+        <msg name="%InsufficientVectorCapacityText">Vector Capacity Usage is low, which usually indicates the use of floating point scalar instructions or vector instructions with partial vector capacity. Explore the instruction mix breakdown to learn more about vectorized code.</msg>
+        <msg name="%InsufitientVectorizationIssueText">The metric value is low, which usually indicates a non-vectorized section in the code or the use of vector instructions with partial vector capacity. Explore the instruction mix breakdown to learn more about vectorized code.</msg>
+        <msg name="%NotFullVectorCapacityIssueText">A significant fraction of floating point arithmetic vector instructions is executed with a partial vector load. Make sure you compile the code with the latest instruction set or use Intel Advisor for vectorization help.</msg>
+        <msg name="%NotSupported">Not supported for this CPU.</msg>
+        <msg name="%OldInstructionSetIssueText">Using the latest vectorization instruction set can improve parallelism for this code. Consider either recompiling the code with the latest instruction set or using Intel Advisor to get vectorization help.</msg>
+        <msg name="%OldInstructionSetIssueTextSIMD">A significant fraction of SIMD instructions executed with partial vector load. A possible reason is compilation with legacy instruction set. Check the compiler options. Another possible reason is compiler code generation specifics. Use Intel Advisor to learn more.</msg>
+        <msg name="%OnlyScalarIssueText">This code has SIMD scalar instructions and is not vectorized. Consider using Intel Advisor to vectorize loops.</msg>
+        <msg name="%OutOfBodyExecutionIssueText">A significant fraction of CPU time is spent in peel or reminder loops that can indicate unaligned access to data. Use Intel Advisor to explore opportunities to improve vectorization efficiency.</msg>
+        <msg name="%PartialVectorLoadIssueText"> A significant fraction of floating point arithmetic vector instructions executed with a partial vector load.  You can try to compile the code with the latest instruction set or use Intel Advisor for vectorization help.</msg>
+        <msg name="%TheMetricValueIsLow">The metric value is low.</msg>
+        <msg name="%TheMetricValueText">The metric value is low.</msg>
+        <msg name="%TheMetricValueTextUnalignedAccessFooterText">The metric value is low. This can be a result of unaligned access to data for vector operations. Use Intel Advisor to find possible data access inefficiencies for vector operations.</msg>
+        <msg name="%UnalignedAccessFooterText">This can be a result of unaligned access to data for vector operations. Use Intel Advisor to find possible data access inefficiencies for vector operations.</msg>
+        <msg name="%UnalignedAccessIssueFooterText">This can be a result of unaligned access to data for vector operations. Use Intel Advisor to get more details on possible inefficiencies in data access for vector operations.</msg>
+    </catalog>
+</xmc>
